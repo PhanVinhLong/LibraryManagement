@@ -108,3 +108,7 @@ C:\Users\HITONASI\Desktop\SourceCode\LibraryManagement\LibraryManagementGUI\obj\
 C:\Users\HITONASI\Desktop\SourceCode\LibraryManagement\LibraryManagementGUI\obj\Debug\LibraryManagementGUI.frmQuanLyLoaiDocGia.resources
 C:\Users\HITONASI\Desktop\SourceCode\LibraryManagement\LibraryManagementGUI\obj\Debug\LibraryManagementGUI.frmThemTheLoaiSach.resources
 C:\Users\HITONASI\Desktop\SourceCode\LibraryManagement\LibraryManagementGUI\obj\Debug\LibraryManagementGUI.frmQuanLyTheLoaiSach.resources
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\bin\Debug\LibraryManagementGUI.exe.config
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\obj\Debug\LibraryManagementGUI.exe
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\obj\Debug\LibraryManagementGUI.xml
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\obj\Debug\LibraryManagementGUI.pdb
