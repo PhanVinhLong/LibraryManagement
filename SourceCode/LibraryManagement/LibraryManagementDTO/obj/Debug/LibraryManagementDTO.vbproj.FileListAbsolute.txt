@@ -1,0 +1,9 @@
+C:\Users\HITONASI\Desktop\SourceCode\LibraryManagement\LibraryManagementDTO\bin\Debug\LibraryManagementDTO.dll
+C:\Users\HITONASI\Desktop\SourceCode\LibraryManagement\LibraryManagementDTO\bin\Debug\LibraryManagementDTO.pdb
+C:\Users\HITONASI\Desktop\SourceCode\LibraryManagement\LibraryManagementDTO\bin\Debug\LibraryManagementDTO.xml
+C:\Users\HITONASI\Desktop\SourceCode\LibraryManagement\LibraryManagementDTO\obj\Debug\LibraryManagementDTO.vbprojResolveAssemblyReference.cache
+C:\Users\HITONASI\Desktop\SourceCode\LibraryManagement\LibraryManagementDTO\obj\Debug\LibraryManagementDTO.Resources.resources
+C:\Users\HITONASI\Desktop\SourceCode\LibraryManagement\LibraryManagementDTO\obj\Debug\LibraryManagementDTO.vbproj.GenerateResource.Cache
+C:\Users\HITONASI\Desktop\SourceCode\LibraryManagement\LibraryManagementDTO\obj\Debug\LibraryManagementDTO.dll
+C:\Users\HITONASI\Desktop\SourceCode\LibraryManagement\LibraryManagementDTO\obj\Debug\LibraryManagementDTO.xml
+C:\Users\HITONASI\Desktop\SourceCode\LibraryManagement\LibraryManagementDTO\obj\Debug\LibraryManagementDTO.pdb
