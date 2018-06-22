@@ -20,22 +20,22 @@ Public Class frmMain
     End Sub
 
     Private Sub btnLapTheDocGia_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnLapTheDocGia.ItemClick
-        Dim frmLTDG As frmLapTheDocGia = Nothing
-        frmLTDG = New frmLapTheDocGia
+        Dim frmLTDG As frmLapTheDocGia
+        frmLTDG = New frmLapTheDocGia()
         frmLTDG.MdiParent = Me
         frmLTDG.Show()
     End Sub
 
     Private Sub btnQuanLyDocGia_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnQuanLyDocGia.ItemClick
-        Dim frmQLDG As frmQuanLyDocGia = Nothing
-        frmQLDG = New frmQuanLyDocGia
+        Dim frmQLDG As frmQuanLyDocGia
+        frmQLDG = New frmQuanLyDocGia()
         frmQLDG.MdiParent = Me
         frmQLDG.Show()
     End Sub
 
     Private Sub btnTiepNhanSachMoi_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnTiepNhanSachMoi.ItemClick
         Dim frmTNSM As frmTiepNhanSachMoi
-        frmTNSM = New frmTiepNhanSachMoi
+        frmTNSM = New frmTiepNhanSachMoi()
         frmTNSM.MdiParent = Me
         frmTNSM.Show()
     End Sub
@@ -49,15 +49,29 @@ Public Class frmMain
 
     Private Sub btnQuanLyLoaiDocGia_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnQuanLyLoaiDocGia.ItemClick
         Dim frmQLLDG As frmQuanLyLoaiDocGia
-        frmQLLDG = New frmQuanLyLoaiDocGia
+        frmQLLDG = New frmQuanLyLoaiDocGia()
         frmQLLDG.MdiParent = Me
         frmQLLDG.Show()
     End Sub
 
     Private Sub btnThemTheLoai_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThemTheLoai.ItemClick
         Dim frmTTL As frmThemTheLoaiSach
-        frmTTL = New frmThemTheLoaiSach
+        frmTTL = New frmThemTheLoaiSach()
         frmTTL.MdiParent = Me
         frmTTL.Show()
+    End Sub
+
+    Private Sub btnThemTacGia_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThemTacGia.ItemClick
+        Dim frmTTG As frmThemTacGia
+        frmTTG = New frmThemTacGia()
+        frmTTG.MdiParent = Me
+        frmTTG.Show()
+    End Sub
+
+    Private Sub btnQuanLyTacGia_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnQuanLyTacGia.ItemClick
+        Dim frmQLTC As frmQuanLyTacGia
+        frmQLTC = New frmQuanLyTacGia()
+        frmQLTC.MdiParent = Me
+        frmQLTC.Show()
     End Sub
 End Class

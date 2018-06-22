@@ -2,7 +2,7 @@
     Private iMaSach As Integer
     Private strTenSach As String
     Private dateNgayXuatBan As DateTime
-    Private iMaNhaXuatBan As Integer
+    Private strNhaXuatBan As String
     Private iTriGia As Integer
     Private dateNgayNhap As DateTime
     Private iMaTrangThai As Integer
@@ -10,11 +10,11 @@
     Public Sub New()
     End Sub
 
-    Public Sub New(iMaSach As Integer, strTenSach As String, dateNgayXuatBan As DateTime, iMaNhaXuatBan As Integer, iTriGia As Integer, dateNgayNhap As DateTime, iMaTrangThai As Integer)
+    Public Sub New(iMaSach As Integer, strTenSach As String, dateNgayXuatBan As DateTime, strNhaXuatBan As String, iTriGia As Integer, dateNgayNhap As DateTime, iMaTrangThai As Integer)
         Me.iMaSach = iMaSach
         Me.strTenSach = strTenSach
         Me.dateNgayXuatBan = dateNgayXuatBan
-        Me.iMaNhaXuatBan = iMaNhaXuatBan
+        Me.strNhaXuatBan = strNhaXuatBan
         Me.iTriGia = iTriGia
         Me.dateNgayNhap = dateNgayNhap
         Me.iMaTrangThai = iMaTrangThai
@@ -47,12 +47,12 @@
         End Set
     End Property
 
-    Public Property MaNhaXuatBan As Integer
+    Public Property NhaXuatBan As String
         Get
-            Return iMaNhaXuatBan
+            Return strNhaXuatBan
         End Get
-        Set(value As Integer)
-            iMaNhaXuatBan = value
+        Set(value As String)
+            strNhaXuatBan = value
         End Set
     End Property
 

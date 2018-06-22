@@ -41,15 +41,18 @@ Partial Class frmMain
         Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup6 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup7 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.btnThemTacGia = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnQuanLyTacGia = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.rbcMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'rbcMain
         '
         Me.rbcMain.ExpandCollapseItem.Id = 0
-        Me.rbcMain.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.rbcMain.ExpandCollapseItem, Me.btnThoat, Me.btnLapTheDocGia, Me.btnTiepNhanSachMoi, Me.btnTraCuuSach, Me.btnChoMuonSach, Me.btnQuanLyDocGia, Me.btnQuanLySach, Me.btnNhanTraSach, Me.btnThemLoaiDocGia, Me.btnQuanLyLoaiDocGia, Me.btnThemTheLoai, Me.btnQuanLyTheLoai})
+        Me.rbcMain.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.rbcMain.ExpandCollapseItem, Me.btnThoat, Me.btnLapTheDocGia, Me.btnTiepNhanSachMoi, Me.btnTraCuuSach, Me.btnChoMuonSach, Me.btnQuanLyDocGia, Me.btnQuanLySach, Me.btnNhanTraSach, Me.btnThemLoaiDocGia, Me.btnQuanLyLoaiDocGia, Me.btnThemTheLoai, Me.btnQuanLyTheLoai, Me.btnThemTacGia, Me.btnQuanLyTacGia})
         Me.rbcMain.Location = New System.Drawing.Point(0, 0)
-        Me.rbcMain.MaxItemId = 13
+        Me.rbcMain.MaxItemId = 15
         Me.rbcMain.Name = "rbcMain"
         Me.rbcMain.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage3})
         Me.rbcMain.Size = New System.Drawing.Size(974, 141)
@@ -172,7 +175,7 @@ Partial Class frmMain
         '
         'RibbonPage3
         '
-        Me.RibbonPage3.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup3, Me.RibbonPageGroup4, Me.RibbonPageGroup6})
+        Me.RibbonPage3.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup3, Me.RibbonPageGroup4, Me.RibbonPageGroup6, Me.RibbonPageGroup7})
         Me.RibbonPage3.Name = "RibbonPage3"
         Me.RibbonPage3.Text = "Sách"
         '
@@ -197,6 +200,27 @@ Partial Class frmMain
         Me.RibbonPageGroup6.ItemLinks.Add(Me.btnQuanLyTheLoai)
         Me.RibbonPageGroup6.Name = "RibbonPageGroup6"
         Me.RibbonPageGroup6.Text = "Quản lý thể loại"
+        '
+        'RibbonPageGroup7
+        '
+        Me.RibbonPageGroup7.ItemLinks.Add(Me.btnThemTacGia)
+        Me.RibbonPageGroup7.ItemLinks.Add(Me.btnQuanLyTacGia)
+        Me.RibbonPageGroup7.Name = "RibbonPageGroup7"
+        Me.RibbonPageGroup7.Text = "Quản lý tác giả"
+        '
+        'btnThemTacGia
+        '
+        Me.btnThemTacGia.Caption = "Thêm tác giả"
+        Me.btnThemTacGia.Id = 13
+        Me.btnThemTacGia.ImageOptions.ImageUri.Uri = "SaveAs;Size32x32;Office2013"
+        Me.btnThemTacGia.Name = "btnThemTacGia"
+        '
+        'btnQuanLyTacGia
+        '
+        Me.btnQuanLyTacGia.Caption = "Quản lý tác giả"
+        Me.btnQuanLyTacGia.Id = 14
+        Me.btnQuanLyTacGia.ImageOptions.ImageUri.Uri = "SaveAll;Size32x32;Office2013"
+        Me.btnQuanLyTacGia.Name = "btnQuanLyTacGia"
         '
         'frmMain
         '
@@ -237,4 +261,7 @@ Partial Class frmMain
     Friend WithEvents btnThemTheLoai As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnQuanLyTheLoai As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPageGroup6 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents btnThemTacGia As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnQuanLyTacGia As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPageGroup7 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
 End Class

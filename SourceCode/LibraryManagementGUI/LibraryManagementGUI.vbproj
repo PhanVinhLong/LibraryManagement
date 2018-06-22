@@ -47,15 +47,15 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Images.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Printing.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Utils.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraBars.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraGrid.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraLayout.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v17.2.Core, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -105,6 +105,12 @@
     <Compile Include="frmQuanLyLoaiDocGia.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmQuanLyTacGia.Designer.vb">
+      <DependentUpon>frmQuanLyTacGia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLyTacGia.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmQuanLyTheLoaiSach.Designer.vb">
       <DependentUpon>frmQuanLyTheLoaiSach.vb</DependentUpon>
     </Compile>
@@ -115,6 +121,12 @@
       <DependentUpon>frmThemLoaiDocGia.vb</DependentUpon>
     </Compile>
     <Compile Include="frmThemLoaiDocGia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemTacGia.Designer.vb">
+      <DependentUpon>frmThemTacGia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemTacGia.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmThemTheLoaiSach.Designer.vb">
@@ -158,11 +170,17 @@
     <EmbeddedResource Include="frmQuanLyLoaiDocGia.resx">
       <DependentUpon>frmQuanLyLoaiDocGia.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyTacGia.resx">
+      <DependentUpon>frmQuanLyTacGia.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLyTheLoaiSach.resx">
       <DependentUpon>frmQuanLyTheLoaiSach.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemLoaiDocGia.resx">
       <DependentUpon>frmThemLoaiDocGia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemTacGia.resx">
+      <DependentUpon>frmThemTacGia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemTheLoaiSach.resx">
       <DependentUpon>frmThemTheLoaiSach.vb</DependentUpon>

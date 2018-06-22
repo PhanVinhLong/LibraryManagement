@@ -7,3 +7,13 @@ C:\Users\HITONASI\Desktop\SourceCode\LibraryManagement\LibraryManagementDTO\obj\
 C:\Users\HITONASI\Desktop\SourceCode\LibraryManagement\LibraryManagementDTO\obj\Debug\LibraryManagementDTO.dll
 C:\Users\HITONASI\Desktop\SourceCode\LibraryManagement\LibraryManagementDTO\obj\Debug\LibraryManagementDTO.xml
 C:\Users\HITONASI\Desktop\SourceCode\LibraryManagement\LibraryManagementDTO\obj\Debug\LibraryManagementDTO.pdb
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementDTO\obj\Debug\LibraryManagementDTO.vbprojAssemblyReference.cache
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementDTO\obj\Debug\LibraryManagementDTO.Resources.resources
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementDTO\obj\Debug\LibraryManagementDTO.vbproj.GenerateResource.cache
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementDTO\obj\Debug\LibraryManagementDTO.vbproj.CoreCompileInputs.cache
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementDTO\obj\Debug\LibraryManagementDTO.dll
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementDTO\obj\Debug\LibraryManagementDTO.xml
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementDTO\obj\Debug\LibraryManagementDTO.pdb
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementDTO\bin\Debug\LibraryManagementDTO.dll
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementDTO\bin\Debug\LibraryManagementDTO.pdb
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementDTO\bin\Debug\LibraryManagementDTO.xml

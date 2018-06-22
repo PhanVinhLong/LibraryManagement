@@ -103,7 +103,7 @@ Public Class frmThemTheLoaiSach
         ' Hiển thị thông tin số loại độc giả
         Dim soTheLoai As Integer
         soTheLoai = theLoaiBUS.Dem()
-        lblGioiHanSoLuongTheLoai.Text = "* Số Thể loại/ Tối đa: " & soTheLoai & "/" & thamSo.SoLuongTheLoai
+        lblGioiHanSoLuong.Text = "* Số Thể loại/ Tối đa: " & soTheLoai & "/" & thamSo.SoLuongTheLoai
         If (soTheLoai >= thamSo.SoLuongTheLoai) Then
             lblCanhBao.Visible = True
             txtTenTheLoai.Enabled = False

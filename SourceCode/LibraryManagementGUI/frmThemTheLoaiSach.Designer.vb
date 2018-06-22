@@ -20,19 +20,19 @@ Partial Class frmThemTheLoaiSach
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
-        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        Me.txtMaTheLoai = New DevExpress.XtraEditors.TextEdit()
         Me.txtTenTheLoai = New DevExpress.XtraEditors.TextEdit()
-        Me.lblGioiHanSoLuongTheLoai = New DevExpress.XtraEditors.LabelControl()
+        Me.txtMaTheLoai = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
+        Me.lblGioiHanSoLuong = New DevExpress.XtraEditors.LabelControl()
         Me.lblCanhBao = New DevExpress.XtraEditors.LabelControl()
         Me.btnThem = New DevExpress.XtraEditors.SimpleButton()
         Me.btnThemVaDong = New DevExpress.XtraEditors.SimpleButton()
         Me.btnDong = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
-        CType(Me.txtMaTheLoai.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTenTheLoai.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtMaTheLoai.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelControl1
@@ -46,21 +46,12 @@ Partial Class frmThemTheLoaiSach
         Me.PanelControl1.Size = New System.Drawing.Size(290, 77)
         Me.PanelControl1.TabIndex = 0
         '
-        'LabelControl1
+        'txtTenTheLoai
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(20, 17)
-        Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(77, 13)
-        Me.LabelControl1.TabIndex = 0
-        Me.LabelControl1.Text = "Mã thể loại sách"
-        '
-        'LabelControl2
-        '
-        Me.LabelControl2.Location = New System.Drawing.Point(20, 46)
-        Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(81, 13)
-        Me.LabelControl2.TabIndex = 1
-        Me.LabelControl2.Text = "Tên thể loại sách"
+        Me.txtTenTheLoai.Location = New System.Drawing.Point(125, 43)
+        Me.txtTenTheLoai.Name = "txtTenTheLoai"
+        Me.txtTenTheLoai.Size = New System.Drawing.Size(135, 20)
+        Me.txtTenTheLoai.TabIndex = 3
         '
         'txtMaTheLoai
         '
@@ -70,24 +61,33 @@ Partial Class frmThemTheLoaiSach
         Me.txtMaTheLoai.Size = New System.Drawing.Size(135, 20)
         Me.txtMaTheLoai.TabIndex = 2
         '
-        'txtTenTheLoai
+        'LabelControl2
         '
-        Me.txtTenTheLoai.Location = New System.Drawing.Point(125, 43)
-        Me.txtTenTheLoai.Name = "txtTenTheLoai"
-        Me.txtTenTheLoai.Size = New System.Drawing.Size(135, 20)
-        Me.txtTenTheLoai.TabIndex = 3
+        Me.LabelControl2.Location = New System.Drawing.Point(20, 46)
+        Me.LabelControl2.Name = "LabelControl2"
+        Me.LabelControl2.Size = New System.Drawing.Size(81, 13)
+        Me.LabelControl2.TabIndex = 1
+        Me.LabelControl2.Text = "Tên thể loại sách"
         '
-        'lblGioiHanSoLuongTheLoai
+        'LabelControl1
         '
-        Me.lblGioiHanSoLuongTheLoai.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Italic)
-        Me.lblGioiHanSoLuongTheLoai.Appearance.ForeColor = System.Drawing.Color.Gray
-        Me.lblGioiHanSoLuongTheLoai.Appearance.Options.UseFont = True
-        Me.lblGioiHanSoLuongTheLoai.Appearance.Options.UseForeColor = True
-        Me.lblGioiHanSoLuongTheLoai.Location = New System.Drawing.Point(43, 104)
-        Me.lblGioiHanSoLuongTheLoai.Name = "lblGioiHanSoLuongTheLoai"
-        Me.lblGioiHanSoLuongTheLoai.Size = New System.Drawing.Size(147, 13)
-        Me.lblGioiHanSoLuongTheLoai.TabIndex = 4
-        Me.lblGioiHanSoLuongTheLoai.Text = "* Số Thể loại sách/ Tối đa: X/Y"
+        Me.LabelControl1.Location = New System.Drawing.Point(20, 17)
+        Me.LabelControl1.Name = "LabelControl1"
+        Me.LabelControl1.Size = New System.Drawing.Size(77, 13)
+        Me.LabelControl1.TabIndex = 0
+        Me.LabelControl1.Text = "Mã thể loại sách"
+        '
+        'lblGioiHanSoLuong
+        '
+        Me.lblGioiHanSoLuong.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Italic)
+        Me.lblGioiHanSoLuong.Appearance.ForeColor = System.Drawing.Color.Gray
+        Me.lblGioiHanSoLuong.Appearance.Options.UseFont = True
+        Me.lblGioiHanSoLuong.Appearance.Options.UseForeColor = True
+        Me.lblGioiHanSoLuong.Location = New System.Drawing.Point(43, 104)
+        Me.lblGioiHanSoLuong.Name = "lblGioiHanSoLuong"
+        Me.lblGioiHanSoLuong.Size = New System.Drawing.Size(147, 13)
+        Me.lblGioiHanSoLuong.TabIndex = 4
+        Me.lblGioiHanSoLuong.Text = "* Số Thể loại sách/ Tối đa: X/Y"
         '
         'lblCanhBao
         '
@@ -135,15 +135,15 @@ Partial Class frmThemTheLoaiSach
         Me.Controls.Add(Me.btnThemVaDong)
         Me.Controls.Add(Me.btnThem)
         Me.Controls.Add(Me.lblCanhBao)
-        Me.Controls.Add(Me.lblGioiHanSoLuongTheLoai)
+        Me.Controls.Add(Me.lblGioiHanSoLuong)
         Me.Controls.Add(Me.PanelControl1)
         Me.Name = "frmThemTheLoaiSach"
         Me.Text = "Thêm thể loại sách"
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         Me.PanelControl1.PerformLayout()
-        CType(Me.txtMaTheLoai.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTenTheLoai.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtMaTheLoai.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -154,7 +154,7 @@ Partial Class frmThemTheLoaiSach
     Friend WithEvents txtMaTheLoai As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents lblGioiHanSoLuongTheLoai As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents lblGioiHanSoLuong As DevExpress.XtraEditors.LabelControl
     Friend WithEvents lblCanhBao As DevExpress.XtraEditors.LabelControl
     Friend WithEvents btnThem As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnThemVaDong As DevExpress.XtraEditors.SimpleButton
