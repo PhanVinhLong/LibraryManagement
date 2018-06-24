@@ -29,6 +29,11 @@ Public Class TacGiaBUS
         Return tacGiaDAL.SelectALL(listTacGia)
     End Function
 
+    Public Function SelectByMaTacGia(iMaTacGia As Integer) As TacGiaDTO
+
+        Return tacGiaDAL.SelectByMaTacGia(iMaTacGia)
+    End Function
+
     Public Function Insert(tacGia As TacGiaDTO) As Result
         Return tacGiaDAL.Insert(tacGia)
     End Function

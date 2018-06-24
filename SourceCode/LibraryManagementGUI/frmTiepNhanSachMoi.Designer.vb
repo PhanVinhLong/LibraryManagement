@@ -29,40 +29,47 @@ Partial Class frmTiepNhanSachMoi
         Me.txtTenSach = New DevExpress.XtraEditors.TextEdit()
         Me.txtTriGia = New DevExpress.XtraEditors.TextEdit()
         Me.dteNgayNhap = New DevExpress.XtraEditors.DateEdit()
-        Me.dteNgayXuatBan = New DevExpress.XtraEditors.DateEdit()
-        Me.lueNhaXuatBan = New DevExpress.XtraEditors.LookUpEdit()
+        Me.dteNamXuatBan = New DevExpress.XtraEditors.DateEdit()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
-        Me.btnTiepNhan = New DevExpress.XtraEditors.SimpleButton()
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
-        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
-        Me.lueTacGia = New DevExpress.XtraEditors.LookUpEdit()
-        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
-        Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
-        Me.lblTacGia = New DevExpress.XtraEditors.LabelControl()
-        Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
+        Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
+        Me.lblNamXuatBan = New DevExpress.XtraEditors.LabelControl()
+        Me.txtNhaXuatBan = New DevExpress.XtraEditors.TextEdit()
         Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
-        Me.lueTheLoai = New DevExpress.XtraEditors.LookUpEdit()
+        Me.gleTheLoai = New DevExpress.XtraEditors.GridLookUpEdit()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.btnXoaTheLoai = New DevExpress.XtraEditors.SimpleButton()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.btnThemTheLoai = New DevExpress.XtraEditors.SimpleButton()
         Me.lblTheLoai = New DevExpress.XtraEditors.LabelControl()
-        Me.btnClearTacGia = New DevExpress.XtraEditors.SimpleButton()
-        Me.btnClearTheLoai = New DevExpress.XtraEditors.SimpleButton()
+        Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
+        Me.gleTacGia = New DevExpress.XtraEditors.GridLookUpEdit()
+        Me.GridLookUpEdit1View = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.btnXoaTacGia = New DevExpress.XtraEditors.SimpleButton()
+        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
+        Me.btnThemTacGia = New DevExpress.XtraEditors.SimpleButton()
+        Me.lblTacGia = New DevExpress.XtraEditors.LabelControl()
+        Me.btnTiepNhan = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
+        Me.lblGioiHanNamXuatBan = New DevExpress.XtraEditors.LabelControl()
         CType(Me.txtMaSach.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTenSach.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTriGia.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dteNgayNhap.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dteNgayNhap.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dteNgayXuatBan.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dteNgayXuatBan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.lueNhaXuatBan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dteNamXuatBan.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dteNamXuatBan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
-        CType(Me.lueTacGia.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelControl2.SuspendLayout()
+        CType(Me.txtNhaXuatBan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl3.SuspendLayout()
-        CType(Me.lueTheLoai.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gleTheLoai.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl2.SuspendLayout()
+        CType(Me.gleTacGia.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridLookUpEdit1View, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblMaSach
@@ -85,13 +92,13 @@ Partial Class frmTiepNhanSachMoi
         '
         Me.LabelControl2.Location = New System.Drawing.Point(16, 75)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(71, 13)
+        Me.LabelControl2.Size = New System.Drawing.Size(67, 13)
         Me.LabelControl2.TabIndex = 2
-        Me.LabelControl2.Text = "Ngày xuất bản"
+        Me.LabelControl2.Text = "Năm xuất bản"
         '
         'LabelControl3
         '
-        Me.LabelControl3.Location = New System.Drawing.Point(348, 19)
+        Me.LabelControl3.Location = New System.Drawing.Point(348, 15)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(65, 13)
         Me.LabelControl3.TabIndex = 3
@@ -99,7 +106,7 @@ Partial Class frmTiepNhanSachMoi
         '
         'LabelControl4
         '
-        Me.LabelControl4.Location = New System.Drawing.Point(348, 49)
+        Me.LabelControl4.Location = New System.Drawing.Point(348, 45)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(29, 13)
         Me.LabelControl4.TabIndex = 4
@@ -107,7 +114,7 @@ Partial Class frmTiepNhanSachMoi
         '
         'LabelControl5
         '
-        Me.LabelControl5.Location = New System.Drawing.Point(348, 79)
+        Me.LabelControl5.Location = New System.Drawing.Point(348, 75)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(52, 13)
         Me.LabelControl5.TabIndex = 5
@@ -130,47 +137,41 @@ Partial Class frmTiepNhanSachMoi
         '
         'txtTriGia
         '
-        Me.txtTriGia.Location = New System.Drawing.Point(434, 46)
+        Me.txtTriGia.Location = New System.Drawing.Point(434, 42)
         Me.txtTriGia.Name = "txtTriGia"
-        Me.txtTriGia.Size = New System.Drawing.Size(138, 20)
+        Me.txtTriGia.Size = New System.Drawing.Size(110, 20)
         Me.txtTriGia.TabIndex = 8
         '
         'dteNgayNhap
         '
         Me.dteNgayNhap.EditValue = Nothing
-        Me.dteNgayNhap.Location = New System.Drawing.Point(434, 76)
+        Me.dteNgayNhap.Location = New System.Drawing.Point(434, 72)
         Me.dteNgayNhap.Name = "dteNgayNhap"
         Me.dteNgayNhap.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dteNgayNhap.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dteNgayNhap.Size = New System.Drawing.Size(138, 20)
         Me.dteNgayNhap.TabIndex = 9
         '
-        'dteNgayXuatBan
+        'dteNamXuatBan
         '
-        Me.dteNgayXuatBan.EditValue = Nothing
-        Me.dteNgayXuatBan.Location = New System.Drawing.Point(106, 72)
-        Me.dteNgayXuatBan.Name = "dteNgayXuatBan"
-        Me.dteNgayXuatBan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.dteNgayXuatBan.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.dteNgayXuatBan.Size = New System.Drawing.Size(138, 20)
-        Me.dteNgayXuatBan.TabIndex = 10
-        '
-        'lueNhaXuatBan
-        '
-        Me.lueNhaXuatBan.Location = New System.Drawing.Point(434, 16)
-        Me.lueNhaXuatBan.Name = "lueNhaXuatBan"
-        Me.lueNhaXuatBan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.lueNhaXuatBan.Size = New System.Drawing.Size(138, 20)
-        Me.lueNhaXuatBan.TabIndex = 11
+        Me.dteNamXuatBan.EditValue = Nothing
+        Me.dteNamXuatBan.Location = New System.Drawing.Point(106, 72)
+        Me.dteNamXuatBan.Name = "dteNamXuatBan"
+        Me.dteNamXuatBan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.dteNamXuatBan.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.dteNamXuatBan.Size = New System.Drawing.Size(138, 20)
+        Me.dteNamXuatBan.TabIndex = 10
         '
         'PanelControl1
         '
+        Me.PanelControl1.Controls.Add(Me.LabelControl8)
+        Me.PanelControl1.Controls.Add(Me.lblNamXuatBan)
+        Me.PanelControl1.Controls.Add(Me.txtNhaXuatBan)
         Me.PanelControl1.Controls.Add(Me.PanelControl3)
         Me.PanelControl1.Controls.Add(Me.PanelControl2)
         Me.PanelControl1.Controls.Add(Me.txtMaSach)
-        Me.PanelControl1.Controls.Add(Me.lueNhaXuatBan)
         Me.PanelControl1.Controls.Add(Me.lblMaSach)
-        Me.PanelControl1.Controls.Add(Me.dteNgayXuatBan)
+        Me.PanelControl1.Controls.Add(Me.dteNamXuatBan)
         Me.PanelControl1.Controls.Add(Me.LabelControl1)
         Me.PanelControl1.Controls.Add(Me.dteNgayNhap)
         Me.PanelControl1.Controls.Add(Me.LabelControl2)
@@ -184,80 +185,39 @@ Partial Class frmTiepNhanSachMoi
         Me.PanelControl1.Size = New System.Drawing.Size(590, 226)
         Me.PanelControl1.TabIndex = 12
         '
-        'btnTiepNhan
+        'LabelControl8
         '
-        Me.btnTiepNhan.Location = New System.Drawing.Point(94, 264)
-        Me.btnTiepNhan.Name = "btnTiepNhan"
-        Me.btnTiepNhan.Size = New System.Drawing.Size(110, 23)
-        Me.btnTiepNhan.TabIndex = 13
-        Me.btnTiepNhan.Text = "Tiếp nhận"
+        Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 10.0!)
+        Me.LabelControl8.Appearance.Options.UseFont = True
+        Me.LabelControl8.Location = New System.Drawing.Point(546, 44)
+        Me.LabelControl8.Name = "LabelControl8"
+        Me.LabelControl8.Size = New System.Drawing.Size(25, 16)
+        Me.LabelControl8.TabIndex = 23
+        Me.LabelControl8.Text = "VNĐ"
         '
-        'SimpleButton1
+        'lblNamXuatBan
         '
-        Me.SimpleButton1.Location = New System.Drawing.Point(262, 264)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(110, 23)
-        Me.SimpleButton1.TabIndex = 14
-        Me.SimpleButton1.Text = "Tiếp nhận và Đóng"
+        Me.lblNamXuatBan.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Italic)
+        Me.lblNamXuatBan.Appearance.ForeColor = System.Drawing.Color.Gray
+        Me.lblNamXuatBan.Appearance.Options.UseFont = True
+        Me.lblNamXuatBan.Appearance.Options.UseForeColor = True
+        Me.lblNamXuatBan.Location = New System.Drawing.Point(248, 75)
+        Me.lblNamXuatBan.Name = "lblNamXuatBan"
+        Me.lblNamXuatBan.Size = New System.Drawing.Size(68, 13)
+        Me.lblNamXuatBan.TabIndex = 22
+        Me.lblNamXuatBan.Text = "Đã XB xx năm"
         '
-        'SimpleButton2
+        'txtNhaXuatBan
         '
-        Me.SimpleButton2.Location = New System.Drawing.Point(431, 264)
-        Me.SimpleButton2.Name = "SimpleButton2"
-        Me.SimpleButton2.Size = New System.Drawing.Size(110, 23)
-        Me.SimpleButton2.TabIndex = 15
-        Me.SimpleButton2.Text = "Đóng"
-        '
-        'lueTacGia
-        '
-        Me.lueTacGia.Location = New System.Drawing.Point(57, 5)
-        Me.lueTacGia.Name = "lueTacGia"
-        Me.lueTacGia.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.lueTacGia.Size = New System.Drawing.Size(138, 20)
-        Me.lueTacGia.TabIndex = 13
-        '
-        'LabelControl6
-        '
-        Me.LabelControl6.Location = New System.Drawing.Point(5, 8)
-        Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(34, 13)
-        Me.LabelControl6.TabIndex = 12
-        Me.LabelControl6.Text = "Tác giả"
-        '
-        'SimpleButton3
-        '
-        Me.SimpleButton3.Location = New System.Drawing.Point(204, 5)
-        Me.SimpleButton3.Name = "SimpleButton3"
-        Me.SimpleButton3.Size = New System.Drawing.Size(73, 20)
-        Me.SimpleButton3.TabIndex = 16
-        Me.SimpleButton3.Text = "Thêm"
-        '
-        'lblTacGia
-        '
-        Me.lblTacGia.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.lblTacGia.Appearance.Options.UseFont = True
-        Me.lblTacGia.Location = New System.Drawing.Point(60, 31)
-        Me.lblTacGia.Name = "lblTacGia"
-        Me.lblTacGia.Size = New System.Drawing.Size(106, 13)
-        Me.lblTacGia.TabIndex = 19
-        Me.lblTacGia.Text = "Tác giả X, Tác giả Y"
-        '
-        'PanelControl2
-        '
-        Me.PanelControl2.Controls.Add(Me.btnClearTacGia)
-        Me.PanelControl2.Controls.Add(Me.lueTacGia)
-        Me.PanelControl2.Controls.Add(Me.LabelControl6)
-        Me.PanelControl2.Controls.Add(Me.SimpleButton3)
-        Me.PanelControl2.Controls.Add(Me.lblTacGia)
-        Me.PanelControl2.Location = New System.Drawing.Point(11, 104)
-        Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(561, 50)
-        Me.PanelControl2.TabIndex = 16
+        Me.txtNhaXuatBan.Location = New System.Drawing.Point(434, 12)
+        Me.txtNhaXuatBan.Name = "txtNhaXuatBan"
+        Me.txtNhaXuatBan.Size = New System.Drawing.Size(138, 20)
+        Me.txtNhaXuatBan.TabIndex = 21
         '
         'PanelControl3
         '
-        Me.PanelControl3.Controls.Add(Me.btnClearTheLoai)
-        Me.PanelControl3.Controls.Add(Me.lueTheLoai)
+        Me.PanelControl3.Controls.Add(Me.gleTheLoai)
+        Me.PanelControl3.Controls.Add(Me.btnXoaTheLoai)
         Me.PanelControl3.Controls.Add(Me.LabelControl7)
         Me.PanelControl3.Controls.Add(Me.btnThemTheLoai)
         Me.PanelControl3.Controls.Add(Me.lblTheLoai)
@@ -266,13 +226,29 @@ Partial Class frmTiepNhanSachMoi
         Me.PanelControl3.Size = New System.Drawing.Size(561, 50)
         Me.PanelControl3.TabIndex = 20
         '
-        'lueTheLoai
+        'gleTheLoai
         '
-        Me.lueTheLoai.Location = New System.Drawing.Point(57, 5)
-        Me.lueTheLoai.Name = "lueTheLoai"
-        Me.lueTheLoai.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.lueTheLoai.Size = New System.Drawing.Size(138, 20)
-        Me.lueTheLoai.TabIndex = 13
+        Me.gleTheLoai.Location = New System.Drawing.Point(57, 5)
+        Me.gleTheLoai.Name = "gleTheLoai"
+        Me.gleTheLoai.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.gleTheLoai.Properties.PopupView = Me.GridView1
+        Me.gleTheLoai.Size = New System.Drawing.Size(141, 20)
+        Me.gleTheLoai.TabIndex = 22
+        '
+        'GridView1
+        '
+        Me.GridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.GridView1.OptionsView.ShowGroupPanel = False
+        '
+        'btnXoaTheLoai
+        '
+        Me.btnXoaTheLoai.Location = New System.Drawing.Point(285, 5)
+        Me.btnXoaTheLoai.Name = "btnXoaTheLoai"
+        Me.btnXoaTheLoai.Size = New System.Drawing.Size(73, 20)
+        Me.btnXoaTheLoai.TabIndex = 20
+        Me.btnXoaTheLoai.Text = "Xoá"
         '
         'LabelControl7
         '
@@ -300,27 +276,110 @@ Partial Class frmTiepNhanSachMoi
         Me.lblTheLoai.TabIndex = 19
         Me.lblTheLoai.Text = "Thể loại X, Thể loại Y"
         '
-        'btnClearTacGia
+        'PanelControl2
         '
-        Me.btnClearTacGia.Location = New System.Drawing.Point(285, 5)
-        Me.btnClearTacGia.Name = "btnClearTacGia"
-        Me.btnClearTacGia.Size = New System.Drawing.Size(73, 20)
-        Me.btnClearTacGia.TabIndex = 20
-        Me.btnClearTacGia.Text = "Clear"
+        Me.PanelControl2.Controls.Add(Me.gleTacGia)
+        Me.PanelControl2.Controls.Add(Me.btnXoaTacGia)
+        Me.PanelControl2.Controls.Add(Me.LabelControl6)
+        Me.PanelControl2.Controls.Add(Me.btnThemTacGia)
+        Me.PanelControl2.Controls.Add(Me.lblTacGia)
+        Me.PanelControl2.Location = New System.Drawing.Point(11, 104)
+        Me.PanelControl2.Name = "PanelControl2"
+        Me.PanelControl2.Size = New System.Drawing.Size(561, 50)
+        Me.PanelControl2.TabIndex = 16
         '
-        'btnClearTheLoai
+        'gleTacGia
         '
-        Me.btnClearTheLoai.Location = New System.Drawing.Point(285, 5)
-        Me.btnClearTheLoai.Name = "btnClearTheLoai"
-        Me.btnClearTheLoai.Size = New System.Drawing.Size(73, 20)
-        Me.btnClearTheLoai.TabIndex = 20
-        Me.btnClearTheLoai.Text = "Clear"
+        Me.gleTacGia.Location = New System.Drawing.Point(57, 5)
+        Me.gleTacGia.Name = "gleTacGia"
+        Me.gleTacGia.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.gleTacGia.Properties.PopupView = Me.GridLookUpEdit1View
+        Me.gleTacGia.Size = New System.Drawing.Size(141, 20)
+        Me.gleTacGia.TabIndex = 21
+        '
+        'GridLookUpEdit1View
+        '
+        Me.GridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.GridLookUpEdit1View.Name = "GridLookUpEdit1View"
+        Me.GridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.GridLookUpEdit1View.OptionsView.ShowGroupPanel = False
+        '
+        'btnXoaTacGia
+        '
+        Me.btnXoaTacGia.Location = New System.Drawing.Point(285, 5)
+        Me.btnXoaTacGia.Name = "btnXoaTacGia"
+        Me.btnXoaTacGia.Size = New System.Drawing.Size(73, 20)
+        Me.btnXoaTacGia.TabIndex = 20
+        Me.btnXoaTacGia.Text = "Xoá"
+        '
+        'LabelControl6
+        '
+        Me.LabelControl6.Location = New System.Drawing.Point(5, 8)
+        Me.LabelControl6.Name = "LabelControl6"
+        Me.LabelControl6.Size = New System.Drawing.Size(34, 13)
+        Me.LabelControl6.TabIndex = 12
+        Me.LabelControl6.Text = "Tác giả"
+        '
+        'btnThemTacGia
+        '
+        Me.btnThemTacGia.Location = New System.Drawing.Point(204, 5)
+        Me.btnThemTacGia.Name = "btnThemTacGia"
+        Me.btnThemTacGia.Size = New System.Drawing.Size(73, 20)
+        Me.btnThemTacGia.TabIndex = 16
+        Me.btnThemTacGia.Text = "Thêm"
+        '
+        'lblTacGia
+        '
+        Me.lblTacGia.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.lblTacGia.Appearance.Options.UseFont = True
+        Me.lblTacGia.Location = New System.Drawing.Point(60, 31)
+        Me.lblTacGia.Name = "lblTacGia"
+        Me.lblTacGia.Size = New System.Drawing.Size(106, 13)
+        Me.lblTacGia.TabIndex = 19
+        Me.lblTacGia.Text = "Tác giả X, Tác giả Y"
+        '
+        'btnTiepNhan
+        '
+        Me.btnTiepNhan.Location = New System.Drawing.Point(90, 271)
+        Me.btnTiepNhan.Name = "btnTiepNhan"
+        Me.btnTiepNhan.Size = New System.Drawing.Size(110, 23)
+        Me.btnTiepNhan.TabIndex = 13
+        Me.btnTiepNhan.Text = "Tiếp nhận"
+        '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.Location = New System.Drawing.Point(258, 271)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(110, 23)
+        Me.SimpleButton1.TabIndex = 14
+        Me.SimpleButton1.Text = "Tiếp nhận và Đóng"
+        '
+        'SimpleButton2
+        '
+        Me.SimpleButton2.Location = New System.Drawing.Point(427, 271)
+        Me.SimpleButton2.Name = "SimpleButton2"
+        Me.SimpleButton2.Size = New System.Drawing.Size(110, 23)
+        Me.SimpleButton2.TabIndex = 15
+        Me.SimpleButton2.Text = "Đóng"
+        '
+        'lblGioiHanNamXuatBan
+        '
+        Me.lblGioiHanNamXuatBan.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Italic)
+        Me.lblGioiHanNamXuatBan.Appearance.ForeColor = System.Drawing.Color.Gray
+        Me.lblGioiHanNamXuatBan.Appearance.Options.UseFont = True
+        Me.lblGioiHanNamXuatBan.Appearance.Options.UseForeColor = True
+        Me.lblGioiHanNamXuatBan.Location = New System.Drawing.Point(34, 249)
+        Me.lblGioiHanNamXuatBan.Name = "lblGioiHanNamXuatBan"
+        Me.lblGioiHanNamXuatBan.Size = New System.Drawing.Size(184, 13)
+        Me.lblGioiHanNamXuatBan.TabIndex = 24
+        Me.lblGioiHanNamXuatBan.Text = "* Chỉ nhận sách xuất bản trong X năm"
         '
         'frmTiepNhanSachMoi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(635, 305)
+        Me.Controls.Add(Me.lblGioiHanNamXuatBan)
         Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.btnTiepNhan)
@@ -332,21 +391,24 @@ Partial Class frmTiepNhanSachMoi
         CType(Me.txtTriGia.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dteNgayNhap.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dteNgayNhap.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dteNgayXuatBan.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dteNgayXuatBan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.lueNhaXuatBan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dteNamXuatBan.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dteNamXuatBan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         Me.PanelControl1.PerformLayout()
-        CType(Me.lueTacGia.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelControl2.ResumeLayout(False)
-        Me.PanelControl2.PerformLayout()
+        CType(Me.txtNhaXuatBan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl3.ResumeLayout(False)
         Me.PanelControl3.PerformLayout()
-        CType(Me.lueTheLoai.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gleTheLoai.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl2.ResumeLayout(False)
+        Me.PanelControl2.PerformLayout()
+        CType(Me.gleTacGia.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridLookUpEdit1View, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -360,22 +422,27 @@ Partial Class frmTiepNhanSachMoi
     Friend WithEvents txtTenSach As DevExpress.XtraEditors.TextEdit
     Friend WithEvents txtTriGia As DevExpress.XtraEditors.TextEdit
     Friend WithEvents dteNgayNhap As DevExpress.XtraEditors.DateEdit
-    Friend WithEvents dteNgayXuatBan As DevExpress.XtraEditors.DateEdit
-    Friend WithEvents lueNhaXuatBan As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents dteNamXuatBan As DevExpress.XtraEditors.DateEdit
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
     Friend WithEvents btnTiepNhan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents PanelControl3 As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents lueTheLoai As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents btnThemTheLoai As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents lblTheLoai As DevExpress.XtraEditors.LabelControl
     Friend WithEvents PanelControl2 As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents lueTacGia As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents SimpleButton3 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnThemTacGia As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents lblTacGia As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents btnClearTheLoai As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents btnClearTacGia As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnXoaTheLoai As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnXoaTacGia As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents txtNhaXuatBan As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents lblNamXuatBan As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents gleTheLoai As DevExpress.XtraEditors.GridLookUpEdit
+    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents gleTacGia As DevExpress.XtraEditors.GridLookUpEdit
+    Friend WithEvents GridLookUpEdit1View As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents lblGioiHanNamXuatBan As DevExpress.XtraEditors.LabelControl
 End Class

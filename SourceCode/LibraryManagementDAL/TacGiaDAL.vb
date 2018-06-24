@@ -20,7 +20,7 @@ Public Class TacGiaDAL
         sqlQuery = String.Empty
 
         sqlQuery &= "SELECT TOP 1 [MaTacGia] "
-        sqlQuery &= "FROM [tblMaTacGia] "
+        sqlQuery &= "FROM [tblTacGia] "
         sqlQuery &= "ORDER BY [MaTacGia] DESC "
 
         Using connection As New SqlConnection(connectionString)
@@ -82,6 +82,33 @@ Public Class TacGiaDAL
             End Using
         End Using
         Return New Result(True)
+    End Function
+
+    Public Function SelectByMaTacGia(iMaTacGia As Integer) As TacGiaDTO
+        Dim tacGia As TacGiaDTO
+        Dim sqlQuery As String = String.Empty
+        sqlQuery &= "SELECT [MaTacGia], [TenTacGia] "
+        sqlQuery &= "FROM [tblTacGia] "
+        sqlQuery &= "WHERE [MaTacGia] = @MaTacGia"
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand()
+                With command
+                    .Connection = connection
+                    .CommandType = CommandType.Text
+                    .CommandText = sqlQuery
+                    .Parameters.AddWithValue("@MaTacGia", iMaTacGia)
+                End With
+                connection.Open()
+                    Dim reader As SqlDataReader
+                    reader = command.ExecuteReader()
+                If reader.HasRows = True Then
+                    While reader.Read()
+                        tacGia = New TacGiaDTO(reader("MaTacGia"), reader("TenTacGia"))
+                    End While
+                End If
+            End Using
+        End Using
+        Return tacGia
     End Function
 
     Public Function SelectByMaSach(iMaSach As Integer, ByRef listTacGia As List(Of TacGiaDTO)) As Result
@@ -166,7 +193,7 @@ Public Class TacGiaDAL
                     .CommandType = CommandType.Text
                     .CommandText = sqlQuery
                     .Parameters.AddWithValue("@MaTacGia", tacGia.MaTacGia)
-                    .Parameters.AddWithValue("@TenTheLoai", tacGia.TenTacGia)
+                    .Parameters.AddWithValue("@TenTacGia", tacGia.TenTacGia)
                 End With
                 Try
                     connection.Open()

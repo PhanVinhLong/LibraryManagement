@@ -29,6 +29,11 @@ Public Class TheLoaiBUS
         Return theLoaiDAL.SelectALL(listTheLoai)
     End Function
 
+    Public Function SelectByMaTheLoai(iMaTheLoai As Integer) As TheLoaiDTO
+
+        Return theLoaiDAL.SelectByMaTheLoai(iMaTheLoai)
+    End Function
+
     Public Function Insert(theLoai As TheLoaiDTO) As Result
         Return theLoaiDAL.Insert(theLoai)
     End Function

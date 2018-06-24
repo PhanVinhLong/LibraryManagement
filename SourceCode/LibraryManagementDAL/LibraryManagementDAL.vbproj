@@ -83,8 +83,10 @@
     </Compile>
     <Compile Include="SachDAL.vb" />
     <Compile Include="TacGiaDAL.vb" />
+    <Compile Include="TacGiaSachDAL.vb" />
     <Compile Include="ThamSoDAL.vb" />
     <Compile Include="TheLoaiDAL.vb" />
+    <Compile Include="TheLoaiSachDAL.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

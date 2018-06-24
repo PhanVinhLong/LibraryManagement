@@ -20,10 +20,10 @@ Partial Class frmThemTacGia
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
-        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        Me.txtMaTacGia = New DevExpress.XtraEditors.TextEdit()
         Me.txtTenTacGia = New DevExpress.XtraEditors.TextEdit()
+        Me.txtMaTacGia = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.lblGioiHanSoLuong = New DevExpress.XtraEditors.LabelControl()
         Me.lblCanhBao = New DevExpress.XtraEditors.LabelControl()
         Me.btnThem = New DevExpress.XtraEditors.SimpleButton()
@@ -31,8 +31,8 @@ Partial Class frmThemTacGia
         Me.btnDong = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
-        CType(Me.txtMaTacGia.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTenTacGia.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtMaTacGia.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelControl1
@@ -46,21 +46,12 @@ Partial Class frmThemTacGia
         Me.PanelControl1.Size = New System.Drawing.Size(300, 80)
         Me.PanelControl1.TabIndex = 0
         '
-        'LabelControl1
+        'txtTenTacGia
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(20, 17)
-        Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(49, 13)
-        Me.LabelControl1.TabIndex = 0
-        Me.LabelControl1.Text = "Mã tác giả"
-        '
-        'LabelControl2
-        '
-        Me.LabelControl2.Location = New System.Drawing.Point(20, 49)
-        Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(53, 13)
-        Me.LabelControl2.TabIndex = 1
-        Me.LabelControl2.Text = "Tên tác giả"
+        Me.txtTenTacGia.Location = New System.Drawing.Point(115, 46)
+        Me.txtTenTacGia.Name = "txtTenTacGia"
+        Me.txtTenTacGia.Size = New System.Drawing.Size(159, 20)
+        Me.txtTenTacGia.TabIndex = 3
         '
         'txtMaTacGia
         '
@@ -70,12 +61,21 @@ Partial Class frmThemTacGia
         Me.txtMaTacGia.Size = New System.Drawing.Size(159, 20)
         Me.txtMaTacGia.TabIndex = 2
         '
-        'txtTenTacGia
+        'LabelControl2
         '
-        Me.txtTenTacGia.Location = New System.Drawing.Point(115, 46)
-        Me.txtTenTacGia.Name = "txtTenTacGia"
-        Me.txtTenTacGia.Size = New System.Drawing.Size(159, 20)
-        Me.txtTenTacGia.TabIndex = 3
+        Me.LabelControl2.Location = New System.Drawing.Point(20, 49)
+        Me.LabelControl2.Name = "LabelControl2"
+        Me.LabelControl2.Size = New System.Drawing.Size(53, 13)
+        Me.LabelControl2.TabIndex = 1
+        Me.LabelControl2.Text = "Tên tác giả"
+        '
+        'LabelControl1
+        '
+        Me.LabelControl1.Location = New System.Drawing.Point(20, 17)
+        Me.LabelControl1.Name = "LabelControl1"
+        Me.LabelControl1.Size = New System.Drawing.Size(49, 13)
+        Me.LabelControl1.TabIndex = 0
+        Me.LabelControl1.Text = "Mã tác giả"
         '
         'lblGioiHanSoLuong
         '
@@ -100,6 +100,7 @@ Partial Class frmThemTacGia
         Me.lblCanhBao.Size = New System.Drawing.Size(153, 13)
         Me.lblCanhBao.TabIndex = 2
         Me.lblCanhBao.Text = "* Số lượng Tác giả đã đạt tối đa"
+        Me.lblCanhBao.Visible = False
         '
         'btnThem
         '
@@ -141,8 +142,8 @@ Partial Class frmThemTacGia
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         Me.PanelControl1.PerformLayout()
-        CType(Me.txtMaTacGia.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTenTacGia.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtMaTacGia.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

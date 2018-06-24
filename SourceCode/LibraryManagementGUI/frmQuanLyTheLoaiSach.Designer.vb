@@ -22,20 +22,20 @@ Partial Class frmQuanLyTheLoaiSach
         Me.grcDanhSachTheLoai = New DevExpress.XtraGrid.GridControl()
         Me.grvDanhSachTheLoai = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
-        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtTenTheLoai = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
-        Me.TextEdit2 = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.btnTaiLai = New DevExpress.XtraEditors.SimpleButton()
         Me.btnCapNhat = New DevExpress.XtraEditors.SimpleButton()
         Me.btnXoa = New DevExpress.XtraEditors.SimpleButton()
         Me.btnDong = New DevExpress.XtraEditors.SimpleButton()
+        Me.txtMaTheLoai = New DevExpress.XtraEditors.TextEdit()
         CType(Me.grcDanhSachTheLoai, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grvDanhSachTheLoai, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtTenTheLoai.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtMaTheLoai.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'grcDanhSachTheLoai
@@ -54,8 +54,8 @@ Partial Class frmQuanLyTheLoaiSach
         '
         'PanelControl1
         '
-        Me.PanelControl1.Controls.Add(Me.TextEdit2)
-        Me.PanelControl1.Controls.Add(Me.TextEdit1)
+        Me.PanelControl1.Controls.Add(Me.txtMaTheLoai)
+        Me.PanelControl1.Controls.Add(Me.txtTenTheLoai)
         Me.PanelControl1.Controls.Add(Me.LabelControl2)
         Me.PanelControl1.Controls.Add(Me.LabelControl1)
         Me.PanelControl1.Location = New System.Drawing.Point(295, 22)
@@ -63,35 +63,28 @@ Partial Class frmQuanLyTheLoaiSach
         Me.PanelControl1.Size = New System.Drawing.Size(254, 91)
         Me.PanelControl1.TabIndex = 1
         '
-        'LabelControl1
+        'txtTenTheLoai
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(19, 23)
-        Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(70, 13)
-        Me.LabelControl1.TabIndex = 0
-        Me.LabelControl1.Text = "Mã loại độc giả"
+        Me.txtTenTheLoai.Location = New System.Drawing.Point(108, 51)
+        Me.txtTenTheLoai.Name = "txtTenTheLoai"
+        Me.txtTenTheLoai.Size = New System.Drawing.Size(125, 20)
+        Me.txtTenTheLoai.TabIndex = 3
         '
         'LabelControl2
         '
         Me.LabelControl2.Location = New System.Drawing.Point(18, 54)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(74, 13)
+        Me.LabelControl2.Size = New System.Drawing.Size(56, 13)
         Me.LabelControl2.TabIndex = 1
-        Me.LabelControl2.Text = "Tên loại độc giả"
+        Me.LabelControl2.Text = "Tên thể loại"
         '
-        'TextEdit1
+        'LabelControl1
         '
-        Me.TextEdit1.Location = New System.Drawing.Point(108, 20)
-        Me.TextEdit1.Name = "TextEdit1"
-        Me.TextEdit1.Size = New System.Drawing.Size(125, 20)
-        Me.TextEdit1.TabIndex = 2
-        '
-        'TextEdit2
-        '
-        Me.TextEdit2.Location = New System.Drawing.Point(108, 51)
-        Me.TextEdit2.Name = "TextEdit2"
-        Me.TextEdit2.Size = New System.Drawing.Size(125, 20)
-        Me.TextEdit2.TabIndex = 3
+        Me.LabelControl1.Location = New System.Drawing.Point(19, 23)
+        Me.LabelControl1.Name = "LabelControl1"
+        Me.LabelControl1.Size = New System.Drawing.Size(52, 13)
+        Me.LabelControl1.TabIndex = 0
+        Me.LabelControl1.Text = "Mã thể loại"
         '
         'btnTaiLai
         '
@@ -127,6 +120,14 @@ Partial Class frmQuanLyTheLoaiSach
         Me.btnDong.TabIndex = 5
         Me.btnDong.Text = "Đóng"
         '
+        'txtMaTheLoai
+        '
+        Me.txtMaTheLoai.Enabled = False
+        Me.txtMaTheLoai.Location = New System.Drawing.Point(108, 20)
+        Me.txtMaTheLoai.Name = "txtMaTheLoai"
+        Me.txtMaTheLoai.Size = New System.Drawing.Size(125, 20)
+        Me.txtMaTheLoai.TabIndex = 4
+        '
         'frmQuanLyTheLoaiSach
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -145,8 +146,8 @@ Partial Class frmQuanLyTheLoaiSach
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         Me.PanelControl1.PerformLayout()
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtTenTheLoai.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtMaTheLoai.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -154,12 +155,12 @@ Partial Class frmQuanLyTheLoaiSach
     Friend WithEvents grcDanhSachTheLoai As DevExpress.XtraGrid.GridControl
     Friend WithEvents grvDanhSachTheLoai As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents TextEdit2 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents TextEdit1 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtTenTheLoai As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents btnTaiLai As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnCapNhat As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnXoa As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnDong As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents txtMaTheLoai As DevExpress.XtraEditors.TextEdit
 End Class

@@ -42,8 +42,8 @@ Partial Class frmLapTheDocGia
         Me.LabelControl16 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl17 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
-        Me.txtHoTen = New DevExpress.XtraEditors.TextEdit()
         Me.txtMaDocGia = New DevExpress.XtraEditors.TextEdit()
+        Me.txtHoTen = New DevExpress.XtraEditors.TextEdit()
         CType(Me.dteNgaySinh.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dteNgaySinh.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtDiaChi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,8 +55,8 @@ Partial Class frmLapTheDocGia
         CType(Me.lueLoaiDocGia.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
-        CType(Me.txtHoTen.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtMaDocGia.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtHoTen.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelControl1
@@ -215,15 +215,15 @@ Partial Class frmLapTheDocGia
         resources.ApplyResources(Me.PanelControl2, "PanelControl2")
         Me.PanelControl2.Name = "PanelControl2"
         '
-        'txtHoTen
-        '
-        resources.ApplyResources(Me.txtHoTen, "txtHoTen")
-        Me.txtHoTen.Name = "txtHoTen"
-        '
         'txtMaDocGia
         '
         resources.ApplyResources(Me.txtMaDocGia, "txtMaDocGia")
         Me.txtMaDocGia.Name = "txtMaDocGia"
+        '
+        'txtHoTen
+        '
+        resources.ApplyResources(Me.txtHoTen, "txtHoTen")
+        Me.txtHoTen.Name = "txtHoTen"
         '
         'frmLapTheDocGia
         '
@@ -249,8 +249,8 @@ Partial Class frmLapTheDocGia
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
         Me.PanelControl2.PerformLayout()
-        CType(Me.txtHoTen.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtMaDocGia.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtHoTen.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

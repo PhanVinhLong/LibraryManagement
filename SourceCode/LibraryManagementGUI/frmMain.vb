@@ -74,4 +74,11 @@ Public Class frmMain
         frmQLTC.MdiParent = Me
         frmQLTC.Show()
     End Sub
+
+    Private Sub btnQuanLyTheLoai_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnQuanLyTheLoai.ItemClick
+        Dim frmQLTL As frmQuanLyTheLoaiSach
+        frmQLTL = New frmQuanLyTheLoaiSach()
+        frmQLTL.MdiParent = Me
+        frmQLTL.Show()
+    End Sub
 End Class

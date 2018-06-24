@@ -32,6 +32,8 @@ Partial Class frmMain
         Me.btnQuanLyLoaiDocGia = New DevExpress.XtraBars.BarButtonItem()
         Me.btnThemTheLoai = New DevExpress.XtraBars.BarButtonItem()
         Me.btnQuanLyTheLoai = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnThemTacGia = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnQuanLyTacGia = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage2 = New DevExpress.XtraBars.Ribbon.RibbonPage()
@@ -42,8 +44,6 @@ Partial Class frmMain
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup6 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup7 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.btnThemTacGia = New DevExpress.XtraBars.BarButtonItem()
-        Me.btnQuanLyTacGia = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.rbcMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -141,6 +141,20 @@ Partial Class frmMain
         Me.btnQuanLyTheLoai.ImageOptions.ImageUri.Uri = "Copy;Office2013"
         Me.btnQuanLyTheLoai.Name = "btnQuanLyTheLoai"
         '
+        'btnThemTacGia
+        '
+        Me.btnThemTacGia.Caption = "Thêm tác giả"
+        Me.btnThemTacGia.Id = 13
+        Me.btnThemTacGia.ImageOptions.ImageUri.Uri = "SaveAs;Size32x32;Office2013"
+        Me.btnThemTacGia.Name = "btnThemTacGia"
+        '
+        'btnQuanLyTacGia
+        '
+        Me.btnQuanLyTacGia.Caption = "Quản lý tác giả"
+        Me.btnQuanLyTacGia.Id = 14
+        Me.btnQuanLyTacGia.ImageOptions.ImageUri.Uri = "SaveAll;Size32x32;Office2013"
+        Me.btnQuanLyTacGia.Name = "btnQuanLyTacGia"
+        '
         'RibbonPage1
         '
         Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
@@ -207,20 +221,6 @@ Partial Class frmMain
         Me.RibbonPageGroup7.ItemLinks.Add(Me.btnQuanLyTacGia)
         Me.RibbonPageGroup7.Name = "RibbonPageGroup7"
         Me.RibbonPageGroup7.Text = "Quản lý tác giả"
-        '
-        'btnThemTacGia
-        '
-        Me.btnThemTacGia.Caption = "Thêm tác giả"
-        Me.btnThemTacGia.Id = 13
-        Me.btnThemTacGia.ImageOptions.ImageUri.Uri = "SaveAs;Size32x32;Office2013"
-        Me.btnThemTacGia.Name = "btnThemTacGia"
-        '
-        'btnQuanLyTacGia
-        '
-        Me.btnQuanLyTacGia.Caption = "Quản lý tác giả"
-        Me.btnQuanLyTacGia.Id = 14
-        Me.btnQuanLyTacGia.ImageOptions.ImageUri.Uri = "SaveAll;Size32x32;Office2013"
-        Me.btnQuanLyTacGia.Name = "btnQuanLyTacGia"
         '
         'frmMain
         '

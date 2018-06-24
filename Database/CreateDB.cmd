@@ -1,2 +1,2 @@
-SQLCMD -S HITONASI -E -i DBScript.sql
+SQLCMD -S HITONASI\HITONASI  -E -i DBScript.sql
 pause

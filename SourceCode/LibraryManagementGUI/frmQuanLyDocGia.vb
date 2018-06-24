@@ -275,7 +275,6 @@ Public Class frmQuanLyDocGia
         Dim currentRowIndex As Integer
         currentRowIndex = grvDanhSachDocGia.FocusedRowHandle
 
-        Dim docGia As DocGiaDTO
         If (-1 < currentRowIndex < grvDanhSachDocGia.RowCount) Then
             Select Case MessageBox.Show("Bạn chắc chắn muốn xoá Độc giả " & txtHoTen.EditValue & " với Mã số " & txtMaDocGia.EditValue & "?", "Xoá Độc giả", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
                 Case DialogResult.Yes

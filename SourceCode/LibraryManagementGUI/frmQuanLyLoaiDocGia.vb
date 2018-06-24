@@ -127,7 +127,6 @@ Public Class frmQuanLyLoaiDocGia
         Dim currentRowIndex As Integer
         currentRowIndex = grvDanhSachLoaiDocGia.FocusedRowHandle
 
-        Dim loaiDocGia As LoaiDocGiaDTO
         If (-1 < currentRowIndex < grvDanhSachLoaiDocGia.RowCount) Then
             Select Case MessageBox.Show("Bạn chắc chắn muốn xoá Loại độc giả " & txtTenLoaiDocGia.EditValue & " với Mã số " & txtMaLoaiDocGia.EditValue & "?", "Xoá Loại độc giả", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
                 Case DialogResult.Yes
@@ -164,5 +163,16 @@ Public Class frmQuanLyLoaiDocGia
 
     Private Sub btnDong_Click(sender As Object, e As EventArgs) Handles btnDong.Click
         Me.Close()
+    End Sub
+
+    Private Sub txtTimKiem_EditValueChanged(sender As Object, e As EventArgs) Handles txtTimKiem.EditValueChanged
+        Dim filterString As String
+        filterString = String.Empty
+        filterString = """" & txtTimKiem.EditValue & """"
+        grvDanhSachLoaiDocGia.ApplyFindFilter(filterString)
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        txtTimKiem.EditValue = ""
     End Sub
 End Class

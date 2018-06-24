@@ -84,6 +84,33 @@ Public Class TheLoaiDAL
         Return New Result(True)
     End Function
 
+    Public Function SelectByMaTheLoai(iMaTheLoai As Integer) As TheLoaiDTO
+        Dim theLoai As TheLoaiDTO
+        Dim sqlQuery As String = String.Empty
+        sqlQuery &= "SELECT [MaTheLoai], [TenTheLoai] "
+        sqlQuery &= "FROM [tblTheLoai] "
+        sqlQuery &= "WHERE [MaTheLoai] = @MaTheLoai "
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand()
+                With command
+                    .Connection = connection
+                    .CommandType = CommandType.Text
+                    .CommandText = sqlQuery
+                    .Parameters.AddWithValue("@MaTheLoai", iMaTheLoai)
+                End With
+                connection.Open()
+                Dim reader As SqlDataReader
+                reader = command.ExecuteReader()
+                If reader.HasRows = True Then
+                    While reader.Read()
+                        theLoai = New TheLoaiDTO(reader("MaTheLoai"), reader("TenTheLoai"))
+                    End While
+                End If
+            End Using
+        End Using
+        Return theLoai
+    End Function
+
     Public Function SelectByMaSach(iMaSach As Integer, ByRef listTheLoai As List(Of TheLoaiDTO)) As Result
         Dim sqlQuery As String = String.Empty
         sqlQuery &= "SELECT [tblTheLoai].[MaTheLoai], [TenTheLoai] "

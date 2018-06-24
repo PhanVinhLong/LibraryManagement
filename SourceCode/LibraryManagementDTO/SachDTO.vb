@@ -1,7 +1,7 @@
 ﻿Public Class SachDTO
     Private iMaSach As Integer
     Private strTenSach As String
-    Private dateNgayXuatBan As DateTime
+    Private iNamXuatBan As Integer
     Private strNhaXuatBan As String
     Private iTriGia As Integer
     Private dateNgayNhap As DateTime
@@ -10,10 +10,10 @@
     Public Sub New()
     End Sub
 
-    Public Sub New(iMaSach As Integer, strTenSach As String, dateNgayXuatBan As DateTime, strNhaXuatBan As String, iTriGia As Integer, dateNgayNhap As DateTime, iMaTrangThai As Integer)
+    Public Sub New(iMaSach As Integer, strTenSach As String, iNamXuatBan As Integer, strNhaXuatBan As String, iTriGia As Integer, dateNgayNhap As DateTime, iMaTrangThai As Integer)
         Me.iMaSach = iMaSach
         Me.strTenSach = strTenSach
-        Me.dateNgayXuatBan = dateNgayXuatBan
+        Me.iNamXuatBan = iNamXuatBan
         Me.strNhaXuatBan = strNhaXuatBan
         Me.iTriGia = iTriGia
         Me.dateNgayNhap = dateNgayNhap
@@ -38,12 +38,12 @@
         End Set
     End Property
 
-    Public Property NgayXuatBan As Date
+    Public Property NamXuatBan As Integer
         Get
-            Return dateNgayXuatBan
+            Return iNamXuatBan
         End Get
-        Set(value As Date)
-            dateNgayXuatBan = value
+        Set(value As Integer)
+            iNamXuatBan = value
         End Set
     End Property
 

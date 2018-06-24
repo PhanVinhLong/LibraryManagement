@@ -57,8 +57,8 @@ Public Class SachDAL
         Dim sqlQuery As String
         sqlQuery = String.Empty
 
-        sqlQuery &= "INSERT INTO [tblSach]([MaSach], [TenSach], [NgayXuatBan], [NhaXuatBan], [TriGia], [NgayNhap], [MaTrangThai] "
-        sqlQuery &= "VALUES(@MaSach, @TenSach, @NgayXuatBan, @NhaXuatBan, @TriGia, @NgayNhap, @MaTrangThai "
+        sqlQuery &= "INSERT INTO [tblSach]([MaSach], [TenSach], [NamXuatBan], [NhaXuatBan], [TriGia], [NgayNhap], [MaTrangThai]) "
+        sqlQuery &= "VALUES(@MaSach, @TenSach, @NamXuatBan, @NhaXuatBan, @TriGia, @NgayNhap, @MaTrangThai) "
 
         ' Lấy MaDocGia kế tiếp
         Dim nextMaSach = 0
@@ -74,7 +74,7 @@ Public Class SachDAL
                     .CommandText = sqlQuery
                     .Parameters.AddWithValue("@MaSach", sach.MaSach)
                     .Parameters.AddWithValue("@TenSach", sach.TenSach)
-                    .Parameters.AddWithValue("@NgayXuatBan", sach.NgayXuatBan)
+                    .Parameters.AddWithValue("@NamXuatBan", sach.NamXuatBan)
                     .Parameters.AddWithValue("@NhaXuatBan", sach.NhaXuatBan)
                     .Parameters.AddWithValue("@TriGia", sach.TriGia)
                     .Parameters.AddWithValue("@NgayNhap", sach.NgayNhap)
@@ -96,7 +96,7 @@ Public Class SachDAL
     Public Function SelectAll(ByRef listSach As List(Of SachDTO)) As Result
         Dim sqlQuery As String
         sqlQuery = String.Empty
-        sqlQuery &= "SELECT [MaSach], [TenSach], [NgayXuatBan], [NhaXuatBan], [TriGia], [NgayNhap], [MaTrangThai] "
+        sqlQuery &= "SELECT [MaSach], [TenSach], [NamXuatBan], [NhaXuatBan], [TriGia], [NgayNhap], [MaTrangThai] "
         sqlQuery &= "FROM [tblSach] "
 
         Using connection As New SqlConnection(connectionString)
@@ -112,7 +112,7 @@ Public Class SachDAL
                     dataReader = command.ExecuteReader()
                     If dataReader.HasRows = True Then
                         While dataReader.Read()
-                            listSach.Add(New SachDTO(dataReader("MaSach"), dataReader("TenSach"), dataReader("NgayXuatBan"), dataReader("NhaXuatBan"), dataReader("TriGia"), dataReader("NgayNhap"), dataReader("MaTrangThai")))
+                            listSach.Add(New SachDTO(dataReader("MaSach"), dataReader("TenSach"), dataReader("NamXuatBan"), dataReader("NhaXuatBan"), dataReader("TriGia"), dataReader("NgayNhap"), dataReader("MaTrangThai")))
                         End While
                     End If
                 Catch ex As Exception
@@ -125,10 +125,10 @@ Public Class SachDAL
         Return New Result(True)
     End Function
 
-    Public Function SelectByCondition(iMaTheLoai As Integer, iMaTacGia As Integer, iMaTrangThai As Integer, ByRef listSach As List(Of SachDTO)) As Result
+    Public Function SelectByCondition(iMaTheLoai As Integer, iMaTacGia As Integer, iMaTrangThai As Integer, iNamXuatBan As Integer, ByRef listSach As List(Of SachDTO)) As Result
         Dim sqlQuery As String
         sqlQuery = String.Empty
-        sqlQuery &= "SELECT [tblSach].[MaSach], [TenSach], [NgayXuatBan], [tblSach].[MaNhaXuatBan], [TriGia], [NgayNhap], [tblSach].[MaTrangThai] "
+        sqlQuery &= "SELECT [tblSach].[MaSach], [TenSach], [NamXuatBan], [tblSach].[MaNhaXuatBan], [TriGia], [NgayNhap], [tblSach].[MaTrangThai] "
         sqlQuery &= "FROM [tblSach], [tblTacGiaSach], [tblTheLoaiSach] "
         sqlQuery &= "WHERE [tblSach].[MaSach] = [tblTacGiaSach].[MaSach] "
         sqlQuery &= "      AND [tblSach].[MaSach] = [tblTheLoaiSach].[MaSach] "
@@ -141,6 +141,9 @@ Public Class SachDAL
         If (iMaTrangThai <> Nothing) Then
             sqlQuery &= "AND [MaTrangThai] = @MaTrangThai "
         End If
+        If (iNamXuatBan <> Nothing) Then
+            sqlQuery &= "AND [NamXuatBan] = @NamXuatBan "
+        End If
 
         Using connection As New SqlConnection(connectionString)
             Using command As New SqlCommand()
@@ -151,6 +154,7 @@ Public Class SachDAL
                     .Parameters.AddWithValue("@MaTheLoai", iMaTheLoai)
                     .Parameters.AddWithValue("@MaTacGia", iMaTacGia)
                     .Parameters.AddWithValue("@MaTrangThai", iMaTrangThai)
+                    .Parameters.AddWithValue("@NamXuatBan", iNamXuatBan)
                 End With
                 Try
                     connection.Open()
@@ -158,7 +162,7 @@ Public Class SachDAL
                     dataReader = command.ExecuteReader()
                     If dataReader.HasRows = True Then
                         While dataReader.Read()
-                            listSach.Add(New SachDTO(dataReader("MaSach"), dataReader("TenSach"), dataReader("NgayXuatBan"), dataReader("NhaXuatBan"), dataReader("TriGia"), dataReader("NgayNhap"), dataReader("MaTrangThai")))
+                            listSach.Add(New SachDTO(dataReader("MaSach"), dataReader("TenSach"), dataReader("NamXuatBan"), dataReader("NhaXuatBan"), dataReader("TriGia"), dataReader("NgayNhap"), dataReader("MaTrangThai")))
                         End While
                     End If
                 Catch ex As Exception
@@ -177,7 +181,7 @@ Public Class SachDAL
 
         sqlQuery &= "UPDATE [tblSach] "
         sqlQuery &= "SET [TenSach] = @TenSach, "
-        sqlQuery &= "    [NgayXuatBan] = @NgayXuatBan, "
+        sqlQuery &= "    [NamXuatBan] = @NamXuatBan, "
         sqlQuery &= "    [NhaXuatBan] = @NhaXuatBan, "
         sqlQuery &= "    [TriGia] = @TriGia, "
         sqlQuery &= "    [NgayNhap] = @NgayNhap, "
@@ -190,7 +194,7 @@ Public Class SachDAL
                     .CommandType = CommandType.Text
                     .CommandText = sqlQuery
                     .Parameters.AddWithValue("@TenSach", sach.TenSach)
-                    .Parameters.AddWithValue("@NgayXuatBan", sach.NgayXuatBan)
+                    .Parameters.AddWithValue("@NamXuatBan", sach.NamXuatBan)
                     .Parameters.AddWithValue("@NhaXuatBan", sach.NhaXuatBan)
                     .Parameters.AddWithValue("@TriGia", sach.TriGia)
                     .Parameters.AddWithValue("@NgayNhap", sach.NgayNhap)
@@ -209,7 +213,7 @@ Public Class SachDAL
         Return New Result(True)
     End Function
 
-    Public Function Delete(iMaSach As Integer)
+    Public Function Delete(iMaSach As Integer) As Result
         Dim sqlQuery As String
         sqlQuery = String.Empty
 
