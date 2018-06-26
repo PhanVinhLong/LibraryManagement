@@ -34,6 +34,10 @@ Public Class TacGiaBUS
         Return tacGiaDAL.SelectByMaTacGia(iMaTacGia)
     End Function
 
+    Public Function SelectByMaSach(iMaSach As Integer, ByRef listTacGia As List(Of TacGiaDTO)) As Result
+        Return tacGiaDAL.SelectByMaSach(iMaSach, listTacGia)
+    End Function
+
     Public Function Insert(tacGia As TacGiaDTO) As Result
         Return tacGiaDAL.Insert(tacGia)
     End Function

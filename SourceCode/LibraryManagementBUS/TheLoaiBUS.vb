@@ -34,6 +34,10 @@ Public Class TheLoaiBUS
         Return theLoaiDAL.SelectByMaTheLoai(iMaTheLoai)
     End Function
 
+    Public Function SelectByMaSach(iMaSach As Integer, ByRef listTheLoai As List(Of TheLoaiDTO)) As Result
+        Return theLoaiDAL.SelectByMaSach(iMaSach, listTheLoai)
+    End Function
+
     Public Function Insert(theLoai As TheLoaiDTO) As Result
         Return theLoaiDAL.Insert(theLoai)
     End Function

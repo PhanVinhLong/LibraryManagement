@@ -93,4 +93,12 @@ Public Class DocGiaBUS
         End If
         Return iYears
     End Function
+
+    Public Function SachMuonHetHan(docGia As DocGiaDTO) As List(Of SachDTO)
+        Return docGiaDAL.SachMuonHetHan(docGia)
+    End Function
+
+    Public Function SachMuonConHan(docGia As DocGiaDTO) As List(Of SachDTO)
+        Return docGiaDAL.SachMuonConHan(docGia)
+    End Function
 End Class

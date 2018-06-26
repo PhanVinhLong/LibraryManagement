@@ -34,7 +34,11 @@ Partial Class frmMain
         Me.btnQuanLyTheLoai = New DevExpress.XtraBars.BarButtonItem()
         Me.btnThemTacGia = New DevExpress.XtraBars.BarButtonItem()
         Me.btnQuanLyTacGia = New DevExpress.XtraBars.BarButtonItem()
+        Me.SkinRibbonGalleryBarItem = New DevExpress.XtraBars.SkinRibbonGalleryBarItem()
+        Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnThongTin = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.RibbonPageGroup9 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage2 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -44,18 +48,32 @@ Partial Class frmMain
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup6 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup7 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPage4 = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.RibbonPageGroup8 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.nbcTruyCapNhanh = New DevExpress.XtraNavBar.NavBarControl()
+        Me.nbgQuickAccess = New DevExpress.XtraNavBar.NavBarGroup()
+        Me.nbiChoMuonSach = New DevExpress.XtraNavBar.NavBarItem()
+        Me.nbiNhanTraSach = New DevExpress.XtraNavBar.NavBarItem()
+        Me.nbiTiepNhanSach = New DevExpress.XtraNavBar.NavBarItem()
+        Me.nbiLapTheDocGia = New DevExpress.XtraNavBar.NavBarItem()
+        Me.nbgTaiKhoan = New DevExpress.XtraNavBar.NavBarGroup()
+        Me.nbiDoiMatKhau = New DevExpress.XtraNavBar.NavBarItem()
+        Me.nbiDangXuat = New DevExpress.XtraNavBar.NavBarItem()
+        Me.xtcMain = New DevExpress.XtraTab.XtraTabControl()
         CType(Me.rbcMain, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nbcTruyCapNhanh, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.xtcMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'rbcMain
         '
         Me.rbcMain.ExpandCollapseItem.Id = 0
-        Me.rbcMain.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.rbcMain.ExpandCollapseItem, Me.btnThoat, Me.btnLapTheDocGia, Me.btnTiepNhanSachMoi, Me.btnTraCuuSach, Me.btnChoMuonSach, Me.btnQuanLyDocGia, Me.btnQuanLySach, Me.btnNhanTraSach, Me.btnThemLoaiDocGia, Me.btnQuanLyLoaiDocGia, Me.btnThemTheLoai, Me.btnQuanLyTheLoai, Me.btnThemTacGia, Me.btnQuanLyTacGia})
+        Me.rbcMain.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.rbcMain.ExpandCollapseItem, Me.btnThoat, Me.btnLapTheDocGia, Me.btnTiepNhanSachMoi, Me.btnTraCuuSach, Me.btnChoMuonSach, Me.btnQuanLyDocGia, Me.btnQuanLySach, Me.btnNhanTraSach, Me.btnThemLoaiDocGia, Me.btnQuanLyLoaiDocGia, Me.btnThemTheLoai, Me.btnQuanLyTheLoai, Me.btnThemTacGia, Me.btnQuanLyTacGia, Me.SkinRibbonGalleryBarItem, Me.BarButtonItem1, Me.btnThongTin})
         Me.rbcMain.Location = New System.Drawing.Point(0, 0)
-        Me.rbcMain.MaxItemId = 15
+        Me.rbcMain.MaxItemId = 21
         Me.rbcMain.Name = "rbcMain"
-        Me.rbcMain.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage3})
-        Me.rbcMain.Size = New System.Drawing.Size(974, 141)
+        Me.rbcMain.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage3, Me.RibbonPage4})
+        Me.rbcMain.Size = New System.Drawing.Size(1126, 141)
         '
         'btnThoat
         '
@@ -155,11 +173,36 @@ Partial Class frmMain
         Me.btnQuanLyTacGia.ImageOptions.ImageUri.Uri = "SaveAll;Size32x32;Office2013"
         Me.btnQuanLyTacGia.Name = "btnQuanLyTacGia"
         '
+        'SkinRibbonGalleryBarItem
+        '
+        Me.SkinRibbonGalleryBarItem.Caption = "Giao diện"
+        Me.SkinRibbonGalleryBarItem.Id = 15
+        Me.SkinRibbonGalleryBarItem.Name = "SkinRibbonGalleryBarItem"
+        '
+        'BarButtonItem1
+        '
+        Me.BarButtonItem1.Caption = "Thông tin"
+        Me.BarButtonItem1.Id = 19
+        Me.BarButtonItem1.Name = "BarButtonItem1"
+        '
+        'btnThongTin
+        '
+        Me.btnThongTin.Caption = "Thông tin"
+        Me.btnThongTin.Id = 20
+        Me.btnThongTin.ImageOptions.ImageUri.Uri = "BehindText;Size32x32;Office2013"
+        Me.btnThongTin.Name = "btnThongTin"
+        '
         'RibbonPage1
         '
-        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
+        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup9, Me.RibbonPageGroup1})
         Me.RibbonPage1.Name = "RibbonPage1"
         Me.RibbonPage1.Text = "File"
+        '
+        'RibbonPageGroup9
+        '
+        Me.RibbonPageGroup9.ItemLinks.Add(Me.btnThongTin)
+        Me.RibbonPageGroup9.Name = "RibbonPageGroup9"
+        Me.RibbonPageGroup9.Text = "Thông tin"
         '
         'RibbonPageGroup1
         '
@@ -222,18 +265,105 @@ Partial Class frmMain
         Me.RibbonPageGroup7.Name = "RibbonPageGroup7"
         Me.RibbonPageGroup7.Text = "Quản lý tác giả"
         '
+        'RibbonPage4
+        '
+        Me.RibbonPage4.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup8})
+        Me.RibbonPage4.Name = "RibbonPage4"
+        Me.RibbonPage4.Text = "Cài đặt"
+        '
+        'RibbonPageGroup8
+        '
+        Me.RibbonPageGroup8.ItemLinks.Add(Me.SkinRibbonGalleryBarItem)
+        Me.RibbonPageGroup8.Name = "RibbonPageGroup8"
+        Me.RibbonPageGroup8.Text = "Cài đặt giao diện"
+        '
+        'nbcTruyCapNhanh
+        '
+        Me.nbcTruyCapNhanh.ActiveGroup = Me.nbgQuickAccess
+        Me.nbcTruyCapNhanh.Dock = System.Windows.Forms.DockStyle.Left
+        Me.nbcTruyCapNhanh.Groups.AddRange(New DevExpress.XtraNavBar.NavBarGroup() {Me.nbgQuickAccess, Me.nbgTaiKhoan})
+        Me.nbcTruyCapNhanh.Items.AddRange(New DevExpress.XtraNavBar.NavBarItem() {Me.nbiChoMuonSach, Me.nbiNhanTraSach, Me.nbiTiepNhanSach, Me.nbiLapTheDocGia, Me.nbiDoiMatKhau, Me.nbiDangXuat})
+        Me.nbcTruyCapNhanh.Location = New System.Drawing.Point(0, 141)
+        Me.nbcTruyCapNhanh.Name = "nbcTruyCapNhanh"
+        Me.nbcTruyCapNhanh.OptionsNavPane.ExpandedWidth = 140
+        Me.nbcTruyCapNhanh.Size = New System.Drawing.Size(140, 585)
+        Me.nbcTruyCapNhanh.TabIndex = 5
+        Me.nbcTruyCapNhanh.Text = "NavBarControl1"
+        '
+        'nbgQuickAccess
+        '
+        Me.nbgQuickAccess.Caption = "Truy cập nhanh"
+        Me.nbgQuickAccess.Expanded = True
+        Me.nbgQuickAccess.ItemLinks.AddRange(New DevExpress.XtraNavBar.NavBarItemLink() {New DevExpress.XtraNavBar.NavBarItemLink(Me.nbiChoMuonSach), New DevExpress.XtraNavBar.NavBarItemLink(Me.nbiNhanTraSach), New DevExpress.XtraNavBar.NavBarItemLink(Me.nbiTiepNhanSach), New DevExpress.XtraNavBar.NavBarItemLink(Me.nbiLapTheDocGia)})
+        Me.nbgQuickAccess.Name = "nbgQuickAccess"
+        '
+        'nbiChoMuonSach
+        '
+        Me.nbiChoMuonSach.Caption = "Cho mượn sách"
+        Me.nbiChoMuonSach.ImageOptions.ImageUri.Uri = "IndentIncrease;Size16x16;Office2013"
+        Me.nbiChoMuonSach.Name = "nbiChoMuonSach"
+        '
+        'nbiNhanTraSach
+        '
+        Me.nbiNhanTraSach.Caption = "Nhận trả sách"
+        Me.nbiNhanTraSach.ImageOptions.ImageUri.Uri = "IndentDecrease;Size16x16;Office2013"
+        Me.nbiNhanTraSach.Name = "nbiNhanTraSach"
+        '
+        'nbiTiepNhanSach
+        '
+        Me.nbiTiepNhanSach.Caption = "Tiếp nhận sách"
+        Me.nbiTiepNhanSach.ImageOptions.ImageUri.Uri = "Add;Size16x16;Office2013"
+        Me.nbiTiepNhanSach.Name = "nbiTiepNhanSach"
+        '
+        'nbiLapTheDocGia
+        '
+        Me.nbiLapTheDocGia.Caption = "Lập thẻ độc giả"
+        Me.nbiLapTheDocGia.ImageOptions.ImageUri.Uri = "AddItem;Size16x16;Office2013"
+        Me.nbiLapTheDocGia.Name = "nbiLapTheDocGia"
+        '
+        'nbgTaiKhoan
+        '
+        Me.nbgTaiKhoan.Caption = "Tài khoản"
+        Me.nbgTaiKhoan.Expanded = True
+        Me.nbgTaiKhoan.ItemLinks.AddRange(New DevExpress.XtraNavBar.NavBarItemLink() {New DevExpress.XtraNavBar.NavBarItemLink(Me.nbiDoiMatKhau), New DevExpress.XtraNavBar.NavBarItemLink(Me.nbiDangXuat)})
+        Me.nbgTaiKhoan.Name = "nbgTaiKhoan"
+        '
+        'nbiDoiMatKhau
+        '
+        Me.nbiDoiMatKhau.Caption = "Đổi mật khẩu"
+        Me.nbiDoiMatKhau.ImageOptions.ImageUri.Uri = "Replace;Size16x16;Office2013"
+        Me.nbiDoiMatKhau.Name = "nbiDoiMatKhau"
+        '
+        'nbiDangXuat
+        '
+        Me.nbiDangXuat.Caption = "Đăng xuất"
+        Me.nbiDangXuat.ImageOptions.ImageUri.Uri = "Clear;Size16x16;Office2013"
+        Me.nbiDangXuat.Name = "nbiDangXuat"
+        '
+        'xtcMain
+        '
+        Me.xtcMain.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeaderAndOnMouseHover
+        Me.xtcMain.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.xtcMain.Location = New System.Drawing.Point(140, 141)
+        Me.xtcMain.Name = "xtcMain"
+        Me.xtcMain.PageImagePosition = DevExpress.XtraTab.TabPageImagePosition.Center
+        Me.xtcMain.Size = New System.Drawing.Size(986, 585)
+        Me.xtcMain.TabIndex = 6
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(974, 588)
+        Me.ClientSize = New System.Drawing.Size(1126, 726)
+        Me.Controls.Add(Me.xtcMain)
+        Me.Controls.Add(Me.nbcTruyCapNhanh)
         Me.Controls.Add(Me.rbcMain)
-        Me.IsMdiContainer = True
         Me.LookAndFeel.SkinName = "Office 2013 Light Gray"
-        Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.Name = "frmMain"
         Me.Text = "Quản Lý Thư Viện"
         CType(Me.rbcMain, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nbcTruyCapNhanh, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.xtcMain, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -264,4 +394,20 @@ Partial Class frmMain
     Friend WithEvents btnThemTacGia As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnQuanLyTacGia As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPageGroup7 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents SkinRibbonGalleryBarItem As DevExpress.XtraBars.SkinRibbonGalleryBarItem
+    Friend WithEvents RibbonPage4 As DevExpress.XtraBars.Ribbon.RibbonPage
+    Friend WithEvents RibbonPageGroup8 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents nbcTruyCapNhanh As DevExpress.XtraNavBar.NavBarControl
+    Friend WithEvents nbgQuickAccess As DevExpress.XtraNavBar.NavBarGroup
+    Friend WithEvents nbiChoMuonSach As DevExpress.XtraNavBar.NavBarItem
+    Friend WithEvents nbiNhanTraSach As DevExpress.XtraNavBar.NavBarItem
+    Friend WithEvents nbiTiepNhanSach As DevExpress.XtraNavBar.NavBarItem
+    Friend WithEvents nbiLapTheDocGia As DevExpress.XtraNavBar.NavBarItem
+    Friend WithEvents nbgTaiKhoan As DevExpress.XtraNavBar.NavBarGroup
+    Friend WithEvents nbiDoiMatKhau As DevExpress.XtraNavBar.NavBarItem
+    Friend WithEvents nbiDangXuat As DevExpress.XtraNavBar.NavBarItem
+    Friend WithEvents xtcMain As DevExpress.XtraTab.XtraTabControl
+    Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnThongTin As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPageGroup9 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
 End Class

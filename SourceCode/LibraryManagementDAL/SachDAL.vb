@@ -125,23 +125,52 @@ Public Class SachDAL
         Return New Result(True)
     End Function
 
+    Public Function SelectByMaSach(iMaSachh As Integer) As SachDTO
+        Dim sqlQuery As String
+        sqlQuery = String.Empty
+        sqlQuery &= "SELECT [MaSach], [TenSach], [NamXuatBan], [NhaXuatBan], [TriGia], [NgayNhap], [MaTrangThai] "
+        sqlQuery &= "FROM [tblSach] "
+        sqlQuery &= "WHERE [MaSach] = @MaSach "
+
+        Dim sach As SachDTO
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand()
+                With command
+                    .Connection = connection
+                    .CommandType = CommandType.Text
+                    .CommandText = sqlQuery
+                    .Parameters.AddWithValue("@MaSach", iMaSachh)
+                End With
+                connection.Open()
+                Dim dataReader As SqlDataReader
+                dataReader = command.ExecuteReader()
+                If dataReader.HasRows = True Then
+                    While dataReader.Read()
+                        sach = (New SachDTO(dataReader("MaSach"), dataReader("TenSach"), dataReader("NamXuatBan"), dataReader("NhaXuatBan"), dataReader("TriGia"), dataReader("NgayNhap"), dataReader("MaTrangThai")))
+                    End While
+                End If
+            End Using
+        End Using
+        Return sach
+    End Function
+
     Public Function SelectByCondition(iMaTheLoai As Integer, iMaTacGia As Integer, iMaTrangThai As Integer, iNamXuatBan As Integer, ByRef listSach As List(Of SachDTO)) As Result
         Dim sqlQuery As String
         sqlQuery = String.Empty
-        sqlQuery &= "SELECT [tblSach].[MaSach], [TenSach], [NamXuatBan], [tblSach].[MaNhaXuatBan], [TriGia], [NgayNhap], [tblSach].[MaTrangThai] "
+        sqlQuery &= "SELECT DISTINCT [tblSach].[MaSach], [TenSach], [NamXuatBan], [NhaXuatBan], [TriGia], [NgayNhap], [MaTrangThai] "
         sqlQuery &= "FROM [tblSach], [tblTacGiaSach], [tblTheLoaiSach] "
         sqlQuery &= "WHERE [tblSach].[MaSach] = [tblTacGiaSach].[MaSach] "
         sqlQuery &= "      AND [tblSach].[MaSach] = [tblTheLoaiSach].[MaSach] "
-        If (iMaTheLoai <> Nothing) Then
+        If (iMaTheLoai <> -1) Then
             sqlQuery &= "AND [MaTheLoai] = @MaTheLoai "
         End If
-        If (iMaTacGia <> Nothing) Then
+        If (iMaTacGia <> -1) Then
             sqlQuery &= "AND [MaTacGia] = @MaTacGia "
         End If
-        If (iMaTrangThai <> Nothing) Then
+        If (iMaTrangThai <> -1) Then
             sqlQuery &= "AND [MaTrangThai] = @MaTrangThai "
         End If
-        If (iNamXuatBan <> Nothing) Then
+        If (iNamXuatBan <> -1) Then
             sqlQuery &= "AND [NamXuatBan] = @NamXuatBan "
         End If
 
@@ -185,7 +214,8 @@ Public Class SachDAL
         sqlQuery &= "    [NhaXuatBan] = @NhaXuatBan, "
         sqlQuery &= "    [TriGia] = @TriGia, "
         sqlQuery &= "    [NgayNhap] = @NgayNhap, "
-        sqlQuery &= "    [MaTrangThai] = @MaTrangThai, "
+        sqlQuery &= "    [MaTrangThai] = @MaTrangThai "
+        sqlQuery &= "WHERE [MaSach] = @MaSach"
 
         Using connection As New SqlConnection(connectionString)
             Using command As New SqlCommand()
@@ -193,6 +223,7 @@ Public Class SachDAL
                     .Connection = connection
                     .CommandType = CommandType.Text
                     .CommandText = sqlQuery
+                    .Parameters.AddWithValue("@MaSach", sach.MaSach)
                     .Parameters.AddWithValue("@TenSach", sach.TenSach)
                     .Parameters.AddWithValue("@NamXuatBan", sach.NamXuatBan)
                     .Parameters.AddWithValue("@NhaXuatBan", sach.NhaXuatBan)
@@ -206,7 +237,7 @@ Public Class SachDAL
                 Catch ex As Exception
                     connection.Close()
                     System.Console.WriteLine(ex.StackTrace)
-                    Return New Result(False, "Sửa thông tin Độc giả không thành công!", ex.StackTrace)
+                    Return New Result(False, "Sửa thông tin Sách không thành công!", ex.StackTrace)
                 End Try
             End Using
         End Using
@@ -214,6 +245,23 @@ Public Class SachDAL
     End Function
 
     Public Function Delete(iMaSach As Integer) As Result
+        Dim tacGiaSachDAL = New TacGiaSachDAL()
+        Dim theLoaiSachDAL = New TheLoaiSachDAL()
+        Dim result As Result
+
+        ' Xoá chi tiết tác giả
+        result = tacGiaSachDAL.DeleteByMaSach(iMaSach)
+        If result.FlagResult = False Then
+            Return result
+        End If
+
+        ' Xoá chi tiết thể loại
+        result = theLoaiSachDAL.DeleteByMaSach(iMaSach)
+        If result.FlagResult = False Then
+            Return result
+        End If
+
+        ' Xoá sách
         Dim sqlQuery As String
         sqlQuery = String.Empty
 
@@ -234,10 +282,74 @@ Public Class SachDAL
                 Catch ex As Exception
                     connection.Close()
                     System.Console.WriteLine(ex.StackTrace)
-                    Return New Result(False, "Xoá Độc giả không thành công!", ex.StackTrace)
+                    Return New Result(False, "Xoá Sách không thành công!", ex.StackTrace)
                 End Try
             End Using
         End Using
         Return New Result(True)
+    End Function
+
+    Public Function MaDocGiaDangMuon(sach As SachDTO) As String
+        'If sach.MaTrangThai <> 2 Then
+        '    Return -1
+        'End If
+
+        Dim maDocGia = String.Empty
+        Dim sqlQuery As String
+        sqlQuery = String.Empty
+        sqlQuery &= "SELECT TOP 1 [MaDocGia] "
+        sqlQuery &= "FROM [tblPhieuMuon], [tblChiTietPhieuMuon] "
+        sqlQuery &= "WHERE [tblPhieuMuon].[MaPhieuMuon] = [tblChiTietPhieuMuon].[MaPhieuMuon] "
+        sqlQuery &= "      AND [MaSach] = @MaSach "
+        sqlQuery &= "ORDER BY [NgayMuon] DESC "
+
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand()
+                With command
+                    .Connection = connection
+                    .CommandType = CommandType.Text
+                    .CommandText = sqlQuery
+                    .Parameters.AddWithValue("@MaSach", sach.MaSach)
+                End With
+                connection.Open()
+                Dim dataReader As SqlDataReader
+                dataReader = command.ExecuteReader()
+                If dataReader.HasRows = True Then
+                    While dataReader.Read()
+                        maDocGia = dataReader("MaDocGia")
+                    End While
+                End If
+            End Using
+        End Using
+        Return maDocGia
+    End Function
+
+    Public Function NgayHetHan(sach As SachDTO) As DateTime
+        Dim sqlQuery As String
+        sqlQuery = String.Empty
+        sqlQuery &= "SELECT TOP 1 [NgayMuon] "
+        sqlQuery &= "FROM [tblPhieuMuon], [tblChiTietPhieuMuon] "
+        sqlQuery &= "WHERE [tblPhieuMuon].[MaPhieuMuon] = [tblChiTietPhieuMuon].[MaPhieuMuon] "
+        sqlQuery &= "      AND [MaSach] = @MaSach "
+        sqlQuery &= "ORDER BY [NgayMuon] DESC "
+
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand()
+                With command
+                    .Connection = connection
+                    .CommandType = CommandType.Text
+                    .CommandText = sqlQuery
+                    .Parameters.AddWithValue("@MaSach", sach.MaSach)
+                End With
+                connection.Open()
+                Dim dataReader As SqlDataReader
+                dataReader = command.ExecuteReader()
+                If dataReader.HasRows = True Then
+                    While dataReader.Read()
+                        Return dataReader("NgayMuon")
+                    End While
+                End If
+            End Using
+        End Using
     End Function
 End Class
