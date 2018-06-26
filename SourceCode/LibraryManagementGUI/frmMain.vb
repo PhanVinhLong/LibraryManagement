@@ -56,6 +56,19 @@ Public Class frmMain
         End If
     End Sub
 
+    Private Sub btnNhanTraSach_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnNhanTraSach.ItemClick
+        Dim t As Integer = 0
+        For Each tab As DevExpress.XtraTab.XtraTabPage In xtcMain.TabPages
+            If tab.Text = "Nhận trả sách" Then
+                xtcMain.SelectedTabPage = tab
+                t = 1
+            End If
+        Next
+        If t <> 1 Then
+            clsAddTab.AddTab(xtcMain, "Nhận trả sách", New ucNhanTraSach())
+        End If
+    End Sub
+
     Private Sub btnQuanLyDocGia_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnQuanLyDocGia.ItemClick
         Dim t As Integer = 0
         For Each tab As DevExpress.XtraTab.XtraTabPage In xtcMain.TabPages
@@ -104,7 +117,7 @@ Public Class frmMain
             End If
         Next
         If t <> 1 Then
-            clsAddTab.AddTab(xtcMain, "Quản lý tác giả", New ucQuanLyDocGia())
+            clsAddTab.AddTab(xtcMain, "Quản lý tác giả", New ucQuanLyTacGia())
         End If
     End Sub
 
@@ -130,7 +143,7 @@ Public Class frmMain
             End If
         Next
         If t <> 1 Then
-            clsAddTab.AddTab(xtcMain, "Thêm loại độc giả", New ucQuanLyDocGia())
+            clsAddTab.AddTab(xtcMain, "Thêm loại độc giả", New ucThemLoaiDocGia())
         End If
     End Sub
 
@@ -143,7 +156,7 @@ Public Class frmMain
             End If
         Next
         If t <> 1 Then
-            clsAddTab.AddTab(xtcMain, "Thêm tác giả", New ucQuanLyTacGia())
+            clsAddTab.AddTab(xtcMain, "Thêm tác giả", New ucThemTacGia())
         End If
     End Sub
 

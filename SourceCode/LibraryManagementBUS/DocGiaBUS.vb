@@ -101,4 +101,8 @@ Public Class DocGiaBUS
     Public Function SachMuonConHan(docGia As DocGiaDTO) As List(Of SachDTO)
         Return docGiaDAL.SachMuonConHan(docGia)
     End Function
+
+    Public Function SachMuon(docGia As DocGiaDTO) As List(Of SachDTO)
+        Return docGiaDAL.SachMuon(docGia)
+    End Function
 End Class

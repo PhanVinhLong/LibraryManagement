@@ -49,7 +49,7 @@ Public Class TacGiaSachDAL
                 Return result
             End If
         Next
-        Return result
+        Return New Result(True)
     End Function
 
     Public Function DeleteByMaSach(iMaSach As Integer) As Result

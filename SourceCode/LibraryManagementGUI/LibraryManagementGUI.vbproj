@@ -115,6 +115,12 @@
     <Compile Include="ucLapTheDocGia.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="ucNhanTraSach.Designer.vb">
+      <DependentUpon>ucNhanTraSach.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucNhanTraSach.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ucQuanLyDocGia.Designer.vb">
       <DependentUpon>ucQuanLyDocGia.vb</DependentUpon>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucLapTheDocGia.resx">
       <DependentUpon>ucLapTheDocGia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucNhanTraSach.resx">
+      <DependentUpon>ucNhanTraSach.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucQuanLyDocGia.resx">
       <DependentUpon>ucQuanLyDocGia.vb</DependentUpon>

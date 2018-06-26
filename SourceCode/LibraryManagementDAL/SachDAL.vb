@@ -289,6 +289,51 @@ Public Class SachDAL
         Return New Result(True)
     End Function
 
+    Public Function DeleteLichSuMuonTra(iMaSach As Integer) As Result
+        Dim tacGiaSachDAL = New TacGiaSachDAL()
+        Dim theLoaiSachDAL = New TheLoaiSachDAL()
+        Dim result As Result
+
+        ' Xoá chi tiết tác giả
+        result = tacGiaSachDAL.DeleteByMaSach(iMaSach)
+        If result.FlagResult = False Then
+            Return result
+        End If
+
+        ' Xoá chi tiết thể loại
+        result = theLoaiSachDAL.DeleteByMaSach(iMaSach)
+        If result.FlagResult = False Then
+            Return result
+        End If
+
+        ' Xoá sách
+        Dim sqlQuery As String
+        sqlQuery = String.Empty
+
+        sqlQuery &= "DELETE FROM [tblSach] "
+        sqlQuery &= "WHERE [MaSach] = @MaSach "
+
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand()
+                With command
+                    .Connection = connection
+                    .CommandType = CommandType.Text
+                    .CommandText = sqlQuery
+                    .Parameters.AddWithValue("@MaSach", iMaSach)
+                End With
+                Try
+                    connection.Open()
+                    command.ExecuteNonQuery()
+                Catch ex As Exception
+                    connection.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Xoá Sách không thành công!", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
+    End Function
+
     Public Function MaDocGiaDangMuon(sach As SachDTO) As String
         'If sach.MaTrangThai <> 2 Then
         '    Return -1

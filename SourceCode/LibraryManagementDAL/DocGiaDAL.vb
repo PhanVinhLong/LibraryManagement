@@ -319,4 +319,44 @@ Public Class DocGiaDAL
         End Using
         Return listSach
     End Function
+
+    Public Function SachMuon(docGia As DocGiaDTO) As List(Of SachDTO)
+        ' Lấy dữ liệu tham số
+        Dim thamSo = New ThamSoDTO
+        Dim thamSoDAL = New ThamSoDAL
+        thamSoDAL.GetData(thamSo)
+
+        Dim sachDAL = New SachDAL()
+        Dim chiTietPhieuMuonDAL = New ChiTietPhieuMuonDAL()
+        Dim listSach = New List(Of SachDTO)
+
+        Dim sqlQuery As String
+        sqlQuery = String.Empty
+        sqlQuery &= "SELECT [MaSach] "
+        sqlQuery &= "FROM [tblPhieuMuon], [tblChiTietPhieuMuon] "
+        sqlQuery &= "WHERE [tblPhieuMuon].[MaPhieuMuon] = [tblChiTietPhieuMuon].[MaPhieuMuon] "
+        sqlQuery &= "      AND [MaDocGia] = @MaDocGia "
+
+        Dim ngayMuonHetHan As DateTime = Now
+        ngayMuonHetHan = ngayMuonHetHan.AddDays(-thamSo.SoNgayMuonToiDa)
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand()
+                With command
+                    .Connection = connection
+                    .CommandType = CommandType.Text
+                    .CommandText = sqlQuery
+                    .Parameters.AddWithValue("@MaDocGia", docGia.MaDocGia)
+                End With
+                connection.Open()
+                Dim dataReader As SqlDataReader
+                dataReader = command.ExecuteReader()
+                If dataReader.HasRows = True Then
+                    While dataReader.Read()
+                        listSach.Add(sachDAL.SelectByMaSach(dataReader("MaSach")))
+                    End While
+                End If
+            End Using
+        End Using
+        Return listSach
+    End Function
 End Class

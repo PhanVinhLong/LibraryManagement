@@ -124,3 +124,4 @@ C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\bin\
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\bin\Debug\ja\DevExpress.XtraNavBar.v17.2.resources.dll
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\bin\Debug\ru\DevExpress.XtraNavBar.v17.2.resources.dll
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\obj\Debug\LibraryManagementGUI.ucThongTin.resources
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\obj\Debug\LibraryManagementGUI.ucNhanTraSach.resources

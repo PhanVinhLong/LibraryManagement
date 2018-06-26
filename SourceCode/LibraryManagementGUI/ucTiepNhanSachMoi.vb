@@ -188,16 +188,29 @@ Public Class ucTiepNhanSachMoi
         If sachBUS.IsValidTenSach(sach) = False Then
             MessageBox.Show("Tên sách không hợp lệ")
             txtTenSach.Focus()
+            Return
         End If
-        '--------
+        '----
         If sachBUS.IsValidNamXuatBan(sach) = False Then
             MessageBox.Show("Năm xuất bản không hợp lệ")
             dteNamXuatBan.Focus()
+            Return
         End If
-        '--------
+        '----
         If sachBUS.IsValidTriGia(sach) = False Then
             MessageBox.Show("Trị giá sách không hợp lệ")
             txtTriGia.Focus()
+            Return
+        End If
+        '----
+        If lTheLoai.Count < 1 Then
+            MessageBox.Show("Bạn chưa chọn thể loại")
+            Return
+        End If
+        '----
+        If lTacGia.Count < 1 Then
+            MessageBox.Show("Bạn chưa chọn tác giả")
+            Return
         End If
 
         ' Thêm dữ liệu vào database
@@ -211,9 +224,13 @@ Public Class ucTiepNhanSachMoi
 
         ' Thêm dữ liệu cho thể loại
         Dim listTheLoaiSach = New List(Of TheLoaiSachDTO)
-        For Each theLoai In lTheLoai
-            listTheLoaiSach.Add(New TheLoaiSachDTO(theLoai.MaTheLoai, Convert.ToInt32(txtMaSach.EditValue)))
-        Next
+        If lTheLoai.Count < 1 Then
+            lblTheLoai.Text = "Chưa chọn thể loại"
+        Else
+            For Each theLoai In lTheLoai
+                listTheLoaiSach.Add(New TheLoaiSachDTO(theLoai.MaTheLoai, Convert.ToInt32(txtMaSach.EditValue)))
+            Next
+        End If
         result = theLoaiSachBUS.InsertList(listTheLoaiSach)
         If (result.FlagResult = False) Then
             MessageBox.Show("Thêm Chi tiết thể loại không thành công")
@@ -222,9 +239,13 @@ Public Class ucTiepNhanSachMoi
 
         ' Thêm dữ liệu cho tác giả
         Dim listTacGiaSach = New List(Of TacGiaSachDTO)
-        For Each tacGia In lTacGia
-            listTacGiaSach.Add(New TacGiaSachDTO(tacGia.MaTacGia, Convert.ToInt32(txtMaSach.EditValue)))
-        Next
+        If lTacGia.Count < 1 Then
+            lblTheLoai.Text = "Chưa chọn tác giả"
+        Else
+            For Each tacGia In lTacGia
+                listTacGiaSach.Add(New TacGiaSachDTO(tacGia.MaTacGia, Convert.ToInt32(txtMaSach.EditValue)))
+            Next
+        End If
         result = tacGiaSachBUS.InsertList(listTacGiaSach)
         If (result.FlagResult = False) Then
             MessageBox.Show("Thêm Chi tiết tác giả không thành công")
@@ -252,5 +273,93 @@ Public Class ucTiepNhanSachMoi
         lTheLoai.Clear()
         lblTacGia.Text = "Chưa có tác giả"
         lblTheLoai.Text = "Chưa có thể loại"
+    End Sub
+
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        Dim sach As SachDTO
+        sach = New SachDTO()
+
+        ' Lấy dữ liệu tham số
+        thamSoBUS = New ThamSoBUS()
+        Dim thamSo As ThamSoDTO = New ThamSoDTO
+        thamSoBUS.GetData(thamSo)
+
+        ' Chuyển data từ GUI thành DTO
+        sach.MaSach = txtMaSach.EditValue
+        sach.TenSach = txtTenSach.EditValue
+        sach.NamXuatBan = dteNamXuatBan.EditValue.Year
+        sach.NhaXuatBan = If(String.IsNullOrWhiteSpace(txtNhaXuatBan.EditValue) Or txtNhaXuatBan.EditValue = "trống", "trống", txtNhaXuatBan.EditValue)
+        sach.TriGia = Convert.ToInt32(txtTriGia.EditValue)
+        sach.NgayNhap = dteNgayNhap.EditValue
+        sach.MaTrangThai = 1
+
+        ' Kiểm tra tính đúng đắn dữ liệu
+        If sachBUS.IsValidTenSach(sach) = False Then
+            MessageBox.Show("Tên sách không hợp lệ")
+            txtTenSach.Focus()
+            Return
+        End If
+        '----
+        If sachBUS.IsValidNamXuatBan(sach) = False Then
+            MessageBox.Show("Năm xuất bản không hợp lệ")
+            dteNamXuatBan.Focus()
+            Return
+        End If
+        '----
+        If sachBUS.IsValidTriGia(sach) = False Then
+            MessageBox.Show("Trị giá sách không hợp lệ")
+            txtTriGia.Focus()
+            Return
+        End If
+        '----
+        If lTheLoai.Count < 1 Then
+            MessageBox.Show("Bạn chưa chọn thể loại")
+            Return
+        End If
+        '----
+        If lTacGia.Count < 1 Then
+            MessageBox.Show("Bạn chưa chọn tác giả")
+            Return
+        End If
+
+        ' Thêm dữ liệu vào database
+        Dim result As Result
+        result = sachBUS.Insert(sach)
+        If (result.FlagResult = False) Then
+            MessageBox.Show("Thêm Sách không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            System.Console.WriteLine(result.SystemMessage)
+            Return
+        End If
+
+        ' Thêm dữ liệu cho thể loại
+        Dim listTheLoaiSach = New List(Of TheLoaiSachDTO)
+        If lTheLoai.Count < 1 Then
+            lblTheLoai.Text = "Chưa chọn thể loại"
+        Else
+            For Each theLoai In lTheLoai
+                listTheLoaiSach.Add(New TheLoaiSachDTO(theLoai.MaTheLoai, Convert.ToInt32(txtMaSach.EditValue)))
+            Next
+        End If
+        result = theLoaiSachBUS.InsertList(listTheLoaiSach)
+        If (result.FlagResult = False) Then
+            MessageBox.Show("Thêm Chi tiết thể loại không thành công")
+            Return
+        End If
+
+        ' Thêm dữ liệu cho tác giả
+        Dim listTacGiaSach = New List(Of TacGiaSachDTO)
+        If lTacGia.Count < 1 Then
+            lblTheLoai.Text = "Chưa chọn tác giả"
+        Else
+            For Each tacGia In lTacGia
+                listTacGiaSach.Add(New TacGiaSachDTO(tacGia.MaTacGia, Convert.ToInt32(txtMaSach.EditValue)))
+            Next
+        End If
+        result = tacGiaSachBUS.InsertList(listTacGiaSach)
+        If (result.FlagResult = False) Then
+            MessageBox.Show("Thêm Chi tiết tác giả không thành công")
+        End If
+        MessageBox.Show("Thêm Sách thành công")
+        Me.Parent.Dispose()
     End Sub
 End Class

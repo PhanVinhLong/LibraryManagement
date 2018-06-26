@@ -37,6 +37,11 @@ Partial Class frmMain
         Me.SkinRibbonGalleryBarItem = New DevExpress.XtraBars.SkinRibbonGalleryBarItem()
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.btnThongTin = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarHeaderItem1 = New DevExpress.XtraBars.BarHeaderItem()
+        Me.BarStaticItem1 = New DevExpress.XtraBars.BarStaticItem()
+        Me.txtThongTin = New DevExpress.XtraBars.BarHeaderItem()
+        Me.txtLoaiTaiKhoan = New DevExpress.XtraBars.BarStaticItem()
+        Me.txtTenTaiKhoan = New DevExpress.XtraBars.BarStaticItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup9 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -50,6 +55,7 @@ Partial Class frmMain
         Me.RibbonPageGroup7 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage4 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup8 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonStatusBar1 = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.nbcTruyCapNhanh = New DevExpress.XtraNavBar.NavBarControl()
         Me.nbgQuickAccess = New DevExpress.XtraNavBar.NavBarGroup()
         Me.nbiChoMuonSach = New DevExpress.XtraNavBar.NavBarItem()
@@ -68,12 +74,13 @@ Partial Class frmMain
         'rbcMain
         '
         Me.rbcMain.ExpandCollapseItem.Id = 0
-        Me.rbcMain.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.rbcMain.ExpandCollapseItem, Me.btnThoat, Me.btnLapTheDocGia, Me.btnTiepNhanSachMoi, Me.btnTraCuuSach, Me.btnChoMuonSach, Me.btnQuanLyDocGia, Me.btnQuanLySach, Me.btnNhanTraSach, Me.btnThemLoaiDocGia, Me.btnQuanLyLoaiDocGia, Me.btnThemTheLoai, Me.btnQuanLyTheLoai, Me.btnThemTacGia, Me.btnQuanLyTacGia, Me.SkinRibbonGalleryBarItem, Me.BarButtonItem1, Me.btnThongTin})
+        Me.rbcMain.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.rbcMain.ExpandCollapseItem, Me.btnThoat, Me.btnLapTheDocGia, Me.btnTiepNhanSachMoi, Me.btnTraCuuSach, Me.btnChoMuonSach, Me.btnQuanLyDocGia, Me.btnQuanLySach, Me.btnNhanTraSach, Me.btnThemLoaiDocGia, Me.btnQuanLyLoaiDocGia, Me.btnThemTheLoai, Me.btnQuanLyTheLoai, Me.btnThemTacGia, Me.btnQuanLyTacGia, Me.SkinRibbonGalleryBarItem, Me.BarButtonItem1, Me.btnThongTin, Me.BarHeaderItem1, Me.BarStaticItem1, Me.txtThongTin, Me.txtLoaiTaiKhoan, Me.txtTenTaiKhoan})
         Me.rbcMain.Location = New System.Drawing.Point(0, 0)
-        Me.rbcMain.MaxItemId = 21
+        Me.rbcMain.MaxItemId = 33
         Me.rbcMain.Name = "rbcMain"
         Me.rbcMain.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage3, Me.RibbonPage4})
-        Me.rbcMain.Size = New System.Drawing.Size(1126, 141)
+        Me.rbcMain.Size = New System.Drawing.Size(1054, 141)
+        Me.rbcMain.StatusBar = Me.RibbonStatusBar1
         '
         'btnThoat
         '
@@ -192,6 +199,39 @@ Partial Class frmMain
         Me.btnThongTin.ImageOptions.ImageUri.Uri = "BehindText;Size32x32;Office2013"
         Me.btnThongTin.Name = "btnThongTin"
         '
+        'BarHeaderItem1
+        '
+        Me.BarHeaderItem1.Caption = "BarHeaderItem1"
+        Me.BarHeaderItem1.Id = 22
+        Me.BarHeaderItem1.Name = "BarHeaderItem1"
+        '
+        'BarStaticItem1
+        '
+        Me.BarStaticItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right
+        Me.BarStaticItem1.Caption = "BarStaticItem1"
+        Me.BarStaticItem1.Id = 24
+        Me.BarStaticItem1.Name = "BarStaticItem1"
+        '
+        'txtThongTin
+        '
+        Me.txtThongTin.Caption = "Thông tin"
+        Me.txtThongTin.Id = 25
+        Me.txtThongTin.Name = "txtThongTin"
+        '
+        'txtLoaiTaiKhoan
+        '
+        Me.txtLoaiTaiKhoan.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right
+        Me.txtLoaiTaiKhoan.Caption = "Tài khoản:"
+        Me.txtLoaiTaiKhoan.Id = 31
+        Me.txtLoaiTaiKhoan.Name = "txtLoaiTaiKhoan"
+        '
+        'txtTenTaiKhoan
+        '
+        Me.txtTenTaiKhoan.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right
+        Me.txtTenTaiKhoan.Caption = "Nguyễn Văn A"
+        Me.txtTenTaiKhoan.Id = 32
+        Me.txtTenTaiKhoan.Name = "txtTenTaiKhoan"
+        '
         'RibbonPage1
         '
         Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup9, Me.RibbonPageGroup1})
@@ -277,6 +317,16 @@ Partial Class frmMain
         Me.RibbonPageGroup8.Name = "RibbonPageGroup8"
         Me.RibbonPageGroup8.Text = "Cài đặt giao diện"
         '
+        'RibbonStatusBar1
+        '
+        Me.RibbonStatusBar1.ItemLinks.Add(Me.txtThongTin)
+        Me.RibbonStatusBar1.ItemLinks.Add(Me.txtLoaiTaiKhoan)
+        Me.RibbonStatusBar1.ItemLinks.Add(Me.txtTenTaiKhoan)
+        Me.RibbonStatusBar1.Location = New System.Drawing.Point(0, 764)
+        Me.RibbonStatusBar1.Name = "RibbonStatusBar1"
+        Me.RibbonStatusBar1.Ribbon = Me.rbcMain
+        Me.RibbonStatusBar1.Size = New System.Drawing.Size(1054, 27)
+        '
         'nbcTruyCapNhanh
         '
         Me.nbcTruyCapNhanh.ActiveGroup = Me.nbgQuickAccess
@@ -286,7 +336,7 @@ Partial Class frmMain
         Me.nbcTruyCapNhanh.Location = New System.Drawing.Point(0, 141)
         Me.nbcTruyCapNhanh.Name = "nbcTruyCapNhanh"
         Me.nbcTruyCapNhanh.OptionsNavPane.ExpandedWidth = 140
-        Me.nbcTruyCapNhanh.Size = New System.Drawing.Size(140, 585)
+        Me.nbcTruyCapNhanh.Size = New System.Drawing.Size(140, 623)
         Me.nbcTruyCapNhanh.TabIndex = 5
         Me.nbcTruyCapNhanh.Text = "NavBarControl1"
         '
@@ -347,18 +397,20 @@ Partial Class frmMain
         Me.xtcMain.Location = New System.Drawing.Point(140, 141)
         Me.xtcMain.Name = "xtcMain"
         Me.xtcMain.PageImagePosition = DevExpress.XtraTab.TabPageImagePosition.Center
-        Me.xtcMain.Size = New System.Drawing.Size(986, 585)
+        Me.xtcMain.Size = New System.Drawing.Size(914, 623)
         Me.xtcMain.TabIndex = 6
         '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1126, 726)
+        Me.ClientSize = New System.Drawing.Size(1054, 791)
         Me.Controls.Add(Me.xtcMain)
         Me.Controls.Add(Me.nbcTruyCapNhanh)
+        Me.Controls.Add(Me.RibbonStatusBar1)
         Me.Controls.Add(Me.rbcMain)
         Me.LookAndFeel.SkinName = "Office 2013 Light Gray"
+        Me.MinimumSize = New System.Drawing.Size(1070, 800)
         Me.Name = "frmMain"
         Me.Text = "Quản Lý Thư Viện"
         CType(Me.rbcMain, System.ComponentModel.ISupportInitialize).EndInit()
@@ -410,4 +462,10 @@ Partial Class frmMain
     Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnThongTin As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPageGroup9 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents RibbonStatusBar1 As DevExpress.XtraBars.Ribbon.RibbonStatusBar
+    Friend WithEvents BarHeaderItem1 As DevExpress.XtraBars.BarHeaderItem
+    Friend WithEvents BarStaticItem1 As DevExpress.XtraBars.BarStaticItem
+    Friend WithEvents txtThongTin As DevExpress.XtraBars.BarHeaderItem
+    Friend WithEvents txtLoaiTaiKhoan As DevExpress.XtraBars.BarStaticItem
+    Friend WithEvents txtTenTaiKhoan As DevExpress.XtraBars.BarStaticItem
 End Class
