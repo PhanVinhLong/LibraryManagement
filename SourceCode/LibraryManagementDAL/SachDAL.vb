@@ -335,10 +335,6 @@ Public Class SachDAL
     End Function
 
     Public Function MaDocGiaDangMuon(sach As SachDTO) As String
-        'If sach.MaTrangThai <> 2 Then
-        '    Return -1
-        'End If
-
         Dim maDocGia = String.Empty
         Dim sqlQuery As String
         sqlQuery = String.Empty
@@ -370,6 +366,11 @@ Public Class SachDAL
     End Function
 
     Public Function NgayHetHan(sach As SachDTO) As DateTime
+        ' Lấy dữ liệu tham số
+        Dim thamSoDAL = New ThamSoDAL()
+        Dim thamSo As ThamSoDTO = New ThamSoDTO
+        thamSoDAL.GetData(thamSo)
+
         Dim sqlQuery As String
         sqlQuery = String.Empty
         sqlQuery &= "SELECT TOP 1 [NgayMuon] "
@@ -378,6 +379,7 @@ Public Class SachDAL
         sqlQuery &= "      AND [MaSach] = @MaSach "
         sqlQuery &= "ORDER BY [NgayMuon] DESC "
 
+        Dim ngayHetHanTra = New DateTime()
         Using connection As New SqlConnection(connectionString)
             Using command As New SqlCommand()
                 With command
@@ -391,10 +393,11 @@ Public Class SachDAL
                 dataReader = command.ExecuteReader()
                 If dataReader.HasRows = True Then
                     While dataReader.Read()
-                        Return dataReader("NgayMuon")
+                        ngayHetHanTra = dataReader("NgayMuon")
                     End While
                 End If
             End Using
         End Using
+        Return ngayHetHanTra.AddDays(thamSo.SoNgayMuonToiDa)
     End Function
 End Class

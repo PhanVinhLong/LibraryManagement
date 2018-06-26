@@ -21,7 +21,7 @@ Partial Class ucNhanTraSach
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucNhanTraSach))
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
-        Me.dteNgayNhap = New DevExpress.XtraEditors.DateEdit()
+        Me.dteNgayTra = New DevExpress.XtraEditors.DateEdit()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.btnDong = New DevExpress.XtraEditors.SimpleButton()
         Me.btnNhanSachVaDong = New DevExpress.XtraEditors.SimpleButton()
@@ -34,6 +34,7 @@ Partial Class ucNhanTraSach
         Me.lblSachMuonQuaHan = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         Me.btnTaiLai = New DevExpress.XtraEditors.SimpleButton()
         Me.txtTimKiem = New DevExpress.XtraEditors.TextEdit()
         Me.grcDanhSachSach = New DevExpress.XtraGrid.GridControl()
@@ -46,11 +47,10 @@ Partial Class ucNhanTraSach
         Me.txtTimKiemDocGia = New DevExpress.XtraEditors.TextEdit()
         Me.grcDanhSachDocGia = New DevExpress.XtraGrid.GridControl()
         Me.grvDanhSachDocGia = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
-        CType(Me.dteNgayNhap.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dteNgayNhap.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dteNgayTra.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dteNgayTra.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,22 +72,22 @@ Partial Class ucNhanTraSach
         '
         'GroupControl2
         '
-        Me.GroupControl2.Controls.Add(Me.dteNgayNhap)
+        Me.GroupControl2.Controls.Add(Me.dteNgayTra)
         Me.GroupControl2.Location = New System.Drawing.Point(666, 117)
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(200, 72)
         Me.GroupControl2.TabIndex = 60
-        Me.GroupControl2.Text = "Ngày nhập"
+        Me.GroupControl2.Text = "Ngày trả"
         '
-        'dteNgayNhap
+        'dteNgayTra
         '
-        Me.dteNgayNhap.EditValue = Nothing
-        Me.dteNgayNhap.Location = New System.Drawing.Point(23, 35)
-        Me.dteNgayNhap.Name = "dteNgayNhap"
-        Me.dteNgayNhap.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.dteNgayNhap.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.dteNgayNhap.Size = New System.Drawing.Size(155, 20)
-        Me.dteNgayNhap.TabIndex = 0
+        Me.dteNgayTra.EditValue = Nothing
+        Me.dteNgayTra.Location = New System.Drawing.Point(23, 35)
+        Me.dteNgayTra.Name = "dteNgayTra"
+        Me.dteNgayTra.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.dteNgayTra.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.dteNgayTra.Size = New System.Drawing.Size(155, 20)
+        Me.dteNgayTra.TabIndex = 0
         '
         'PanelControl1
         '
@@ -213,6 +213,17 @@ Partial Class ucNhanTraSach
         Me.PanelControl3.Size = New System.Drawing.Size(844, 37)
         Me.PanelControl3.TabIndex = 56
         '
+        'LabelControl3
+        '
+        Me.LabelControl3.Appearance.Image = CType(resources.GetObject("LabelControl3.Appearance.Image"), System.Drawing.Image)
+        Me.LabelControl3.Appearance.Options.UseImage = True
+        Me.LabelControl3.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.LabelControl3.Location = New System.Drawing.Point(8, 7)
+        Me.LabelControl3.Name = "LabelControl3"
+        Me.LabelControl3.Size = New System.Drawing.Size(61, 20)
+        Me.LabelControl3.TabIndex = 26
+        Me.LabelControl3.Text = "Tìm kiếm"
+        '
         'btnTaiLai
         '
         Me.btnTaiLai.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
@@ -316,17 +327,6 @@ Partial Class ucNhanTraSach
         Me.grvDanhSachDocGia.GridControl = Me.grcDanhSachDocGia
         Me.grvDanhSachDocGia.Name = "grvDanhSachDocGia"
         '
-        'LabelControl3
-        '
-        Me.LabelControl3.Appearance.Image = CType(resources.GetObject("LabelControl3.Appearance.Image"), System.Drawing.Image)
-        Me.LabelControl3.Appearance.Options.UseImage = True
-        Me.LabelControl3.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.LabelControl3.Location = New System.Drawing.Point(8, 7)
-        Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(61, 20)
-        Me.LabelControl3.TabIndex = 26
-        Me.LabelControl3.Text = "Tìm kiếm"
-        '
         'ucNhanTraSach
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -343,8 +343,8 @@ Partial Class ucNhanTraSach
         Me.Size = New System.Drawing.Size(891, 557)
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
-        CType(Me.dteNgayNhap.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dteNgayNhap.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dteNgayTra.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dteNgayTra.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -370,7 +370,7 @@ Partial Class ucNhanTraSach
     End Sub
 
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents dteNgayNhap As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents dteNgayTra As DevExpress.XtraEditors.DateEdit
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
     Friend WithEvents btnDong As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnNhanSachVaDong As DevExpress.XtraEditors.SimpleButton

@@ -64,4 +64,8 @@ Public Class SachBUS
     Public Function Delete(iMaSach As Integer) As Result
         Return sachDAL.Delete(iMaSach)
     End Function
+
+    Public Function NgayHetHan(sach As SachDTO) As DateTime
+        Return sachDAL.NgayHetHan(sach)
+    End Function
 End Class

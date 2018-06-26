@@ -379,6 +379,17 @@ Public Class ucChoMuonSach
             MessageBox.Show("Bạn chưa chọn độc giả")
             Return
         End If
+        '----
+        If docGiaBUS.SachMuonHetHan(docGia).Count > 0 Then
+            MessageBox.Show("Độc giả còn sách mượn quá hạn chưa trả")
+            Return
+        End If
+        '----
+        Dim soSachDangMuon = docGiaBUS.SachMuonConHan(docGia).Count
+        If soSachDangMuon + listSachChon.Count > thamSo.SoLuongSachMuonToiDa Then
+            MessageBox.Show("Chỉ có thể mượn tối đa 1 lúc " & thamSo.SoLuongSachMuonToiDa & " cuốn. Vui lòng xoá bớt sách hoặc trả sách đang mượn")
+            Return
+        End If
 
         ' Lấy Data phiếu mượn
         Dim phieuMuon = New PhieuMuonDTO()

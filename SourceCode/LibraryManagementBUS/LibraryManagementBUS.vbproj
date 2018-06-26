@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiTietPhieuMuonBUS.vb" />
+    <Compile Include="ChiTietPhieuTraBUS.vb" />
     <Compile Include="DocGiaBUS.vb" />
     <Compile Include="LoaiDocGiaBUS.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -91,6 +92,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="PhieuMuonBUS.vb" />
+    <Compile Include="PhieuTraBUS.vb" />
     <Compile Include="SachBUS.vb" />
     <Compile Include="TacGiaBUS.vb" />
     <Compile Include="TacGiaSachBUS.vb" />

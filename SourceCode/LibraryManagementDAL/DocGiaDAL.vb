@@ -17,43 +17,55 @@ Public Class DocGiaDAL
 
     Public Function BuildMaDocGia(ByRef nextMaDocGia As String) As Result
         nextMaDocGia = String.Empty
-        nextMaDocGia = "00000000"
-        Dim sqlQuery As String
-        sqlQuery = String.Empty
+        Dim y = DateTime.Now.Year
+        Dim x = y.ToString().Substring(2)
+        nextMaDocGia = x + "000000"
 
-        sqlQuery &= "SELECT TOP 1 [MaDocGia] "
-        sqlQuery &= "FROM [tblDocGia] "
-        sqlQuery &= "ORDER BY [MaDocGia] DESC "
+        Dim query As String = String.Empty
+        query &= "SELECT TOP 1 [MaDocGia]"
+        query &= " FROM [tblDocGia]"
+        query &= " ORDER BY [MaDocGia] DESC"
 
         Using connection As New SqlConnection(connectionString)
             Using command As New SqlCommand()
                 With command
                     .Connection = connection
                     .CommandType = CommandType.Text
-                    .CommandText = sqlQuery
+                    .CommandText = query
                 End With
                 Try
                     connection.Open()
                     Dim dataReader As SqlDataReader
                     dataReader = command.ExecuteReader()
-                    Dim maDocGiaOnDB As String = Nothing
+                    Dim maDocGiaOnDB As String
+                    maDocGiaOnDB = Nothing
                     If dataReader.HasRows = True Then
                         While dataReader.Read()
                             maDocGiaOnDB = dataReader("MaDocGia")
                         End While
+
+                        If (maDocGiaOnDB <> Nothing And maDocGiaOnDB.Length >= 8) Then
+                            Dim currentYear = Integer.Parse(DateTime.Now.Year.ToString().Substring(2))
+                            Dim currentYearOnDB = Integer.Parse(maDocGiaOnDB.Substring(0, 2))
+                            Dim year = currentYear
+                            If year < currentYearOnDB Then
+                                year = currentYearOnDB
+                            End If
+                            nextMaDocGia = year.ToString()
+                            Dim maDocGiaOnDBWithoutYear = maDocGiaOnDB.Substring(2)
+                            Dim covertDecimal = Convert.ToDecimal(maDocGiaOnDBWithoutYear)
+                            covertDecimal = covertDecimal + 1
+                            Dim maDocGiaWithoutYear = covertDecimal.ToString()
+                            maDocGiaWithoutYear = maDocGiaWithoutYear.PadLeft(6, "0")
+                            nextMaDocGia = nextMaDocGia + maDocGiaWithoutYear
+                            System.Console.WriteLine(nextMaDocGia)
+                        End If
                     End If
-                    Dim dMaDocGia As Decimal = 0
-                    If (maDocGiaOnDB <> Nothing) Then
-                        dMaDocGia = Convert.ToDecimal(maDocGiaOnDB)
-                    End If
-                    dMaDocGia = dMaDocGia + 1
-                    nextMaDocGia = dMaDocGia.ToString
-                    nextMaDocGia = nextMaDocGia.PadLeft(8 - nextMaDocGia.Length, "0")
-                    System.Console.WriteLine(nextMaDocGia)
+
                 Catch ex As Exception
                     connection.Close()
                     System.Console.WriteLine(ex.StackTrace)
-                    Return New Result(False, "Lấy MaDocGia kế tiếp không thành công!", ex.StackTrace)
+                    Return New Result(False, "Tự động sinh Mã độc giả kế tiếp không thành công!", ex.StackTrace)
                 End Try
             End Using
         End Using

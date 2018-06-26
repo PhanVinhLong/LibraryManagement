@@ -17,8 +17,8 @@ Public Class ucNhanTraSach
     Private docGiaBUS As DocGiaBUS
     Private loaiDocGiaBUS As LoaiDocGiaBUS
 
-    Private phieuMuonBUS As PhieuMuonBUS
-    Private chiTietPhieuMuonBUS As ChiTietPhieuMuonBUS
+    Private phieuTraBUS As PhieuTraBUS
+    Private chiTietPhieuTraBUS As ChiTietPhieuTraBUS
 
     Private thamSoBUS As ThamSoBUS
     Private result As Result
@@ -37,8 +37,8 @@ Public Class ucNhanTraSach
         loaiDocGiaBUS = New LoaiDocGiaBUS()
         thamSoBUS = New ThamSoBUS()
 
-        phieuMuonBUS = New PhieuMuonBUS()
-        chiTietPhieuMuonBUS = New ChiTietPhieuMuonBUS()
+        phieuTraBUS = New PhieuTraBUS()
+        chiTietPhieuTraBUS = New ChiTietPhieuTraBUS()
 
         ' Lấy dữ liệu tham số
         thamSoBUS = New ThamSoBUS()
@@ -97,45 +97,14 @@ Public Class ucNhanTraSach
             Return
         End If
 
-        lueLocTheLoai.Properties.ShowHeader = False
-        lueLocTheLoai.Properties.ShowFooter = False
-        lueLocTheLoai.Properties.DataSource = New BindingSource(listTheLoai, String.Empty)
-        lueLocTheLoai.Properties.DisplayMember = "TenTheLoai"
-        lueLocTheLoai.Properties.ValueMember = "MaTheLoai"
-        '----
-        lueLocTacGia.Properties.ShowHeader = False
-        lueLocTacGia.Properties.ShowFooter = False
-        lueLocTacGia.Properties.DataSource = New BindingSource(listTacGia, String.Empty)
-        lueLocTacGia.Properties.DisplayMember = "TenTacGia"
-        lueLocTacGia.Properties.ValueMember = "MaTacGia"
-
-        ' Xoá cột ValueMember
-        lueLocTheLoai.Properties.PopulateColumns()
-        lueLocTheLoai.Properties.Columns(0).Visible = False
-        '--------
-        lueLocTacGia.Properties.PopulateColumns()
-        lueLocTacGia.Properties.Columns(0).Visible = False
-
-        ' Đặt giá trị mặc định cho Lọc năm xuất bản
-        dteLocNamXuatBan.EditValue = Now
-        dteLocNamXuatBan.Properties.EditMask = "yyyy"
-        dteLocNamXuatBan.Properties.EditFormat.FormatString = "yyyy"
-        dteLocNamXuatBan.Properties.DisplayFormat.FormatType = FormatType.DateTime
-        dteLocNamXuatBan.Properties.VistaCalendarViewStyle = VistaCalendarViewStyle.YearsGroupView
-        dteLocNamXuatBan.Properties.DisplayFormat.FormatString = "yyyy"
-
-        ' Đặt giá trị mặc định
-        lueLocTheLoai.EditValue = 1
-        lueLocTacGia.EditValue = 1
-
         ' Load dữ liệu cho GridView
         LoadListSach()
 
         ' Đặt giá trị mặc định cho Ngày nhập
-        dteNgayNhap.Properties.EditMask = "dd/MM/yyyy"
-        dteNgayNhap.Properties.DisplayFormat.FormatType = FormatType.DateTime
-        dteNgayNhap.Properties.DisplayFormat.FormatString = "dd/MM/yyyy"
-        dteNgayNhap.EditValue = Now
+        dteNgayTra.Properties.EditMask = "dd/MM/yyyy"
+        dteNgayTra.Properties.DisplayFormat.FormatType = FormatType.DateTime
+        dteNgayTra.Properties.DisplayFormat.FormatString = "dd/MM/yyyy"
+        dteNgayTra.EditValue = Now
     End Sub
 
     Private Sub CaiDatGridControlDocGia(listDocGia As List(Of DocGiaDTO))
@@ -327,6 +296,11 @@ Public Class ucNhanTraSach
     End Sub
 
     Private Sub btnNhanSach_Click(sender As Object, e As EventArgs) Handles btnNhanSach.Click
+        ' Lấy dữ liệu tham số
+        thamSoBUS = New ThamSoBUS()
+        Dim thamSo As ThamSoDTO = New ThamSoDTO
+        thamSoBUS.GetData(thamSo)
+
         ' Lấy Data phiếu trả
         Dim phieuTra = New PhieuTraDTO()
         Dim nextMaPhieuTra As Integer = Nothing
@@ -338,7 +312,50 @@ Public Class ucNhanTraSach
         Else
             phieuTra.MaPhieuTra = nextMaPhieuTra
             phieuTra.MaDocGia = docGia.MaDocGia
-            phieuTra.NgayTra = dteNgayNhap.EditValue
+            phieuTra.NgayTra = dteNgayTra.EditValue
         End If
+
+        ' Lấy Data list Danh sách Chi tiết phiếu trả
+        Dim soNgayTraTre As Integer
+        Dim listChiTietPhieuTra = New List(Of ChiTietPhieuTraDTO)
+        listChiTietPhieuTra.Clear()
+        For Each sach As SachDTO In listSachChon
+            soNgayTraTre = (Now - sachBUS.NgayHetHan(sach)).Days
+            soNgayTraTre = If(soNgayTraTre < 0, 0, soNgayTraTre)
+            listChiTietPhieuTra.Add(New ChiTietPhieuTraDTO(nextMaPhieuTra, sach.MaSach, soNgayTraTre))
+        Next
+
+        ' Thêm dữ liệu vào database cho Phiếu trả
+        result = phieuTraBUS.Insert(phieuTra)
+        If (result.FlagResult = False) Then
+            MessageBox.Show("Thêm Phiếu trả không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            System.Console.WriteLine(result.SystemMessage)
+            Return
+        End If
+
+        ' Thêm dữ liệu vào database cho List Chi tiết phiếu trả
+        result = chiTietPhieuTraBUS.InsertList(listChiTietPhieuTra)
+        If (result.FlagResult = False) Then
+            MessageBox.Show("Thêm Chi tiết phiếu trả không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            System.Console.WriteLine(result.SystemMessage)
+            Return
+        End If
+
+        ' Thay đổi trạng thái sách
+        For Each sach In listSachChon
+            sach.MaTrangThai = 1
+            result = sachBUS.Update(sach)
+            If (result.FlagResult = False) Then
+                MessageBox.Show("Cập nhật trạng thái Sách lỗi", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
+        Next
+
+        MessageBox.Show("Đã Lập phiếu trả")
+
+        ' Reset dữ liệu
+        ResetDocGia()
+        listSachChon.Clear()
+        lblSachDaChon.Text = "Chưa chọn sách"
     End Sub
 End Class

@@ -81,7 +81,7 @@ Public Class ucLapTheDocGia
         lblGioiHanTuoi.Text = "* Tuổi từ " & thamSo.TuoiToiThieu & " đến " & thamSo.TuoiToiDa
     End Sub
 
-    Private Sub dteNgaySinh_EditValueChanged(sender As Object, e As EventArgs)
+    Private Sub dteNgaySinh_EditValueChanged(sender As Object, e As EventArgs) Handles dteNgaySinh.EditValueChanged
         docGiaBUS = New DocGiaBUS()
         lblTuoi.Text = docGiaBUS.CaculateAges(dteNgaySinh.EditValue) & " tuổi"
     End Sub
