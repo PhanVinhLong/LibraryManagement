@@ -99,6 +99,7 @@
     <Compile Include="ThamSoBUS.vb" />
     <Compile Include="TheLoaiBUS.vb" />
     <Compile Include="TheLoaiSachBUS.vb" />
+    <Compile Include="TinhHinhMuonSachBUS.vb" />
     <Compile Include="TrangThaiBUS.vb" />
   </ItemGroup>
   <ItemGroup>

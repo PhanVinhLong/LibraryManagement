@@ -42,6 +42,7 @@ Partial Class frmMain
         Me.txtThongTin = New DevExpress.XtraBars.BarHeaderItem()
         Me.txtLoaiTaiKhoan = New DevExpress.XtraBars.BarStaticItem()
         Me.txtTenTaiKhoan = New DevExpress.XtraBars.BarStaticItem()
+        Me.btnThayDoiQuyDinh = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup9 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -55,6 +56,7 @@ Partial Class frmMain
         Me.RibbonPageGroup7 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage4 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup8 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup10 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonStatusBar1 = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.nbcTruyCapNhanh = New DevExpress.XtraNavBar.NavBarControl()
         Me.nbgQuickAccess = New DevExpress.XtraNavBar.NavBarGroup()
@@ -66,8 +68,10 @@ Partial Class frmMain
         Me.nbiDoiMatKhau = New DevExpress.XtraNavBar.NavBarItem()
         Me.nbiDangXuat = New DevExpress.XtraNavBar.NavBarItem()
         Me.xtcMain = New DevExpress.XtraTab.XtraTabControl()
-        Me.RibbonPageGroup10 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.btnThayDoiQuyDinh = New DevExpress.XtraBars.BarButtonItem()
+        Me.RibbonPage5 = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.RibbonPageGroup11 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.btnThongKeTinhHinh = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnThongKeSachTraTre = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.rbcMain, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nbcTruyCapNhanh, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.xtcMain, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,11 +80,11 @@ Partial Class frmMain
         'rbcMain
         '
         Me.rbcMain.ExpandCollapseItem.Id = 0
-        Me.rbcMain.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.rbcMain.ExpandCollapseItem, Me.btnThoat, Me.btnLapTheDocGia, Me.btnTiepNhanSachMoi, Me.btnTraCuuSach, Me.btnChoMuonSach, Me.btnQuanLyDocGia, Me.btnQuanLySach, Me.btnNhanTraSach, Me.btnThemLoaiDocGia, Me.btnQuanLyLoaiDocGia, Me.btnThemTheLoai, Me.btnQuanLyTheLoai, Me.btnThemTacGia, Me.btnQuanLyTacGia, Me.SkinRibbonGalleryBarItem, Me.BarButtonItem1, Me.btnThongTin, Me.BarHeaderItem1, Me.BarStaticItem1, Me.txtThongTin, Me.txtLoaiTaiKhoan, Me.txtTenTaiKhoan, Me.btnThayDoiQuyDinh})
+        Me.rbcMain.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.rbcMain.ExpandCollapseItem, Me.btnThoat, Me.btnLapTheDocGia, Me.btnTiepNhanSachMoi, Me.btnTraCuuSach, Me.btnChoMuonSach, Me.btnQuanLyDocGia, Me.btnQuanLySach, Me.btnNhanTraSach, Me.btnThemLoaiDocGia, Me.btnQuanLyLoaiDocGia, Me.btnThemTheLoai, Me.btnQuanLyTheLoai, Me.btnThemTacGia, Me.btnQuanLyTacGia, Me.SkinRibbonGalleryBarItem, Me.BarButtonItem1, Me.btnThongTin, Me.BarHeaderItem1, Me.BarStaticItem1, Me.txtThongTin, Me.txtLoaiTaiKhoan, Me.txtTenTaiKhoan, Me.btnThayDoiQuyDinh, Me.btnThongKeTinhHinh, Me.btnThongKeSachTraTre})
         Me.rbcMain.Location = New System.Drawing.Point(0, 0)
-        Me.rbcMain.MaxItemId = 34
+        Me.rbcMain.MaxItemId = 36
         Me.rbcMain.Name = "rbcMain"
-        Me.rbcMain.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage3, Me.RibbonPage4})
+        Me.rbcMain.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage3, Me.RibbonPage5, Me.RibbonPage4})
         Me.rbcMain.Size = New System.Drawing.Size(1054, 141)
         Me.rbcMain.StatusBar = Me.RibbonStatusBar1
         '
@@ -234,6 +238,13 @@ Partial Class frmMain
         Me.txtTenTaiKhoan.Id = 32
         Me.txtTenTaiKhoan.Name = "txtTenTaiKhoan"
         '
+        'btnThayDoiQuyDinh
+        '
+        Me.btnThayDoiQuyDinh.Caption = "Thay đổi quy định"
+        Me.btnThayDoiQuyDinh.Id = 33
+        Me.btnThayDoiQuyDinh.ImageOptions.ImageUri.Uri = "ListNumbers;Size32x32;Office2013"
+        Me.btnThayDoiQuyDinh.Name = "btnThayDoiQuyDinh"
+        '
         'RibbonPage1
         '
         Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup9, Me.RibbonPageGroup1})
@@ -321,6 +332,12 @@ Partial Class frmMain
         Me.RibbonPageGroup8.Name = "RibbonPageGroup8"
         Me.RibbonPageGroup8.Text = "Cài đặt giao diện"
         '
+        'RibbonPageGroup10
+        '
+        Me.RibbonPageGroup10.ItemLinks.Add(Me.btnThayDoiQuyDinh)
+        Me.RibbonPageGroup10.Name = "RibbonPageGroup10"
+        Me.RibbonPageGroup10.Text = "Thay đổi quy định"
+        '
         'RibbonStatusBar1
         '
         Me.RibbonStatusBar1.ItemLinks.Add(Me.txtThongTin)
@@ -404,18 +421,32 @@ Partial Class frmMain
         Me.xtcMain.Size = New System.Drawing.Size(914, 623)
         Me.xtcMain.TabIndex = 6
         '
-        'RibbonPageGroup10
+        'RibbonPage5
         '
-        Me.RibbonPageGroup10.ItemLinks.Add(Me.btnThayDoiQuyDinh)
-        Me.RibbonPageGroup10.Name = "RibbonPageGroup10"
-        Me.RibbonPageGroup10.Text = "Thay đổi quy định"
+        Me.RibbonPage5.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup11})
+        Me.RibbonPage5.Name = "RibbonPage5"
+        Me.RibbonPage5.Text = "Thống kê"
         '
-        'btnThayDoiQuyDinh
+        'RibbonPageGroup11
         '
-        Me.btnThayDoiQuyDinh.Caption = "Thay đổi quy định"
-        Me.btnThayDoiQuyDinh.Id = 33
-        Me.btnThayDoiQuyDinh.ImageOptions.ImageUri.Uri = "ListNumbers;Size32x32;Office2013"
-        Me.btnThayDoiQuyDinh.Name = "btnThayDoiQuyDinh"
+        Me.RibbonPageGroup11.ItemLinks.Add(Me.btnThongKeTinhHinh)
+        Me.RibbonPageGroup11.ItemLinks.Add(Me.btnThongKeSachTraTre)
+        Me.RibbonPageGroup11.Name = "RibbonPageGroup11"
+        Me.RibbonPageGroup11.Text = "Thống kê"
+        '
+        'btnThongKeTinhHinh
+        '
+        Me.btnThongKeTinhHinh.Caption = "Tình hình mượn sách theo thể loại"
+        Me.btnThongKeTinhHinh.Id = 34
+        Me.btnThongKeTinhHinh.ImageOptions.ImageUri.Uri = "DayView;Size32x32;Office2013"
+        Me.btnThongKeTinhHinh.Name = "btnThongKeTinhHinh"
+        '
+        'btnThongKeSachTraTre
+        '
+        Me.btnThongKeSachTraTre.Caption = "Thống kê sách trả trễ"
+        Me.btnThongKeSachTraTre.Id = 35
+        Me.btnThongKeSachTraTre.ImageOptions.ImageUri.Uri = "SwitchTimeScalesTo;Size32x32;Office2013"
+        Me.btnThongKeSachTraTre.Name = "btnThongKeSachTraTre"
         '
         'frmMain
         '
@@ -487,4 +518,8 @@ Partial Class frmMain
     Friend WithEvents txtTenTaiKhoan As DevExpress.XtraBars.BarStaticItem
     Friend WithEvents btnThayDoiQuyDinh As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPageGroup10 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents btnThongKeTinhHinh As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPage5 As DevExpress.XtraBars.Ribbon.RibbonPage
+    Friend WithEvents RibbonPageGroup11 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents btnThongKeSachTraTre As DevExpress.XtraBars.BarButtonItem
 End Class

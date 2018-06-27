@@ -300,4 +300,44 @@ Public Class TheLoaiDAL
         Return soBanGhi
     End Function
 
+    Public Function DemSoLanMuon(iMaTheLoai As Integer, iThang As Integer, iNam As Integer) As Integer
+        Dim soLanMuon As Integer
+        Dim sqlQuery As String = String.Empty
+        sqlQuery &= "SELECT COUNT (*) AS SoLanMuon "
+        sqlQuery &= "FROM [tblPhieuMuon], [tblChiTietPhieuMuon], [tblTheLoaiSach] "
+        sqlQuery &= "WHERE [tblChiTietPhieuMuon].[MaSach] = [tblTheLoaiSach].[MaSach] "
+        sqlQuery &= "      AND [tblChiTietPhieuMuon].[MaPhieuMuon] = [tblPhieuMuon].[MaPhieuMuon] "
+        sqlQuery &= "      AND [MaTheLoai] = @MaTheLoai "
+        sqlQuery &= "      AND YEAR([NgayMuon]) = @Nam "
+        sqlQuery &= "      AND MONTH([NgayMuon]) = @Thang "
+
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand()
+                With command
+                    .Connection = connection
+                    .CommandType = CommandType.Text
+                    .CommandText = sqlQuery
+                    .Parameters.AddWithValue("@MaTheLoai", iMaTheLoai)
+                    .Parameters.AddWithValue("@Nam", iNam)
+                    .Parameters.AddWithValue("@Thang", iThang)
+                End With
+                Try
+                    connection.Open()
+                    Dim reader As SqlDataReader
+                    reader = command.ExecuteReader()
+                    If reader.HasRows = True Then
+                        While reader.Read()
+                            soLanMuon = reader("SoLanMuon")
+                        End While
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    connection.Close()
+                    Return -1
+                End Try
+            End Using
+        End Using
+        Return soLanMuon
+    End Function
+
 End Class

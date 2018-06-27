@@ -1,13 +1,6 @@
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\bin\Debug\Utility.dll
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\bin\Debug\Utility.pdb
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\bin\Debug\Utility.xml
-C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\obj\Debug\Utility.vbprojAssemblyReference.cache
-C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\obj\Debug\Utility.Resources.resources
-C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\obj\Debug\Utility.vbproj.GenerateResource.cache
-C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\obj\Debug\Utility.vbproj.CoreCompileInputs.cache
-C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\obj\Debug\Utility.dll
-C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\obj\Debug\Utility.xml
-C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\obj\Debug\Utility.pdb
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\bin\Debug\DevExpress.Data.v17.2.dll
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\bin\Debug\DevExpress.Printing.v17.2.Core.dll
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\bin\Debug\DevExpress.Utils.v17.2.dll
@@ -44,4 +37,11 @@ C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\bin\Debug\de\DevE
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\bin\Debug\es\DevExpress.Sparkline.v17.2.Core.resources.dll
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\bin\Debug\ja\DevExpress.Sparkline.v17.2.Core.resources.dll
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\bin\Debug\ru\DevExpress.Sparkline.v17.2.Core.resources.dll
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\obj\Debug\Utility.vbprojAssemblyReference.cache
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\obj\Debug\Utility.Resources.resources
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\obj\Debug\Utility.vbproj.GenerateResource.cache
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\obj\Debug\Utility.vbproj.CoreCompileInputs.cache
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\obj\Debug\Utility.vbproj.CopyComplete
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\obj\Debug\Utility.dll
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\obj\Debug\Utility.xml
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\obj\Debug\Utility.pdb

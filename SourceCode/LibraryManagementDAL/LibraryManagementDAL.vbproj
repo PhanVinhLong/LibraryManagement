@@ -91,6 +91,7 @@
     <Compile Include="ThamSoDAL.vb" />
     <Compile Include="TheLoaiDAL.vb" />
     <Compile Include="TheLoaiSachDAL.vb" />
+    <Compile Include="TinhHinhMuonSachDAL.vb" />
     <Compile Include="TrangThaiDAL.vb" />
   </ItemGroup>
   <ItemGroup>

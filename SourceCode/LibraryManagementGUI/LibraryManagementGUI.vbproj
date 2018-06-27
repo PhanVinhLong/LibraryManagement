@@ -47,21 +47,38 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Charts.v17.2.Core, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Images.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v17.2.Core, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v17.2.Core, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v17.2.Core, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v17.2.Core, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v17.2.Core, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v17.2.Core, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v17.2.UI, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v17.2.UI, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v17.2.Wizard, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v17.2.Core, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraNavBar.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v17.2.Extensions, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -88,6 +105,12 @@
     <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmPrint.Designer.vb">
+      <DependentUpon>frmPrint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrint.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -103,100 +126,115 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="ucChoMuonSach.Designer.vb">
+    <Compile Include="Report\xrpTinhHinhMuonSach.Designer.vb">
+      <DependentUpon>xrpTinhHinhMuonSach.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\xrpTinhHinhMuonSach.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControlGUI\ucChoMuonSach.Designer.vb">
       <DependentUpon>ucChoMuonSach.vb</DependentUpon>
     </Compile>
-    <Compile Include="ucChoMuonSach.vb">
+    <Compile Include="UserControlGUI\ucChoMuonSach.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucLapTheDocGia.Designer.vb">
+    <Compile Include="UserControlGUI\ucLapTheDocGia.Designer.vb">
       <DependentUpon>ucLapTheDocGia.vb</DependentUpon>
     </Compile>
-    <Compile Include="ucLapTheDocGia.vb">
+    <Compile Include="UserControlGUI\ucLapTheDocGia.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucNhanTraSach.Designer.vb">
+    <Compile Include="UserControlGUI\ucNhanTraSach.Designer.vb">
       <DependentUpon>ucNhanTraSach.vb</DependentUpon>
     </Compile>
-    <Compile Include="ucNhanTraSach.vb">
+    <Compile Include="UserControlGUI\ucNhanTraSach.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucQuanLyDocGia.Designer.vb">
+    <Compile Include="UserControlGUI\ucQuanLyDocGia.Designer.vb">
       <DependentUpon>ucQuanLyDocGia.vb</DependentUpon>
     </Compile>
-    <Compile Include="ucQuanLyDocGia.vb">
+    <Compile Include="UserControlGUI\ucQuanLyDocGia.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucQuanLyLoaiDocGia.Designer.vb">
+    <Compile Include="UserControlGUI\ucQuanLyLoaiDocGia.Designer.vb">
       <DependentUpon>ucQuanLyLoaiDocGia.vb</DependentUpon>
     </Compile>
-    <Compile Include="ucQuanLyLoaiDocGia.vb">
+    <Compile Include="UserControlGUI\ucQuanLyLoaiDocGia.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucQuanLySach.Designer.vb">
+    <Compile Include="UserControlGUI\ucQuanLySach.Designer.vb">
       <DependentUpon>ucQuanLySach.vb</DependentUpon>
     </Compile>
-    <Compile Include="ucQuanLySach.vb">
+    <Compile Include="UserControlGUI\ucQuanLySach.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucQuanLyTacGia.Designer.vb">
+    <Compile Include="UserControlGUI\ucQuanLyTacGia.Designer.vb">
       <DependentUpon>ucQuanLyTacGia.vb</DependentUpon>
     </Compile>
-    <Compile Include="ucQuanLyTacGia.vb">
+    <Compile Include="UserControlGUI\ucQuanLyTacGia.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucQuanLyTheLoaiSach.Designer.vb">
+    <Compile Include="UserControlGUI\ucQuanLyTheLoaiSach.Designer.vb">
       <DependentUpon>ucQuanLyTheLoaiSach.vb</DependentUpon>
     </Compile>
-    <Compile Include="ucQuanLyTheLoaiSach.vb">
+    <Compile Include="UserControlGUI\ucQuanLyTheLoaiSach.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucThayDoiQuyDinh.Designer.vb">
+    <Compile Include="UserControlGUI\ucThayDoiQuyDinh.Designer.vb">
       <DependentUpon>ucThayDoiQuyDinh.vb</DependentUpon>
     </Compile>
-    <Compile Include="ucThayDoiQuyDinh.vb">
+    <Compile Include="UserControlGUI\ucThayDoiQuyDinh.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucThemLoaiDocGia.Designer.vb">
+    <Compile Include="UserControlGUI\ucThemLoaiDocGia.Designer.vb">
       <DependentUpon>ucThemLoaiDocGia.vb</DependentUpon>
     </Compile>
-    <Compile Include="ucThemLoaiDocGia.vb">
+    <Compile Include="UserControlGUI\ucThemLoaiDocGia.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucThemTacGia.Designer.vb">
+    <Compile Include="UserControlGUI\ucThemTacGia.Designer.vb">
       <DependentUpon>ucThemTacGia.vb</DependentUpon>
     </Compile>
-    <Compile Include="ucThemTacGia.vb">
+    <Compile Include="UserControlGUI\ucThemTacGia.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucThemTheLoai.Designer.vb">
+    <Compile Include="UserControlGUI\ucThemTheLoai.Designer.vb">
       <DependentUpon>ucThemTheLoai.vb</DependentUpon>
     </Compile>
-    <Compile Include="ucThemTheLoai.vb">
+    <Compile Include="UserControlGUI\ucThemTheLoai.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucThongKeTraSachTre.Designer.vb">
+    <Compile Include="UserControlGUI\ucThongKeTinhHinhMuonSach.Designer.vb">
+      <DependentUpon>ucThongKeTinhHinhMuonSach.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlGUI\ucThongKeTinhHinhMuonSach.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlGUI\ucThongKeTraSachTre.Designer.vb">
       <DependentUpon>ucThongKeTraSachTre.vb</DependentUpon>
     </Compile>
-    <Compile Include="ucThongKeTraSachTre.vb">
+    <Compile Include="UserControlGUI\ucThongKeTraSachTre.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucThongTin.Designer.vb">
+    <Compile Include="UserControlGUI\ucThongTin.Designer.vb">
       <DependentUpon>ucThongTin.vb</DependentUpon>
     </Compile>
-    <Compile Include="ucThongTin.vb">
+    <Compile Include="UserControlGUI\ucThongTin.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucTiepNhanSachMoi.Designer.vb">
+    <Compile Include="UserControlGUI\ucTiepNhanSachMoi.Designer.vb">
       <DependentUpon>ucTiepNhanSachMoi.vb</DependentUpon>
     </Compile>
-    <Compile Include="ucTiepNhanSachMoi.vb">
+    <Compile Include="UserControlGUI\ucTiepNhanSachMoi.vb">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrint.resx">
+      <DependentUpon>frmPrint.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -205,49 +243,55 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucChoMuonSach.resx">
+    <EmbeddedResource Include="Report\xrpTinhHinhMuonSach.resx">
+      <DependentUpon>xrpTinhHinhMuonSach.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlGUI\ucChoMuonSach.resx">
       <DependentUpon>ucChoMuonSach.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucLapTheDocGia.resx">
+    <EmbeddedResource Include="UserControlGUI\ucLapTheDocGia.resx">
       <DependentUpon>ucLapTheDocGia.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucNhanTraSach.resx">
+    <EmbeddedResource Include="UserControlGUI\ucNhanTraSach.resx">
       <DependentUpon>ucNhanTraSach.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucQuanLyDocGia.resx">
+    <EmbeddedResource Include="UserControlGUI\ucQuanLyDocGia.resx">
       <DependentUpon>ucQuanLyDocGia.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucQuanLyLoaiDocGia.resx">
+    <EmbeddedResource Include="UserControlGUI\ucQuanLyLoaiDocGia.resx">
       <DependentUpon>ucQuanLyLoaiDocGia.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucQuanLySach.resx">
+    <EmbeddedResource Include="UserControlGUI\ucQuanLySach.resx">
       <DependentUpon>ucQuanLySach.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucQuanLyTacGia.resx">
+    <EmbeddedResource Include="UserControlGUI\ucQuanLyTacGia.resx">
       <DependentUpon>ucQuanLyTacGia.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucQuanLyTheLoaiSach.resx">
+    <EmbeddedResource Include="UserControlGUI\ucQuanLyTheLoaiSach.resx">
       <DependentUpon>ucQuanLyTheLoaiSach.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucThayDoiQuyDinh.resx">
+    <EmbeddedResource Include="UserControlGUI\ucThayDoiQuyDinh.resx">
       <DependentUpon>ucThayDoiQuyDinh.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucThemLoaiDocGia.resx">
+    <EmbeddedResource Include="UserControlGUI\ucThemLoaiDocGia.resx">
       <DependentUpon>ucThemLoaiDocGia.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucThemTacGia.resx">
+    <EmbeddedResource Include="UserControlGUI\ucThemTacGia.resx">
       <DependentUpon>ucThemTacGia.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucThemTheLoai.resx">
+    <EmbeddedResource Include="UserControlGUI\ucThemTheLoai.resx">
       <DependentUpon>ucThemTheLoai.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucThongKeTraSachTre.resx">
+    <EmbeddedResource Include="UserControlGUI\ucThongKeTinhHinhMuonSach.resx">
+      <DependentUpon>ucThongKeTinhHinhMuonSach.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlGUI\ucThongKeTraSachTre.resx">
       <DependentUpon>ucThongKeTraSachTre.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucThongTin.resx">
+    <EmbeddedResource Include="UserControlGUI\ucThongTin.resx">
       <DependentUpon>ucThongTin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucTiepNhanSachMoi.resx">
+    <EmbeddedResource Include="UserControlGUI\ucTiepNhanSachMoi.resx">
       <DependentUpon>ucTiepNhanSachMoi.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -256,6 +300,7 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\LibraryManagementDTO.TinhHinhMuonSachDTO.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -263,6 +308,10 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book-library.jpg" />
+  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\LibraryManagementBUS\LibraryManagementBUS.vbproj">
       <Project>{5e27c130-68f6-47fb-abbf-1c314d1af94c}</Project>
@@ -276,9 +325,6 @@
       <Project>{01c6792e-64f1-4a93-9c59-91532921232e}</Project>
       <Name>Utility</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\book-library.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

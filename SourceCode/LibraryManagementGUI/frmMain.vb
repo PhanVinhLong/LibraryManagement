@@ -255,6 +255,32 @@ Public Class frmMain
         End If
     End Sub
 
+    Private Sub btnThongKeTinhHinh_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThongKeTinhHinh.ItemClick
+        Dim t As Integer = 0
+        For Each tab As DevExpress.XtraTab.XtraTabPage In xtcMain.TabPages
+            If tab.Text = "Thống kê tình hình mượn" Then
+                xtcMain.SelectedTabPage = tab
+                t = 1
+            End If
+        Next
+        If t <> 1 Then
+            clsAddTab.AddTab(xtcMain, "Thống kê tình hình mượn", New ucThongKeTinhHinhMuonSach())
+        End If
+    End Sub
+
+    Private Sub btnThongKeSachTraTre_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThongKeSachTraTre.ItemClick
+        Dim t As Integer = 0
+        For Each tab As DevExpress.XtraTab.XtraTabPage In xtcMain.TabPages
+            If tab.Text = "Thống kê sách trả trễ" Then
+                xtcMain.SelectedTabPage = tab
+                t = 1
+            End If
+        Next
+        If t <> 1 Then
+            clsAddTab.AddTab(xtcMain, "Thống kê sách trả trễ", New ucThongKeTraSachTre())
+        End If
+    End Sub
+
     Private Sub nbiDoiMatKhau_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles nbiDoiMatKhau.LinkClicked
 
     End Sub
