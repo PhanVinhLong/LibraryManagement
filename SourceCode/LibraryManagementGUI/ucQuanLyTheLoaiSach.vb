@@ -48,7 +48,7 @@ Public Class ucQuanLyTheLoaiSach
             LoadListTheLoai()
             Dim theLoai = CType(grvDanhSachTheLoai.GetRow(currenRowIndex), TheLoaiDTO)
             LoadTheLoai(theLoai)
-            grvDanhSachTheLoai.SelectRow(currenRowIndex)
+            grvDanhSachTheLoai.FocusedRowHandle = (currenRowIndex)
         End If
     End Sub
 
@@ -85,7 +85,7 @@ Public Class ucQuanLyTheLoaiSach
         End If
     End Sub
 
-    Private Sub btnTaiLai_Click(sender As Object, e As EventArgs) Handles btnTaiLai.Click
+    Private Sub btnTaiLai_Click(sender As Object, e As EventArgs)
         Reset()
     End Sub
 
@@ -145,7 +145,7 @@ Public Class ucQuanLyTheLoaiSach
                                 currentRowIndex = currentRowIndex - 1
                             End If
                             If (currentRowIndex >= 0) Then
-                                grvDanhSachTheLoai.SelectRow(currentRowIndex)
+                                grvDanhSachTheLoai.FocusedRowHandle = (currentRowIndex)
                             End If
                         Else
                             MessageBox.Show("Xóa Thể loại không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)

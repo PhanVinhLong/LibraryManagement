@@ -245,7 +245,7 @@ Public Class ucNhanTraSach
             LoadListSach()
             Dim sach = CType(grvDanhSachSach.GetRow(currenRowIndex), SachDTO)
             LoadSach(sach)
-            grvDanhSachSach.SelectRow(currenRowIndex)
+            grvDanhSachSach.FocusedRowHandle = currenRowIndex
         End If
 
         ' Xoá ô tìm kiếm

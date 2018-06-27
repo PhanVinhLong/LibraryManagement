@@ -49,6 +49,7 @@ Partial Class ucQuanLyDocGia
         Me.btnGiaHanThe = New DevExpress.XtraEditors.SimpleButton()
         Me.grcDanhSachDocGia = New DevExpress.XtraGrid.GridControl()
         Me.grvDanhSachDocGia = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
         CType(Me.lueChonLoaiDocGia.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,6 +69,8 @@ Partial Class ucQuanLyDocGia
         CType(Me.lueLoaiDocGia.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grcDanhSachDocGia, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grvDanhSachDocGia, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl3.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelControl2
@@ -130,7 +133,7 @@ Partial Class ucQuanLyDocGia
         '
         Me.btnDong.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btnDong.ImageOptions.ImageUri.Uri = "Close;Size16x16;Office2013"
-        Me.btnDong.Location = New System.Drawing.Point(795, 356)
+        Me.btnDong.Location = New System.Drawing.Point(130, 46)
         Me.btnDong.Name = "btnDong"
         Me.btnDong.Size = New System.Drawing.Size(109, 23)
         Me.btnDong.TabIndex = 31
@@ -142,7 +145,7 @@ Partial Class ucQuanLyDocGia
         Me.btnXoa.Appearance.Options.UseForeColor = True
         Me.btnXoa.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btnXoa.ImageOptions.ImageUri.Uri = "Cancel;Size16x16;Office2013"
-        Me.btnXoa.Location = New System.Drawing.Point(673, 356)
+        Me.btnXoa.Location = New System.Drawing.Point(8, 46)
         Me.btnXoa.Name = "btnXoa"
         Me.btnXoa.Size = New System.Drawing.Size(116, 23)
         Me.btnXoa.TabIndex = 30
@@ -167,82 +170,82 @@ Partial Class ucQuanLyDocGia
         Me.PanelControl1.Controls.Add(Me.LabelControl4)
         Me.PanelControl1.Controls.Add(Me.LabelControl3)
         Me.PanelControl1.Controls.Add(Me.LabelControl2)
-        Me.PanelControl1.Location = New System.Drawing.Point(673, 57)
+        Me.PanelControl1.Location = New System.Drawing.Point(673, 102)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(231, 252)
+        Me.PanelControl1.Size = New System.Drawing.Size(247, 284)
         Me.PanelControl1.TabIndex = 27
         '
         'dteNgayLapThe
         '
         Me.dteNgayLapThe.EditValue = Nothing
-        Me.dteNgayLapThe.Location = New System.Drawing.Point(96, 161)
+        Me.dteNgayLapThe.Location = New System.Drawing.Point(99, 175)
         Me.dteNgayLapThe.Name = "dteNgayLapThe"
         Me.dteNgayLapThe.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dteNgayLapThe.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.dteNgayLapThe.Size = New System.Drawing.Size(115, 20)
+        Me.dteNgayLapThe.Size = New System.Drawing.Size(125, 20)
         Me.dteNgayLapThe.TabIndex = 17
         '
         'dteNgayHetHan
         '
         Me.dteNgayHetHan.EditValue = Nothing
-        Me.dteNgayHetHan.Location = New System.Drawing.Point(96, 190)
+        Me.dteNgayHetHan.Location = New System.Drawing.Point(99, 207)
         Me.dteNgayHetHan.Name = "dteNgayHetHan"
         Me.dteNgayHetHan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dteNgayHetHan.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.dteNgayHetHan.Size = New System.Drawing.Size(115, 20)
+        Me.dteNgayHetHan.Size = New System.Drawing.Size(125, 20)
         Me.dteNgayHetHan.TabIndex = 16
         '
         'dteNgaySinh
         '
         Me.dteNgaySinh.EditValue = Nothing
-        Me.dteNgaySinh.Location = New System.Drawing.Point(96, 78)
+        Me.dteNgaySinh.Location = New System.Drawing.Point(99, 83)
         Me.dteNgaySinh.Name = "dteNgaySinh"
         Me.dteNgaySinh.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dteNgaySinh.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.dteNgaySinh.Size = New System.Drawing.Size(115, 20)
+        Me.dteNgaySinh.Size = New System.Drawing.Size(125, 20)
         Me.dteNgaySinh.TabIndex = 15
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(96, 133)
+        Me.txtEmail.Location = New System.Drawing.Point(99, 144)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(115, 20)
+        Me.txtEmail.Size = New System.Drawing.Size(125, 20)
         Me.txtEmail.TabIndex = 14
         '
         'txtDiaChi
         '
-        Me.txtDiaChi.Location = New System.Drawing.Point(96, 107)
+        Me.txtDiaChi.Location = New System.Drawing.Point(99, 115)
         Me.txtDiaChi.Name = "txtDiaChi"
-        Me.txtDiaChi.Size = New System.Drawing.Size(115, 20)
+        Me.txtDiaChi.Size = New System.Drawing.Size(125, 20)
         Me.txtDiaChi.TabIndex = 13
         '
         'txtHoTen
         '
-        Me.txtHoTen.Location = New System.Drawing.Point(96, 49)
+        Me.txtHoTen.Location = New System.Drawing.Point(99, 51)
         Me.txtHoTen.Name = "txtHoTen"
-        Me.txtHoTen.Size = New System.Drawing.Size(115, 20)
+        Me.txtHoTen.Size = New System.Drawing.Size(125, 20)
         Me.txtHoTen.TabIndex = 12
         '
         'txtMaDocGia
         '
         Me.txtMaDocGia.Enabled = False
-        Me.txtMaDocGia.Location = New System.Drawing.Point(96, 21)
+        Me.txtMaDocGia.Location = New System.Drawing.Point(99, 20)
         Me.txtMaDocGia.Name = "txtMaDocGia"
-        Me.txtMaDocGia.Size = New System.Drawing.Size(115, 20)
+        Me.txtMaDocGia.Size = New System.Drawing.Size(125, 20)
         Me.txtMaDocGia.TabIndex = 11
         '
         'lueLoaiDocGia
         '
         Me.lueLoaiDocGia.EditValue = ""
-        Me.lueLoaiDocGia.Location = New System.Drawing.Point(96, 219)
+        Me.lueLoaiDocGia.Location = New System.Drawing.Point(99, 239)
         Me.lueLoaiDocGia.Name = "lueLoaiDocGia"
         Me.lueLoaiDocGia.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.lueLoaiDocGia.Size = New System.Drawing.Size(115, 20)
+        Me.lueLoaiDocGia.Size = New System.Drawing.Size(125, 20)
         Me.lueLoaiDocGia.TabIndex = 4
         '
         'LabelControl9
         '
-        Me.LabelControl9.Location = New System.Drawing.Point(18, 222)
+        Me.LabelControl9.Location = New System.Drawing.Point(21, 242)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(56, 13)
         Me.LabelControl9.TabIndex = 10
@@ -250,7 +253,7 @@ Partial Class ucQuanLyDocGia
         '
         'LabelControl8
         '
-        Me.LabelControl8.Location = New System.Drawing.Point(18, 193)
+        Me.LabelControl8.Location = New System.Drawing.Point(21, 210)
         Me.LabelControl8.Name = "LabelControl8"
         Me.LabelControl8.Size = New System.Drawing.Size(65, 13)
         Me.LabelControl8.TabIndex = 9
@@ -258,7 +261,7 @@ Partial Class ucQuanLyDocGia
         '
         'LabelControl7
         '
-        Me.LabelControl7.Location = New System.Drawing.Point(18, 164)
+        Me.LabelControl7.Location = New System.Drawing.Point(21, 178)
         Me.LabelControl7.Name = "LabelControl7"
         Me.LabelControl7.Size = New System.Drawing.Size(61, 13)
         Me.LabelControl7.TabIndex = 8
@@ -266,7 +269,7 @@ Partial Class ucQuanLyDocGia
         '
         'LabelControl6
         '
-        Me.LabelControl6.Location = New System.Drawing.Point(18, 136)
+        Me.LabelControl6.Location = New System.Drawing.Point(21, 146)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(24, 13)
         Me.LabelControl6.TabIndex = 7
@@ -274,7 +277,7 @@ Partial Class ucQuanLyDocGia
         '
         'LabelControl5
         '
-        Me.LabelControl5.Location = New System.Drawing.Point(18, 110)
+        Me.LabelControl5.Location = New System.Drawing.Point(21, 118)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(32, 13)
         Me.LabelControl5.TabIndex = 6
@@ -282,7 +285,7 @@ Partial Class ucQuanLyDocGia
         '
         'LabelControl4
         '
-        Me.LabelControl4.Location = New System.Drawing.Point(18, 81)
+        Me.LabelControl4.Location = New System.Drawing.Point(21, 86)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(47, 13)
         Me.LabelControl4.TabIndex = 5
@@ -290,7 +293,7 @@ Partial Class ucQuanLyDocGia
         '
         'LabelControl3
         '
-        Me.LabelControl3.Location = New System.Drawing.Point(18, 52)
+        Me.LabelControl3.Location = New System.Drawing.Point(21, 54)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(32, 13)
         Me.LabelControl3.TabIndex = 4
@@ -298,7 +301,7 @@ Partial Class ucQuanLyDocGia
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(18, 24)
+        Me.LabelControl2.Location = New System.Drawing.Point(21, 23)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(51, 13)
         Me.LabelControl2.TabIndex = 4
@@ -308,7 +311,7 @@ Partial Class ucQuanLyDocGia
         '
         Me.btnCapNhat.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btnCapNhat.ImageOptions.ImageUri.Uri = "CustomizeGrid;Size16x16;Office2013"
-        Me.btnCapNhat.Location = New System.Drawing.Point(795, 326)
+        Me.btnCapNhat.Location = New System.Drawing.Point(130, 11)
         Me.btnCapNhat.Name = "btnCapNhat"
         Me.btnCapNhat.Size = New System.Drawing.Size(109, 23)
         Me.btnCapNhat.TabIndex = 29
@@ -318,7 +321,7 @@ Partial Class ucQuanLyDocGia
         '
         Me.btnGiaHanThe.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btnGiaHanThe.ImageOptions.ImageUri.Uri = "TimeLineView;Size16x16;Office2013"
-        Me.btnGiaHanThe.Location = New System.Drawing.Point(673, 326)
+        Me.btnGiaHanThe.Location = New System.Drawing.Point(8, 11)
         Me.btnGiaHanThe.Name = "btnGiaHanThe"
         Me.btnGiaHanThe.Size = New System.Drawing.Size(116, 23)
         Me.btnGiaHanThe.TabIndex = 28
@@ -338,19 +341,27 @@ Partial Class ucQuanLyDocGia
         Me.grvDanhSachDocGia.GridControl = Me.grcDanhSachDocGia
         Me.grvDanhSachDocGia.Name = "grvDanhSachDocGia"
         '
+        'PanelControl3
+        '
+        Me.PanelControl3.Controls.Add(Me.btnGiaHanThe)
+        Me.PanelControl3.Controls.Add(Me.btnCapNhat)
+        Me.PanelControl3.Controls.Add(Me.btnDong)
+        Me.PanelControl3.Controls.Add(Me.btnXoa)
+        Me.PanelControl3.Location = New System.Drawing.Point(673, 15)
+        Me.PanelControl3.Name = "PanelControl3"
+        Me.PanelControl3.Size = New System.Drawing.Size(247, 81)
+        Me.PanelControl3.TabIndex = 33
+        '
         'ucQuanLyDocGia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.PanelControl3)
         Me.Controls.Add(Me.PanelControl2)
-        Me.Controls.Add(Me.btnDong)
-        Me.Controls.Add(Me.btnXoa)
         Me.Controls.Add(Me.PanelControl1)
-        Me.Controls.Add(Me.btnCapNhat)
-        Me.Controls.Add(Me.btnGiaHanThe)
         Me.Controls.Add(Me.grcDanhSachDocGia)
         Me.Name = "ucQuanLyDocGia"
-        Me.Size = New System.Drawing.Size(926, 404)
+        Me.Size = New System.Drawing.Size(936, 404)
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
         Me.PanelControl2.PerformLayout()
@@ -372,6 +383,8 @@ Partial Class ucQuanLyDocGia
         CType(Me.lueLoaiDocGia.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grcDanhSachDocGia, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grvDanhSachDocGia, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl3.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -405,4 +418,5 @@ Partial Class ucQuanLyDocGia
     Friend WithEvents btnGiaHanThe As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents grcDanhSachDocGia As DevExpress.XtraGrid.GridControl
     Friend WithEvents grvDanhSachDocGia As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents PanelControl3 As DevExpress.XtraEditors.PanelControl
 End Class

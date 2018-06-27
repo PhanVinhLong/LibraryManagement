@@ -289,7 +289,7 @@ Public Class ucQuanLyDocGia
                                 currentRowIndex = currentRowIndex - 1
                             End If
                             If (currentRowIndex >= 0) Then
-                                grvDanhSachDocGia.SelectRow(currentRowIndex)
+                                grvDanhSachDocGia.FocusedRowHandle = (currentRowIndex)
                             End If
                         Else
                             MessageBox.Show("Xóa Độc giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

@@ -242,6 +242,19 @@ Public Class frmMain
         End If
     End Sub
 
+    Private Sub btnThayDoiQuyDinh_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThayDoiQuyDinh.ItemClick
+        Dim t As Integer = 0
+        For Each tab As DevExpress.XtraTab.XtraTabPage In xtcMain.TabPages
+            If tab.Text = "Thay đổi quy định" Then
+                xtcMain.SelectedTabPage = tab
+                t = 1
+            End If
+        Next
+        If t <> 1 Then
+            clsAddTab.AddTab(xtcMain, "Thay đổi quy định", New ucThayDoiQuyDinh())
+        End If
+    End Sub
+
     Private Sub nbiDoiMatKhau_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles nbiDoiMatKhau.LinkClicked
 
     End Sub

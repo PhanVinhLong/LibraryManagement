@@ -159,7 +159,7 @@ Public Class ucQuanLySach
             LoadListSach()
             sach = CType(grvDanhSachSach.GetRow(currenRowIndex), SachDTO)
             LoadSach(sach)
-            grvDanhSachSach.SelectRow(currenRowIndex)
+            grvDanhSachSach.FocusedRowHandle = currenRowIndex
         End If
 
         ' Xoá ô tìm kiếm
@@ -440,6 +440,7 @@ Public Class ucQuanLySach
             If (result.FlagResult = False) Then
                 MessageBox.Show("Thêm Chi tiết tác giả không thành công")
             End If
+            Reset()
             MessageBox.Show("Thêm Sách thành công")
         End If
     End Sub
@@ -462,7 +463,7 @@ Public Class ucQuanLySach
                                 currentRowIndex = currentRowIndex - 1
                             End If
                             If (currentRowIndex >= 0) Then
-                                grvDanhSachSach.SelectRow(currentRowIndex)
+                                grvDanhSachSach.FocusedRowHandle = currentRowIndex
                             End If
                         Else
                             MessageBox.Show("Xóa Sách không thành công.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)

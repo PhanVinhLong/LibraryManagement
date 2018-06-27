@@ -48,7 +48,7 @@ Public Class ucQuanLyTacGia
             LoadListTacGia()
             Dim tacGia = CType(grvDanhSachTacGia.GetRow(currenRowIndex), TacGiaDTO)
             LoadTacGia(tacGia)
-            grvDanhSachTacGia.SelectRow(currenRowIndex)
+            grvDanhSachTacGia.FocusedRowHandle = (currenRowIndex)
         End If
     End Sub
 
@@ -145,7 +145,7 @@ Public Class ucQuanLyTacGia
                                 currentRowIndex = currentRowIndex - 1
                             End If
                             If (currentRowIndex >= 0) Then
-                                grvDanhSachTacGia.SelectRow(currentRowIndex)
+                                grvDanhSachTacGia.FocusedRowHandle = (currentRowIndex)
                             End If
                         Else
                             MessageBox.Show("Xóa Tác giả không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)

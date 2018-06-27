@@ -49,7 +49,7 @@ Public Class ucQuanLyLoaiDocGia
             LoadListLoaiDocGia()
             Dim loaiDocGia = CType(grvDanhSachLoaiDocGia.GetRow(currenRowIndex), LoaiDocGiaDTO)
             LoadLoaiDocGia(loaiDocGia)
-            grvDanhSachLoaiDocGia.SelectRow(currenRowIndex)
+            grvDanhSachLoaiDocGia.FocusedRowHandle = currenRowIndex
         End If
     End Sub
 
@@ -147,7 +147,7 @@ Public Class ucQuanLyLoaiDocGia
                                 currentRowIndex = currentRowIndex - 1
                             End If
                             If (currentRowIndex >= 0) Then
-                                grvDanhSachLoaiDocGia.SelectRow(currentRowIndex)
+                                grvDanhSachLoaiDocGia.FocusedRowHandle = currentRowIndex
                             End If
                         Else
                             MessageBox.Show("Xóa Loại độc giả không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)

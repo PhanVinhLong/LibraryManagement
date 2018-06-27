@@ -29,13 +29,15 @@ Partial Class ucQuanLyTheLoaiSach
         Me.btnDong = New DevExpress.XtraEditors.SimpleButton()
         Me.btnXoa = New DevExpress.XtraEditors.SimpleButton()
         Me.btnCapNhat = New DevExpress.XtraEditors.SimpleButton()
-        Me.btnTaiLai = New DevExpress.XtraEditors.SimpleButton()
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         CType(Me.grcDanhSachTheLoai, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grvDanhSachTheLoai, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.txtMaTheLoai.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTenTheLoai.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl1.SuspendLayout()
         Me.SuspendLayout()
         '
         'grcDanhSachTheLoai
@@ -54,33 +56,32 @@ Partial Class ucQuanLyTheLoaiSach
         '
         'PanelControl1
         '
-        Me.PanelControl1.Controls.Add(Me.txtMaTheLoai)
-        Me.PanelControl1.Controls.Add(Me.txtTenTheLoai)
-        Me.PanelControl1.Controls.Add(Me.LabelControl2)
-        Me.PanelControl1.Controls.Add(Me.LabelControl1)
+        Me.PanelControl1.Controls.Add(Me.btnCapNhat)
+        Me.PanelControl1.Controls.Add(Me.btnXoa)
+        Me.PanelControl1.Controls.Add(Me.btnDong)
         Me.PanelControl1.Location = New System.Drawing.Point(297, 21)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(254, 91)
+        Me.PanelControl1.Size = New System.Drawing.Size(254, 71)
         Me.PanelControl1.TabIndex = 7
         '
         'txtMaTheLoai
         '
         Me.txtMaTheLoai.Enabled = False
-        Me.txtMaTheLoai.Location = New System.Drawing.Point(108, 20)
+        Me.txtMaTheLoai.Location = New System.Drawing.Point(111, 36)
         Me.txtMaTheLoai.Name = "txtMaTheLoai"
         Me.txtMaTheLoai.Size = New System.Drawing.Size(125, 20)
         Me.txtMaTheLoai.TabIndex = 4
         '
         'txtTenTheLoai
         '
-        Me.txtTenTheLoai.Location = New System.Drawing.Point(108, 51)
+        Me.txtTenTheLoai.Location = New System.Drawing.Point(111, 66)
         Me.txtTenTheLoai.Name = "txtTenTheLoai"
         Me.txtTenTheLoai.Size = New System.Drawing.Size(125, 20)
         Me.txtTenTheLoai.TabIndex = 3
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(18, 54)
+        Me.LabelControl2.Location = New System.Drawing.Point(21, 69)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(56, 13)
         Me.LabelControl2.TabIndex = 1
@@ -88,7 +89,7 @@ Partial Class ucQuanLyTheLoaiSach
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(19, 23)
+        Me.LabelControl1.Location = New System.Drawing.Point(22, 39)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(52, 13)
         Me.LabelControl1.TabIndex = 0
@@ -96,7 +97,9 @@ Partial Class ucQuanLyTheLoaiSach
         '
         'btnDong
         '
-        Me.btnDong.Location = New System.Drawing.Point(440, 164)
+        Me.btnDong.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.btnDong.ImageOptions.ImageUri.Uri = "Close;Size16x16;Office2013"
+        Me.btnDong.Location = New System.Drawing.Point(140, 8)
         Me.btnDong.Name = "btnDong"
         Me.btnDong.Size = New System.Drawing.Size(100, 23)
         Me.btnDong.TabIndex = 11
@@ -106,7 +109,9 @@ Partial Class ucQuanLyTheLoaiSach
         '
         Me.btnXoa.Appearance.ForeColor = System.Drawing.Color.Red
         Me.btnXoa.Appearance.Options.UseForeColor = True
-        Me.btnXoa.Location = New System.Drawing.Point(312, 164)
+        Me.btnXoa.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.btnXoa.ImageOptions.ImageUri.Uri = "Delete;Size16x16;Office2013"
+        Me.btnXoa.Location = New System.Drawing.Point(140, 39)
         Me.btnXoa.Name = "btnXoa"
         Me.btnXoa.Size = New System.Drawing.Size(100, 23)
         Me.btnXoa.TabIndex = 10
@@ -114,39 +119,44 @@ Partial Class ucQuanLyTheLoaiSach
         '
         'btnCapNhat
         '
-        Me.btnCapNhat.Location = New System.Drawing.Point(440, 129)
+        Me.btnCapNhat.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.btnCapNhat.ImageOptions.ImageUri.Uri = "CustomizeGrid;Size16x16;Office2013"
+        Me.btnCapNhat.Location = New System.Drawing.Point(18, 19)
         Me.btnCapNhat.Name = "btnCapNhat"
-        Me.btnCapNhat.Size = New System.Drawing.Size(100, 23)
+        Me.btnCapNhat.Size = New System.Drawing.Size(100, 32)
         Me.btnCapNhat.TabIndex = 9
         Me.btnCapNhat.Text = "Cập nhật"
         '
-        'btnTaiLai
+        'GroupControl1
         '
-        Me.btnTaiLai.Location = New System.Drawing.Point(312, 129)
-        Me.btnTaiLai.Name = "btnTaiLai"
-        Me.btnTaiLai.Size = New System.Drawing.Size(100, 23)
-        Me.btnTaiLai.TabIndex = 8
-        Me.btnTaiLai.Text = "Tải lại"
+        Me.GroupControl1.Controls.Add(Me.txtMaTheLoai)
+        Me.GroupControl1.Controls.Add(Me.LabelControl1)
+        Me.GroupControl1.Controls.Add(Me.txtTenTheLoai)
+        Me.GroupControl1.Controls.Add(Me.LabelControl2)
+        Me.GroupControl1.Location = New System.Drawing.Point(297, 98)
+        Me.GroupControl1.Name = "GroupControl1"
+        Me.GroupControl1.Size = New System.Drawing.Size(254, 96)
+        Me.GroupControl1.TabIndex = 12
+        Me.GroupControl1.Text = "Chi tiết thể loại"
         '
         'ucQuanLyTheLoaiSach
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.grcDanhSachTheLoai)
         Me.Controls.Add(Me.PanelControl1)
-        Me.Controls.Add(Me.btnDong)
-        Me.Controls.Add(Me.btnXoa)
-        Me.Controls.Add(Me.btnCapNhat)
-        Me.Controls.Add(Me.btnTaiLai)
         Me.Name = "ucQuanLyTheLoaiSach"
-        Me.Size = New System.Drawing.Size(577, 213)
+        Me.Size = New System.Drawing.Size(736, 455)
         CType(Me.grcDanhSachTheLoai, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grvDanhSachTheLoai, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
-        Me.PanelControl1.PerformLayout()
         CType(Me.txtMaTheLoai.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTenTheLoai.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl1.ResumeLayout(False)
+        Me.GroupControl1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -161,5 +171,5 @@ Partial Class ucQuanLyTheLoaiSach
     Friend WithEvents btnDong As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnXoa As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnCapNhat As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents btnTaiLai As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
 End Class

@@ -374,7 +374,7 @@ Partial Class ucQuanLySach
         Me.PanelControl1.Controls.Add(Me.txtTenSach)
         Me.PanelControl1.Controls.Add(Me.LabelControl4)
         Me.PanelControl1.Controls.Add(Me.LabelControl5)
-        Me.PanelControl1.Location = New System.Drawing.Point(26, 332)
+        Me.PanelControl1.Location = New System.Drawing.Point(13, 11)
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Size = New System.Drawing.Size(649, 206)
         Me.PanelControl1.TabIndex = 40
@@ -386,7 +386,7 @@ Partial Class ucQuanLySach
         '
         'grcDanhSachSach
         '
-        Me.grcDanhSachSach.Location = New System.Drawing.Point(26, 91)
+        Me.grcDanhSachSach.Location = New System.Drawing.Point(13, 294)
         Me.grcDanhSachSach.MainView = Me.grvDanhSachSach
         Me.grcDanhSachSach.Name = "grcDanhSachSach"
         Me.grcDanhSachSach.Size = New System.Drawing.Size(761, 235)
@@ -493,7 +493,7 @@ Partial Class ucQuanLySach
         Me.btnLoc.ImageOptions.ImageUri.Uri = "Filter;Size16x16;Office2013"
         Me.btnLoc.Location = New System.Drawing.Point(669, 11)
         Me.btnLoc.Name = "btnLoc"
-        Me.btnLoc.Size = New System.Drawing.Size(51, 45)
+        Me.btnLoc.Size = New System.Drawing.Size(68, 45)
         Me.btnLoc.TabIndex = 36
         Me.btnLoc.Text = "Lọc"
         '
@@ -511,7 +511,7 @@ Partial Class ucQuanLySach
         Me.PanelControl2.Controls.Add(Me.LabelControl10)
         Me.PanelControl2.Controls.Add(Me.lueLocTheLoai)
         Me.PanelControl2.Controls.Add(Me.txtTimKiem)
-        Me.PanelControl2.Location = New System.Drawing.Point(26, 20)
+        Me.PanelControl2.Location = New System.Drawing.Point(13, 223)
         Me.PanelControl2.Name = "PanelControl2"
         Me.PanelControl2.Size = New System.Drawing.Size(761, 65)
         Me.PanelControl2.TabIndex = 39
@@ -520,9 +520,9 @@ Partial Class ucQuanLySach
         '
         Me.btnDong.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btnDong.ImageOptions.ImageUri.Uri = "Cancel;Size16x16;Office2013"
-        Me.btnDong.Location = New System.Drawing.Point(10, 173)
+        Me.btnDong.Location = New System.Drawing.Point(10, 9)
         Me.btnDong.Name = "btnDong"
-        Me.btnDong.Size = New System.Drawing.Size(86, 23)
+        Me.btnDong.Size = New System.Drawing.Size(86, 34)
         Me.btnDong.TabIndex = 38
         Me.btnDong.Text = "Đóng"
         '
@@ -532,9 +532,9 @@ Partial Class ucQuanLySach
         Me.btnXoa.Appearance.Options.UseForeColor = True
         Me.btnXoa.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btnXoa.ImageOptions.ImageUri.Uri = "Close;Size16x16;Office2013"
-        Me.btnXoa.Location = New System.Drawing.Point(10, 87)
+        Me.btnXoa.Location = New System.Drawing.Point(10, 164)
         Me.btnXoa.Name = "btnXoa"
-        Me.btnXoa.Size = New System.Drawing.Size(86, 23)
+        Me.btnXoa.Size = New System.Drawing.Size(86, 32)
         Me.btnXoa.TabIndex = 37
         Me.btnXoa.Text = "Xoá"
         '
@@ -544,7 +544,7 @@ Partial Class ucQuanLySach
         Me.btnXoaLichSuMuon.Appearance.Options.UseForeColor = True
         Me.btnXoaLichSuMuon.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btnXoaLichSuMuon.ImageOptions.ImageUri.Uri = "Close;Size16x16;Office2013"
-        Me.btnXoaLichSuMuon.Location = New System.Drawing.Point(10, 49)
+        Me.btnXoaLichSuMuon.Location = New System.Drawing.Point(10, 126)
         Me.btnXoaLichSuMuon.Name = "btnXoaLichSuMuon"
         Me.btnXoaLichSuMuon.Size = New System.Drawing.Size(86, 32)
         Me.btnXoaLichSuMuon.TabIndex = 41
@@ -554,9 +554,9 @@ Partial Class ucQuanLySach
         '
         Me.btnCapNhat.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btnCapNhat.ImageOptions.ImageUri.Uri = "CustomizeGrid;Size16x16;Office2013"
-        Me.btnCapNhat.Location = New System.Drawing.Point(10, 9)
+        Me.btnCapNhat.Location = New System.Drawing.Point(10, 70)
         Me.btnCapNhat.Name = "btnCapNhat"
-        Me.btnCapNhat.Size = New System.Drawing.Size(86, 23)
+        Me.btnCapNhat.Size = New System.Drawing.Size(86, 34)
         Me.btnCapNhat.TabIndex = 36
         Me.btnCapNhat.Text = "Cập nhật"
         '
@@ -566,7 +566,7 @@ Partial Class ucQuanLySach
         Me.PanelControl5.Controls.Add(Me.btnXoaLichSuMuon)
         Me.PanelControl5.Controls.Add(Me.btnXoa)
         Me.PanelControl5.Controls.Add(Me.btnDong)
-        Me.PanelControl5.Location = New System.Drawing.Point(681, 332)
+        Me.PanelControl5.Location = New System.Drawing.Point(668, 11)
         Me.PanelControl5.Name = "PanelControl5"
         Me.PanelControl5.Size = New System.Drawing.Size(106, 206)
         Me.PanelControl5.TabIndex = 42
@@ -580,7 +580,7 @@ Partial Class ucQuanLySach
         Me.Controls.Add(Me.grcDanhSachSach)
         Me.Controls.Add(Me.PanelControl1)
         Me.Name = "ucQuanLySach"
-        Me.Size = New System.Drawing.Size(806, 552)
+        Me.Size = New System.Drawing.Size(788, 538)
         CType(Me.txtTenSach.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTriGia.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dteNgayNhap.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()

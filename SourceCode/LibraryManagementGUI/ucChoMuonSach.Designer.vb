@@ -49,9 +49,9 @@ Partial Class ucChoMuonSach
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.lblSachDaChon = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
-        Me.btnChoMuon = New DevExpress.XtraEditors.SimpleButton()
-        Me.btnChoMuonVaDong = New DevExpress.XtraEditors.SimpleButton()
         Me.btnDong = New DevExpress.XtraEditors.SimpleButton()
+        Me.btnChoMuonVaDong = New DevExpress.XtraEditors.SimpleButton()
+        Me.btnChoMuon = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         Me.dteNgayNhap = New DevExpress.XtraEditors.DateEdit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -355,52 +355,52 @@ Partial Class ucChoMuonSach
         Me.PanelControl1.Controls.Add(Me.btnChoMuon)
         Me.PanelControl1.Location = New System.Drawing.Point(669, 13)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(202, 102)
+        Me.PanelControl1.Size = New System.Drawing.Size(202, 91)
         Me.PanelControl1.TabIndex = 51
-        '
-        'btnChoMuon
-        '
-        Me.btnChoMuon.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.btnChoMuon.ImageOptions.ImageUri.Uri = "DoubleNext;Size16x16;Office2013"
-        Me.btnChoMuon.Location = New System.Drawing.Point(104, 15)
-        Me.btnChoMuon.Name = "btnChoMuon"
-        Me.btnChoMuon.Size = New System.Drawing.Size(86, 32)
-        Me.btnChoMuon.TabIndex = 0
-        Me.btnChoMuon.Text = "Cho mượn"
-        '
-        'btnChoMuonVaDong
-        '
-        Me.btnChoMuonVaDong.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.btnChoMuonVaDong.ImageOptions.ImageUri.Uri = "DoubleLast;Size16x16;Office2013"
-        Me.btnChoMuonVaDong.Location = New System.Drawing.Point(12, 15)
-        Me.btnChoMuonVaDong.Name = "btnChoMuonVaDong"
-        Me.btnChoMuonVaDong.Size = New System.Drawing.Size(86, 32)
-        Me.btnChoMuonVaDong.TabIndex = 1
-        Me.btnChoMuonVaDong.Text = "Cho mượn" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "và đóng"
         '
         'btnDong
         '
         Me.btnDong.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btnDong.ImageOptions.ImageUri.Uri = "Close;Size16x16;Office2013"
-        Me.btnDong.Location = New System.Drawing.Point(104, 63)
+        Me.btnDong.Location = New System.Drawing.Point(107, 11)
         Me.btnDong.Name = "btnDong"
         Me.btnDong.Size = New System.Drawing.Size(86, 23)
         Me.btnDong.TabIndex = 2
         Me.btnDong.Text = "Đóng"
         '
+        'btnChoMuonVaDong
+        '
+        Me.btnChoMuonVaDong.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.btnChoMuonVaDong.ImageOptions.ImageUri.Uri = "DoubleLast;Size16x16;Office2013"
+        Me.btnChoMuonVaDong.Location = New System.Drawing.Point(107, 47)
+        Me.btnChoMuonVaDong.Name = "btnChoMuonVaDong"
+        Me.btnChoMuonVaDong.Size = New System.Drawing.Size(86, 32)
+        Me.btnChoMuonVaDong.TabIndex = 1
+        Me.btnChoMuonVaDong.Text = "Cho mượn" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "và đóng"
+        '
+        'btnChoMuon
+        '
+        Me.btnChoMuon.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.btnChoMuon.ImageOptions.ImageUri.Uri = "DoubleNext;Size16x16;Office2013"
+        Me.btnChoMuon.Location = New System.Drawing.Point(10, 47)
+        Me.btnChoMuon.Name = "btnChoMuon"
+        Me.btnChoMuon.Size = New System.Drawing.Size(86, 32)
+        Me.btnChoMuon.TabIndex = 0
+        Me.btnChoMuon.Text = "Cho mượn"
+        '
         'GroupControl2
         '
         Me.GroupControl2.Controls.Add(Me.dteNgayNhap)
-        Me.GroupControl2.Location = New System.Drawing.Point(670, 121)
+        Me.GroupControl2.Location = New System.Drawing.Point(670, 110)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(200, 72)
+        Me.GroupControl2.Size = New System.Drawing.Size(200, 83)
         Me.GroupControl2.TabIndex = 52
         Me.GroupControl2.Text = "Ngày nhập"
         '
         'dteNgayNhap
         '
         Me.dteNgayNhap.EditValue = Nothing
-        Me.dteNgayNhap.Location = New System.Drawing.Point(23, 35)
+        Me.dteNgayNhap.Location = New System.Drawing.Point(23, 36)
         Me.dteNgayNhap.Name = "dteNgayNhap"
         Me.dteNgayNhap.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dteNgayNhap.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})

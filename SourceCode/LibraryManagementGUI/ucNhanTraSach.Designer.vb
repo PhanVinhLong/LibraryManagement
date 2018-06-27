@@ -73,9 +73,9 @@ Partial Class ucNhanTraSach
         'GroupControl2
         '
         Me.GroupControl2.Controls.Add(Me.dteNgayTra)
-        Me.GroupControl2.Location = New System.Drawing.Point(666, 117)
+        Me.GroupControl2.Location = New System.Drawing.Point(666, 106)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(200, 72)
+        Me.GroupControl2.Size = New System.Drawing.Size(200, 83)
         Me.GroupControl2.TabIndex = 60
         Me.GroupControl2.Text = "Ngày trả"
         '
@@ -96,14 +96,14 @@ Partial Class ucNhanTraSach
         Me.PanelControl1.Controls.Add(Me.btnNhanSach)
         Me.PanelControl1.Location = New System.Drawing.Point(665, 9)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(202, 102)
+        Me.PanelControl1.Size = New System.Drawing.Size(202, 91)
         Me.PanelControl1.TabIndex = 59
         '
         'btnDong
         '
         Me.btnDong.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btnDong.ImageOptions.ImageUri.Uri = "Close;Size16x16;Office2013"
-        Me.btnDong.Location = New System.Drawing.Point(104, 63)
+        Me.btnDong.Location = New System.Drawing.Point(105, 10)
         Me.btnDong.Name = "btnDong"
         Me.btnDong.Size = New System.Drawing.Size(86, 23)
         Me.btnDong.TabIndex = 2
@@ -113,7 +113,7 @@ Partial Class ucNhanTraSach
         '
         Me.btnNhanSachVaDong.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btnNhanSachVaDong.ImageOptions.ImageUri.Uri = "DoubleLast;Size16x16;Office2013"
-        Me.btnNhanSachVaDong.Location = New System.Drawing.Point(12, 15)
+        Me.btnNhanSachVaDong.Location = New System.Drawing.Point(13, 49)
         Me.btnNhanSachVaDong.Name = "btnNhanSachVaDong"
         Me.btnNhanSachVaDong.Size = New System.Drawing.Size(86, 32)
         Me.btnNhanSachVaDong.TabIndex = 1
@@ -123,7 +123,7 @@ Partial Class ucNhanTraSach
         '
         Me.btnNhanSach.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btnNhanSach.ImageOptions.ImageUri.Uri = "DoubleNext;Size16x16;Office2013"
-        Me.btnNhanSach.Location = New System.Drawing.Point(104, 15)
+        Me.btnNhanSach.Location = New System.Drawing.Point(105, 49)
         Me.btnNhanSach.Name = "btnNhanSach"
         Me.btnNhanSach.Size = New System.Drawing.Size(86, 32)
         Me.btnNhanSach.TabIndex = 0

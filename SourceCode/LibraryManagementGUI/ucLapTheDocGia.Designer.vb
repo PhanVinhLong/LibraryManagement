@@ -36,11 +36,14 @@ Partial Class ucLapTheDocGia
         Me.txtHoTen = New DevExpress.XtraEditors.TextEdit()
         Me.txtDiaChi = New DevExpress.XtraEditors.TextEdit()
         Me.dteNgaySinh = New DevExpress.XtraEditors.DateEdit()
-        Me.lblGioiHanTuoi = New DevExpress.XtraEditors.LabelControl()
-        Me.lblThoiHanSuDung = New DevExpress.XtraEditors.LabelControl()
         Me.btnLapTheVaDong = New DevExpress.XtraEditors.SimpleButton()
         Me.btnDong = New DevExpress.XtraEditors.SimpleButton()
         Me.btnLapThe = New DevExpress.XtraEditors.SimpleButton()
+        Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
+        Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
+        Me.lblGioiHanTuoi = New DevExpress.XtraEditors.LabelControl()
+        Me.lblThoiHanSuDung = New DevExpress.XtraEditors.LabelControl()
+        Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
         CType(Me.lueLoaiDocGia.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dteNgayHetHan.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dteNgayHetHan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,6 +55,12 @@ Partial Class ucLapTheDocGia
         CType(Me.txtDiaChi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dteNgaySinh.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dteNgaySinh.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl1.SuspendLayout()
+        CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl2.SuspendLayout()
+        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl3.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblTuoi
@@ -60,7 +69,7 @@ Partial Class ucLapTheDocGia
         Me.lblTuoi.Appearance.ForeColor = System.Drawing.Color.Gray
         Me.lblTuoi.Appearance.Options.UseFont = True
         Me.lblTuoi.Appearance.Options.UseForeColor = True
-        Me.lblTuoi.Location = New System.Drawing.Point(265, 87)
+        Me.lblTuoi.Location = New System.Drawing.Point(242, 71)
         Me.lblTuoi.Name = "lblTuoi"
         Me.lblTuoi.Size = New System.Drawing.Size(35, 13)
         Me.lblTuoi.TabIndex = 66
@@ -68,7 +77,7 @@ Partial Class ucLapTheDocGia
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(39, 29)
+        Me.LabelControl1.Location = New System.Drawing.Point(16, 13)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(51, 13)
         Me.LabelControl1.TabIndex = 50
@@ -76,7 +85,7 @@ Partial Class ucLapTheDocGia
         '
         'LabelControl10
         '
-        Me.LabelControl10.Location = New System.Drawing.Point(39, 58)
+        Me.LabelControl10.Location = New System.Drawing.Point(16, 42)
         Me.LabelControl10.Name = "LabelControl10"
         Me.LabelControl10.Size = New System.Drawing.Size(41, 13)
         Me.LabelControl10.TabIndex = 51
@@ -84,7 +93,7 @@ Partial Class ucLapTheDocGia
         '
         'LabelControl11
         '
-        Me.LabelControl11.Location = New System.Drawing.Point(39, 87)
+        Me.LabelControl11.Location = New System.Drawing.Point(16, 71)
         Me.LabelControl11.Name = "LabelControl11"
         Me.LabelControl11.Size = New System.Drawing.Size(56, 13)
         Me.LabelControl11.TabIndex = 52
@@ -93,7 +102,7 @@ Partial Class ucLapTheDocGia
         'LabelControl12
         '
         Me.LabelControl12.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
-        Me.LabelControl12.Location = New System.Drawing.Point(39, 116)
+        Me.LabelControl12.Location = New System.Drawing.Point(16, 100)
         Me.LabelControl12.Name = "LabelControl12"
         Me.LabelControl12.Size = New System.Drawing.Size(32, 13)
         Me.LabelControl12.TabIndex = 53
@@ -102,7 +111,7 @@ Partial Class ucLapTheDocGia
         'lueLoaiDocGia
         '
         Me.lueLoaiDocGia.EditValue = "Loại Độc Giả"
-        Me.lueLoaiDocGia.Location = New System.Drawing.Point(431, 113)
+        Me.lueLoaiDocGia.Location = New System.Drawing.Point(408, 97)
         Me.lueLoaiDocGia.Name = "lueLoaiDocGia"
         Me.lueLoaiDocGia.Properties.AutoSearchColumnIndex = 1
         Me.lueLoaiDocGia.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -112,7 +121,7 @@ Partial Class ucLapTheDocGia
         '
         'LabelControl13
         '
-        Me.LabelControl13.Location = New System.Drawing.Point(343, 29)
+        Me.LabelControl13.Location = New System.Drawing.Point(320, 13)
         Me.LabelControl13.Name = "LabelControl13"
         Me.LabelControl13.Size = New System.Drawing.Size(24, 13)
         Me.LabelControl13.TabIndex = 54
@@ -122,7 +131,7 @@ Partial Class ucLapTheDocGia
         '
         Me.dteNgayHetHan.EditValue = Nothing
         Me.dteNgayHetHan.Enabled = False
-        Me.dteNgayHetHan.Location = New System.Drawing.Point(431, 84)
+        Me.dteNgayHetHan.Location = New System.Drawing.Point(408, 68)
         Me.dteNgayHetHan.Name = "dteNgayHetHan"
         Me.dteNgayHetHan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dteNgayHetHan.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -131,7 +140,7 @@ Partial Class ucLapTheDocGia
         '
         'LabelControl14
         '
-        Me.LabelControl14.Location = New System.Drawing.Point(343, 58)
+        Me.LabelControl14.Location = New System.Drawing.Point(320, 42)
         Me.LabelControl14.Name = "LabelControl14"
         Me.LabelControl14.Size = New System.Drawing.Size(70, 13)
         Me.LabelControl14.TabIndex = 55
@@ -140,7 +149,7 @@ Partial Class ucLapTheDocGia
         'dteNgayLapThe
         '
         Me.dteNgayLapThe.EditValue = New Date(2018, 6, 10, 16, 32, 9, 0)
-        Me.dteNgayLapThe.Location = New System.Drawing.Point(431, 55)
+        Me.dteNgayLapThe.Location = New System.Drawing.Point(408, 39)
         Me.dteNgayLapThe.Name = "dteNgayLapThe"
         Me.dteNgayLapThe.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dteNgayLapThe.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -149,7 +158,7 @@ Partial Class ucLapTheDocGia
         '
         'LabelControl15
         '
-        Me.LabelControl15.Location = New System.Drawing.Point(343, 87)
+        Me.LabelControl15.Location = New System.Drawing.Point(320, 71)
         Me.LabelControl15.Name = "LabelControl15"
         Me.LabelControl15.Size = New System.Drawing.Size(65, 13)
         Me.LabelControl15.TabIndex = 56
@@ -158,21 +167,21 @@ Partial Class ucLapTheDocGia
         'txtMaDocGia
         '
         Me.txtMaDocGia.Enabled = False
-        Me.txtMaDocGia.Location = New System.Drawing.Point(112, 26)
+        Me.txtMaDocGia.Location = New System.Drawing.Point(89, 10)
         Me.txtMaDocGia.Name = "txtMaDocGia"
         Me.txtMaDocGia.Size = New System.Drawing.Size(148, 20)
         Me.txtMaDocGia.TabIndex = 58
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(431, 26)
+        Me.txtEmail.Location = New System.Drawing.Point(408, 10)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(148, 20)
         Me.txtEmail.TabIndex = 62
         '
         'LabelControl16
         '
-        Me.LabelControl16.Location = New System.Drawing.Point(343, 116)
+        Me.LabelControl16.Location = New System.Drawing.Point(320, 100)
         Me.LabelControl16.Name = "LabelControl16"
         Me.LabelControl16.Size = New System.Drawing.Size(65, 13)
         Me.LabelControl16.TabIndex = 57
@@ -180,14 +189,14 @@ Partial Class ucLapTheDocGia
         '
         'txtHoTen
         '
-        Me.txtHoTen.Location = New System.Drawing.Point(112, 55)
+        Me.txtHoTen.Location = New System.Drawing.Point(89, 39)
         Me.txtHoTen.Name = "txtHoTen"
         Me.txtHoTen.Size = New System.Drawing.Size(148, 20)
         Me.txtHoTen.TabIndex = 59
         '
         'txtDiaChi
         '
-        Me.txtDiaChi.Location = New System.Drawing.Point(112, 113)
+        Me.txtDiaChi.Location = New System.Drawing.Point(89, 97)
         Me.txtDiaChi.Name = "txtDiaChi"
         Me.txtDiaChi.Size = New System.Drawing.Size(148, 20)
         Me.txtDiaChi.TabIndex = 61
@@ -195,12 +204,76 @@ Partial Class ucLapTheDocGia
         'dteNgaySinh
         '
         Me.dteNgaySinh.EditValue = Nothing
-        Me.dteNgaySinh.Location = New System.Drawing.Point(112, 84)
+        Me.dteNgaySinh.Location = New System.Drawing.Point(89, 68)
         Me.dteNgaySinh.Name = "dteNgaySinh"
         Me.dteNgaySinh.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dteNgaySinh.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dteNgaySinh.Size = New System.Drawing.Size(148, 20)
         Me.dteNgaySinh.TabIndex = 60
+        '
+        'btnLapTheVaDong
+        '
+        Me.btnLapTheVaDong.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.btnLapTheVaDong.ImageOptions.ImageUri.Uri = "DoubleNext;Size16x16;Office2013"
+        Me.btnLapTheVaDong.Location = New System.Drawing.Point(14, 95)
+        Me.btnLapTheVaDong.Name = "btnLapTheVaDong"
+        Me.btnLapTheVaDong.Size = New System.Drawing.Size(109, 23)
+        Me.btnLapTheVaDong.TabIndex = 47
+        Me.btnLapTheVaDong.Text = "Lập thẻ và Đóng"
+        '
+        'btnDong
+        '
+        Me.btnDong.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.btnDong.ImageOptions.ImageUri.Uri = "Cancel;Size16x16;Office2013"
+        Me.btnDong.Location = New System.Drawing.Point(14, 11)
+        Me.btnDong.Name = "btnDong"
+        Me.btnDong.Size = New System.Drawing.Size(109, 23)
+        Me.btnDong.TabIndex = 46
+        Me.btnDong.Text = "Đóng"
+        '
+        'btnLapThe
+        '
+        Me.btnLapThe.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.btnLapThe.ImageOptions.ImageUri.Uri = "Add;Size16x16;Office2013"
+        Me.btnLapThe.Location = New System.Drawing.Point(14, 64)
+        Me.btnLapThe.Name = "btnLapThe"
+        Me.btnLapThe.Size = New System.Drawing.Size(109, 23)
+        Me.btnLapThe.TabIndex = 45
+        Me.btnLapThe.Text = "Lập thẻ"
+        '
+        'PanelControl1
+        '
+        Me.PanelControl1.Controls.Add(Me.btnDong)
+        Me.PanelControl1.Controls.Add(Me.btnLapTheVaDong)
+        Me.PanelControl1.Controls.Add(Me.btnLapThe)
+        Me.PanelControl1.Location = New System.Drawing.Point(590, 15)
+        Me.PanelControl1.Name = "PanelControl1"
+        Me.PanelControl1.Size = New System.Drawing.Size(135, 128)
+        Me.PanelControl1.TabIndex = 67
+        '
+        'PanelControl2
+        '
+        Me.PanelControl2.Controls.Add(Me.txtMaDocGia)
+        Me.PanelControl2.Controls.Add(Me.lblTuoi)
+        Me.PanelControl2.Controls.Add(Me.LabelControl1)
+        Me.PanelControl2.Controls.Add(Me.dteNgaySinh)
+        Me.PanelControl2.Controls.Add(Me.LabelControl10)
+        Me.PanelControl2.Controls.Add(Me.txtDiaChi)
+        Me.PanelControl2.Controls.Add(Me.LabelControl11)
+        Me.PanelControl2.Controls.Add(Me.txtHoTen)
+        Me.PanelControl2.Controls.Add(Me.LabelControl12)
+        Me.PanelControl2.Controls.Add(Me.LabelControl16)
+        Me.PanelControl2.Controls.Add(Me.lueLoaiDocGia)
+        Me.PanelControl2.Controls.Add(Me.txtEmail)
+        Me.PanelControl2.Controls.Add(Me.LabelControl13)
+        Me.PanelControl2.Controls.Add(Me.LabelControl15)
+        Me.PanelControl2.Controls.Add(Me.dteNgayHetHan)
+        Me.PanelControl2.Controls.Add(Me.dteNgayLapThe)
+        Me.PanelControl2.Controls.Add(Me.LabelControl14)
+        Me.PanelControl2.Location = New System.Drawing.Point(17, 15)
+        Me.PanelControl2.Name = "PanelControl2"
+        Me.PanelControl2.Size = New System.Drawing.Size(567, 128)
+        Me.PanelControl2.TabIndex = 68
         '
         'lblGioiHanTuoi
         '
@@ -208,7 +281,7 @@ Partial Class ucLapTheDocGia
         Me.lblGioiHanTuoi.Appearance.ForeColor = System.Drawing.Color.Gray
         Me.lblGioiHanTuoi.Appearance.Options.UseFont = True
         Me.lblGioiHanTuoi.Appearance.Options.UseForeColor = True
-        Me.lblGioiHanTuoi.Location = New System.Drawing.Point(38, 166)
+        Me.lblGioiHanTuoi.Location = New System.Drawing.Point(16, 23)
         Me.lblGioiHanTuoi.Name = "lblGioiHanTuoi"
         Me.lblGioiHanTuoi.Size = New System.Drawing.Size(84, 13)
         Me.lblGioiHanTuoi.TabIndex = 49
@@ -220,70 +293,30 @@ Partial Class ucLapTheDocGia
         Me.lblThoiHanSuDung.Appearance.ForeColor = System.Drawing.Color.Gray
         Me.lblThoiHanSuDung.Appearance.Options.UseFont = True
         Me.lblThoiHanSuDung.Appearance.Options.UseForeColor = True
-        Me.lblThoiHanSuDung.Location = New System.Drawing.Point(38, 147)
+        Me.lblThoiHanSuDung.Location = New System.Drawing.Point(16, 4)
         Me.lblThoiHanSuDung.Name = "lblThoiHanSuDung"
         Me.lblThoiHanSuDung.Size = New System.Drawing.Size(137, 13)
         Me.lblThoiHanSuDung.TabIndex = 48
         Me.lblThoiHanSuDung.Text = "* Thời hạn sử dụng: x tháng"
         '
-        'btnLapTheVaDong
+        'PanelControl3
         '
-        Me.btnLapTheVaDong.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.btnLapTheVaDong.ImageOptions.ImageUri.Uri = "DoubleNext;Size16x16;Office2013"
-        Me.btnLapTheVaDong.Location = New System.Drawing.Point(258, 195)
-        Me.btnLapTheVaDong.Name = "btnLapTheVaDong"
-        Me.btnLapTheVaDong.Size = New System.Drawing.Size(109, 23)
-        Me.btnLapTheVaDong.TabIndex = 47
-        Me.btnLapTheVaDong.Text = "Lập thẻ và Đóng"
-        '
-        'btnDong
-        '
-        Me.btnDong.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.btnDong.ImageOptions.ImageUri.Uri = "Cancel;Size16x16;Office2013"
-        Me.btnDong.Location = New System.Drawing.Point(423, 195)
-        Me.btnDong.Name = "btnDong"
-        Me.btnDong.Size = New System.Drawing.Size(109, 23)
-        Me.btnDong.TabIndex = 46
-        Me.btnDong.Text = "Đóng"
-        '
-        'btnLapThe
-        '
-        Me.btnLapThe.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.btnLapThe.ImageOptions.ImageUri.Uri = "Add;Size16x16;Office2013"
-        Me.btnLapThe.Location = New System.Drawing.Point(90, 195)
-        Me.btnLapThe.Name = "btnLapThe"
-        Me.btnLapThe.Size = New System.Drawing.Size(109, 23)
-        Me.btnLapThe.TabIndex = 45
-        Me.btnLapThe.Text = "Lập thẻ"
+        Me.PanelControl3.Controls.Add(Me.lblThoiHanSuDung)
+        Me.PanelControl3.Controls.Add(Me.lblGioiHanTuoi)
+        Me.PanelControl3.Location = New System.Drawing.Point(17, 150)
+        Me.PanelControl3.Name = "PanelControl3"
+        Me.PanelControl3.Size = New System.Drawing.Size(567, 44)
+        Me.PanelControl3.TabIndex = 69
         '
         'ucLapTheDocGia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.lblTuoi)
-        Me.Controls.Add(Me.LabelControl1)
-        Me.Controls.Add(Me.LabelControl10)
-        Me.Controls.Add(Me.LabelControl11)
-        Me.Controls.Add(Me.LabelControl12)
-        Me.Controls.Add(Me.lueLoaiDocGia)
-        Me.Controls.Add(Me.LabelControl13)
-        Me.Controls.Add(Me.dteNgayHetHan)
-        Me.Controls.Add(Me.LabelControl14)
-        Me.Controls.Add(Me.dteNgayLapThe)
-        Me.Controls.Add(Me.LabelControl15)
-        Me.Controls.Add(Me.txtMaDocGia)
-        Me.Controls.Add(Me.txtEmail)
-        Me.Controls.Add(Me.LabelControl16)
-        Me.Controls.Add(Me.txtHoTen)
-        Me.Controls.Add(Me.txtDiaChi)
-        Me.Controls.Add(Me.dteNgaySinh)
-        Me.Controls.Add(Me.lblGioiHanTuoi)
-        Me.Controls.Add(Me.lblThoiHanSuDung)
-        Me.Controls.Add(Me.btnLapTheVaDong)
-        Me.Controls.Add(Me.btnDong)
-        Me.Controls.Add(Me.btnLapThe)
+        Me.Controls.Add(Me.PanelControl3)
+        Me.Controls.Add(Me.PanelControl2)
+        Me.Controls.Add(Me.PanelControl1)
         Me.Name = "ucLapTheDocGia"
-        Me.Size = New System.Drawing.Size(622, 235)
+        Me.Size = New System.Drawing.Size(745, 264)
         CType(Me.lueLoaiDocGia.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dteNgayHetHan.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dteNgayHetHan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -295,8 +328,15 @@ Partial Class ucLapTheDocGia
         CType(Me.txtDiaChi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dteNgaySinh.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dteNgaySinh.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl1.ResumeLayout(False)
+        CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl2.ResumeLayout(False)
+        Me.PanelControl2.PerformLayout()
+        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl3.ResumeLayout(False)
+        Me.PanelControl3.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -317,9 +357,12 @@ Partial Class ucLapTheDocGia
     Friend WithEvents txtHoTen As DevExpress.XtraEditors.TextEdit
     Friend WithEvents txtDiaChi As DevExpress.XtraEditors.TextEdit
     Friend WithEvents dteNgaySinh As DevExpress.XtraEditors.DateEdit
-    Friend WithEvents lblGioiHanTuoi As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents lblThoiHanSuDung As DevExpress.XtraEditors.LabelControl
     Friend WithEvents btnLapTheVaDong As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnDong As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnLapThe As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents PanelControl2 As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents lblGioiHanTuoi As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents lblThoiHanSuDung As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents PanelControl3 As DevExpress.XtraEditors.PanelControl
 End Class
