@@ -372,7 +372,7 @@ Partial Class ucChoMuonSach
         '
         Me.btnChoMuonVaDong.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btnChoMuonVaDong.ImageOptions.ImageUri.Uri = "DoubleLast;Size16x16;Office2013"
-        Me.btnChoMuonVaDong.Location = New System.Drawing.Point(107, 47)
+        Me.btnChoMuonVaDong.Location = New System.Drawing.Point(107, 48)
         Me.btnChoMuonVaDong.Name = "btnChoMuonVaDong"
         Me.btnChoMuonVaDong.Size = New System.Drawing.Size(86, 32)
         Me.btnChoMuonVaDong.TabIndex = 1

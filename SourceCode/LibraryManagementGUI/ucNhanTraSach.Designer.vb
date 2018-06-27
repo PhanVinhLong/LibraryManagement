@@ -159,7 +159,7 @@ Partial Class ucNhanTraSach
         Me.gcDocGia.Name = "gcDocGia"
         Me.gcDocGia.Size = New System.Drawing.Size(844, 87)
         Me.gcDocGia.TabIndex = 57
-        Me.gcDocGia.Text = "Độc giả"
+        Me.gcDocGia.Text = "Sách đang mượn của độc giả"
         '
         'LabelControl1
         '

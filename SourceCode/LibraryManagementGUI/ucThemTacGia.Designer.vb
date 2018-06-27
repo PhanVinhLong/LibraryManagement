@@ -29,33 +29,45 @@ Partial Class ucThemTacGia
         Me.txtMaTacGia = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.txtTenTacGia.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtMaTacGia.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl1.SuspendLayout()
+        CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl2.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnDong
         '
-        Me.btnDong.Location = New System.Drawing.Point(245, 143)
+        Me.btnDong.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.btnDong.ImageOptions.ImageUri.Uri = "Close;Size16x16;Office2013"
+        Me.btnDong.Location = New System.Drawing.Point(17, 8)
         Me.btnDong.Name = "btnDong"
-        Me.btnDong.Size = New System.Drawing.Size(75, 23)
+        Me.btnDong.Size = New System.Drawing.Size(94, 23)
         Me.btnDong.TabIndex = 11
         Me.btnDong.Text = "Đóng"
         '
         'btnThemVaDong
         '
-        Me.btnThemVaDong.Location = New System.Drawing.Point(124, 143)
+        Me.btnThemVaDong.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.btnThemVaDong.ImageOptions.ImageUri.Uri = "Last;Size16x16;Office2013"
+        Me.btnThemVaDong.Location = New System.Drawing.Point(17, 50)
         Me.btnThemVaDong.Name = "btnThemVaDong"
-        Me.btnThemVaDong.Size = New System.Drawing.Size(94, 23)
+        Me.btnThemVaDong.Size = New System.Drawing.Size(94, 30)
         Me.btnThemVaDong.TabIndex = 10
-        Me.btnThemVaDong.Text = "Thêm và Đóng"
+        Me.btnThemVaDong.Text = "Thêm" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "và Đóng"
         '
         'btnThem
         '
-        Me.btnThem.Location = New System.Drawing.Point(20, 143)
+        Me.btnThem.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.btnThem.ImageOptions.ImageUri.Uri = "Add;Size16x16;Office2013"
+        Me.btnThem.Location = New System.Drawing.Point(17, 100)
         Me.btnThem.Name = "btnThem"
-        Me.btnThem.Size = New System.Drawing.Size(75, 23)
+        Me.btnThem.Size = New System.Drawing.Size(94, 23)
         Me.btnThem.TabIndex = 9
         Me.btnThem.Text = "Thêm"
         '
@@ -65,7 +77,7 @@ Partial Class ucThemTacGia
         Me.lblCanhBao.Appearance.ForeColor = System.Drawing.Color.Red
         Me.lblCanhBao.Appearance.Options.UseFont = True
         Me.lblCanhBao.Appearance.Options.UseForeColor = True
-        Me.lblCanhBao.Location = New System.Drawing.Point(40, 122)
+        Me.lblCanhBao.Location = New System.Drawing.Point(14, 131)
         Me.lblCanhBao.Name = "lblCanhBao"
         Me.lblCanhBao.Size = New System.Drawing.Size(153, 13)
         Me.lblCanhBao.TabIndex = 8
@@ -78,7 +90,7 @@ Partial Class ucThemTacGia
         Me.lblGioiHanSoLuong.Appearance.ForeColor = System.Drawing.Color.Gray
         Me.lblGioiHanSoLuong.Appearance.Options.UseFont = True
         Me.lblGioiHanSoLuong.Appearance.Options.UseForeColor = True
-        Me.lblGioiHanSoLuong.Location = New System.Drawing.Point(40, 107)
+        Me.lblGioiHanSoLuong.Location = New System.Drawing.Point(14, 116)
         Me.lblGioiHanSoLuong.Name = "lblGioiHanSoLuong"
         Me.lblGioiHanSoLuong.Size = New System.Drawing.Size(117, 13)
         Me.lblGioiHanSoLuong.TabIndex = 7
@@ -86,18 +98,17 @@ Partial Class ucThemTacGia
         '
         'PanelControl1
         '
-        Me.PanelControl1.Controls.Add(Me.txtTenTacGia)
-        Me.PanelControl1.Controls.Add(Me.txtMaTacGia)
-        Me.PanelControl1.Controls.Add(Me.LabelControl2)
-        Me.PanelControl1.Controls.Add(Me.LabelControl1)
-        Me.PanelControl1.Location = New System.Drawing.Point(20, 19)
+        Me.PanelControl1.Controls.Add(Me.btnThem)
+        Me.PanelControl1.Controls.Add(Me.btnDong)
+        Me.PanelControl1.Controls.Add(Me.btnThemVaDong)
+        Me.PanelControl1.Location = New System.Drawing.Point(322, 12)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(300, 80)
+        Me.PanelControl1.Size = New System.Drawing.Size(127, 132)
         Me.PanelControl1.TabIndex = 6
         '
         'txtTenTacGia
         '
-        Me.txtTenTacGia.Location = New System.Drawing.Point(115, 46)
+        Me.txtTenTacGia.Location = New System.Drawing.Point(115, 67)
         Me.txtTenTacGia.Name = "txtTenTacGia"
         Me.txtTenTacGia.Size = New System.Drawing.Size(159, 20)
         Me.txtTenTacGia.TabIndex = 3
@@ -105,14 +116,14 @@ Partial Class ucThemTacGia
         'txtMaTacGia
         '
         Me.txtMaTacGia.Enabled = False
-        Me.txtMaTacGia.Location = New System.Drawing.Point(115, 14)
+        Me.txtMaTacGia.Location = New System.Drawing.Point(115, 39)
         Me.txtMaTacGia.Name = "txtMaTacGia"
         Me.txtMaTacGia.Size = New System.Drawing.Size(159, 20)
         Me.txtMaTacGia.TabIndex = 2
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(20, 49)
+        Me.LabelControl2.Location = New System.Drawing.Point(20, 70)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(53, 13)
         Me.LabelControl2.TabIndex = 1
@@ -120,31 +131,53 @@ Partial Class ucThemTacGia
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(20, 17)
+        Me.LabelControl1.Location = New System.Drawing.Point(20, 42)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(49, 13)
         Me.LabelControl1.TabIndex = 0
         Me.LabelControl1.Text = "Mã tác giả"
         '
+        'GroupControl1
+        '
+        Me.GroupControl1.Controls.Add(Me.txtTenTacGia)
+        Me.GroupControl1.Controls.Add(Me.LabelControl1)
+        Me.GroupControl1.Controls.Add(Me.txtMaTacGia)
+        Me.GroupControl1.Controls.Add(Me.LabelControl2)
+        Me.GroupControl1.Location = New System.Drawing.Point(14, 12)
+        Me.GroupControl1.Name = "GroupControl1"
+        Me.GroupControl1.Size = New System.Drawing.Size(302, 98)
+        Me.GroupControl1.TabIndex = 12
+        Me.GroupControl1.Text = "Chi tiết tác giả"
+        '
+        'PanelControl2
+        '
+        Me.PanelControl2.Controls.Add(Me.lblGioiHanSoLuong)
+        Me.PanelControl2.Controls.Add(Me.PanelControl1)
+        Me.PanelControl2.Controls.Add(Me.GroupControl1)
+        Me.PanelControl2.Controls.Add(Me.lblCanhBao)
+        Me.PanelControl2.Location = New System.Drawing.Point(18, 12)
+        Me.PanelControl2.Name = "PanelControl2"
+        Me.PanelControl2.Size = New System.Drawing.Size(463, 154)
+        Me.PanelControl2.TabIndex = 13
+        '
         'ucThemTacGia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.btnDong)
-        Me.Controls.Add(Me.btnThemVaDong)
-        Me.Controls.Add(Me.btnThem)
-        Me.Controls.Add(Me.lblCanhBao)
-        Me.Controls.Add(Me.lblGioiHanSoLuong)
-        Me.Controls.Add(Me.PanelControl1)
+        Me.Controls.Add(Me.PanelControl2)
         Me.Name = "ucThemTacGia"
-        Me.Size = New System.Drawing.Size(344, 180)
+        Me.Size = New System.Drawing.Size(501, 182)
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
-        Me.PanelControl1.PerformLayout()
         CType(Me.txtTenTacGia.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtMaTacGia.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl1.ResumeLayout(False)
+        Me.GroupControl1.PerformLayout()
+        CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl2.ResumeLayout(False)
+        Me.PanelControl2.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -158,4 +191,6 @@ Partial Class ucThemTacGia
     Friend WithEvents txtMaTacGia As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents PanelControl2 As DevExpress.XtraEditors.PanelControl
 End Class
