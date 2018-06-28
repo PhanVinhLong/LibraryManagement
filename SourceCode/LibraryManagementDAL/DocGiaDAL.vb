@@ -265,6 +265,12 @@ Public Class DocGiaDAL
         sqlQuery &= "WHERE [tblPhieuMuon].[MaPhieuMuon] = [tblChiTietPhieuMuon].[MaPhieuMuon] "
         sqlQuery &= "      AND [MaDocGia] = @MaDocGia "
         sqlQuery &= "      AND [NgayMuon] < @NgayMuonHetHan "
+        sqlQuery &= "      AND [tblPhieuMuon].[MaPhieuMuon] NOT IN "
+        sqlQuery &= "           (SELECT DISTINCT [MaPhieuMuon] "
+        sqlQuery &= "           FROM [tblPhieuTra], [tblChiTietPhieuTra] "
+        sqlQuery &= "           WHERE [tblPhieuTra].[MaPhieuTra] = [tblChiTietPhieuTra].[MaPhieuTra] "
+        sqlQuery &= "                 AND [tblChiTietPhieuTra].[MaSach] = [tblChiTietPhieuMuon].[MaSach] "
+        sqlQuery &= "                 AND [tblChiTietPhieuTra].[MaPhieuMuon] = [tblPhieuMuon].[MaPhieuMuon]) "
 
         Dim ngayMuonHetHan As DateTime = Now
         ngayMuonHetHan = ngayMuonHetHan.AddDays(-thamSo.SoNgayMuonToiDa)
@@ -307,6 +313,12 @@ Public Class DocGiaDAL
         sqlQuery &= "WHERE [tblPhieuMuon].[MaPhieuMuon] = [tblChiTietPhieuMuon].[MaPhieuMuon] "
         sqlQuery &= "      AND [MaDocGia] = @MaDocGia "
         sqlQuery &= "      AND [NgayMuon] >= @NgayMuonHetHan "
+        sqlQuery &= "      AND [tblPhieuMuon].[MaPhieuMuon] NOT IN "
+        sqlQuery &= "           (SELECT DISTINCT [MaPhieuMuon] "
+        sqlQuery &= "           FROM [tblPhieuTra], [tblChiTietPhieuTra] "
+        sqlQuery &= "           WHERE [tblPhieuTra].[MaPhieuTra] = [tblChiTietPhieuTra].[MaPhieuTra] "
+        sqlQuery &= "                 AND [tblChiTietPhieuTra].[MaSach] = [tblChiTietPhieuMuon].[MaSach] "
+        sqlQuery &= "                 AND [tblChiTietPhieuTra].[MaPhieuMuon] = [tblPhieuMuon].[MaPhieuMuon]) "
 
         Dim ngayMuonHetHan As DateTime = Now
         ngayMuonHetHan = ngayMuonHetHan.AddDays(-thamSo.SoNgayMuonToiDa)
@@ -348,9 +360,13 @@ Public Class DocGiaDAL
         sqlQuery &= "FROM [tblPhieuMuon], [tblChiTietPhieuMuon] "
         sqlQuery &= "WHERE [tblPhieuMuon].[MaPhieuMuon] = [tblChiTietPhieuMuon].[MaPhieuMuon] "
         sqlQuery &= "      AND [MaDocGia] = @MaDocGia "
+        sqlQuery &= "      AND [tblPhieuMuon].[MaPhieuMuon] NOT IN "
+        sqlQuery &= "           (SELECT DISTINCT [MaPhieuMuon] "
+        sqlQuery &= "           FROM [tblPhieuTra], [tblChiTietPhieuTra] "
+        sqlQuery &= "           WHERE [tblPhieuTra].[MaPhieuTra] = [tblChiTietPhieuTra].[MaPhieuTra] "
+        sqlQuery &= "                 AND [tblChiTietPhieuTra].[MaSach] = [tblChiTietPhieuMuon].[MaSach] "
+        sqlQuery &= "                 AND [tblChiTietPhieuTra].[MaPhieuMuon] = [tblPhieuMuon].[MaPhieuMuon]) "
 
-        Dim ngayMuonHetHan As DateTime = Now
-        ngayMuonHetHan = ngayMuonHetHan.AddDays(-thamSo.SoNgayMuonToiDa)
         Using connection As New SqlConnection(connectionString)
             Using command As New SqlCommand()
                 With command

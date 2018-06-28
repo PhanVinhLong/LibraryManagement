@@ -17,8 +17,8 @@ Public Class ChiTietPhieuTraDAL
 
     Public Function Insert(chiTietPhieuTra As ChiTietPhieuTraDTO) As Result
         Dim sqlQuery As String = String.Empty
-        sqlQuery &= "INSERT INTO [tblChiTietPhieuTra]([MaPhieuTra], [MaSach], [SoNgayTraTre]) "
-        sqlQuery &= "VALUES(@MaPhieuTra, @MaSach, @SoNgayTraTre) "
+        sqlQuery &= "INSERT INTO [tblChiTietPhieuTra]([MaPhieuTra], [MaSach], [MaPhieuMuon], [SoNgayTraTre]) "
+        sqlQuery &= "VALUES(@MaPhieuTra, @MaSach, @MaPhieuMuon, @SoNgayTraTre) "
 
         Using connection As New SqlConnection(connectionString)
             Using command As New SqlCommand()
@@ -29,6 +29,7 @@ Public Class ChiTietPhieuTraDAL
                     .Parameters.AddWithValue("@MaPhieuTra", chiTietPhieuTra.MaPhieuTra)
                     .Parameters.AddWithValue("@MaSach", chiTietPhieuTra.MaSach)
                     .Parameters.AddWithValue("@SoNgayTraTre", chiTietPhieuTra.SoNgayTraTre)
+                    .Parameters.AddWithValue("@MaPhieuMuon", chiTietPhieuTra.MaPhieuMuon)
                 End With
                 Try
                     connection.Open()

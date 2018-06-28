@@ -219,3 +219,5 @@ C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\obj\
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\obj\Debug\LibraryManagementGUI.frmPrint.resources
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\bin\Debug\DevExpress.XtraCharts.v17.2.UI.dll
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\bin\Debug\DevExpress.XtraCharts.v17.2.UI.xml
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\bin\Debug\DevExpress.RichEdit.v17.2.Export.dll
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\obj\Debug\LibraryManagementGUI.xrpThongKeSachTraTre.resources

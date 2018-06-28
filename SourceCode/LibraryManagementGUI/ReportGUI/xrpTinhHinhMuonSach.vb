@@ -1,11 +1,8 @@
-﻿Imports System.Configuration
-Imports System.Data.SqlClient
-Imports DevExpress.XtraCharts
+﻿Imports DevExpress.XtraCharts
 Imports LibraryManagementDTO
-Imports Utility
 
 Public Class xrpTinhHinhMuonSach
-    Public Sub InitTinhHinhMuonSach(ngayLap As DateTime, ngayThongKe As DateTime, list As List(Of TinhHinhMuonSachDTO))
+    Public Sub Init(ngayLap As DateTime, ngayThongKe As DateTime, list As List(Of TinhHinhMuonSachDTO))
         ObjectDataSource1.DataSource = list
 
         Dim tongSoLuotMuon As Integer = 0

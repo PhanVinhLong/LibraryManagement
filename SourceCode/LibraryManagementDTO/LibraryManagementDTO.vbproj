@@ -86,6 +86,7 @@
     <Compile Include="PhieuMuonDTO.vb" />
     <Compile Include="PhieuTraDTO.vb" />
     <Compile Include="SachDTO.vb" />
+    <Compile Include="SachTraTreDTO.vb" />
     <Compile Include="TacGiaDTO.vb" />
     <Compile Include="TacGiaSachDTO.vb" />
     <Compile Include="ThamSoDTO.vb" />

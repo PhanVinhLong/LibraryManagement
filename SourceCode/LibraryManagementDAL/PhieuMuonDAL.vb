@@ -34,7 +34,7 @@ Public Class PhieuMuonDAL
                     connection.Open()
                     Dim dataReader As SqlDataReader
                     dataReader = command.ExecuteReader()
-                    Dim maPhieuMuonOnDB As String
+                    Dim maPhieuMuonOnDB As Integer = 0
                     If dataReader.HasRows = True Then
                         While dataReader.Read()
                             maPhieuMuonOnDB = dataReader("MaPhieuMuon")

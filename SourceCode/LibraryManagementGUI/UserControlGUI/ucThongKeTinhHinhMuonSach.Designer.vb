@@ -53,13 +53,13 @@ Partial Class ucThongKeTinhHinhMuonSach
         Me.PanelControl2.Controls.Add(Me.txtTimKiem)
         Me.PanelControl2.Location = New System.Drawing.Point(24, 15)
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(574, 36)
+        Me.PanelControl2.Size = New System.Drawing.Size(661, 36)
         Me.PanelControl2.TabIndex = 35
         '
         'btnDong
         '
         Me.btnDong.ImageOptions.ImageUri.Uri = "Close;Size16x16;Office2013"
-        Me.btnDong.Location = New System.Drawing.Point(508, 7)
+        Me.btnDong.Location = New System.Drawing.Point(583, 7)
         Me.btnDong.Name = "btnDong"
         Me.btnDong.Size = New System.Drawing.Size(61, 23)
         Me.btnDong.TabIndex = 28
@@ -68,7 +68,7 @@ Partial Class ucThongKeTinhHinhMuonSach
         'btnIn
         '
         Me.btnIn.ImageOptions.ImageUri.Uri = "Print;Size16x16;Office2013"
-        Me.btnIn.Location = New System.Drawing.Point(410, 7)
+        Me.btnIn.Location = New System.Drawing.Point(485, 7)
         Me.btnIn.Name = "btnIn"
         Me.btnIn.Size = New System.Drawing.Size(91, 23)
         Me.btnIn.TabIndex = 27
@@ -79,16 +79,16 @@ Partial Class ucThongKeTinhHinhMuonSach
         Me.LabelControl1.Appearance.Image = CType(resources.GetObject("LabelControl1.Appearance.Image"), System.Drawing.Image)
         Me.LabelControl1.Appearance.Options.UseImage = True
         Me.LabelControl1.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.LabelControl1.Location = New System.Drawing.Point(177, 9)
+        Me.LabelControl1.Location = New System.Drawing.Point(218, 9)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(97, 20)
+        Me.LabelControl1.Size = New System.Drawing.Size(109, 20)
         Me.LabelControl1.TabIndex = 26
-        Me.LabelControl1.Text = "T.Gian thống kê"
+        Me.LabelControl1.Text = "Thời gian thống kê"
         '
         'dteThangNam
         '
         Me.dteThangNam.EditValue = Nothing
-        Me.dteThangNam.Location = New System.Drawing.Point(278, 9)
+        Me.dteThangNam.Location = New System.Drawing.Point(331, 9)
         Me.dteThangNam.Name = "dteThangNam"
         Me.dteThangNam.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dteThangNam.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -115,10 +115,10 @@ Partial Class ucThongKeTinhHinhMuonSach
         '
         'grcDanhSachThongKe
         '
-        Me.grcDanhSachThongKe.Location = New System.Drawing.Point(302, 57)
+        Me.grcDanhSachThongKe.Location = New System.Drawing.Point(27, 57)
         Me.grcDanhSachThongKe.MainView = Me.grvDanhSachThongKe
         Me.grcDanhSachThongKe.Name = "grcDanhSachThongKe"
-        Me.grcDanhSachThongKe.Size = New System.Drawing.Size(296, 233)
+        Me.grcDanhSachThongKe.Size = New System.Drawing.Size(658, 144)
         Me.grcDanhSachThongKe.TabIndex = 34
         Me.grcDanhSachThongKe.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvDanhSachThongKe})
         '
@@ -134,10 +134,10 @@ Partial Class ucThongKeTinhHinhMuonSach
         'ChartControl1
         '
         Me.ChartControl1.Legend.Name = "Default Legend"
-        Me.ChartControl1.Location = New System.Drawing.Point(24, 57)
+        Me.ChartControl1.Location = New System.Drawing.Point(27, 207)
         Me.ChartControl1.Name = "ChartControl1"
         Me.ChartControl1.SeriesSerializable = New DevExpress.XtraCharts.Series(-1) {}
-        Me.ChartControl1.Size = New System.Drawing.Size(272, 233)
+        Me.ChartControl1.Size = New System.Drawing.Size(658, 390)
         Me.ChartControl1.TabIndex = 36
         '
         'ucThongKeTinhHinhMuonSach
@@ -148,7 +148,7 @@ Partial Class ucThongKeTinhHinhMuonSach
         Me.Controls.Add(Me.PanelControl2)
         Me.Controls.Add(Me.grcDanhSachThongKe)
         Me.Name = "ucThongKeTinhHinhMuonSach"
-        Me.Size = New System.Drawing.Size(627, 311)
+        Me.Size = New System.Drawing.Size(710, 615)
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
         Me.PanelControl2.PerformLayout()

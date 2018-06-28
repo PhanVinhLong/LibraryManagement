@@ -34,7 +34,7 @@ Public Class LoaiDocGiaDAL
                     connection.Open()
                     Dim dataReader As SqlDataReader
                     dataReader = command.ExecuteReader()
-                    Dim maLoaiDocGiaOnDB As String
+                    Dim maLoaiDocGiaOnDB As String = 0
                     If dataReader.HasRows = True Then
                         While dataReader.Read()
                             maLoaiDocGiaOnDB = dataReader("MaLoaiDocGia")

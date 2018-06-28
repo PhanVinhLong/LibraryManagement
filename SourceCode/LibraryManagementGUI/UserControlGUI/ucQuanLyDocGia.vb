@@ -252,7 +252,7 @@ Public Class ucQuanLyDocGia
         currenRowIndex = grvDanhSachDocGia.FocusedRowHandle
 
         ' Lấy data dòng hiện tại
-        Dim docGia As DocGiaDTO
+        Dim docGia = New DocGiaDTO
         If (-1 < currenRowIndex < grvDanhSachDocGia.RowCount) Then
             docGia = CType(grvDanhSachDocGia.GetRow(currenRowIndex), DocGiaDTO)
         End If

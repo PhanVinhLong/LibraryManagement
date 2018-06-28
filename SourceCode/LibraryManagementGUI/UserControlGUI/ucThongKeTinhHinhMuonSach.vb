@@ -8,6 +8,7 @@ Imports Utility
 
 Public Class ucThongKeTinhHinhMuonSach
     Private tinhHinhMuonSachBUS As TinhHinhMuonSachBUS
+
     Private Sub ucThongKeTinhHinhMuonSach_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         tinhHinhMuonSachBUS = New TinhHinhMuonSachBUS()
 
@@ -55,11 +56,12 @@ Public Class ucThongKeTinhHinhMuonSach
             listTinhHinh = tinhHinhMuonSachBUS.SelectAll(dteThangNam.EditValue.Month, dteThangNam.EditValue.Year)
             CaiDatGridControl(listTinhHinh)
 
+            ChartControl1.Series.Clear()
             Dim series1 As New Series("TỈ LỆ MƯỢN SÁCH", ViewType.Pie)
             For Each data As TinhHinhMuonSachDTO In listTinhHinh
                 series1.Points.Add(New SeriesPoint(data.TenTheLoai, data.TiLe))
             Next
-            ChartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False
+            ChartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True
             ChartControl1.Series.Add(series1)
             series1.Label.TextPattern = "{A}: {VP:p0}"
         End If

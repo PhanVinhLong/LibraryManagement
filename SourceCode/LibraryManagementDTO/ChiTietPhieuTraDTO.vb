@@ -1,14 +1,16 @@
 ﻿Public Class ChiTietPhieuTraDTO
     Private iMaPhieuTra As Integer
     Private iMaSach As Integer
+    Private iMaPhieuMuon As Integer
     Private iSoNgayTraTre As Integer
 
     Public Sub New()
     End Sub
 
-    Public Sub New(iMaPhieuTra As Integer, iMaSach As Integer, iSoNgayTraTre As Integer)
+    Public Sub New(iMaPhieuTra As Integer, iMaSach As Integer, iMaPhieuMuon As Integer, iSoNgayTraTre As Integer)
         Me.iMaPhieuTra = iMaPhieuTra
         Me.iMaSach = iMaSach
+        Me.iMaPhieuMuon = iMaPhieuMuon
         Me.iSoNgayTraTre = iSoNgayTraTre
     End Sub
 
@@ -36,6 +38,15 @@
         End Get
         Set(value As Integer)
             iSoNgayTraTre = value
+        End Set
+    End Property
+
+    Public Property MaPhieuMuon As Integer
+        Get
+            Return iMaPhieuMuon
+        End Get
+        Set(value As Integer)
+            iMaPhieuMuon = value
         End Set
     End Property
 End Class

@@ -307,8 +307,9 @@ Public Class ucNhanTraSach
         Dim result As Result
         result = phieuTraBUS.BuildMaPhieuTra(nextMaPhieuTra)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy Mã phiếu mượn kế tiếp không thành công.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy Mã phiếu trả kế tiếp không thành công.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
+            Return
         Else
             phieuTra.MaPhieuTra = nextMaPhieuTra
             phieuTra.MaDocGia = docGia.MaDocGia
@@ -318,11 +319,13 @@ Public Class ucNhanTraSach
         ' Lấy Data list Danh sách Chi tiết phiếu trả
         Dim soNgayTraTre As Integer
         Dim listChiTietPhieuTra = New List(Of ChiTietPhieuTraDTO)
+        Dim maPhieuMuon As Integer
         listChiTietPhieuTra.Clear()
         For Each sach As SachDTO In listSachChon
             soNgayTraTre = (Now - sachBUS.NgayHetHan(sach)).Days
             soNgayTraTre = If(soNgayTraTre < 0, 0, soNgayTraTre)
-            listChiTietPhieuTra.Add(New ChiTietPhieuTraDTO(nextMaPhieuTra, sach.MaSach, soNgayTraTre))
+            maPhieuMuon = sachBUS.MaPhieuMuonCuoi(sach)
+            listChiTietPhieuTra.Add(New ChiTietPhieuTraDTO(nextMaPhieuTra, sach.MaSach, maPhieuMuon, soNgayTraTre))
         Next
 
         ' Thêm dữ liệu vào database cho Phiếu trả

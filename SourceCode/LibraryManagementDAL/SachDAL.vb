@@ -132,7 +132,7 @@ Public Class SachDAL
         sqlQuery &= "FROM [tblSach] "
         sqlQuery &= "WHERE [MaSach] = @MaSach "
 
-        Dim sach As SachDTO
+        Dim sach = New SachDTO
         Using connection As New SqlConnection(connectionString)
             Using command As New SqlCommand()
                 With command
@@ -363,6 +363,37 @@ Public Class SachDAL
             End Using
         End Using
         Return maDocGia
+    End Function
+
+    Public Function MaPhieuMuonCuoi(sach As SachDTO) As Integer
+        Dim maPhieuMuon As Integer = 0
+        Dim sqlQuery As String
+        sqlQuery = String.Empty
+        sqlQuery &= "SELECT TOP 1 [tblPhieuMuon].[MaPhieuMuon] "
+        sqlQuery &= "FROM [tblPhieuMuon], [tblChiTietPhieuMuon] "
+        sqlQuery &= "WHERE [tblPhieuMuon].[MaPhieuMuon] = [tblChiTietPhieuMuon].[MaPhieuMuon] "
+        sqlQuery &= "      AND [MaSach] = @MaSach "
+        sqlQuery &= "ORDER BY [NgayMuon] DESC "
+
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand()
+                With command
+                    .Connection = connection
+                    .CommandType = CommandType.Text
+                    .CommandText = sqlQuery
+                    .Parameters.AddWithValue("@MaSach", sach.MaSach)
+                End With
+                connection.Open()
+                Dim dataReader As SqlDataReader
+                dataReader = command.ExecuteReader()
+                If dataReader.HasRows = True Then
+                    While dataReader.Read()
+                        maPhieuMuon = dataReader("MaPhieuMuon")
+                    End While
+                End If
+            End Using
+        End Using
+        Return maPhieuMuon
     End Function
 
     Public Function NgayHetHan(sach As SachDTO) As DateTime

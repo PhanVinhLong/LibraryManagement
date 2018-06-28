@@ -7,3 +7,4 @@ C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementDTO\obj\
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementDTO\obj\Debug\LibraryManagementDTO.dll
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementDTO\obj\Debug\LibraryManagementDTO.xml
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementDTO\obj\Debug\LibraryManagementDTO.pdb
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementDTO\obj\Debug\LibraryManagementDTO.vbprojAssemblyReference.cache

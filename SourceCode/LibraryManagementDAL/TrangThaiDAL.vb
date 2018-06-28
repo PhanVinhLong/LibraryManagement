@@ -34,7 +34,7 @@ Public Class TrangThaiDAL
                     connection.Open()
                     Dim dataReader As SqlDataReader
                     dataReader = command.ExecuteReader()
-                    Dim maTrangThaiOnDB As String
+                    Dim maTrangThaiOnDB As String = String.Empty
                     If dataReader.HasRows = True Then
                         While dataReader.Read()
                             maTrangThaiOnDB = dataReader("MaTrangThai")
@@ -85,7 +85,7 @@ Public Class TrangThaiDAL
     End Function
 
     Public Function SelectByMaTrangThai(iMaTrangThai As Integer) As TrangThaiDTO
-        Dim trangThai As TrangThaiDTO
+        Dim trangThai = New TrangThaiDTO
         Dim sqlQuery As String = String.Empty
         sqlQuery &= "SELECT [MaTrangThai], [TenTrangThai] "
         sqlQuery &= "FROM [tblTrangThai] "

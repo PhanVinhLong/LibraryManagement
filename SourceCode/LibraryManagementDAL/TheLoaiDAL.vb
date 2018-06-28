@@ -34,7 +34,7 @@ Public Class TheLoaiDAL
                     connection.Open()
                     Dim dataReader As SqlDataReader
                     dataReader = command.ExecuteReader()
-                    Dim maTheLoaiOnDB As String
+                    Dim maTheLoaiOnDB As String = String.Empty
                     If dataReader.HasRows = True Then
                         While dataReader.Read()
                             maTheLoaiOnDB = dataReader("MaTheLoai")
@@ -85,7 +85,7 @@ Public Class TheLoaiDAL
     End Function
 
     Public Function SelectByMaTheLoai(iMaTheLoai As Integer) As TheLoaiDTO
-        Dim theLoai As TheLoaiDTO
+        Dim theLoai = New TheLoaiDTO
         Dim sqlQuery As String = String.Empty
         sqlQuery &= "SELECT [MaTheLoai], [TenTheLoai] "
         sqlQuery &= "FROM [tblTheLoai] "

@@ -213,7 +213,7 @@ Public Class ucQuanLySach
         UpdateTheLoai()
     End Sub
 
-    Private Function UpdateTacGia()
+    Private Sub UpdateTacGia()
         For Each tacGia As TacGiaDTO In lTacGia
             If tacGia.MaTacGia = lTacGia.First.MaTacGia Then
                 lblTacGia.Text = tacGia.TenTacGia
@@ -221,9 +221,9 @@ Public Class ucQuanLySach
                 lblTacGia.Text = tacGia.TenTacGia & ", " & lblTacGia.Text
             End If
         Next
-    End Function
+    End Sub
 
-    Private Function UpdateTheLoai()
+    Private Sub UpdateTheLoai()
         For Each theLoai As TheLoaiDTO In lTheLoai
             If theLoai.MaTheLoai = lTheLoai.First.MaTheLoai Then
                 lblTheLoai.Text = theLoai.TenTheLoai
@@ -231,7 +231,7 @@ Public Class ucQuanLySach
                 lblTheLoai.Text = theLoai.TenTheLoai & ", " & lblTheLoai.Text
             End If
         Next
-    End Function
+    End Sub
 
     Private Sub txtTimKiem_EditValueChanged(sender As Object, e As EventArgs) Handles txtTimKiem.EditValueChanged
         Dim filterString As String

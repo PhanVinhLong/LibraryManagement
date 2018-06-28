@@ -34,7 +34,7 @@ Public Class TacGiaDAL
                     connection.Open()
                     Dim dataReader As SqlDataReader
                     dataReader = command.ExecuteReader()
-                    Dim maTacGiaOnDB As String
+                    Dim maTacGiaOnDB As String = String.Empty
                     If dataReader.HasRows = True Then
                         While dataReader.Read()
                             maTacGiaOnDB = dataReader("MaTacGia")
@@ -85,7 +85,7 @@ Public Class TacGiaDAL
     End Function
 
     Public Function SelectByMaTacGia(iMaTacGia As Integer) As TacGiaDTO
-        Dim tacGia As TacGiaDTO
+        Dim tacGia = New TacGiaDTO
         Dim sqlQuery As String = String.Empty
         sqlQuery &= "SELECT [MaTacGia], [TenTacGia] "
         sqlQuery &= "FROM [tblTacGia] "

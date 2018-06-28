@@ -34,7 +34,7 @@ Public Class PhieuTraDAL
                     connection.Open()
                     Dim dataReader As SqlDataReader
                     dataReader = command.ExecuteReader()
-                    Dim maPhieuTraOnDB As String
+                    Dim maPhieuTraOnDB As Integer = 0
                     If dataReader.HasRows = True Then
                         While dataReader.Read()
                             maPhieuTraOnDB = dataReader("MaPhieuTra")

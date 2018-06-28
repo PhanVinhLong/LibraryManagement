@@ -110,7 +110,7 @@ Public Class ucTiepNhanSachMoi
         lblNamXuatBan.Text = "Đã XB " & (Now.Year - dteNamXuatBan.EditValue.Year).ToString & " năm"
     End Sub
 
-    Private Function UpdateTacGia()
+    Private Sub UpdateTacGia()
         For Each tacGia As TacGiaDTO In lTacGia
             If tacGia.MaTacGia = lTacGia.First.MaTacGia Then
                 lblTacGia.Text = tacGia.TenTacGia
@@ -118,9 +118,9 @@ Public Class ucTiepNhanSachMoi
                 lblTacGia.Text = tacGia.TenTacGia & ", " & lblTacGia.Text
             End If
         Next
-    End Function
+    End Sub
 
-    Private Function UpdateTheLoai()
+    Private Sub UpdateTheLoai()
         For Each theLoai As TheLoaiDTO In lTheLoai
             If theLoai.MaTheLoai = lTheLoai.First.MaTheLoai Then
                 lblTheLoai.Text = theLoai.TenTheLoai
@@ -128,7 +128,7 @@ Public Class ucTiepNhanSachMoi
                 lblTheLoai.Text = theLoai.TenTheLoai & ", " & lblTheLoai.Text
             End If
         Next
-    End Function
+    End Sub
 
     Private Sub btnThemTacGia_Click(sender As Object, e As EventArgs) Handles btnThemTacGia.Click
         Dim tacGia As TacGiaDTO = tacGiaBUS.SelectByMaTacGia(gleTacGia.EditValue)

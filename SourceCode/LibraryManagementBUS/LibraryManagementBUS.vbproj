@@ -94,6 +94,7 @@
     <Compile Include="PhieuMuonBUS.vb" />
     <Compile Include="PhieuTraBUS.vb" />
     <Compile Include="SachBUS.vb" />
+    <Compile Include="SachTraTreBUS.vb" />
     <Compile Include="TacGiaBUS.vb" />
     <Compile Include="TacGiaSachBUS.vb" />
     <Compile Include="ThamSoBUS.vb" />

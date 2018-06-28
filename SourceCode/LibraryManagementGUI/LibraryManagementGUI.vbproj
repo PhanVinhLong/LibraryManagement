@@ -56,6 +56,7 @@
     <Reference Include="DevExpress.PivotGrid.v17.2.Core, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v17.2.Core, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.RichEdit.v17.2.Core, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v17.2.Export, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Sparkline.v17.2.Core, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v17.2.UI, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -126,10 +127,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Report\xrpTinhHinhMuonSach.Designer.vb">
+    <Compile Include="ReportGUI\xrpThongKeSachTraTre.Designer.vb">
+      <DependentUpon>xrpThongKeSachTraTre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportGUI\xrpThongKeSachTraTre.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportGUI\xrpTinhHinhMuonSach.Designer.vb">
       <DependentUpon>xrpTinhHinhMuonSach.vb</DependentUpon>
     </Compile>
-    <Compile Include="Report\xrpTinhHinhMuonSach.vb">
+    <Compile Include="ReportGUI\xrpTinhHinhMuonSach.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UserControlGUI\ucChoMuonSach.Designer.vb">
@@ -243,7 +250,10 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\xrpTinhHinhMuonSach.resx">
+    <EmbeddedResource Include="ReportGUI\xrpThongKeSachTraTre.resx">
+      <DependentUpon>xrpThongKeSachTraTre.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportGUI\xrpTinhHinhMuonSach.resx">
       <DependentUpon>xrpTinhHinhMuonSach.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlGUI\ucChoMuonSach.resx">

@@ -31,13 +31,16 @@ Partial Public Class xrpTinhHinhMuonSach
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.GroupHeader2 = New DevExpress.XtraReports.UI.GroupHeaderBand()
+        Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
         Me.XrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
         Me.dateNgayThongKe = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel3 = New DevExpress.XtraReports.UI.XRLabel()
         Me.invoiceInfoTable = New DevExpress.XtraReports.UI.XRTable()
         Me.invoiceInfoTableRow3 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell2 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.dateNgayLap = New DevExpress.XtraReports.UI.XRTableCell()
         Me.GroupFooter1 = New DevExpress.XtraReports.UI.GroupFooterBand()
+        Me.XrChart1 = New DevExpress.XtraReports.UI.XRChart()
         Me.totalTable = New DevExpress.XtraReports.UI.XRTable()
         Me.totalRow = New DevExpress.XtraReports.UI.XRTableRow()
         Me.totalCaption = New DevExpress.XtraReports.UI.XRTableCell()
@@ -49,19 +52,16 @@ Partial Public Class xrpTinhHinhMuonSach
         Me.quantityCaption = New DevExpress.XtraReports.UI.XRTableCell()
         Me.unitPriceCaption = New DevExpress.XtraReports.UI.XRTableCell()
         Me.lineTotalCaption = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.ObjectDataSource1 = New DevExpress.DataAccess.ObjectBinding.ObjectDataSource(Me.components)
         Me.baseControlStyle = New DevExpress.XtraReports.UI.XRControlStyle()
         Me.evenDetailStyle = New DevExpress.XtraReports.UI.XRControlStyle()
         Me.oddDetailStyle = New DevExpress.XtraReports.UI.XRControlStyle()
-        Me.XrTableCell2 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrChart1 = New DevExpress.XtraReports.UI.XRChart()
-        Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
+        Me.ObjectDataSource1 = New DevExpress.DataAccess.ObjectBinding.ObjectDataSource(Me.components)
         CType(Me.detailTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.invoiceInfoTable, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.XrChart1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.totalTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.headerTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ObjectDataSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.XrChart1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'Detail
@@ -128,7 +128,7 @@ Partial Public Class xrpTinhHinhMuonSach
         '
         'detailTableCell5
         '
-        Me.detailTableCell5.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TiLe]")})
+        Me.detailTableCell5.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TiLe] + '%'")})
         Me.detailTableCell5.Font = New System.Drawing.Font("Segoe UI", 9.75!)
         Me.detailTableCell5.Name = "detailTableCell5"
         Me.detailTableCell5.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 5, 0, 100.0!)
@@ -164,6 +164,14 @@ Partial Public Class xrpTinhHinhMuonSach
         Me.GroupHeader2.Name = "GroupHeader2"
         Me.GroupHeader2.StyleName = "baseControlStyle"
         Me.GroupHeader2.StylePriority.UseBackColor = False
+        '
+        'XrPictureBox1
+        '
+        Me.XrPictureBox1.Image = CType(resources.GetObject("XrPictureBox1.Image"), System.Drawing.Image)
+        Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(9.999986!, 10.00001!)
+        Me.XrPictureBox1.Name = "XrPictureBox1"
+        Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(110.0!, 110.0!)
+        Me.XrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage
         '
         'XrLabel1
         '
@@ -212,6 +220,16 @@ Partial Public Class xrpTinhHinhMuonSach
         Me.invoiceInfoTableRow3.StylePriority.UseFont = False
         Me.invoiceInfoTableRow3.Weight = 0.4266795832360003R
         '
+        'XrTableCell2
+        '
+        Me.XrTableCell2.Borders = DevExpress.XtraPrinting.BorderSide.None
+        Me.XrTableCell2.Name = "XrTableCell2"
+        Me.XrTableCell2.StylePriority.UseBorders = False
+        Me.XrTableCell2.StylePriority.UseTextAlignment = False
+        Me.XrTableCell2.Text = "Ngày lập:"
+        Me.XrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
+        Me.XrTableCell2.Weight = 1.125101946954864R
+        '
         'dateNgayLap
         '
         Me.dateNgayLap.Borders = DevExpress.XtraPrinting.BorderSide.None
@@ -234,6 +252,16 @@ Partial Public Class xrpTinhHinhMuonSach
         Me.GroupFooter1.Name = "GroupFooter1"
         Me.GroupFooter1.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBandExceptLastEntry
         Me.GroupFooter1.StyleName = "baseControlStyle"
+        '
+        'XrChart1
+        '
+        Me.XrChart1.BorderColor = System.Drawing.Color.Black
+        Me.XrChart1.Borders = DevExpress.XtraPrinting.BorderSide.None
+        Me.XrChart1.Legend.Name = "Default Legend"
+        Me.XrChart1.LocationFloat = New DevExpress.Utils.PointFloat(125.7062!, 53.63692!)
+        Me.XrChart1.Name = "XrChart1"
+        Me.XrChart1.SeriesSerializable = New DevExpress.XtraCharts.Series(-1) {}
+        Me.XrChart1.SizeF = New System.Drawing.SizeF(492.002!, 378.4314!)
         '
         'totalTable
         '
@@ -370,11 +398,6 @@ Partial Public Class xrpTinhHinhMuonSach
         Me.lineTotalCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         Me.lineTotalCaption.Weight = 0.34524235124525154R
         '
-        'ObjectDataSource1
-        '
-        Me.ObjectDataSource1.DataSource = GetType(LibraryManagementDTO.TinhHinhMuonSachDTO)
-        Me.ObjectDataSource1.Name = "ObjectDataSource1"
-        '
         'baseControlStyle
         '
         Me.baseControlStyle.Font = New System.Drawing.Font("Segoe UI", 9.75!)
@@ -393,33 +416,10 @@ Partial Public Class xrpTinhHinhMuonSach
         Me.oddDetailStyle.Name = "oddDetailStyle"
         Me.oddDetailStyle.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         '
-        'XrTableCell2
+        'ObjectDataSource1
         '
-        Me.XrTableCell2.Borders = DevExpress.XtraPrinting.BorderSide.None
-        Me.XrTableCell2.Name = "XrTableCell2"
-        Me.XrTableCell2.StylePriority.UseBorders = False
-        Me.XrTableCell2.StylePriority.UseTextAlignment = False
-        Me.XrTableCell2.Text = "Ngày lập:"
-        Me.XrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
-        Me.XrTableCell2.Weight = 1.125101946954864R
-        '
-        'XrChart1
-        '
-        Me.XrChart1.BorderColor = System.Drawing.Color.Black
-        Me.XrChart1.Borders = DevExpress.XtraPrinting.BorderSide.None
-        Me.XrChart1.Legend.Name = "Default Legend"
-        Me.XrChart1.LocationFloat = New DevExpress.Utils.PointFloat(125.7062!, 53.63692!)
-        Me.XrChart1.Name = "XrChart1"
-        Me.XrChart1.SeriesSerializable = New DevExpress.XtraCharts.Series(-1) {}
-        Me.XrChart1.SizeF = New System.Drawing.SizeF(492.002!, 378.4314!)
-        '
-        'XrPictureBox1
-        '
-        Me.XrPictureBox1.Image = CType(resources.GetObject("XrPictureBox1.Image"), System.Drawing.Image)
-        Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(9.999986!, 10.00001!)
-        Me.XrPictureBox1.Name = "XrPictureBox1"
-        Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(110.0!, 110.0!)
-        Me.XrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage
+        Me.ObjectDataSource1.DataSource = GetType(LibraryManagementDTO.TinhHinhMuonSachDTO)
+        Me.ObjectDataSource1.Name = "ObjectDataSource1"
         '
         'xrpTinhHinhMuonSach
         '
@@ -432,10 +432,10 @@ Partial Public Class xrpTinhHinhMuonSach
         Me.Version = "17.2"
         CType(Me.detailTable, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.invoiceInfoTable, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.XrChart1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.totalTable, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.headerTable, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ObjectDataSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.XrChart1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub
@@ -457,7 +457,6 @@ Partial Public Class xrpTinhHinhMuonSach
     Friend WithEvents quantityCaption As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents unitPriceCaption As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents lineTotalCaption As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents ObjectDataSource1 As DevExpress.DataAccess.ObjectBinding.ObjectDataSource
     Friend WithEvents baseControlStyle As DevExpress.XtraReports.UI.XRControlStyle
     Friend WithEvents evenDetailStyle As DevExpress.XtraReports.UI.XRControlStyle
     Friend WithEvents oddDetailStyle As DevExpress.XtraReports.UI.XRControlStyle
@@ -475,4 +474,5 @@ Partial Public Class xrpTinhHinhMuonSach
     Friend WithEvents XrTableCell2 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrChart1 As DevExpress.XtraReports.UI.XRChart
     Friend WithEvents XrPictureBox1 As DevExpress.XtraReports.UI.XRPictureBox
+    Friend WithEvents ObjectDataSource1 As DevExpress.DataAccess.ObjectBinding.ObjectDataSource
 End Class
