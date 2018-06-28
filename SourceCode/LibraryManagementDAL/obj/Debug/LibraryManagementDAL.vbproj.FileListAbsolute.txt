@@ -51,3 +51,4 @@ C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementDAL\obj\
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementDAL\obj\Debug\LibraryManagementDAL.dll
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementDAL\obj\Debug\LibraryManagementDAL.xml
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementDAL\obj\Debug\LibraryManagementDAL.pdb
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementDAL\bin\Debug\Bunifu_UI_v1.5.3.dll

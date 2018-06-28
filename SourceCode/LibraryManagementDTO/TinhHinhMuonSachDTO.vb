@@ -38,4 +38,8 @@
             iTiLe = value
         End Set
     End Property
+
+    Public Function Clone() As TinhHinhMuonSachDTO
+        Return Me.MemberwiseClone()
+    End Function
 End Class

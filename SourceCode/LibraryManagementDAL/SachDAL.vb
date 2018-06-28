@@ -431,4 +431,39 @@ Public Class SachDAL
         End Using
         Return ngayHetHanTra.AddDays(thamSo.SoNgayMuonToiDa)
     End Function
+
+    Public Function NgayMuonCuoi(sach As SachDTO) As DateTime
+        Dim ngayMuon As DateTime = sach.NgayNhap
+        Dim sqlQuery As String
+        sqlQuery = String.Empty
+        sqlQuery &= "SELECT TOP 1 [tblPhieuMuon].[NgayMuon] "
+        sqlQuery &= "FROM [tblPhieuMuon], [tblChiTietPhieuMuon] "
+        sqlQuery &= "WHERE [tblPhieuMuon].[MaPhieuMuon] = [tblChiTietPhieuMuon].[MaPhieuMuon] "
+        sqlQuery &= "      AND [MaSach] = @MaSach "
+        sqlQuery &= "ORDER BY [NgayMuon] DESC "
+
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand()
+                With command
+                    .Connection = connection
+                    .CommandType = CommandType.Text
+                    .CommandText = sqlQuery
+                    .Parameters.AddWithValue("@MaSach", sach.MaSach)
+                End With
+                connection.Open()
+                Dim dataReader As SqlDataReader
+                dataReader = command.ExecuteReader()
+                Try
+                    If dataReader.HasRows = True Then
+                        While dataReader.Read()
+                            ngayMuon = dataReader("[NgayMuon]")
+                        End While
+                    End If
+                Catch
+                    ngayMuon = sach.NgayNhap
+                End Try
+            End Using
+        End Using
+        Return ngayMuon
+    End Function
 End Class

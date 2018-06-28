@@ -30,8 +30,8 @@ Partial Class ucThongKeTraSachTre
         Me.txtTimKiem = New DevExpress.XtraEditors.TextEdit()
         Me.grcDanhSachThongKe = New DevExpress.XtraGrid.GridControl()
         Me.grvDanhSachThongKe = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.TinhHinhMuonSachDTOBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ChartControl1 = New DevExpress.XtraCharts.ChartControl()
+        Me.TinhHinhMuonSachDTOBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.dteThoiGian.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dteThoiGian.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -39,8 +39,8 @@ Partial Class ucThongKeTraSachTre
         CType(Me.txtTimKiem.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grcDanhSachThongKe, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grvDanhSachThongKe, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TinhHinhMuonSachDTOBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TinhHinhMuonSachDTOBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelControl1
@@ -127,10 +127,6 @@ Partial Class ucThongKeTraSachTre
         Me.grvDanhSachThongKe.GridControl = Me.grcDanhSachThongKe
         Me.grvDanhSachThongKe.Name = "grvDanhSachThongKe"
         '
-        'TinhHinhMuonSachDTOBindingSource
-        '
-        Me.TinhHinhMuonSachDTOBindingSource.DataSource = GetType(LibraryManagementDTO.TinhHinhMuonSachDTO)
-        '
         'ChartControl1
         '
         Me.ChartControl1.Legend.Name = "Default Legend"
@@ -139,6 +135,10 @@ Partial Class ucThongKeTraSachTre
         Me.ChartControl1.SeriesSerializable = New DevExpress.XtraCharts.Series(-1) {}
         Me.ChartControl1.Size = New System.Drawing.Size(661, 395)
         Me.ChartControl1.TabIndex = 39
+        '
+        'TinhHinhMuonSachDTOBindingSource
+        '
+        Me.TinhHinhMuonSachDTOBindingSource.DataSource = GetType(LibraryManagementDTO.TinhHinhMuonSachDTO)
         '
         'ucThongKeTraSachTre
         '
@@ -157,8 +157,8 @@ Partial Class ucThongKeTraSachTre
         CType(Me.txtTimKiem.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grcDanhSachThongKe, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grvDanhSachThongKe, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TinhHinhMuonSachDTOBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ChartControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TinhHinhMuonSachDTOBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -172,6 +172,6 @@ Partial Class ucThongKeTraSachTre
     Friend WithEvents txtTimKiem As DevExpress.XtraEditors.TextEdit
     Friend WithEvents grcDanhSachThongKe As DevExpress.XtraGrid.GridControl
     Friend WithEvents grvDanhSachThongKe As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents TinhHinhMuonSachDTOBindingSource As BindingSource
     Friend WithEvents ChartControl1 As DevExpress.XtraCharts.ChartControl
+    Friend WithEvents TinhHinhMuonSachDTOBindingSource As BindingSource
 End Class

@@ -1,4 +1,5 @@
-﻿Imports LibraryManagementBUS
+﻿Imports DevExpress.XtraEditors.Controls
+Imports LibraryManagementBUS
 Imports LibraryManagementDTO
 Imports Utility
 
@@ -33,12 +34,16 @@ Public Class ucQuanLyDocGia
         lueChonLoaiDocGia.Properties.DataSource = New BindingSource(listLoaiDocGia, String.Empty)
         lueChonLoaiDocGia.Properties.DisplayMember = "TenLoaiDocGia"
         lueChonLoaiDocGia.Properties.ValueMember = "MaLoaiDocGia"
+        lueChonLoaiDocGia.Properties.TextEditStyle = TextEditStyles.Standard
+        lueChonLoaiDocGia.Properties.SearchMode = SearchMode.AutoFilter
         '------------
         lueLoaiDocGia.Properties.ShowHeader = False
         lueLoaiDocGia.Properties.ShowFooter = False
         lueLoaiDocGia.Properties.DataSource = New BindingSource(listLoaiDocGia, String.Empty)
         lueLoaiDocGia.Properties.DisplayMember = "TenLoaiDocGia"
         lueLoaiDocGia.Properties.ValueMember = "MaLoaiDocGia"
+        lueLoaiDocGia.Properties.TextEditStyle = TextEditStyles.Standard
+        lueLoaiDocGia.Properties.SearchMode = SearchMode.AutoFilter
 
         ' Xoá cột ValueMember của ChonLoaiDocGia và LoaiDocGia
         lueChonLoaiDocGia.Properties.PopulateColumns()

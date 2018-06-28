@@ -67,6 +67,7 @@
     <Compile Include="ChiTietPhieuTraDTO.vb" />
     <Compile Include="DocGiaDTO.vb" />
     <Compile Include="LoaiDocGiaDTO.vb" />
+    <Compile Include="LoaiNhanVienDTO.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -82,6 +83,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="NhanVienDTO.vb" />
     <Compile Include="NhaXuatBanDTO.vb" />
     <Compile Include="PhieuMuonDTO.vb" />
     <Compile Include="PhieuTraDTO.vb" />

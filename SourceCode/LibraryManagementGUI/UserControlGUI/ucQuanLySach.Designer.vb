@@ -431,7 +431,7 @@ Partial Class ucQuanLySach
         'lueLocTacGia
         '
         Me.lueLocTacGia.EditValue = " "
-        Me.lueLocTacGia.Location = New System.Drawing.Point(547, 10)
+        Me.lueLocTacGia.Location = New System.Drawing.Point(556, 10)
         Me.lueLocTacGia.Name = "lueLocTacGia"
         Me.lueLocTacGia.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueLocTacGia.Size = New System.Drawing.Size(116, 20)
@@ -440,7 +440,7 @@ Partial Class ucQuanLySach
         'lueLocTrangThai
         '
         Me.lueLocTrangThai.EditValue = " "
-        Me.lueLocTrangThai.Location = New System.Drawing.Point(547, 36)
+        Me.lueLocTrangThai.Location = New System.Drawing.Point(556, 36)
         Me.lueLocTrangThai.Name = "lueLocTrangThai"
         Me.lueLocTrangThai.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueLocTrangThai.Size = New System.Drawing.Size(116, 20)
@@ -491,7 +491,7 @@ Partial Class ucQuanLySach
         'btnLoc
         '
         Me.btnLoc.ImageOptions.ImageUri.Uri = "Filter;Size16x16;Office2013"
-        Me.btnLoc.Location = New System.Drawing.Point(669, 11)
+        Me.btnLoc.Location = New System.Drawing.Point(678, 11)
         Me.btnLoc.Name = "btnLoc"
         Me.btnLoc.Size = New System.Drawing.Size(68, 45)
         Me.btnLoc.TabIndex = 36

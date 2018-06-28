@@ -5,6 +5,7 @@ Imports DevExpress.XtraReports.Design
 Imports LibraryManagementBUS
 Imports LibraryManagementDTO
 Imports Utility
+Imports System.Object
 
 Public Class ucThongKeTraSachTre
     Private sachTraTreBUS As SachTraTreBUS
@@ -49,7 +50,7 @@ Public Class ucThongKeTraSachTre
         grvDanhSachThongKe.ApplyFindFilter(filterString)
     End Sub
 
-    Private Sub dteThoiGian_EditValueChanged(sender As Object, e As EventArgs) Handles dteThoiGian.EditValueChanged
+    Private Sub dteThoiGian_EditValueChanged(sender As Object, e As EventArgs) Handles dteThoiGian.DateTimeChanged
         sachTraTreBUS = New SachTraTreBUS()
         If dteThoiGian.EditValue <> Nothing Then
             Dim listSachTraTre = New List(Of SachTraTreDTO)
@@ -59,7 +60,7 @@ Public Class ucThongKeTraSachTre
             Dim listBieuDo = New List(Of SachTraTreDTO)
             For Each item In listSachTraTre
                 If listBieuDo.Count < 1 Then
-                    listBieuDo.Add(item)
+                    listBieuDo.Add(item.Clone())
                     Continue For
                 End If
 
@@ -72,7 +73,7 @@ Public Class ucThongKeTraSachTre
                 Next
 
                 If flag Then
-                    listBieuDo.Add(item)
+                    listBieuDo.Add(item.Clone())
                 End If
             Next
 

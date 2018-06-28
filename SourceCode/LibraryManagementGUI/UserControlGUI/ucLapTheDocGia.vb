@@ -1,5 +1,6 @@
 ﻿Imports DevExpress.Utils
 Imports DevExpress.XtraEditors
+Imports DevExpress.XtraEditors.Controls
 Imports LibraryManagementBUS
 Imports LibraryManagementDTO
 Imports Utility
@@ -47,6 +48,8 @@ Public Class ucLapTheDocGia
         lueLoaiDocGia.Properties.DataSource = New BindingSource(listLoaiDocGia, String.Empty)
         lueLoaiDocGia.Properties.DisplayMember = "TenLoaiDocGia"
         lueLoaiDocGia.Properties.ValueMember = "MaLoaiDocGia"
+        lueLoaiDocGia.Properties.TextEditStyle = TextEditStyles.Standard
+        lueLoaiDocGia.Properties.SearchMode = SearchMode.AutoFilter
 
         ' Xoá cột ValueMember của LoaiDocGia
         lueLoaiDocGia.Properties.PopulateColumns()

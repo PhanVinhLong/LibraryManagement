@@ -1,5 +1,6 @@
 ﻿Imports DevExpress.Utils
 Imports DevExpress.XtraEditors
+Imports DevExpress.XtraEditors.Controls
 Imports LibraryManagementBUS
 Imports LibraryManagementDTO
 Imports Utility
@@ -102,12 +103,16 @@ Public Class ucChoMuonSach
         lueLocTheLoai.Properties.DataSource = New BindingSource(listTheLoai, String.Empty)
         lueLocTheLoai.Properties.DisplayMember = "TenTheLoai"
         lueLocTheLoai.Properties.ValueMember = "MaTheLoai"
+        lueLocTheLoai.Properties.TextEditStyle = TextEditStyles.Standard
+        lueLocTheLoai.Properties.SearchMode = SearchMode.AutoFilter
         '----
         lueLocTacGia.Properties.ShowHeader = False
         lueLocTacGia.Properties.ShowFooter = False
         lueLocTacGia.Properties.DataSource = New BindingSource(listTacGia, String.Empty)
         lueLocTacGia.Properties.DisplayMember = "TenTacGia"
         lueLocTacGia.Properties.ValueMember = "MaTacGia"
+        lueLocTacGia.Properties.TextEditStyle = TextEditStyles.Standard
+        lueLocTacGia.Properties.SearchMode = SearchMode.AutoFilter
 
         ' Xoá cột ValueMember
         lueLocTheLoai.Properties.PopulateColumns()
@@ -129,7 +134,7 @@ Public Class ucChoMuonSach
         lueLocTacGia.EditValue = 1
 
         ' Load dữ liệu cho GridView
-        LoadListSach(-1, -1, 1, -1)
+        LoadGridSach(GetListSach(-1, -1, -1, -1))
 
         ' Đặt giá trị mặc định cho Ngày nhập
         dteNgayNhap.Properties.EditMask = "dd/MM/yyyy"
@@ -207,7 +212,7 @@ Public Class ucChoMuonSach
         End If
     End Sub
 
-    Private Sub ResetDocGia()
+    Private Sub ResetInfoDocGia()
         ' Xoá ô tìm kiếm
         txtTimKiemDocGia.EditValue = Nothing
 
@@ -243,14 +248,13 @@ Public Class ucChoMuonSach
     End Sub
 
     Private Sub btnTaiLaiDocGia_Click(sender As Object, e As EventArgs) Handles btnTaiLaiDocGia.Click
-        ResetDocGia()
+        ResetInfoDocGia()
     End Sub
 
     '------------------------------------------------
 
-    Private Sub CaiDatGridControl(listSach As List(Of SachDTO))
+    Private Sub LoadGridSach(listSach As List(Of SachDTO))
         grcDanhSachSach.SuspendLayout() ' Tạm dừng hiển thị GridView
-
         ' Cài đặt cho GridControl và GridView
         grvDanhSachSach.BestFitColumns()
         grvDanhSachSach.Columns.Clear()
@@ -261,27 +265,10 @@ Public Class ucChoMuonSach
         grvDanhSachSach.OptionsFind.FindDelay = 0
         grvDanhSachSach.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect
         grvDanhSachSach.OptionsSelection.MultiSelect = True
-
         grcDanhSachSach.ResumeLayout() ' Tiếp tục hiển thị GridView
     End Sub
 
-    Private Sub Reset()
-        Dim currenRowIndex As Integer
-        currenRowIndex = grvDanhSachSach.FocusedRowHandle
-
-        ' Thay đổi data ô thông tin sách
-        If (-1 < currenRowIndex < grvDanhSachSach.RowCount) Then
-            LoadListSach(-1, -1, 1, -1)
-            Dim sach = CType(grvDanhSachSach.GetRow(currenRowIndex), SachDTO)
-            LoadSach(sach)
-            grvDanhSachSach.FocusedRowHandle = currenRowIndex
-        End If
-
-        ' Xoá ô tìm kiếm
-        txtTimKiem.EditValue = Nothing
-    End Sub
-
-    Private Sub LoadListSach(iMaTheLoai As Integer, iMaTacGia As Integer, iMaTrangThai As Integer, iNamXuatBan As Integer)
+    Private Function GetListSach(iMaTheLoai As Integer, iMaTacGia As Integer, iMaTrangThai As Integer, iNamXuatBan As Integer) As List(Of SachDTO)
         Dim listSach = New List(Of SachDTO)
         Dim result As Result
         ' Chỉ lấy sách đang sẵn sàng để mượn
@@ -290,15 +277,9 @@ Public Class ucChoMuonSach
         If (result.FlagResult = False) Then
             MessageBox.Show("Lấy danh sách Sách theo điều kiện không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
-            Return
         End If
-
-        CaiDatGridControl(listSach)
-    End Sub
-
-    Private Sub LoadSach(sach As SachDTO)
-
-    End Sub
+        Return listSach
+    End Function
 
     Private Sub txtTimKiem_EditValueChanged(sender As Object, e As EventArgs) Handles txtTimKiem.EditValueChanged
         Dim filterString As String
@@ -307,18 +288,12 @@ Public Class ucChoMuonSach
         grvDanhSachSach.ApplyFindFilter(filterString)
     End Sub
 
-    Private Sub btnTimKiem_Click(sender As Object, e As EventArgs)
-        Dim filterString As String
-        filterString = String.Empty
-        filterString = """" & txtTimKiem.EditValue & """"
-        grvDanhSachSach.ApplyFindFilter(filterString)
-    End Sub
-
     Private Sub btnTaiLai_Click(sender As Object, e As EventArgs) Handles btnTaiLai.Click
+        txtTimKiem.EditValue = Nothing
         ckeTheLoai.Checked = False
         ckeTacGia.Checked = False
         ckeNamXuatBan.Checked = False
-        Reset()
+        LoadGridSach(GetListSach(-1, -1, 1, -1))
     End Sub
 
     Private Sub grvDanhSachSach_SelectionChanged(sender As Object, e As DevExpress.Data.SelectionChangedEventArgs) Handles grvDanhSachSach.SelectionChanged
@@ -355,10 +330,10 @@ Public Class ucChoMuonSach
         End If
 
         ' Lọc data
-        LoadListSach(iMaTheLoai, iMaTacGia, 1, iNamXuatBan)
+        LoadGridSach(GetListSach(iMaTheLoai, iMaTacGia, 1, iNamXuatBan))
     End Sub
 
-    Private Sub btnChoMuon_Click(sender As Object, e As EventArgs) Handles btnChoMuon.Click
+    Private Sub ChoMuonSach()
         ' Lấy dữ liệu tham số
         thamSoBUS = New ThamSoBUS()
         Dim thamSo As ThamSoDTO = New ThamSoDTO
@@ -380,94 +355,12 @@ Public Class ucChoMuonSach
             Return
         End If
         '----
-        If docGiaBUS.SachMuonHetHan(docGia).Count > 0 Then
-            MessageBox.Show("Độc giả còn sách mượn quá hạn chưa trả")
-            Return
-        End If
-        '----
-        Dim soSachDangMuon = docGiaBUS.SachMuonConHan(docGia).Count
-        If soSachDangMuon + listSachChon.Count > thamSo.SoLuongSachMuonToiDa Then
-            MessageBox.Show("Chỉ có thể mượn tối đa 1 lúc " & thamSo.SoLuongSachMuonToiDa & " cuốn. Vui lòng xoá bớt sách hoặc trả sách đang mượn")
-            Return
-        End If
-
-        ' Lấy Data phiếu mượn
-        Dim phieuMuon = New PhieuMuonDTO()
-        Dim nextMaPhieuMuon As Integer = Nothing
-        Dim result As Result
-        result = phieuMuonBUS.BuildMaPhieuMuon(nextMaPhieuMuon)
-        If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy Mã phiếu mượn kế tiếp không thành công.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            System.Console.WriteLine(result.SystemMessage)
-        Else
-            phieuMuon.MaPhieuMuon = nextMaPhieuMuon
-            phieuMuon.MaDocGia = docGia.MaDocGia
-            phieuMuon.NgayMuon = dteNgayNhap.EditValue
-        End If
-
-        ' Lấy Data list Danh sách Chi tiết phiếu mượn
-        Dim listChiTietPhieuMuon = New List(Of ChiTietPhieuMuonDTO)
-        listChiTietPhieuMuon.Clear()
-        For Each sach As SachDTO In listSachChon
-            listChiTietPhieuMuon.Add(New ChiTietPhieuMuonDTO(nextMaPhieuMuon, sach.MaSach))
-        Next
-
-        ' Thêm dữ liệu vào database cho Phiếu mượn
-        result = phieuMuonBUS.Insert(phieuMuon)
-        If (result.FlagResult = False) Then
-            MessageBox.Show("Thêm Phiếu mượn không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            System.Console.WriteLine(result.SystemMessage)
-            Return
-        End If
-
-        ' Thêm dữ liệu vào database cho List Chi tiết phiếu mượn
-        result = chiTietPhieuMuonBUS.InsertList(listChiTietPhieuMuon)
-        If (result.FlagResult = False) Then
-            MessageBox.Show("Thêm Chi tiết phiếu mượn không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            System.Console.WriteLine(result.SystemMessage)
-            Return
-        End If
-
-        ' Thay đổi trạng thái sách
         For Each sach In listSachChon
-            sach.MaTrangThai = 2
-            result = sachBUS.Update(sach)
-            If (result.FlagResult = False) Then
-                MessageBox.Show("Cập nhật trạng thái Sách lỗi", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            If sachBUS.NgayMuonCuoi(sach) > dteNgayNhap.EditValue Then
+                MessageBox.Show("Ngày mượn không thể nhỏ hơn ngày mượn cuối cùng hoặc ngày nhập sách")
                 Return
             End If
         Next
-
-        MessageBox.Show("Đã Lập phiếu mượn")
-
-        ' Reset dữ liệu
-        LoadListSach(-1, -1, 1, -1)
-        ResetDocGia()
-        listSachChon.Clear()
-        lblSachDaChon.Text = "Chưa chọn sách"
-    End Sub
-
-    Private Sub btnChoMuonVaDong_Click(sender As Object, e As EventArgs) Handles btnChoMuonVaDong.Click
-        ' Lấy dữ liệu tham số
-        thamSoBUS = New ThamSoBUS()
-        Dim thamSo As ThamSoDTO = New ThamSoDTO
-        thamSoBUS.GetData(thamSo)
-
-        ' Kiểm tra
-        If dteNgayNhap.EditValue > Now Then
-            MessageBox.Show("Ngày nhập không đúng")
-            Return
-        End If
-        ' ----
-        If listSachChon.Count < 1 Then
-            MessageBox.Show("Bạn chưa chọn sách nào")
-            Return
-        End If
-        ' ----
-        If docGia.MaDocGia = Nothing Then
-            MessageBox.Show("Bạn chưa chọn độc giả")
-            Return
-        End If
 
         ' Lấy Data phiếu mượn kế tiếp
         Dim phieuMuon = New PhieuMuonDTO()
@@ -477,10 +370,21 @@ Public Class ucChoMuonSach
         If (result.FlagResult = False) Then
             MessageBox.Show("Lấy Mã phiếu mượn kế tiếp không thành công.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
+            GlobalControl.ChangeStatus("Lấy Mã phiếu mượn kế tiếp không thành công")
+            Return
         Else
             phieuMuon.MaPhieuMuon = nextMaPhieuMuon
             phieuMuon.MaDocGia = docGia.MaDocGia
             phieuMuon.NgayMuon = dteNgayNhap.EditValue
+        End If
+
+        ' Thêm dữ liệu vào database cho Phiếu mượn
+        result = phieuMuonBUS.Insert(phieuMuon)
+        If (result.FlagResult = False) Then
+            MessageBox.Show("Thêm Phiếu mượn không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            System.Console.WriteLine(result.SystemMessage)
+            GlobalControl.ChangeStatus("Thêm Phiếu mượn không thành công")
+            Return
         End If
 
         ' Lấy Data list Danh sách Chi tiết phiếu mượn
@@ -490,20 +394,13 @@ Public Class ucChoMuonSach
             listChiTietPhieuMuon.Add(New ChiTietPhieuMuonDTO(nextMaPhieuMuon, sach.MaSach))
         Next
 
-        ' Thêm dữ liệu vào database cho Phiếu mượn
-        result = phieuMuonBUS.Insert(phieuMuon)
-        If (result.FlagResult = False) Then
-            MessageBox.Show("Thêm Phiếu mượn không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            System.Console.WriteLine(result.SystemMessage)
-            Me.Parent.Dispose()
-        End If
-
         ' Thêm dữ liệu vào database cho List Chi tiết phiếu mượn
         result = chiTietPhieuMuonBUS.InsertList(listChiTietPhieuMuon)
         If (result.FlagResult = False) Then
             MessageBox.Show("Thêm Chi tiết phiếu mượn không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
-            Me.Parent.Dispose()
+            GlobalControl.ChangeStatus("Thêm Chi tiết phiếu mượn không thành công")
+            Return
         End If
 
         ' Thay đổi trạng thái sách
@@ -512,11 +409,28 @@ Public Class ucChoMuonSach
             result = sachBUS.Update(sach)
             If (result.FlagResult = False) Then
                 MessageBox.Show("Cập nhật trạng thái Sách lỗi", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Me.Parent.Dispose()
+                GlobalControl.ChangeStatus("Cập nhật trạng thái Sách lỗi")
+                Return
             End If
         Next
-
         MessageBox.Show("Đã Lập phiếu mượn")
+        GlobalControl.ChangeStatus("Đã Lập phiếu mượn")
+    End Sub
+
+
+    Private Sub btnChoMuon_Click(sender As Object, e As EventArgs) Handles btnChoMuon.Click
+        ChoMuonSach()
+
+        ' Reset dữ liệu
+        LoadGridSach(GetListSach(-1, -1, 1, -1))
+        ResetInfoDocGia()
+        listSachChon.Clear()
+        lblSachDaChon.Text = "Chưa chọn sách"
+        dteNgayNhap.EditValue = Now
+    End Sub
+
+    Private Sub btnChoMuonVaDong_Click(sender As Object, e As EventArgs) Handles btnChoMuonVaDong.Click
+        ChoMuonSach()
         Me.Parent.Dispose()
     End Sub
 

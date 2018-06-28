@@ -45,3 +45,5 @@ C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\obj\Debug\Utility
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\obj\Debug\Utility.dll
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\obj\Debug\Utility.xml
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\obj\Debug\Utility.pdb
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\Utility\obj\Debug\Utility.frmLogin.resources

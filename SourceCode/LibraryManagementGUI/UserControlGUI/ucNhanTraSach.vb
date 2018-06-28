@@ -1,5 +1,6 @@
 ﻿Imports DevExpress.Utils
 Imports DevExpress.XtraEditors
+Imports DevExpress.XtraEditors.Controls
 Imports LibraryManagementBUS
 Imports LibraryManagementDTO
 Imports Utility
@@ -59,6 +60,8 @@ Public Class ucNhanTraSach
         lueChonLoaiDocGia.Properties.DataSource = New BindingSource(listLoaiDocGia, String.Empty)
         lueChonLoaiDocGia.Properties.DisplayMember = "TenLoaiDocGia"
         lueChonLoaiDocGia.Properties.ValueMember = "MaLoaiDocGia"
+        lueChonLoaiDocGia.Properties.TextEditStyle = TextEditStyles.Standard
+        lueChonLoaiDocGia.Properties.SearchMode = SearchMode.AutoFilter
 
         ' Xoá cột ValueMember của ChonLoaiDocGia và LoaiDocGia
         lueChonLoaiDocGia.Properties.PopulateColumns()
@@ -360,5 +363,6 @@ Public Class ucNhanTraSach
         ResetDocGia()
         listSachChon.Clear()
         lblSachDaChon.Text = "Chưa chọn sách"
+        dteNgayTra.EditValue = Now
     End Sub
 End Class

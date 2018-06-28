@@ -28,7 +28,6 @@ Public Class SachTraTreDAL
         sqlQuery &= "      AND [tblPhieuMuon].[MaPhieuMuon] = [tblChiTietPhieuMuon].[MaPhieuMuon] "
         sqlQuery &= "      AND [tblChiTietPhieuMuon].[MaPhieuMuon] = [tblChiTietPhieuTra].[MaPhieuMuon] "
         sqlQuery &= "      AND [tblChiTietPhieuTra].[MaPhieuTra] = [tblPhieuTra].[MaPhieuTra] "
-        sqlQuery &= "      AND [tblChiTietPhieuTra].[SoNgayTraTre] > 0 "
         sqlQuery &= "      AND DAY([NgayTra]) =  DAY(@NgayThongKe) "
         sqlQuery &= "      AND MONTH([NgayTra]) =  MONTH(@NgayThongKe) "
         sqlQuery &= "      AND YEAR([NgayTra]) =  YEAR(@NgayThongKe) "

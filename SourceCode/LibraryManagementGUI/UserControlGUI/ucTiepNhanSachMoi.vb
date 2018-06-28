@@ -1,5 +1,6 @@
 ﻿Imports DevExpress.Utils
 Imports DevExpress.XtraEditors
+Imports DevExpress.XtraEditors.Controls
 Imports LibraryManagementBUS
 Imports LibraryManagementDTO
 Imports Utility
@@ -57,6 +58,8 @@ Public Class ucTiepNhanSachMoi
         gleTacGia.Properties.DataSource = New BindingSource(listTacGia, String.Empty)
         gleTacGia.Properties.DisplayMember = "TenTacGia"
         gleTacGia.Properties.ValueMember = "MaTacGia"
+        gleTacGia.Properties.TextEditStyle = TextEditStyles.Standard
+        gleTacGia.Properties.View.OptionsView.ShowAutoFilterRow = SearchMode.AutoFilter
 
         ' Xoá cột ValueMember của Tác giả
 
@@ -76,6 +79,8 @@ Public Class ucTiepNhanSachMoi
         gleTheLoai.Properties.DataSource = listTheLoai
         gleTheLoai.Properties.DisplayMember = "TenTheLoai"
         gleTheLoai.Properties.ValueMember = "MaTheLoai"
+        gleTheLoai.Properties.TextEditStyle = TextEditStyles.Standard
+        gleTheLoai.Properties.View.OptionsView.ShowAutoFilterRow = SearchMode.AutoFilter
 
         ' Xoá cột ValueMember của Thể loại
         gleTheLoai.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup

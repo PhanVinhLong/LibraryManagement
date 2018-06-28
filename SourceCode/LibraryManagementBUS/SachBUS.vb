@@ -72,4 +72,8 @@ Public Class SachBUS
     Public Function MaPhieuMuonCuoi(sach As SachDTO) As Integer
         Return sachDAL.MaPhieuMuonCuoi(sach)
     End Function
+
+    Public Function NgayMuonCuoi(sach As SachDTO) As DateTime
+        Return sachDAL.NgayMuonCuoi(sach)
+    End Function
 End Class

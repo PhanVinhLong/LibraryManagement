@@ -1,5 +1,6 @@
 ﻿Imports DevExpress.Utils
 Imports DevExpress.XtraEditors
+Imports DevExpress.XtraEditors.Controls
 Imports LibraryManagementBUS
 Imports LibraryManagementDTO
 Imports Utility
@@ -67,24 +68,32 @@ Public Class ucQuanLySach
         lueLocTheLoai.Properties.DataSource = New BindingSource(listTheLoai, String.Empty)
         lueLocTheLoai.Properties.DisplayMember = "TenTheLoai"
         lueLocTheLoai.Properties.ValueMember = "MaTheLoai"
+        lueLocTheLoai.Properties.TextEditStyle = TextEditStyles.Standard
+        lueLocTheLoai.Properties.SearchMode = SearchMode.AutoFilter
         '----
         gleTacGia.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup
         gleTacGia.Properties.ShowFooter = False
         gleTacGia.Properties.DataSource = New BindingSource(listTacGia, String.Empty)
         gleTacGia.Properties.DisplayMember = "TenTacGia"
         gleTacGia.Properties.ValueMember = "MaTacGia"
+        gleTacGia.Properties.TextEditStyle = TextEditStyles.Standard
+        gleTacGia.Properties.View.OptionsView.ShowAutoFilterRow = SearchMode.AutoFilter
         '----
         lueLocTacGia.Properties.ShowHeader = False
         lueLocTacGia.Properties.ShowFooter = False
         lueLocTacGia.Properties.DataSource = New BindingSource(listTacGia, String.Empty)
         lueLocTacGia.Properties.DisplayMember = "TenTacGia"
         lueLocTacGia.Properties.ValueMember = "MaTacGia"
+        lueLocTacGia.Properties.TextEditStyle = TextEditStyles.Standard
+        lueLocTacGia.Properties.SearchMode = SearchMode.AutoFilter
         '----
         gleTheLoai.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup
         gleTheLoai.Properties.ShowFooter = False
         gleTheLoai.Properties.DataSource = New BindingSource(listTheLoai, String.Empty)
         gleTheLoai.Properties.DisplayMember = "TenTheLoai"
         gleTheLoai.Properties.ValueMember = "MaTheLoai"
+        gleTheLoai.Properties.TextEditStyle = TextEditStyles.Standard
+        gleTheLoai.Properties.View.OptionsView.ShowAutoFilterRow = SearchMode.AutoFilter
         '----
         lueLocTrangThai.Properties.ShowHeader = False
         lueLocTrangThai.Properties.ShowFooter = False

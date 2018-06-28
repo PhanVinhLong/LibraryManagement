@@ -38,4 +38,8 @@
             iSoNgayTraTre = value
         End Set
     End Property
+
+    Public Function Clone() As SachTraTreDTO
+        Return Me.MemberwiseClone()
+    End Function
 End Class

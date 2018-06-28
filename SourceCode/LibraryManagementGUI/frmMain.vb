@@ -9,10 +9,12 @@ Public Class frmMain
     Dim clsAddTab As AddTab = New AddTab()
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim frm As frmLogin = New frmLogin()
+        frm.ShowDialog()
         ' Tắt QuickAccessBar của RibbonControl
 
         ' Cài đặt giao diện
-        DevExpress.LookAndFeel.UserLookAndFeel.Default.SkinName = "The Bezier"
+        DevExpress.LookAndFeel.UserLookAndFeel.Default.SkinName = "Office 2010 Blue"
 
         ' Mở UC Thông tin
         clsAddTab.AddTab(xtcMain, "Thông tin", New ucThongTin())
@@ -46,7 +48,6 @@ Public Class frmMain
         If t <> 1 Then
             clsAddTab.AddTab(xtcMain, "Cho mượn sách", New ucChoMuonSach())
         End If
-        GlobalControl.ChangeStatus("Cho mượn sách")
     End Sub
 
     Private Sub btnLapTheDocGia_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnLapTheDocGia.ItemClick
@@ -60,7 +61,6 @@ Public Class frmMain
         If t <> 1 Then
             clsAddTab.AddTab(xtcMain, "Lập thẻ độc giả", New ucLapTheDocGia())
         End If
-        GlobalControl.ChangeStatus("Lập thẻ độc giả")
     End Sub
 
     Private Sub btnNhanTraSach_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnNhanTraSach.ItemClick
@@ -74,7 +74,6 @@ Public Class frmMain
         If t <> 1 Then
             clsAddTab.AddTab(xtcMain, "Nhận trả sách", New ucNhanTraSach())
         End If
-        GlobalControl.ChangeStatus("Nhận trả sách")
     End Sub
 
     Private Sub btnQuanLyDocGia_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnQuanLyDocGia.ItemClick
@@ -88,7 +87,6 @@ Public Class frmMain
         If t <> 1 Then
             clsAddTab.AddTab(xtcMain, "Quản lý độc giả", New ucQuanLyDocGia())
         End If
-        GlobalControl.ChangeStatus("Quản lý độc giả")
     End Sub
 
     Private Sub btnQuanLyLoaiDocGia_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnQuanLyLoaiDocGia.ItemClick
@@ -102,7 +100,6 @@ Public Class frmMain
         If t <> 1 Then
             clsAddTab.AddTab(xtcMain, "Quản lý loại độc giả", New ucQuanLyLoaiDocGia())
         End If
-        GlobalControl.ChangeStatus("Quản lý loại độc giả")
     End Sub
 
     Private Sub btnQuanLySach_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnQuanLySach.ItemClick
@@ -116,7 +113,6 @@ Public Class frmMain
         If t <> 1 Then
             clsAddTab.AddTab(xtcMain, "Quản lý sách", New ucQuanLySach())
         End If
-        GlobalControl.ChangeStatus("Quản lý sách")
     End Sub
 
     Private Sub btnQuanLyTacGia_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnQuanLyTacGia.ItemClick
@@ -130,7 +126,6 @@ Public Class frmMain
         If t <> 1 Then
             clsAddTab.AddTab(xtcMain, "Quản lý tác giả", New ucQuanLyTacGia())
         End If
-        GlobalControl.ChangeStatus("Quản lý tác giả")
     End Sub
 
     Private Sub btnQuanLyTheLoai_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnQuanLyTheLoai.ItemClick
@@ -144,7 +139,6 @@ Public Class frmMain
         If t <> 1 Then
             clsAddTab.AddTab(xtcMain, "Quản lý thể loại", New ucQuanLyTheLoaiSach())
         End If
-        GlobalControl.ChangeStatus("Quản lý thể loại")
     End Sub
 
     Private Sub btnThemLoaiDocGia_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThemLoaiDocGia.ItemClick
@@ -158,7 +152,6 @@ Public Class frmMain
         If t <> 1 Then
             clsAddTab.AddTab(xtcMain, "Thêm loại độc giả", New ucThemLoaiDocGia())
         End If
-        GlobalControl.ChangeStatus("Thêm loại độc giả")
     End Sub
 
     Private Sub btnThemTacGia_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThemTacGia.ItemClick
@@ -172,7 +165,6 @@ Public Class frmMain
         If t <> 1 Then
             clsAddTab.AddTab(xtcMain, "Thêm tác giả", New ucThemTacGia())
         End If
-        GlobalControl.ChangeStatus("Thêm tác giả")
     End Sub
 
     Private Sub btnThemTheLoai_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThemTheLoai.ItemClick
@@ -186,7 +178,6 @@ Public Class frmMain
         If t <> 1 Then
             clsAddTab.AddTab(xtcMain, "Thêm thể loại", New ucThemTheLoai())
         End If
-        GlobalControl.ChangeStatus("Thêm thể loại")
     End Sub
 
     Private Sub btnTiepNhanSachMoi_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnTiepNhanSachMoi.ItemClick
@@ -200,7 +191,6 @@ Public Class frmMain
         If t <> 1 Then
             clsAddTab.AddTab(xtcMain, "Tiếp nhận sách mới", New ucTiepNhanSachMoi())
         End If
-        GlobalControl.ChangeStatus("Tiếp nhận sách mới")
     End Sub
 
     Private Sub btnThongTin_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThongTin.ItemClick
@@ -214,7 +204,6 @@ Public Class frmMain
         If t <> 1 Then
             clsAddTab.AddTab(xtcMain, "Thông tin", New ucThongTin())
         End If
-        GlobalControl.ChangeStatus("Thông tin")
     End Sub
 
     Private Sub nbiChoMuonSach_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles nbiChoMuonSach.LinkClicked
@@ -228,7 +217,6 @@ Public Class frmMain
         If t <> 1 Then
             clsAddTab.AddTab(xtcMain, "Cho mượn sách", New ucChoMuonSach())
         End If
-        GlobalControl.ChangeStatus("Cho mượn sách")
     End Sub
 
     Private Sub nbiNhanTraSach_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles nbiNhanTraSach.LinkClicked
@@ -246,7 +234,6 @@ Public Class frmMain
         If t <> 1 Then
             clsAddTab.AddTab(xtcMain, "Tiếp nhận sách mới", New ucTiepNhanSachMoi())
         End If
-        GlobalControl.ChangeStatus("Tiếp nhận sách mới")
     End Sub
 
     Private Sub nbiLapTheDocGia_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles nbiLapTheDocGia.LinkClicked
@@ -260,7 +247,6 @@ Public Class frmMain
         If t <> 1 Then
             clsAddTab.AddTab(xtcMain, "Lập thẻ độc giả", New ucLapTheDocGia())
         End If
-        GlobalControl.ChangeStatus("Lập thẻ độc giả")
     End Sub
 
     Private Sub btnThayDoiQuyDinh_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThayDoiQuyDinh.ItemClick
@@ -274,7 +260,6 @@ Public Class frmMain
         If t <> 1 Then
             clsAddTab.AddTab(xtcMain, "Thay đổi quy định", New ucThayDoiQuyDinh())
         End If
-        GlobalControl.ChangeStatus("Thay đổi quy định")
     End Sub
 
     Private Sub btnThongKeTinhHinh_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThongKeTinhHinh.ItemClick
@@ -288,7 +273,6 @@ Public Class frmMain
         If t <> 1 Then
             clsAddTab.AddTab(xtcMain, "Thống kê tình hình mượn", New ucThongKeTinhHinhMuonSach())
         End If
-        GlobalControl.ChangeStatus("Thống kê tình hình mượn")
     End Sub
 
     Private Sub btnThongKeSachTraTre_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThongKeSachTraTre.ItemClick
@@ -302,7 +286,6 @@ Public Class frmMain
         If t <> 1 Then
             clsAddTab.AddTab(xtcMain, "Thống kê sách trả trễ", New ucThongKeTraSachTre())
         End If
-        GlobalControl.ChangeStatus("Thống kê sách trả trễ")
     End Sub
 
     Private Sub nbiDoiMatKhau_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles nbiDoiMatKhau.LinkClicked
