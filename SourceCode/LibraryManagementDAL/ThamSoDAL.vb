@@ -45,4 +45,49 @@ Public Class ThamSoDAL
         End Using
         Return New Result(True)
     End Function
+
+    Public Function Update(iTuoiToiThieu As Integer, iTuoiToiDa As Integer, iThoiHanSuDung As Integer, iGioiHanNamXuatBan As Integer, iSoLuongTacGia As Integer, iSoLuongSachMuonToiDa As Integer, iSoNgayMuonToiDa As Integer, iSoLuongTheLoai As Integer, iSoLuongLoaiDocGia As Integer) As Result
+        Dim sqlQuery As String
+        sqlQuery = String.Empty
+
+        sqlQuery &= "UPDATE [tblThamSo] "
+        sqlQuery &= "SET [TuoiToiThieu] = @TuoiToiThieu, "
+        sqlQuery &= "    [TuoiToiDa] = @TuoiToiDa, "
+        sqlQuery &= "    [ThoiHanSuDung] = @ThoiHanSuDung, "
+        sqlQuery &= "    [GioiHanNamXuatBan] = @GioiHanNamXuatBan, "
+        sqlQuery &= "    [SoLuongTacGia] = @SoLuongTacGia, "
+        sqlQuery &= "    [SoLuongSachMuonToiDa] = @SoLuongSachMuonToiDa, "
+        sqlQuery &= "    [NgayMuonToiDa] = @NgayMuonToiDa, "
+        sqlQuery &= "    [SoLuongTheLoai] = @SoLuongTheLoai, "
+        sqlQuery &= "    [SoLuongLoaiDocGia] = @SoLuongLoaiDocGia "
+
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand()
+                With command
+                    .Connection = connection
+                    .CommandType = CommandType.Text
+                    .CommandText = sqlQuery
+                    .Parameters.AddWithValue("@TuoiToiThieu", iTuoiToiDa)
+                    .Parameters.AddWithValue("@TuoiToiDa", iTuoiToiDa)
+                    .Parameters.AddWithValue("@ThoiHanSuDung", iThoiHanSuDung)
+                    .Parameters.AddWithValue("@GioiHanNamXuatBan", iGioiHanNamXuatBan)
+                    .Parameters.AddWithValue("@SoLuongTacGia", iSoLuongTacGia)
+                    .Parameters.AddWithValue("@SoLuongSachMuonToiDa", iSoLuongSachMuonToiDa)
+                    .Parameters.AddWithValue("@NgayMuonToiDa", iSoNgayMuonToiDa)
+                    .Parameters.AddWithValue("@SoLuongTheLoai", iSoLuongTheLoai)
+                    .Parameters.AddWithValue("@SoLuongLoaiDocGia", iSoLuongLoaiDocGia)
+
+                End With
+                Try
+                    connection.Open()
+                    command.ExecuteNonQuery()
+                Catch ex As Exception
+                    connection.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Sửa thông tin Sách không thành công!", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
+    End Function
 End Class

@@ -20,51 +20,74 @@ Partial Class ucThayDoiQuyDinh
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.txtTuoiToiDa = New DevExpress.XtraEditors.TextEdit()
+        Me.txtTuoiToiThieu = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtThoiHanThe = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtSoLuongTheLoai = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.GroupControl4 = New DevExpress.XtraEditors.GroupControl()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtNamXuatBan = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.GroupControl5 = New DevExpress.XtraEditors.GroupControl()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
+        Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtThoiGianMuonToiDa = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtSachMuonToiDa = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.btnCapNhat = New DevExpress.XtraEditors.SimpleButton()
-        Me.btnXoa = New DevExpress.XtraEditors.SimpleButton()
         Me.btnDong = New DevExpress.XtraEditors.SimpleButton()
+        Me.btnTaiLai = New DevExpress.XtraEditors.SimpleButton()
+        Me.GroupControl6 = New DevExpress.XtraEditors.GroupControl()
+        Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtSoLuongTacGia = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
+        Me.GroupControl7 = New DevExpress.XtraEditors.GroupControl()
+        Me.LabelControl14 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtSoLuongLoaiDocGia = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl15 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
+        CType(Me.txtTuoiToiDa.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtTuoiToiThieu.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
+        CType(Me.txtThoiHanThe.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
+        CType(Me.txtSoLuongTheLoai.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl4.SuspendLayout()
+        CType(Me.txtNamXuatBan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl5.SuspendLayout()
+        CType(Me.txtThoiGianMuonToiDa.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtSachMuonToiDa.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
+        CType(Me.GroupControl6, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl6.SuspendLayout()
+        CType(Me.txtSoLuongTacGia.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl7, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl7.SuspendLayout()
+        CType(Me.txtSoLuongLoaiDocGia.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
         '
-        Me.GroupControl1.Controls.Add(Me.TextBox2)
-        Me.GroupControl1.Controls.Add(Me.Label2)
-        Me.GroupControl1.Controls.Add(Me.TextBox1)
+        Me.GroupControl1.Controls.Add(Me.txtTuoiToiDa)
+        Me.GroupControl1.Controls.Add(Me.txtTuoiToiThieu)
+        Me.GroupControl1.Controls.Add(Me.LabelControl2)
+        Me.GroupControl1.Controls.Add(Me.LabelControl1)
         Me.GroupControl1.Controls.Add(Me.Label1)
         Me.GroupControl1.Location = New System.Drawing.Point(19, 16)
         Me.GroupControl1.Name = "GroupControl1"
@@ -72,204 +95,201 @@ Partial Class ucThayDoiQuyDinh
         Me.GroupControl1.TabIndex = 0
         Me.GroupControl1.Text = "Quy định tuổi"
         '
+        'txtTuoiToiDa
+        '
+        Me.txtTuoiToiDa.Location = New System.Drawing.Point(167, 27)
+        Me.txtTuoiToiDa.Name = "txtTuoiToiDa"
+        Me.txtTuoiToiDa.Size = New System.Drawing.Size(46, 20)
+        Me.txtTuoiToiDa.TabIndex = 12
+        '
+        'txtTuoiToiThieu
+        '
+        Me.txtTuoiToiThieu.Location = New System.Drawing.Point(91, 27)
+        Me.txtTuoiToiThieu.Name = "txtTuoiToiThieu"
+        Me.txtTuoiToiThieu.Size = New System.Drawing.Size(46, 20)
+        Me.txtTuoiToiThieu.TabIndex = 11
+        '
+        'LabelControl2
+        '
+        Me.LabelControl2.Location = New System.Drawing.Point(143, 30)
+        Me.LabelControl2.Name = "LabelControl2"
+        Me.LabelControl2.Size = New System.Drawing.Size(18, 13)
+        Me.LabelControl2.TabIndex = 10
+        Me.LabelControl2.Text = "đến"
+        '
+        'LabelControl1
+        '
+        Me.LabelControl1.Location = New System.Drawing.Point(14, 30)
+        Me.LabelControl1.Name = "LabelControl1"
+        Me.LabelControl1.Size = New System.Drawing.Size(71, 13)
+        Me.LabelControl1.TabIndex = 9
+        Me.LabelControl1.Text = "Tuổi độc giả từ"
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(11, 30)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(78, 13)
+        Me.Label1.Size = New System.Drawing.Size(0, 13)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Tuổi độc giả từ"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(92, 27)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(44, 21)
-        Me.TextBox1.TabIndex = 1
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(142, 30)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(25, 13)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "đến"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(172, 27)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(44, 21)
-        Me.TextBox2.TabIndex = 3
         '
         'GroupControl2
         '
-        Me.GroupControl2.Controls.Add(Me.Label3)
-        Me.GroupControl2.Controls.Add(Me.TextBox3)
-        Me.GroupControl2.Controls.Add(Me.Label4)
+        Me.GroupControl2.Controls.Add(Me.LabelControl4)
+        Me.GroupControl2.Controls.Add(Me.txtThoiHanThe)
+        Me.GroupControl2.Controls.Add(Me.LabelControl3)
         Me.GroupControl2.Location = New System.Drawing.Point(19, 75)
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(332, 53)
         Me.GroupControl2.TabIndex = 4
         Me.GroupControl2.Text = "Quy thời hạn giá trị thẻ"
         '
-        'Label4
+        'LabelControl4
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(11, 30)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(118, 13)
-        Me.Label4.TabIndex = 0
-        Me.Label4.Text = "Thẻ độc giả có thời hạn"
+        Me.LabelControl4.Location = New System.Drawing.Point(185, 30)
+        Me.LabelControl4.Name = "LabelControl4"
+        Me.LabelControl4.Size = New System.Drawing.Size(28, 13)
+        Me.LabelControl4.TabIndex = 14
+        Me.LabelControl4.Text = "tháng"
         '
-        'TextBox3
+        'txtThoiHanThe
         '
-        Me.TextBox3.Location = New System.Drawing.Point(131, 27)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(44, 21)
-        Me.TextBox3.TabIndex = 4
+        Me.txtThoiHanThe.Location = New System.Drawing.Point(131, 27)
+        Me.txtThoiHanThe.Name = "txtThoiHanThe"
+        Me.txtThoiHanThe.Size = New System.Drawing.Size(46, 20)
+        Me.txtThoiHanThe.TabIndex = 13
         '
-        'Label3
+        'LabelControl3
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(179, 30)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(35, 13)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "tháng"
+        Me.LabelControl3.Location = New System.Drawing.Point(14, 30)
+        Me.LabelControl3.Name = "LabelControl3"
+        Me.LabelControl3.Size = New System.Drawing.Size(111, 13)
+        Me.LabelControl3.TabIndex = 13
+        Me.LabelControl3.Text = "Thẻ độc giả có thời hạn"
         '
         'GroupControl3
         '
-        Me.GroupControl3.Controls.Add(Me.Label7)
-        Me.GroupControl3.Controls.Add(Me.TextBox4)
-        Me.GroupControl3.Controls.Add(Me.Label6)
+        Me.GroupControl3.Controls.Add(Me.LabelControl6)
+        Me.GroupControl3.Controls.Add(Me.txtSoLuongTheLoai)
+        Me.GroupControl3.Controls.Add(Me.LabelControl5)
         Me.GroupControl3.Location = New System.Drawing.Point(19, 134)
         Me.GroupControl3.Name = "GroupControl3"
         Me.GroupControl3.Size = New System.Drawing.Size(332, 53)
         Me.GroupControl3.TabIndex = 6
         Me.GroupControl3.Text = "Quy định thể loại"
         '
-        'TextBox4
+        'LabelControl6
         '
-        Me.TextBox4.Location = New System.Drawing.Point(34, 27)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(44, 21)
-        Me.TextBox4.TabIndex = 4
+        Me.LabelControl6.Location = New System.Drawing.Point(85, 30)
+        Me.LabelControl6.Name = "LabelControl6"
+        Me.LabelControl6.Size = New System.Drawing.Size(60, 13)
+        Me.LabelControl6.TabIndex = 16
+        Me.LabelControl6.Text = "thể loại sách"
         '
-        'Label6
+        'txtSoLuongTheLoai
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(11, 30)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(20, 13)
-        Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Có"
+        Me.txtSoLuongTheLoai.Location = New System.Drawing.Point(33, 27)
+        Me.txtSoLuongTheLoai.Name = "txtSoLuongTheLoai"
+        Me.txtSoLuongTheLoai.Size = New System.Drawing.Size(46, 20)
+        Me.txtSoLuongTheLoai.TabIndex = 15
+        '
+        'LabelControl5
+        '
+        Me.LabelControl5.Location = New System.Drawing.Point(14, 30)
+        Me.LabelControl5.Name = "LabelControl5"
+        Me.LabelControl5.Size = New System.Drawing.Size(13, 13)
+        Me.LabelControl5.TabIndex = 15
+        Me.LabelControl5.Text = "Có"
         '
         'GroupControl4
         '
-        Me.GroupControl4.Controls.Add(Me.Label8)
-        Me.GroupControl4.Controls.Add(Me.TextBox5)
-        Me.GroupControl4.Controls.Add(Me.Label5)
+        Me.GroupControl4.Controls.Add(Me.LabelControl8)
+        Me.GroupControl4.Controls.Add(Me.txtNamXuatBan)
+        Me.GroupControl4.Controls.Add(Me.LabelControl7)
         Me.GroupControl4.Location = New System.Drawing.Point(19, 193)
         Me.GroupControl4.Name = "GroupControl4"
         Me.GroupControl4.Size = New System.Drawing.Size(332, 53)
         Me.GroupControl4.TabIndex = 7
         Me.GroupControl4.Text = "Quy định năm xuất bản"
         '
-        'TextBox5
+        'LabelControl8
         '
-        Me.TextBox5.Location = New System.Drawing.Point(181, 27)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(44, 21)
-        Me.TextBox5.TabIndex = 4
+        Me.LabelControl8.Location = New System.Drawing.Point(235, 30)
+        Me.LabelControl8.Name = "LabelControl8"
+        Me.LabelControl8.Size = New System.Drawing.Size(50, 13)
+        Me.LabelControl8.TabIndex = 18
+        Me.LabelControl8.Text = "năm trờ lại"
         '
-        'Label5
+        'txtNamXuatBan
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(11, 30)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(170, 13)
-        Me.Label5.TabIndex = 0
-        Me.Label5.Text = "Chỉ tiếp nhận sách xuất bản trong"
+        Me.txtNamXuatBan.Location = New System.Drawing.Point(183, 27)
+        Me.txtNamXuatBan.Name = "txtNamXuatBan"
+        Me.txtNamXuatBan.Size = New System.Drawing.Size(46, 20)
+        Me.txtNamXuatBan.TabIndex = 17
         '
-        'Label7
+        'LabelControl7
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(82, 30)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(67, 13)
-        Me.Label7.TabIndex = 5
-        Me.Label7.Text = "thể loại sách"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(228, 30)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(57, 13)
-        Me.Label8.TabIndex = 5
-        Me.Label8.Text = "năm trờ lại"
+        Me.LabelControl7.Location = New System.Drawing.Point(14, 30)
+        Me.LabelControl7.Name = "LabelControl7"
+        Me.LabelControl7.Size = New System.Drawing.Size(163, 13)
+        Me.LabelControl7.TabIndex = 17
+        Me.LabelControl7.Text = "Chỉ tiếp nhận sách xuất bản trong"
         '
         'GroupControl5
         '
-        Me.GroupControl5.Controls.Add(Me.Label11)
-        Me.GroupControl5.Controls.Add(Me.TextBox6)
-        Me.GroupControl5.Controls.Add(Me.Label9)
-        Me.GroupControl5.Controls.Add(Me.TextBox7)
-        Me.GroupControl5.Controls.Add(Me.Label10)
+        Me.GroupControl5.Controls.Add(Me.LabelControl11)
+        Me.GroupControl5.Controls.Add(Me.txtThoiGianMuonToiDa)
+        Me.GroupControl5.Controls.Add(Me.LabelControl10)
+        Me.GroupControl5.Controls.Add(Me.txtSachMuonToiDa)
+        Me.GroupControl5.Controls.Add(Me.LabelControl9)
         Me.GroupControl5.Location = New System.Drawing.Point(19, 252)
         Me.GroupControl5.Name = "GroupControl5"
         Me.GroupControl5.Size = New System.Drawing.Size(332, 53)
         Me.GroupControl5.TabIndex = 4
         Me.GroupControl5.Text = "Quy định số lượng và thời gian mượn sách"
         '
-        'TextBox6
+        'LabelControl11
         '
-        Me.TextBox6.Location = New System.Drawing.Point(242, 27)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(44, 21)
-        Me.TextBox6.TabIndex = 3
+        Me.LabelControl11.Location = New System.Drawing.Point(299, 30)
+        Me.LabelControl11.Name = "LabelControl11"
+        Me.LabelControl11.Size = New System.Drawing.Size(24, 13)
+        Me.LabelControl11.TabIndex = 22
+        Me.LabelControl11.Text = "ngày"
         '
-        'Label9
+        'txtThoiGianMuonToiDa
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(158, 30)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(84, 13)
-        Me.Label9.TabIndex = 2
-        Me.Label9.Text = "cuốn sách trong"
+        Me.txtThoiGianMuonToiDa.Location = New System.Drawing.Point(247, 27)
+        Me.txtThoiGianMuonToiDa.Name = "txtThoiGianMuonToiDa"
+        Me.txtThoiGianMuonToiDa.Size = New System.Drawing.Size(46, 20)
+        Me.txtThoiGianMuonToiDa.TabIndex = 21
         '
-        'TextBox7
+        'LabelControl10
         '
-        Me.TextBox7.Location = New System.Drawing.Point(112, 27)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(44, 21)
-        Me.TextBox7.TabIndex = 1
+        Me.LabelControl10.Location = New System.Drawing.Point(164, 30)
+        Me.LabelControl10.Name = "LabelControl10"
+        Me.LabelControl10.Size = New System.Drawing.Size(77, 13)
+        Me.LabelControl10.TabIndex = 20
+        Me.LabelControl10.Text = "cuốn sách trong"
         '
-        'Label10
+        'txtSachMuonToiDa
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(11, 30)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(99, 13)
-        Me.Label10.TabIndex = 0
-        Me.Label10.Text = "Có thể mượn tối đa"
+        Me.txtSachMuonToiDa.Location = New System.Drawing.Point(112, 27)
+        Me.txtSachMuonToiDa.Name = "txtSachMuonToiDa"
+        Me.txtSachMuonToiDa.Size = New System.Drawing.Size(46, 20)
+        Me.txtSachMuonToiDa.TabIndex = 19
         '
-        'Label11
+        'LabelControl9
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(288, 30)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(31, 13)
-        Me.Label11.TabIndex = 4
-        Me.Label11.Text = "ngày"
+        Me.LabelControl9.Location = New System.Drawing.Point(14, 30)
+        Me.LabelControl9.Name = "LabelControl9"
+        Me.LabelControl9.Size = New System.Drawing.Size(92, 13)
+        Me.LabelControl9.TabIndex = 19
+        Me.LabelControl9.Text = "Có thể mượn tối đa"
         '
         'PanelControl1
         '
+        Me.PanelControl1.Controls.Add(Me.btnTaiLai)
         Me.PanelControl1.Controls.Add(Me.btnCapNhat)
-        Me.PanelControl1.Controls.Add(Me.btnXoa)
         Me.PanelControl1.Controls.Add(Me.btnDong)
         Me.PanelControl1.Location = New System.Drawing.Point(357, 16)
         Me.PanelControl1.Name = "PanelControl1"
@@ -286,18 +306,6 @@ Partial Class ucThayDoiQuyDinh
         Me.btnCapNhat.TabIndex = 12
         Me.btnCapNhat.Text = "Cập nhật"
         '
-        'btnXoa
-        '
-        Me.btnXoa.Appearance.ForeColor = System.Drawing.Color.Red
-        Me.btnXoa.Appearance.Options.UseForeColor = True
-        Me.btnXoa.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.btnXoa.ImageOptions.ImageUri.Uri = "Delete;Size16x16;Office2013"
-        Me.btnXoa.Location = New System.Drawing.Point(8, 81)
-        Me.btnXoa.Name = "btnXoa"
-        Me.btnXoa.Size = New System.Drawing.Size(100, 23)
-        Me.btnXoa.TabIndex = 13
-        Me.btnXoa.Text = "Xoá"
-        '
         'btnDong
         '
         Me.btnDong.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
@@ -308,10 +316,90 @@ Partial Class ucThayDoiQuyDinh
         Me.btnDong.TabIndex = 14
         Me.btnDong.Text = "Đóng"
         '
+        'btnTaiLai
+        '
+        Me.btnTaiLai.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.btnTaiLai.ImageOptions.ImageUri.Uri = "Reset;Size16x16;Office2013"
+        Me.btnTaiLai.Location = New System.Drawing.Point(8, 80)
+        Me.btnTaiLai.Name = "btnTaiLai"
+        Me.btnTaiLai.Size = New System.Drawing.Size(100, 23)
+        Me.btnTaiLai.TabIndex = 15
+        Me.btnTaiLai.Text = "Tải lại"
+        '
+        'GroupControl6
+        '
+        Me.GroupControl6.Controls.Add(Me.LabelControl12)
+        Me.GroupControl6.Controls.Add(Me.txtSoLuongTacGia)
+        Me.GroupControl6.Controls.Add(Me.LabelControl13)
+        Me.GroupControl6.Location = New System.Drawing.Point(19, 311)
+        Me.GroupControl6.Name = "GroupControl6"
+        Me.GroupControl6.Size = New System.Drawing.Size(332, 53)
+        Me.GroupControl6.TabIndex = 17
+        Me.GroupControl6.Text = "Quy định tác giả"
+        '
+        'LabelControl12
+        '
+        Me.LabelControl12.Location = New System.Drawing.Point(85, 30)
+        Me.LabelControl12.Name = "LabelControl12"
+        Me.LabelControl12.Size = New System.Drawing.Size(32, 13)
+        Me.LabelControl12.TabIndex = 16
+        Me.LabelControl12.Text = "tác giả"
+        '
+        'txtSoLuongTacGia
+        '
+        Me.txtSoLuongTacGia.Location = New System.Drawing.Point(33, 27)
+        Me.txtSoLuongTacGia.Name = "txtSoLuongTacGia"
+        Me.txtSoLuongTacGia.Size = New System.Drawing.Size(46, 20)
+        Me.txtSoLuongTacGia.TabIndex = 15
+        '
+        'LabelControl13
+        '
+        Me.LabelControl13.Location = New System.Drawing.Point(14, 30)
+        Me.LabelControl13.Name = "LabelControl13"
+        Me.LabelControl13.Size = New System.Drawing.Size(13, 13)
+        Me.LabelControl13.TabIndex = 15
+        Me.LabelControl13.Text = "Có"
+        '
+        'GroupControl7
+        '
+        Me.GroupControl7.Controls.Add(Me.LabelControl14)
+        Me.GroupControl7.Controls.Add(Me.txtSoLuongLoaiDocGia)
+        Me.GroupControl7.Controls.Add(Me.LabelControl15)
+        Me.GroupControl7.Location = New System.Drawing.Point(19, 370)
+        Me.GroupControl7.Name = "GroupControl7"
+        Me.GroupControl7.Size = New System.Drawing.Size(332, 53)
+        Me.GroupControl7.TabIndex = 18
+        Me.GroupControl7.Text = "Quy định loại độc giả"
+        '
+        'LabelControl14
+        '
+        Me.LabelControl14.Location = New System.Drawing.Point(85, 30)
+        Me.LabelControl14.Name = "LabelControl14"
+        Me.LabelControl14.Size = New System.Drawing.Size(53, 13)
+        Me.LabelControl14.TabIndex = 16
+        Me.LabelControl14.Text = "loại độc giả"
+        '
+        'txtSoLuongLoaiDocGia
+        '
+        Me.txtSoLuongLoaiDocGia.Location = New System.Drawing.Point(33, 27)
+        Me.txtSoLuongLoaiDocGia.Name = "txtSoLuongLoaiDocGia"
+        Me.txtSoLuongLoaiDocGia.Size = New System.Drawing.Size(46, 20)
+        Me.txtSoLuongLoaiDocGia.TabIndex = 15
+        '
+        'LabelControl15
+        '
+        Me.LabelControl15.Location = New System.Drawing.Point(14, 30)
+        Me.LabelControl15.Name = "LabelControl15"
+        Me.LabelControl15.Size = New System.Drawing.Size(13, 13)
+        Me.LabelControl15.TabIndex = 15
+        Me.LabelControl15.Text = "Có"
+        '
         'ucThayDoiQuyDinh
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.GroupControl7)
+        Me.Controls.Add(Me.GroupControl6)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.GroupControl5)
         Me.Controls.Add(Me.GroupControl4)
@@ -319,53 +407,77 @@ Partial Class ucThayDoiQuyDinh
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "ucThayDoiQuyDinh"
-        Me.Size = New System.Drawing.Size(495, 319)
+        Me.Size = New System.Drawing.Size(485, 452)
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
+        CType(Me.txtTuoiToiDa.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtTuoiToiThieu.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
+        CType(Me.txtThoiHanThe.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
         Me.GroupControl3.PerformLayout()
+        CType(Me.txtSoLuongTheLoai.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl4.ResumeLayout(False)
         Me.GroupControl4.PerformLayout()
+        CType(Me.txtNamXuatBan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl5.ResumeLayout(False)
         Me.GroupControl5.PerformLayout()
+        CType(Me.txtThoiGianMuonToiDa.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtSachMuonToiDa.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
+        CType(Me.GroupControl6, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl6.ResumeLayout(False)
+        Me.GroupControl6.PerformLayout()
+        CType(Me.txtSoLuongTacGia.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl7, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl7.ResumeLayout(False)
+        Me.GroupControl7.PerformLayout()
+        CType(Me.txtSoLuongLoaiDocGia.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents Label4 As Label
     Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents Label6 As Label
     Friend WithEvents GroupControl4 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
     Friend WithEvents GroupControl5 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents Label11 As Label
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents Label10 As Label
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
     Friend WithEvents btnCapNhat As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents btnXoa As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnDong As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtTuoiToiThieu As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtTuoiToiDa As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtThoiHanThe As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtSoLuongTheLoai As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtNamXuatBan As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl11 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtThoiGianMuonToiDa As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl10 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtSachMuonToiDa As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl9 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents btnTaiLai As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents GroupControl6 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents LabelControl12 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtSoLuongTacGia As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl13 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents GroupControl7 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents LabelControl14 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtSoLuongLoaiDocGia As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl15 As DevExpress.XtraEditors.LabelControl
 End Class
