@@ -99,7 +99,6 @@ Partial Class ucThongTin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.LibraryManagementGUI.My.Resources.Resources.book_library
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.LabelControl5)
         Me.Controls.Add(Me.LabelControl4)

@@ -58,4 +58,3 @@ C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementBUS\obj\
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementBUS\obj\Debug\LibraryManagementBUS.dll
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementBUS\obj\Debug\LibraryManagementBUS.xml
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementBUS\obj\Debug\LibraryManagementBUS.pdb
-C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementBUS\bin\Debug\Bunifu_UI_v1.5.3.dll

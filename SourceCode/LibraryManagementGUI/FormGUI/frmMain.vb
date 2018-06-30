@@ -7,26 +7,47 @@ Imports Utility
 
 Public Class frmMain
     Dim clsAddTab As AddTab = New AddTab()
+    Dim frmDangNhap As frmLogin
+
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        frmDangNhap = New frmLogin()
+    End Sub
+
+    Public Sub New(frm As frmLogin)
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        frmDangNhap = frm
+    End Sub
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim frm As frmLogin = New frmLogin()
-        frm.ShowDialog()
         ' Tắt QuickAccessBar của RibbonControl
-
-        ' Cài đặt giao diện
-        DevExpress.LookAndFeel.UserLookAndFeel.Default.SkinName = "Office 2010 Blue"
 
         ' Mở UC Thông tin
         clsAddTab.AddTab(xtcMain, "Thông tin", New ucThongTin())
 
         ' Cài đặt biến global
         GlobalControl.GetControl(txtThongTin, txtLoaiTaiKhoan, txtTenTaiKhoan)
+        GlobalControl.ChangeAccouInfo()
+
+        ' Phần dành riêng cho admin
+        If GlobalControl.ReturnNhanVien.MaLoaiNhanVien <> 1 Then
+            rpgQuanLyNhanVien.Visible = False
+        End If
     End Sub
 
     ' Event đóng tab control
     Private Sub frmMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         ' Hiện thông báo khi tắt phần mềm
-        e.Cancel = (MessageBox.Show("Bạn chắc chắn muốn thoát?", "Thoát", MessageBoxButtons.YesNo) = DialogResult.No)
+        e.Cancel = MessageBox.Show("Bạn có chắc chắn muốn thoát", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.No
+        Application.Exit()
     End Sub
 
     Private Sub xtcMain_CloseButtonClick(sender As Object, e As EventArgs) Handles xtcMain.CloseButtonClick
@@ -293,29 +314,36 @@ Public Class frmMain
     End Sub
 
     Private Sub nbiDangXuat_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles nbiDangXuat.LinkClicked
-    End Sub
-End Class
-
-Public Class GlobalControl
-    Shared txtStatus As BarStaticItem
-    Shared txtAccountType As BarStaticItem
-    Shared txtStatName As BarStaticItem
-
-    Public Shared Sub GetControl(statusControl As BarStaticItem, accountTypeControl As BarStaticItem, statNameControl As BarStaticItem)
-        txtStatus = statusControl
-        txtAccountType = accountTypeControl
-        txtStatName = statNameControl
+        If MessageBox.Show("Bạn chắc chắn muốn đăng xuất?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) = DialogResult.OK Then
+            frmDangNhap.Visible = True
+            Me.Dispose()
+        End If
+        Return
     End Sub
 
-    Public Shared Sub ChangeStatus(strStatus As String)
-        txtStatus.Caption = strStatus
+    Private Sub btnThongTinTaiKhoan_ItemClick(sender As Object, e As ItemClickEventArgs) Handles btnThongTinTaiKhoan.ItemClick
+        Dim t As Integer = 0
+        For Each tab As DevExpress.XtraTab.XtraTabPage In xtcMain.TabPages
+            If tab.Text = "Thông tin tài khoản" Then
+                xtcMain.SelectedTabPage = tab
+                t = 1
+            End If
+        Next
+        If t <> 1 Then
+            clsAddTab.AddTab(xtcMain, "Thông tin tài khoảng", New ucThongTinTaiKhoan())
+        End If
     End Sub
 
-    Public Shared Sub ChangeAccountType(maLoaiTaiKhoan As Integer)
-        'lblAccountType.Caption = loaiTaiKhoanBUS.GetName(maLoaiTaiKhoan)
-    End Sub
-
-    Public Shared Sub ChangeAccountName(maNhanVien As Integer)
-        'lblStatName.Caption = nhanVienBUS.GetName(maNhanVien)
+    Private Sub btnQuanLyNhanVien_ItemClick(sender As Object, e As ItemClickEventArgs) Handles btnQuanLyNhanVien.ItemClick
+        Dim t As Integer = 0
+        For Each tab As DevExpress.XtraTab.XtraTabPage In xtcMain.TabPages
+            If tab.Text = "Quản lý nhân viên" Then
+                xtcMain.SelectedTabPage = tab
+                t = 1
+            End If
+        Next
+        If t <> 1 Then
+            clsAddTab.AddTab(xtcMain, "Quản lý nhân viên", New ucQuanLyNhanVien())
+        End If
     End Sub
 End Class

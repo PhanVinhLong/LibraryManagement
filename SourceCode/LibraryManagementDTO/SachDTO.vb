@@ -5,12 +5,14 @@
     Private strNhaXuatBan As String
     Private iTriGia As Integer
     Private dateNgayNhap As DateTime
-    Private iMaTrangThai As Integer
+    Private strTrangThai As Integer
+    Private strTacGia As Integer
+    Private strTheLoai As Integer
 
     Public Sub New()
     End Sub
 
-    Public Sub New(iMaSach As Integer, strTenSach As String, iNamXuatBan As Integer, strNhaXuatBan As String, iTriGia As Integer, dateNgayNhap As DateTime, iMaTrangThai As Integer)
+    Public Sub New(iMaSach As Integer, strTenSach As String, iNamXuatBan As Integer, strNhaXuatBan As String, iTriGia As Integer, dateNgayNhap As DateTime, strTrangThai As String, strTacGia As String, strTheLoai As String)
         Me.iMaSach = iMaSach
         Me.strTenSach = strTenSach
         Me.iNamXuatBan = iNamXuatBan

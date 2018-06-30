@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="ChiTietPhieuMuonDTO.vb" />
     <Compile Include="ChiTietPhieuTraDTO.vb" />
+    <Compile Include="DBServerDTO.vb" />
     <Compile Include="DocGiaDTO.vb" />
     <Compile Include="LoaiDocGiaDTO.vb" />
     <Compile Include="LoaiNhanVienDTO.vb" />

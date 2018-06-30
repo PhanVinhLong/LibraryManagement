@@ -72,4 +72,37 @@ Public Class LoaiNhanVienDAL
         End Using
         Return New Result(True)
     End Function
+
+    Public Function GetName(iMaLoaiNhanVien As Integer) As String
+        Dim strTenLoaiNhanVien As String = String.Empty
+        Dim sqlQuery As String = String.Empty
+        sqlQuery &= "SELECT [TenLoaiNhanVien] "
+        sqlQuery &= "FROM [tblLoaiNhanVien] "
+        sqlQuery &= "WHERE [MaLoaiNhanVien] = @MaLoaiNhanVien "
+
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand()
+                With command
+                    .Connection = connection
+                    .CommandType = CommandType.Text
+                    .CommandText = sqlQuery
+                    .Parameters.AddWithValue("@MaLoaiNhanVien", iMaLoaiNhanVien)
+                End With
+                Try
+                    connection.Open()
+                    Dim reader As SqlDataReader
+                    reader = command.ExecuteReader()
+                    If reader.HasRows = True Then
+                        While reader.Read()
+                            strTenLoaiNhanVien = reader("TenLoaiNhanVien")
+                        End While
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    connection.Close()
+                End Try
+            End Using
+        End Using
+        Return strTenLoaiNhanVien
+    End Function
 End Class

@@ -46,7 +46,14 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Charts.v17.2.Core, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.DataAccess.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -75,9 +82,12 @@
     <Reference Include="DevExpress.XtraReports.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v17.2.Extensions, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
@@ -100,16 +110,34 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmMain.designer.vb">
-      <DependentUpon>frmMain.vb</DependentUpon>
+    <Compile Include="FormGUI\frmConnectionSetting.Designer.vb">
+      <DependentUpon>frmConnectionSetting.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.vb">
+    <Compile Include="FormGUI\frmConnectionSetting.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPrint.Designer.vb">
+    <Compile Include="FormGUI\frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormGUI\frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGUI\frmMain.designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormGUI\frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGUI\frmPrint.Designer.vb">
       <DependentUpon>frmPrint.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmPrint.vb">
+    <Compile Include="FormGUI\frmPrint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGUI\frmRegister.Designer.vb">
+      <DependentUpon>frmRegister.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormGUI\frmRegister.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -167,6 +195,12 @@
       <DependentUpon>ucQuanLyLoaiDocGia.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControlGUI\ucQuanLyLoaiDocGia.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlGUI\ucQuanLyNhanVien.Designer.vb">
+      <DependentUpon>ucQuanLyNhanVien.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlGUI\ucQuanLyNhanVien.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControlGUI\ucQuanLySach.Designer.vb">
@@ -229,6 +263,12 @@
     <Compile Include="UserControlGUI\ucThongTin.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControlGUI\ucThongTinTaiKhoan.Designer.vb">
+      <DependentUpon>ucThongTinTaiKhoan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlGUI\ucThongTinTaiKhoan.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControlGUI\ucTiepNhanSachMoi.Designer.vb">
       <DependentUpon>ucTiepNhanSachMoi.vb</DependentUpon>
     </Compile>
@@ -237,18 +277,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmMain.resx">
+    <EmbeddedResource Include="FormGUI\frmConnectionSetting.resx">
+      <DependentUpon>frmConnectionSetting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGUI\frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGUI\frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPrint.resx">
+    <EmbeddedResource Include="FormGUI\frmPrint.resx">
       <DependentUpon>frmPrint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGUI\frmRegister.resx">
+      <DependentUpon>frmRegister.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
-      <CustomToolNamespace>My.Resources</CustomToolNamespace>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportGUI\xrpThongKeSachTraTre.resx">
       <DependentUpon>xrpThongKeSachTraTre.vb</DependentUpon>
@@ -270,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlGUI\ucQuanLyLoaiDocGia.resx">
       <DependentUpon>ucQuanLyLoaiDocGia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlGUI\ucQuanLyNhanVien.resx">
+      <DependentUpon>ucQuanLyNhanVien.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlGUI\ucQuanLySach.resx">
       <DependentUpon>ucQuanLySach.vb</DependentUpon>
@@ -301,11 +352,15 @@
     <EmbeddedResource Include="UserControlGUI\ucThongTin.resx">
       <DependentUpon>ucThongTin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlGUI\ucThongTinTaiKhoan.resx">
+      <DependentUpon>ucThongTinTaiKhoan.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlGUI\ucTiepNhanSachMoi.resx">
       <DependentUpon>ucTiepNhanSachMoi.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -319,10 +374,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\book-library.jpg" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
     <ProjectReference Include="..\LibraryManagementBUS\LibraryManagementBUS.vbproj">
       <Project>{5e27c130-68f6-47fb-abbf-1c314d1af94c}</Project>
       <Name>LibraryManagementBUS</Name>
@@ -335,6 +386,18 @@
       <Project>{01c6792e-64f1-4a93-9c59-91532921232e}</Project>
       <Name>Utility</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\librarylogo2-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-88-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -51,6 +51,7 @@ Public Class ucThongKeTinhHinhMuonSach
     End Sub
 
     Private Sub dteThangNam_EditValueChanged(sender As Object, e As EventArgs) Handles dteThangNam.EditValueChanged
+        Dim tongSo As Integer = 0
         If dteThangNam.EditValue <> Nothing Then
             Dim listTinhHinh = New List(Of TinhHinhMuonSachDTO)
             listTinhHinh = tinhHinhMuonSachBUS.SelectAll(dteThangNam.EditValue.Month, dteThangNam.EditValue.Year)
@@ -58,12 +59,17 @@ Public Class ucThongKeTinhHinhMuonSach
 
             ChartControl1.Series.Clear()
             Dim series1 As New Series("TỈ LỆ MƯỢN SÁCH", ViewType.Pie)
+            tongSo = 0
             For Each data As TinhHinhMuonSachDTO In listTinhHinh
                 series1.Points.Add(New SeriesPoint(data.TenTheLoai, data.TiLe))
+                tongSo += data.SoLuotMuon
             Next
+            lblTongSo.Text = "Tổng số lượt mượn: " & tongSo
             ChartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True
             ChartControl1.Series.Add(series1)
             series1.Label.TextPattern = "{A}: {VP:p0}"
+
+
         End If
     End Sub
 

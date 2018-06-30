@@ -339,5 +339,4 @@ Public Class TheLoaiDAL
         End Using
         Return soLanMuon
     End Function
-
 End Class

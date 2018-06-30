@@ -22,40 +22,5 @@ Utility
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
-<member name="P:Utility.My.Resources.Resources.book_library">
-<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member>
-<member name="P:Utility.My.Resources.Resources.cancel">
-<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member>
-<member name="P:Utility.My.Resources.Resources.key_48">
-<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member>
-<member name="P:Utility.My.Resources.Resources.librarylogo_01">
-<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member>
-<member name="P:Utility.My.Resources.Resources.librarylogo2_01">
-<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member>
-<member name="P:Utility.My.Resources.Resources.setting_01">
-<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member>
-<member name="P:Utility.My.Resources.Resources.user_48">
-<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member>
 </members>
 </doc>

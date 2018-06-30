@@ -74,12 +74,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddTab.vb" />
-    <Compile Include="frmLogin.Designer.vb">
-      <DependentUpon>frmLogin.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmLogin.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -98,14 +92,11 @@
     <Compile Include="Result.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmLogin.resx">
-      <DependentUpon>frmLogin.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -118,27 +109,6 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\user-48.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\key-48.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\book-library.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\librarylogo-01.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\librarylogo2-01.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cancel.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\setting-01.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

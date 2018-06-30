@@ -32,6 +32,8 @@ Partial Class ucThongKeTinhHinhMuonSach
         Me.grvDanhSachThongKe = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.TinhHinhMuonSachDTOBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ChartControl1 = New DevExpress.XtraCharts.ChartControl()
+        Me.lblTongSo = New DevExpress.XtraEditors.LabelControl()
+        Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
         CType(Me.dteThangNam.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -41,6 +43,8 @@ Partial Class ucThongKeTinhHinhMuonSach
         CType(Me.grvDanhSachThongKe, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TinhHinhMuonSachDTOBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl1.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelControl2
@@ -134,16 +138,35 @@ Partial Class ucThongKeTinhHinhMuonSach
         'ChartControl1
         '
         Me.ChartControl1.Legend.Name = "Default Legend"
-        Me.ChartControl1.Location = New System.Drawing.Point(27, 207)
+        Me.ChartControl1.Location = New System.Drawing.Point(27, 240)
         Me.ChartControl1.Name = "ChartControl1"
         Me.ChartControl1.SeriesSerializable = New DevExpress.XtraCharts.Series(-1) {}
-        Me.ChartControl1.Size = New System.Drawing.Size(658, 390)
+        Me.ChartControl1.Size = New System.Drawing.Size(658, 357)
         Me.ChartControl1.TabIndex = 36
+        '
+        'lblTongSo
+        '
+        Me.lblTongSo.Appearance.Font = New System.Drawing.Font("Tahoma", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.lblTongSo.Appearance.Options.UseFont = True
+        Me.lblTongSo.Location = New System.Drawing.Point(16, 5)
+        Me.lblTongSo.Name = "lblTongSo"
+        Me.lblTongSo.Size = New System.Drawing.Size(129, 16)
+        Me.lblTongSo.TabIndex = 37
+        Me.lblTongSo.Text = "Tổng số lượt mượn: "
+        '
+        'PanelControl1
+        '
+        Me.PanelControl1.Controls.Add(Me.lblTongSo)
+        Me.PanelControl1.Location = New System.Drawing.Point(485, 207)
+        Me.PanelControl1.Name = "PanelControl1"
+        Me.PanelControl1.Size = New System.Drawing.Size(200, 27)
+        Me.PanelControl1.TabIndex = 38
         '
         'ucThongKeTinhHinhMuonSach
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.ChartControl1)
         Me.Controls.Add(Me.PanelControl2)
         Me.Controls.Add(Me.grcDanhSachThongKe)
@@ -159,6 +182,9 @@ Partial Class ucThongKeTinhHinhMuonSach
         CType(Me.grvDanhSachThongKe, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TinhHinhMuonSachDTOBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ChartControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl1.ResumeLayout(False)
+        Me.PanelControl1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -174,4 +200,6 @@ Partial Class ucThongKeTinhHinhMuonSach
     Friend WithEvents btnDong As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents TinhHinhMuonSachDTOBindingSource As BindingSource
     Friend WithEvents ChartControl1 As DevExpress.XtraCharts.ChartControl
+    Friend WithEvents lblTongSo As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
 End Class

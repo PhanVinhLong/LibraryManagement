@@ -251,6 +251,28 @@ Public Class ucChoMuonSach
         ResetInfoDocGia()
     End Sub
 
+    Private Sub lueChonLoaiDocGia_EditValueChanged(sender As Object, e As EventArgs) Handles lueChonLoaiDocGia.EditValueChanged
+        Try
+            Dim maLoaiDocGia As Integer
+            maLoaiDocGia = Convert.ToInt32(lueChonLoaiDocGia.EditValue)
+            LoadListDocGia(maLoaiDocGia)
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub LoadListDocGia(maLoaiDocGia As Integer)
+        Dim listDocGia As List(Of DocGiaDTO) = New List(Of DocGiaDTO)
+        Dim result As Result
+        result = docGiaBUS.SellectByMaDocGia(maLoaiDocGia, listDocGia)
+        If (result.FlagResult = False) Then
+            MessageBox.Show("Lấy danh sách tất cả Độc giả không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            System.Console.WriteLine(result.SystemMessage)
+            Return
+        End If
+
+        CaiDatGridControlDocGia(listDocGia)
+    End Sub
+
     '------------------------------------------------
 
     Private Sub LoadGridSach(listSach As List(Of SachDTO))

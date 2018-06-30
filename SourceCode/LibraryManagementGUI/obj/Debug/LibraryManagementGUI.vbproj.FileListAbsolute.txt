@@ -221,4 +221,8 @@ C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\bin\
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\bin\Debug\DevExpress.XtraCharts.v17.2.UI.xml
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\bin\Debug\DevExpress.RichEdit.v17.2.Export.dll
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\obj\Debug\LibraryManagementGUI.xrpThongKeSachTraTre.resources
-C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\obj\Debug\LibraryManagementGUI.frmLogin.resources
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\obj\Debug\LibraryManagementGUI.frmConnectionSetting.resources
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\obj\Debug\LibraryManagementGUI.ucThongTinTaiKhoan.resources
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\obj\Debug\LibraryManagementGUI.ucQuanLyNhanVien.resources
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\obj\Debug\LibraryManagementGUI.frmRegister.resources
