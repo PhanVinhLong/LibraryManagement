@@ -4,6 +4,8 @@ Imports DevExpress.XtraEditors.Controls
 Imports LibraryManagementBUS
 Imports LibraryManagementDTO
 Imports Utility
+Imports System.Data.OleDb
+Imports Microsoft.Office.Interop.Excel
 
 Public Class ucQuanLySach
     Private sachBUS As SachBUS
@@ -142,21 +144,57 @@ Public Class ucQuanLySach
 
         ' Load dữ liệu cho GridView
         LoadListSach()
+
+        ' Text mặc định cho folder picker
+        btnChoosePath.Text = "D:\LibraryManagement\"
+
+        ' Text mặc định cho filename
+        txtFileName.EditValue = "DuLieuSach-" & Now.Day & "-" & Now.Month & "-" & Now.Year & ".xls"
     End Sub
 
     Private Sub CaiDatGridControl(listSach As List(Of SachDTO))
+        Dim hienThiSachBUS = New HienThiSachBUS()
+        Dim listHienThiSach As List(Of HienThiSachDTO)
+        listHienThiSach = hienThiSachBUS.ConvertListData(listSach)
         grcDanhSachSach.SuspendLayout() ' Tạm dừng hiển thị GridView
 
         ' Cài đặt cho GridControl và GridView
         grvDanhSachSach.BestFitColumns()
         grvDanhSachSach.Columns.Clear()
-        grcDanhSachSach.DataSource = listSach
+        grcDanhSachSach.DataSource = listHienThiSach
         grvDanhSachSach.OptionsBehavior.Editable = False
         grvDanhSachSach.OptionsFind.AlwaysVisible = False
         grvDanhSachSach.OptionsView.ShowGroupPanel = False
         grvDanhSachSach.OptionsFind.FindDelay = 0
+        grvDanhSachSach.BestFitColumns()
+
+        ' Thay đổi tên cột
+        grvDanhSachSach.Columns("MaSach").Caption = "Mã sách"
+        grvDanhSachSach.Columns("TenSach").Caption = "Tên sách"
+        grvDanhSachSach.Columns("NamXuatBan").Caption = "Năm xuất bản"
+        grvDanhSachSach.Columns("NhaXuatBan").Caption = "Nhà xuất bản"
+        grvDanhSachSach.Columns("TriGia").Caption = "Trị giá"
+        grvDanhSachSach.Columns("NgayNhap").Caption = "Ngày nhập"
+        grvDanhSachSach.Columns("TrangThai").Caption = "Trạng thái"
+        grvDanhSachSach.Columns("TacGia").Caption = "Tác giả"
+        grvDanhSachSach.Columns("TheLoai").Caption = "Thể loại"
 
         grcDanhSachSach.ResumeLayout() ' Tiếp tục hiển thị GridView
+    End Sub
+
+    Private Sub LoadSach(sach As SachDTO)
+        txtMaSach.EditValue = sach.MaSach
+        txtTenSach.EditValue = sach.TenSach
+        dteNamXuatBan.EditValue = Now.AddYears(-Now.Year + sach.NamXuatBan)
+        txtNhaXuatBan.EditValue = sach.NhaXuatBan
+        txtTriGia.EditValue = sach.TriGia
+        dteNgayNhap.EditValue = sach.NgayNhap
+
+        ' Load tác giả
+        tacGiaBUS.SelectByMaSach(sach.MaSach, lTacGia)
+        theLoaiBUS.SelectByMaSach(sach.MaSach, lTheLoai)
+        UpdateTacGia()
+        UpdateTheLoai()
     End Sub
 
     Private Sub Reset()
@@ -166,7 +204,7 @@ Public Class ucQuanLySach
         ' Thay đổi data ô thông tin sách
         If (-1 < currenRowIndex < grvDanhSachSach.RowCount) Then
             LoadListSach()
-            sach = CType(grvDanhSachSach.GetRow(currenRowIndex), SachDTO)
+            sach = sachBUS.SelectByMaSach(CType(grvDanhSachSach.GetRow(currenRowIndex), HienThiSachDTO).MaSach)
             LoadSach(sach)
             grvDanhSachSach.FocusedRowHandle = currenRowIndex
         End If
@@ -205,21 +243,6 @@ Public Class ucQuanLySach
             dteNamXuatBan.EditValue = Now
         End If
         lblNamXuatBan.Text = "Đã XB " & (Now.Year - dteNamXuatBan.EditValue.Year).ToString & " năm"
-    End Sub
-
-    Private Sub LoadSach(sach As SachDTO)
-        txtMaSach.EditValue = sach.MaSach
-        txtTenSach.EditValue = sach.TenSach
-        dteNamXuatBan.EditValue = Now.AddYears(-Now.Year + sach.NamXuatBan)
-        txtNhaXuatBan.EditValue = sach.NhaXuatBan
-        txtTriGia.EditValue = sach.TriGia
-        dteNgayNhap.EditValue = sach.NgayNhap
-
-        ' Load tác giả
-        tacGiaBUS.SelectByMaSach(sach.MaSach, lTacGia)
-        theLoaiBUS.SelectByMaSach(sach.MaSach, lTheLoai)
-        UpdateTacGia()
-        UpdateTheLoai()
     End Sub
 
     Private Sub UpdateTacGia()
@@ -272,7 +295,7 @@ Public Class ucQuanLySach
         ' Thay đổi data ô thông tin sách
         If (-1 < currenRowIndex < grvDanhSachSach.RowCount) Then
             Try
-                sach = CType(grvDanhSachSach.GetRow(currenRowIndex), SachDTO)
+                sach = sachBUS.SelectByMaSach(CType(grvDanhSachSach.GetRow(currenRowIndex), HienThiSachDTO).MaSach)
                 LoadSach(sach)
             Catch ex As Exception
                 Console.WriteLine(ex.StackTrace)
@@ -496,4 +519,102 @@ Public Class ucQuanLySach
     Private Sub btnDong_Click(sender As Object, e As EventArgs) Handles btnDong.Click
         Me.Parent.Dispose()
     End Sub
+
+    Private Sub btnChoosePath_Click(sender As Object, e As EventArgs) Handles btnChoosePath.Click
+        xfbChoosePath.ShowDialog()
+        btnChoosePath.Text = xfbChoosePath.SelectedPath
+    End Sub
+
+    Private Sub btnIn_Click(sender As Object, e As EventArgs) Handles btnIn.Click
+        ' Khai báo & khởi tạo
+        Dim xlApp As Microsoft.Office.Interop.Excel.Application
+        Dim xlWorkBook As Microsoft.Office.Interop.Excel.Workbook
+        Dim xlWorkSheet As Microsoft.Office.Interop.Excel.Worksheet
+        Dim misValue As Object = System.Reflection.Missing.Value
+
+        xlApp = New Microsoft.Office.Interop.Excel.Application
+        xlWorkBook = xlApp.Workbooks.Add(misValue)
+        xlWorkSheet = xlWorkBook.Sheets("sheet1")
+
+
+        Dim dt = ConvertToDataTable(Of HienThiSachDTO)(grvDanhSachSach.DataSource)
+        Dim dc As DataColumn
+        Dim dr As DataRow
+
+        xlWorkSheet.Range("A1", "J1").Merge()
+        xlWorkSheet.Cells(1, 1) = "DANH SÁCH SÁCH NGÀY " & Now.ToShortDateString & " - UIT LIBRARY"
+
+        Dim colIndex As Integer = 1
+        Dim rowIndex As Integer = 2
+        Dim stt As Integer = 0
+
+        ' Tên cột excel
+        xlWorkSheet.Cells(rowIndex, 1) = "STT"
+        For Each dc In dt.Columns
+            colIndex = colIndex + 1
+            xlWorkSheet.Cells(rowIndex, colIndex) = dc.ColumnName
+        Next
+        ' Thêm dữ liệu excel
+        For Each dr In dt.Rows
+            stt = stt + 1
+            rowIndex = rowIndex + 1
+            colIndex = 1
+            For Each dc In dt.Columns
+                colIndex = colIndex + 1
+                xlWorkSheet.Cells(rowIndex, 1) = "'" & stt
+                If colIndex = 2 Then
+                    xlWorkSheet.Cells(rowIndex, colIndex) = "'" & dr(dc.ColumnName)
+                Else
+                    xlWorkSheet.Cells(rowIndex, colIndex) = dr(dc.ColumnName)
+                End If
+
+            Next
+        Next
+
+        ' Auto fit cột excel
+        xlWorkSheet.Columns("A:J").AutoFit
+
+        ' Lưu file
+        Try
+            xlWorkBook.SaveAs(btnChoosePath.EditValue & txtFileName.EditValue, XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue)
+            If MessageBox.Show("Xuất file exel thành công. Bạn có muốn mở file?", "Thông tin", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
+                Process.Start(btnChoosePath.EditValue & txtFileName.EditValue)
+            End If
+        Catch
+            MessageBox.Show("ERROR")
+        End Try
+        xlWorkBook.Close(True, misValue, misValue)
+        xlApp.Quit()
+        ReleaseObject(xlApp)
+        ReleaseObject(xlWorkBook)
+        ReleaseObject(xlWorkSheet)
+    End Sub
+
+    Private Sub ReleaseObject(ByVal obj As Object)
+        Try
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(obj)
+            obj = Nothing
+        Catch ex As Exception
+            obj = Nothing
+        Finally
+            GC.Collect()
+        End Try
+    End Sub
+
+    Public Shared Function ConvertToDataTable(Of HienThiSachDTO)(ByVal list As IList(Of HienThiSachDTO)) As System.Data.DataTable
+        Dim table As New System.Data.DataTable()
+        Dim fields() = list.First.GetType.GetProperties
+        For Each field In fields
+            table.Columns.Add(field.Name, field.PropertyType)
+        Next
+        For Each item In list
+            Dim row As DataRow = table.NewRow()
+            For Each field In fields
+                Dim p = item.GetType.GetProperty(field.Name)
+                row(field.Name) = p.GetValue(item, Nothing)
+            Next
+            table.Rows.Add(row)
+        Next
+        Return table
+    End Function
 End Class

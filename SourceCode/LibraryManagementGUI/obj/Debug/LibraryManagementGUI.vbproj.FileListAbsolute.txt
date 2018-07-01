@@ -226,3 +226,8 @@ C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\obj\
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\obj\Debug\LibraryManagementGUI.ucThongTinTaiKhoan.resources
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\obj\Debug\LibraryManagementGUI.ucQuanLyNhanVien.resources
 C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\obj\Debug\LibraryManagementGUI.frmRegister.resources
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\obj\Debug\LibraryManagementGUI.vbproj.ResolveComReference.cache
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\bin\Debug\DevExpress.Dialogs.v17.2.Core.dll
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\bin\Debug\DevExpress.XtraDialogs.v17.2.dll
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\obj\Debug\LibraryManagementGUI.xrpPhieuMuonSach.resources
+C:\Users\HITONASI\Desktop\LibraryManagement\SourceCode\LibraryManagementGUI\obj\Debug\LibraryManagementGUI.xrpPhieuTraSach.resources

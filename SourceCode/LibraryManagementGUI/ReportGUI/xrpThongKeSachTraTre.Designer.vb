@@ -22,41 +22,41 @@ Partial Public Class xrpThongKeSachTraTre
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(xrpThongKeSachTraTre))
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
-        Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
-        Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
-        Me.GroupHeader2 = New DevExpress.XtraReports.UI.GroupHeaderBand()
-        Me.GroupFooter1 = New DevExpress.XtraReports.UI.GroupFooterBand()
-        Me.GroupHeader1 = New DevExpress.XtraReports.UI.GroupHeaderBand()
-        Me.baseControlStyle = New DevExpress.XtraReports.UI.XRControlStyle()
-        Me.evenDetailStyle = New DevExpress.XtraReports.UI.XRControlStyle()
-        Me.oddDetailStyle = New DevExpress.XtraReports.UI.XRControlStyle()
-        Me.XrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel3 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.dateNgayThongKe = New DevExpress.XtraReports.UI.XRLabel()
-        Me.invoiceInfoTable = New DevExpress.XtraReports.UI.XRTable()
-        Me.invoiceInfoTableRow3 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell2 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.dateNgayLap = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.headerTable = New DevExpress.XtraReports.UI.XRTable()
-        Me.headerTableRow = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.productDesctiptionCaption = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.quantityCaption = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.unitPriceCaption = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.lineTotalCaption = New DevExpress.XtraReports.UI.XRTableCell()
         Me.detailTable = New DevExpress.XtraReports.UI.XRTable()
         Me.detailTableRow2 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell1 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.detailTableCell1 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.detailTableCell2 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.detailTableCell5 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrChart1 = New DevExpress.XtraReports.UI.XRChart()
+        Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
+        Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
+        Me.GroupHeader2 = New DevExpress.XtraReports.UI.GroupHeaderBand()
         Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
+        Me.invoiceInfoTable = New DevExpress.XtraReports.UI.XRTable()
+        Me.invoiceInfoTableRow3 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell2 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.dateNgayLap = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel3 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.dateNgayThongKe = New DevExpress.XtraReports.UI.XRLabel()
+        Me.GroupFooter1 = New DevExpress.XtraReports.UI.GroupFooterBand()
+        Me.XrChart1 = New DevExpress.XtraReports.UI.XRChart()
+        Me.GroupHeader1 = New DevExpress.XtraReports.UI.GroupHeaderBand()
+        Me.baseControlStyle = New DevExpress.XtraReports.UI.XRControlStyle()
+        Me.evenDetailStyle = New DevExpress.XtraReports.UI.XRControlStyle()
+        Me.oddDetailStyle = New DevExpress.XtraReports.UI.XRControlStyle()
         Me.ObjectDataSource1 = New DevExpress.DataAccess.ObjectBinding.ObjectDataSource(Me.components)
-        CType(Me.invoiceInfoTable, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.headerTable, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.lineTotalCaption = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.unitPriceCaption = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.quantityCaption = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.productDesctiptionCaption = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.headerTableRow = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.headerTable = New DevExpress.XtraReports.UI.XRTable()
         CType(Me.detailTable, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.invoiceInfoTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrChart1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ObjectDataSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.headerTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'Detail
@@ -68,215 +68,6 @@ Partial Public Class xrpThongKeSachTraTre
         Me.Detail.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.Detail.StyleName = "baseControlStyle"
         Me.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
-        '
-        'TopMargin
-        '
-        Me.TopMargin.HeightF = 50.0!
-        Me.TopMargin.Name = "TopMargin"
-        Me.TopMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
-        Me.TopMargin.StylePriority.UseBackColor = False
-        Me.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
-        '
-        'BottomMargin
-        '
-        Me.BottomMargin.HeightF = 140.0!
-        Me.BottomMargin.Name = "BottomMargin"
-        Me.BottomMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
-        Me.BottomMargin.StyleName = "baseControlStyle"
-        Me.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
-        '
-        'GroupHeader2
-        '
-        Me.GroupHeader2.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrPictureBox1, Me.invoiceInfoTable, Me.XrLabel1, Me.XrLabel3, Me.dateNgayThongKe})
-        Me.GroupHeader2.GroupFields.AddRange(New DevExpress.XtraReports.UI.GroupField() {New DevExpress.XtraReports.UI.GroupField("InvoiceNumber", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)})
-        Me.GroupHeader2.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WithFirstDetail
-        Me.GroupHeader2.HeightF = 187.0417!
-        Me.GroupHeader2.Level = 1
-        Me.GroupHeader2.Name = "GroupHeader2"
-        Me.GroupHeader2.StyleName = "baseControlStyle"
-        Me.GroupHeader2.StylePriority.UseBackColor = False
-        '
-        'GroupFooter1
-        '
-        Me.GroupFooter1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrChart1})
-        Me.GroupFooter1.GroupUnion = DevExpress.XtraReports.UI.GroupFooterUnion.WithLastDetail
-        Me.GroupFooter1.HeightF = 426.3481!
-        Me.GroupFooter1.KeepTogether = True
-        Me.GroupFooter1.Name = "GroupFooter1"
-        Me.GroupFooter1.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBandExceptLastEntry
-        Me.GroupFooter1.StyleName = "baseControlStyle"
-        '
-        'GroupHeader1
-        '
-        Me.GroupHeader1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.headerTable})
-        Me.GroupHeader1.HeightF = 47.08331!
-        Me.GroupHeader1.Name = "GroupHeader1"
-        Me.GroupHeader1.RepeatEveryPage = True
-        Me.GroupHeader1.StyleName = "baseControlStyle"
-        '
-        'baseControlStyle
-        '
-        Me.baseControlStyle.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-        Me.baseControlStyle.Name = "baseControlStyle"
-        Me.baseControlStyle.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        '
-        'evenDetailStyle
-        '
-        Me.evenDetailStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(233, Byte), Integer), CType(CType(234, Byte), Integer))
-        Me.evenDetailStyle.Name = "evenDetailStyle"
-        Me.evenDetailStyle.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        '
-        'oddDetailStyle
-        '
-        Me.oddDetailStyle.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.oddDetailStyle.Name = "oddDetailStyle"
-        Me.oddDetailStyle.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        '
-        'XrLabel1
-        '
-        Me.XrLabel1.Font = New System.Drawing.Font("Segoe UI", 30.0!)
-        Me.XrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(184.885!, 10.00001!)
-        Me.XrLabel1.Name = "XrLabel1"
-        Me.XrLabel1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel1.SizeF = New System.Drawing.SizeF(498.3033!, 53.20832!)
-        Me.XrLabel1.StylePriority.UseFont = False
-        Me.XrLabel1.StylePriority.UseTextAlignment = False
-        Me.XrLabel1.Text = "BÁO CÁO THỐNG KÊ"
-        Me.XrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
-        '
-        'XrLabel3
-        '
-        Me.XrLabel3.Font = New System.Drawing.Font("Segoe UI", 30.0!)
-        Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(127.9788!, 63.20832!)
-        Me.XrLabel3.Name = "XrLabel3"
-        Me.XrLabel3.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel3.SizeF = New System.Drawing.SizeF(396.9096!, 53.08333!)
-        Me.XrLabel3.StylePriority.UseFont = False
-        Me.XrLabel3.Text = "SÁCH TRẢ TRỄ NGÀY"
-        '
-        'dateNgayThongKe
-        '
-        Me.dateNgayThongKe.Font = New System.Drawing.Font("Segoe UI", 30.0!)
-        Me.dateNgayThongKe.LocationFloat = New DevExpress.Utils.PointFloat(524.8884!, 63.20832!)
-        Me.dateNgayThongKe.Name = "dateNgayThongKe"
-        Me.dateNgayThongKe.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.dateNgayThongKe.SizeF = New System.Drawing.SizeF(224.3613!, 53.08332!)
-        Me.dateNgayThongKe.StylePriority.UseFont = False
-        Me.dateNgayThongKe.Text = "21/12/2018"
-        Me.dateNgayThongKe.TextFormatString = "{0:dd/MM/yyyy}"
-        '
-        'invoiceInfoTable
-        '
-        Me.invoiceInfoTable.LocationFloat = New DevExpress.Utils.PointFloat(514.8109!, 131.1667!)
-        Me.invoiceInfoTable.Name = "invoiceInfoTable"
-        Me.invoiceInfoTable.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.invoiceInfoTableRow3})
-        Me.invoiceInfoTable.SizeF = New System.Drawing.SizeF(214.1282!, 27.83333!)
-        Me.invoiceInfoTable.StylePriority.UseFont = False
-        '
-        'invoiceInfoTableRow3
-        '
-        Me.invoiceInfoTableRow3.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell2, Me.dateNgayLap})
-        Me.invoiceInfoTableRow3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.invoiceInfoTableRow3.Name = "invoiceInfoTableRow3"
-        Me.invoiceInfoTableRow3.StylePriority.UseFont = False
-        Me.invoiceInfoTableRow3.Weight = 0.4266795832360003R
-        '
-        'XrTableCell2
-        '
-        Me.XrTableCell2.Borders = DevExpress.XtraPrinting.BorderSide.None
-        Me.XrTableCell2.Name = "XrTableCell2"
-        Me.XrTableCell2.StylePriority.UseBorders = False
-        Me.XrTableCell2.StylePriority.UseTextAlignment = False
-        Me.XrTableCell2.Text = "Ngày lập:"
-        Me.XrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
-        Me.XrTableCell2.Weight = 1.125101946954864R
-        '
-        'dateNgayLap
-        '
-        Me.dateNgayLap.Borders = DevExpress.XtraPrinting.BorderSide.None
-        Me.dateNgayLap.Name = "dateNgayLap"
-        Me.dateNgayLap.StylePriority.UseBackColor = False
-        Me.dateNgayLap.StylePriority.UseBorders = False
-        Me.dateNgayLap.StylePriority.UseFont = False
-        Me.dateNgayLap.StylePriority.UseTextAlignment = False
-        Me.dateNgayLap.Text = "28/06/2018"
-        Me.dateNgayLap.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
-        Me.dateNgayLap.TextFormatString = "{0:dd/MM/yyyy}"
-        Me.dateNgayLap.Weight = 1.1656299433761719R
-        '
-        'headerTable
-        '
-        Me.headerTable.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.headerTable.LocationFloat = New DevExpress.Utils.PointFloat(10.00009!, 0!)
-        Me.headerTable.Name = "headerTable"
-        Me.headerTable.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.headerTableRow})
-        Me.headerTable.SizeF = New System.Drawing.SizeF(729.9998!, 47.08331!)
-        Me.headerTable.StylePriority.UseFont = False
-        Me.headerTable.StylePriority.UsePadding = False
-        '
-        'headerTableRow
-        '
-        Me.headerTableRow.Borders = CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
-            Or DevExpress.XtraPrinting.BorderSide.Right) _
-            Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
-        Me.headerTableRow.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.productDesctiptionCaption, Me.quantityCaption, Me.unitPriceCaption, Me.lineTotalCaption})
-        Me.headerTableRow.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.headerTableRow.Name = "headerTableRow"
-        Me.headerTableRow.StylePriority.UseBorders = False
-        Me.headerTableRow.StylePriority.UseFont = False
-        Me.headerTableRow.Weight = 10.719222293551759R
-        '
-        'productDesctiptionCaption
-        '
-        Me.productDesctiptionCaption.Name = "productDesctiptionCaption"
-        Me.productDesctiptionCaption.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 0, 0, 0, 100.0!)
-        Me.productDesctiptionCaption.StylePriority.UseBackColor = False
-        Me.productDesctiptionCaption.StylePriority.UseFont = False
-        Me.productDesctiptionCaption.StylePriority.UseForeColor = False
-        Me.productDesctiptionCaption.StylePriority.UsePadding = False
-        Me.productDesctiptionCaption.StylePriority.UseTextAlignment = False
-        Me.productDesctiptionCaption.Text = "STT"
-        Me.productDesctiptionCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.productDesctiptionCaption.Weight = 0.18082970838411455R
-        '
-        'quantityCaption
-        '
-        Me.quantityCaption.Name = "quantityCaption"
-        Me.quantityCaption.Padding = New DevExpress.XtraPrinting.PaddingInfo(20, 0, 0, 0, 100.0!)
-        Me.quantityCaption.StylePriority.UseBackColor = False
-        Me.quantityCaption.StylePriority.UseFont = False
-        Me.quantityCaption.StylePriority.UseForeColor = False
-        Me.quantityCaption.StylePriority.UsePadding = False
-        Me.quantityCaption.StylePriority.UseTextAlignment = False
-        Me.quantityCaption.Text = "TÊN SÁCH"
-        Me.quantityCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.quantityCaption.Weight = 0.93040880134004178R
-        '
-        'unitPriceCaption
-        '
-        Me.unitPriceCaption.Name = "unitPriceCaption"
-        Me.unitPriceCaption.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.unitPriceCaption.StylePriority.UseBackColor = False
-        Me.unitPriceCaption.StylePriority.UseFont = False
-        Me.unitPriceCaption.StylePriority.UseForeColor = False
-        Me.unitPriceCaption.StylePriority.UsePadding = False
-        Me.unitPriceCaption.StylePriority.UseTextAlignment = False
-        Me.unitPriceCaption.Text = "NGÀY MƯỢN"
-        Me.unitPriceCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.unitPriceCaption.Weight = 0.34437318806277967R
-        '
-        'lineTotalCaption
-        '
-        Me.lineTotalCaption.Name = "lineTotalCaption"
-        Me.lineTotalCaption.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 5, 0, 0, 100.0!)
-        Me.lineTotalCaption.StylePriority.UseBackColor = False
-        Me.lineTotalCaption.StylePriority.UseFont = False
-        Me.lineTotalCaption.StylePriority.UseForeColor = False
-        Me.lineTotalCaption.StylePriority.UsePadding = False
-        Me.lineTotalCaption.StylePriority.UseTextAlignment = False
-        Me.lineTotalCaption.Text = "SỐ NGÀY TRẢ TRỄ"
-        Me.lineTotalCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.lineTotalCaption.Weight = 0.34524235124525154R
         '
         'detailTable
         '
@@ -342,6 +133,123 @@ Partial Public Class xrpThongKeSachTraTre
         Me.detailTableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         Me.detailTableCell5.Weight = 0.17199467510384831R
         '
+        'TopMargin
+        '
+        Me.TopMargin.HeightF = 50.0!
+        Me.TopMargin.Name = "TopMargin"
+        Me.TopMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
+        Me.TopMargin.StylePriority.UseBackColor = False
+        Me.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
+        '
+        'BottomMargin
+        '
+        Me.BottomMargin.HeightF = 140.0!
+        Me.BottomMargin.Name = "BottomMargin"
+        Me.BottomMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
+        Me.BottomMargin.StyleName = "baseControlStyle"
+        Me.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
+        '
+        'GroupHeader2
+        '
+        Me.GroupHeader2.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrPictureBox1, Me.invoiceInfoTable, Me.XrLabel1, Me.XrLabel3, Me.dateNgayThongKe})
+        Me.GroupHeader2.GroupFields.AddRange(New DevExpress.XtraReports.UI.GroupField() {New DevExpress.XtraReports.UI.GroupField("InvoiceNumber", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)})
+        Me.GroupHeader2.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WithFirstDetail
+        Me.GroupHeader2.HeightF = 187.0417!
+        Me.GroupHeader2.Level = 1
+        Me.GroupHeader2.Name = "GroupHeader2"
+        Me.GroupHeader2.StyleName = "baseControlStyle"
+        Me.GroupHeader2.StylePriority.UseBackColor = False
+        '
+        'XrPictureBox1
+        '
+        Me.XrPictureBox1.Image = CType(resources.GetObject("XrPictureBox1.Image"), System.Drawing.Image)
+        Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(10.00036!, 10.00001!)
+        Me.XrPictureBox1.Name = "XrPictureBox1"
+        Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(110.0!, 110.0!)
+        Me.XrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage
+        '
+        'invoiceInfoTable
+        '
+        Me.invoiceInfoTable.LocationFloat = New DevExpress.Utils.PointFloat(514.8109!, 131.1667!)
+        Me.invoiceInfoTable.Name = "invoiceInfoTable"
+        Me.invoiceInfoTable.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.invoiceInfoTableRow3})
+        Me.invoiceInfoTable.SizeF = New System.Drawing.SizeF(214.1282!, 27.83333!)
+        Me.invoiceInfoTable.StylePriority.UseFont = False
+        '
+        'invoiceInfoTableRow3
+        '
+        Me.invoiceInfoTableRow3.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell2, Me.dateNgayLap})
+        Me.invoiceInfoTableRow3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.invoiceInfoTableRow3.Name = "invoiceInfoTableRow3"
+        Me.invoiceInfoTableRow3.StylePriority.UseFont = False
+        Me.invoiceInfoTableRow3.Weight = 0.4266795832360003R
+        '
+        'XrTableCell2
+        '
+        Me.XrTableCell2.Borders = DevExpress.XtraPrinting.BorderSide.None
+        Me.XrTableCell2.Name = "XrTableCell2"
+        Me.XrTableCell2.StylePriority.UseBorders = False
+        Me.XrTableCell2.StylePriority.UseTextAlignment = False
+        Me.XrTableCell2.Text = "Ngày lập:"
+        Me.XrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
+        Me.XrTableCell2.Weight = 1.125101946954864R
+        '
+        'dateNgayLap
+        '
+        Me.dateNgayLap.Borders = DevExpress.XtraPrinting.BorderSide.None
+        Me.dateNgayLap.Name = "dateNgayLap"
+        Me.dateNgayLap.StylePriority.UseBackColor = False
+        Me.dateNgayLap.StylePriority.UseBorders = False
+        Me.dateNgayLap.StylePriority.UseFont = False
+        Me.dateNgayLap.StylePriority.UseTextAlignment = False
+        Me.dateNgayLap.Text = "28/06/2018"
+        Me.dateNgayLap.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
+        Me.dateNgayLap.TextFormatString = "{0:dd/MM/yyyy}"
+        Me.dateNgayLap.Weight = 1.1656299433761719R
+        '
+        'XrLabel1
+        '
+        Me.XrLabel1.Font = New System.Drawing.Font("Segoe UI", 30.0!)
+        Me.XrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(184.885!, 10.00001!)
+        Me.XrLabel1.Name = "XrLabel1"
+        Me.XrLabel1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel1.SizeF = New System.Drawing.SizeF(498.3033!, 53.20832!)
+        Me.XrLabel1.StylePriority.UseFont = False
+        Me.XrLabel1.StylePriority.UseTextAlignment = False
+        Me.XrLabel1.Text = "BÁO CÁO THỐNG KÊ"
+        Me.XrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
+        '
+        'XrLabel3
+        '
+        Me.XrLabel3.Font = New System.Drawing.Font("Segoe UI", 30.0!)
+        Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(127.9788!, 63.20832!)
+        Me.XrLabel3.Name = "XrLabel3"
+        Me.XrLabel3.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel3.SizeF = New System.Drawing.SizeF(396.9096!, 53.08333!)
+        Me.XrLabel3.StylePriority.UseFont = False
+        Me.XrLabel3.Text = "SÁCH TRẢ TRỄ NGÀY"
+        '
+        'dateNgayThongKe
+        '
+        Me.dateNgayThongKe.Font = New System.Drawing.Font("Segoe UI", 30.0!)
+        Me.dateNgayThongKe.LocationFloat = New DevExpress.Utils.PointFloat(524.8884!, 63.20832!)
+        Me.dateNgayThongKe.Name = "dateNgayThongKe"
+        Me.dateNgayThongKe.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.dateNgayThongKe.SizeF = New System.Drawing.SizeF(224.3613!, 53.08332!)
+        Me.dateNgayThongKe.StylePriority.UseFont = False
+        Me.dateNgayThongKe.Text = "21/12/2018"
+        Me.dateNgayThongKe.TextFormatString = "{0:dd/MM/yyyy}"
+        '
+        'GroupFooter1
+        '
+        Me.GroupFooter1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrChart1})
+        Me.GroupFooter1.GroupUnion = DevExpress.XtraReports.UI.GroupFooterUnion.WithLastDetail
+        Me.GroupFooter1.HeightF = 426.3481!
+        Me.GroupFooter1.KeepTogether = True
+        Me.GroupFooter1.Name = "GroupFooter1"
+        Me.GroupFooter1.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBandExceptLastEntry
+        Me.GroupFooter1.StyleName = "baseControlStyle"
+        '
         'XrChart1
         '
         Me.XrChart1.BorderColor = System.Drawing.Color.Black
@@ -352,18 +260,110 @@ Partial Public Class xrpThongKeSachTraTre
         Me.XrChart1.SeriesSerializable = New DevExpress.XtraCharts.Series(-1) {}
         Me.XrChart1.SizeF = New System.Drawing.SizeF(492.002!, 378.4314!)
         '
-        'XrPictureBox1
+        'GroupHeader1
         '
-        Me.XrPictureBox1.Image = CType(resources.GetObject("XrPictureBox1.Image"), System.Drawing.Image)
-        Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(10.00036!, 10.00001!)
-        Me.XrPictureBox1.Name = "XrPictureBox1"
-        Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(110.0!, 110.0!)
-        Me.XrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage
+        Me.GroupHeader1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.headerTable})
+        Me.GroupHeader1.HeightF = 47.08331!
+        Me.GroupHeader1.Name = "GroupHeader1"
+        Me.GroupHeader1.RepeatEveryPage = True
+        Me.GroupHeader1.StyleName = "baseControlStyle"
+        '
+        'baseControlStyle
+        '
+        Me.baseControlStyle.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.baseControlStyle.Name = "baseControlStyle"
+        Me.baseControlStyle.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        '
+        'evenDetailStyle
+        '
+        Me.evenDetailStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(233, Byte), Integer), CType(CType(234, Byte), Integer))
+        Me.evenDetailStyle.Name = "evenDetailStyle"
+        Me.evenDetailStyle.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        '
+        'oddDetailStyle
+        '
+        Me.oddDetailStyle.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.oddDetailStyle.Name = "oddDetailStyle"
+        Me.oddDetailStyle.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         '
         'ObjectDataSource1
         '
         Me.ObjectDataSource1.DataSource = GetType(LibraryManagementDTO.SachTraTreDTO)
         Me.ObjectDataSource1.Name = "ObjectDataSource1"
+        '
+        'lineTotalCaption
+        '
+        Me.lineTotalCaption.Name = "lineTotalCaption"
+        Me.lineTotalCaption.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 5, 0, 0, 100.0!)
+        Me.lineTotalCaption.StylePriority.UseBackColor = False
+        Me.lineTotalCaption.StylePriority.UseFont = False
+        Me.lineTotalCaption.StylePriority.UseForeColor = False
+        Me.lineTotalCaption.StylePriority.UsePadding = False
+        Me.lineTotalCaption.StylePriority.UseTextAlignment = False
+        Me.lineTotalCaption.Text = "SỐ NGÀY TRẢ TRỄ"
+        Me.lineTotalCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.lineTotalCaption.Weight = 0.34524235124525154R
+        '
+        'unitPriceCaption
+        '
+        Me.unitPriceCaption.Name = "unitPriceCaption"
+        Me.unitPriceCaption.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.unitPriceCaption.StylePriority.UseBackColor = False
+        Me.unitPriceCaption.StylePriority.UseFont = False
+        Me.unitPriceCaption.StylePriority.UseForeColor = False
+        Me.unitPriceCaption.StylePriority.UsePadding = False
+        Me.unitPriceCaption.StylePriority.UseTextAlignment = False
+        Me.unitPriceCaption.Text = "NGÀY MƯỢN"
+        Me.unitPriceCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.unitPriceCaption.Weight = 0.34437318806277967R
+        '
+        'quantityCaption
+        '
+        Me.quantityCaption.Name = "quantityCaption"
+        Me.quantityCaption.Padding = New DevExpress.XtraPrinting.PaddingInfo(20, 0, 0, 0, 100.0!)
+        Me.quantityCaption.StylePriority.UseBackColor = False
+        Me.quantityCaption.StylePriority.UseFont = False
+        Me.quantityCaption.StylePriority.UseForeColor = False
+        Me.quantityCaption.StylePriority.UsePadding = False
+        Me.quantityCaption.StylePriority.UseTextAlignment = False
+        Me.quantityCaption.Text = "TÊN SÁCH"
+        Me.quantityCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.quantityCaption.Weight = 0.93040880134004178R
+        '
+        'productDesctiptionCaption
+        '
+        Me.productDesctiptionCaption.Name = "productDesctiptionCaption"
+        Me.productDesctiptionCaption.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 0, 0, 0, 100.0!)
+        Me.productDesctiptionCaption.StylePriority.UseBackColor = False
+        Me.productDesctiptionCaption.StylePriority.UseFont = False
+        Me.productDesctiptionCaption.StylePriority.UseForeColor = False
+        Me.productDesctiptionCaption.StylePriority.UsePadding = False
+        Me.productDesctiptionCaption.StylePriority.UseTextAlignment = False
+        Me.productDesctiptionCaption.Text = "STT"
+        Me.productDesctiptionCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.productDesctiptionCaption.Weight = 0.18082970838411455R
+        '
+        'headerTableRow
+        '
+        Me.headerTableRow.Borders = CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
+            Or DevExpress.XtraPrinting.BorderSide.Right) _
+            Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.headerTableRow.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.productDesctiptionCaption, Me.quantityCaption, Me.unitPriceCaption, Me.lineTotalCaption})
+        Me.headerTableRow.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.headerTableRow.Name = "headerTableRow"
+        Me.headerTableRow.StylePriority.UseBorders = False
+        Me.headerTableRow.StylePriority.UseFont = False
+        Me.headerTableRow.Weight = 10.719222293551759R
+        '
+        'headerTable
+        '
+        Me.headerTable.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.headerTable.LocationFloat = New DevExpress.Utils.PointFloat(10.00009!, 0!)
+        Me.headerTable.Name = "headerTable"
+        Me.headerTable.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.headerTableRow})
+        Me.headerTable.SizeF = New System.Drawing.SizeF(729.9998!, 47.08331!)
+        Me.headerTable.StylePriority.UseFont = False
+        Me.headerTable.StylePriority.UsePadding = False
         '
         'xrpThongKeSachTraTre
         '
@@ -374,11 +374,11 @@ Partial Public Class xrpThongKeSachTraTre
         Me.Margins = New System.Drawing.Printing.Margins(50, 50, 50, 140)
         Me.StyleSheet.AddRange(New DevExpress.XtraReports.UI.XRControlStyle() {Me.baseControlStyle, Me.evenDetailStyle, Me.oddDetailStyle})
         Me.Version = "17.2"
-        CType(Me.invoiceInfoTable, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.headerTable, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.detailTable, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.invoiceInfoTable, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrChart1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ObjectDataSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.headerTable, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub
@@ -399,12 +399,6 @@ Partial Public Class xrpThongKeSachTraTre
     Friend WithEvents invoiceInfoTableRow3 As DevExpress.XtraReports.UI.XRTableRow
     Friend WithEvents XrTableCell2 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents dateNgayLap As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents headerTable As DevExpress.XtraReports.UI.XRTable
-    Friend WithEvents headerTableRow As DevExpress.XtraReports.UI.XRTableRow
-    Friend WithEvents productDesctiptionCaption As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents quantityCaption As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents unitPriceCaption As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents lineTotalCaption As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents detailTable As DevExpress.XtraReports.UI.XRTable
     Friend WithEvents detailTableRow2 As DevExpress.XtraReports.UI.XRTableRow
     Friend WithEvents XrTableCell1 As DevExpress.XtraReports.UI.XRTableCell
@@ -414,4 +408,10 @@ Partial Public Class xrpThongKeSachTraTre
     Friend WithEvents XrChart1 As DevExpress.XtraReports.UI.XRChart
     Friend WithEvents XrPictureBox1 As DevExpress.XtraReports.UI.XRPictureBox
     Friend WithEvents ObjectDataSource1 As DevExpress.DataAccess.ObjectBinding.ObjectDataSource
+    Friend WithEvents headerTable As DevExpress.XtraReports.UI.XRTable
+    Friend WithEvents headerTableRow As DevExpress.XtraReports.UI.XRTableRow
+    Friend WithEvents productDesctiptionCaption As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents quantityCaption As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents unitPriceCaption As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents lineTotalCaption As DevExpress.XtraReports.UI.XRTableCell
 End Class

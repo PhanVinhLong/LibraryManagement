@@ -76,8 +76,7 @@ Public Class ucThongKeTinhHinhMuonSach
     Private Sub btnIn_Click(sender As Object, e As EventArgs) Handles btnIn.Click
         Dim listTinhHinhMuonSach As List(Of TinhHinhMuonSachDTO)
         listTinhHinhMuonSach = tinhHinhMuonSachBUS.SelectAll(dteThangNam.EditValue.Month, dteThangNam.EditValue.Year)
-        Using frmPrint As frmPrint = New frmPrint()
-            frmPrint.InitTinhHinhMuonSach(dteThangNam.EditValue, listTinhHinhMuonSach)
+        Using frmPrint As frmPrint = New frmPrint(dteThangNam.EditValue, listTinhHinhMuonSach)
             frmPrint.ShowDialog()
         End Using
     End Sub

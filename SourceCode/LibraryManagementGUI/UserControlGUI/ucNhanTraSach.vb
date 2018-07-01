@@ -121,6 +121,7 @@ Public Class ucNhanTraSach
         grvDanhSachDocGia.OptionsFind.AlwaysVisible = False
         grvDanhSachDocGia.OptionsView.ShowGroupPanel = False
         grvDanhSachDocGia.OptionsFind.FindDelay = 0
+        grvDanhSachDocGia.BestFitColumns()
 
         ' Chỉnh độ rộng cột
         grvDanhSachDocGia.Columns("MaDocGia").Width = 70
@@ -223,18 +224,33 @@ Public Class ucNhanTraSach
     '------------------------------------------------
 
     Private Sub CaiDatGridControl(listSach As List(Of SachDTO))
-        grcDanhSachSach.SuspendLayout() ' Tạm dừng hiển thị GridView
+        Dim hienThiSachBUS = New HienThiSachBUS()
+        Dim listHienThiSach As List(Of HienThiSachDTO)
+        listHienThiSach = hienThiSachBUS.ConvertListData(listSach)
 
+        grcDanhSachSach.SuspendLayout() ' Tạm dừng hiển thị GridView
         ' Cài đặt cho GridControl và GridView
         grvDanhSachSach.BestFitColumns()
         grvDanhSachSach.Columns.Clear()
-        grcDanhSachSach.DataSource = listSach
+        grcDanhSachSach.DataSource = listHienThiSach
         grvDanhSachSach.OptionsBehavior.Editable = False
         grvDanhSachSach.OptionsFind.AlwaysVisible = False
         grvDanhSachSach.OptionsView.ShowGroupPanel = False
         grvDanhSachSach.OptionsFind.FindDelay = 0
         grvDanhSachSach.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect
         grvDanhSachSach.OptionsSelection.MultiSelect = True
+        grvDanhSachDocGia.BestFitColumns()
+
+        ' Thay đổi tên cột
+        grvDanhSachSach.Columns("MaSach").Caption = "Mã sách"
+        grvDanhSachSach.Columns("TenSach").Caption = "Tên sách"
+        grvDanhSachSach.Columns("NamXuatBan").Caption = "Năm xuất bản"
+        grvDanhSachSach.Columns("NhaXuatBan").Caption = "Nhà xuất bản"
+        grvDanhSachSach.Columns("TriGia").Caption = "Trị giá"
+        grvDanhSachSach.Columns("NgayNhap").Caption = "Ngày nhập"
+        grvDanhSachSach.Columns("TrangThai").Caption = "Trạng thái"
+        grvDanhSachSach.Columns("TacGia").Caption = "Tác giả"
+        grvDanhSachSach.Columns("TheLoai").Caption = "Thể loại"
 
         grcDanhSachSach.ResumeLayout() ' Tiếp tục hiển thị GridView
     End Sub
@@ -246,7 +262,7 @@ Public Class ucNhanTraSach
         ' Thay đổi data ô thông tin sách
         If (-1 < currenRowIndex < grvDanhSachSach.RowCount) Then
             LoadListSach()
-            Dim sach = CType(grvDanhSachSach.GetRow(currenRowIndex), SachDTO)
+            Dim sach = sachBUS.SelectByMaSach(CType(grvDanhSachSach.GetRow(currenRowIndex), HienThiSachDTO).MaSach)
             LoadSach(sach)
             grvDanhSachSach.FocusedRowHandle = currenRowIndex
         End If
@@ -288,7 +304,7 @@ Public Class ucNhanTraSach
         lblSachDaChon.Text = String.Empty
         listSachChon.Clear()
         For Each rowIndex As Integer In grvDanhSachSach.GetSelectedRows
-            Dim sach = CType(grvDanhSachSach.GetRow(rowIndex), SachDTO)
+            Dim sach = sachBUS.SelectByMaSach(CType(grvDanhSachSach.GetRow(rowIndex), HienThiSachDTO).MaSach)
             listSachChon.Add(sach)
             lblSachDaChon.Text &= sach.TenSach & " (" & sach.MaSach & "), "
         Next
@@ -303,6 +319,19 @@ Public Class ucNhanTraSach
         thamSoBUS = New ThamSoBUS()
         Dim thamSo As ThamSoDTO = New ThamSoDTO
         thamSoBUS.GetData(thamSo)
+
+        ' Kiểm tra
+        If listSachChon.Count < 1 Then
+            MessageBox.Show("Bạn chưa chọn sách")
+            Return
+        End If
+
+        For Each sach As SachDTO In listSachChon
+            If sachBUS.NgayHetHan(sach).AddDays(-thamSo.SoNgayMuonToiDa) > dteNgayTra.EditValue Then
+                MessageBox.Show("Ngày trả không thể nhỏ hơn ngày mượn của sách (" & sach.TenSach & ")", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
+        Next
 
         ' Lấy Data phiếu trả
         Dim phieuTra = New PhieuTraDTO()

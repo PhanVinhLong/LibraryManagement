@@ -125,7 +125,7 @@ Public Class SachDAL
         Return New Result(True)
     End Function
 
-    Public Function SelectByMaSach(iMaSachh As Integer) As SachDTO
+    Public Function SelectByMaSach(iMaSach As Integer) As SachDTO
         Dim sqlQuery As String
         sqlQuery = String.Empty
         sqlQuery &= "SELECT [MaSach], [TenSach], [NamXuatBan], [NhaXuatBan], [TriGia], [NgayNhap], [MaTrangThai] "
@@ -139,7 +139,7 @@ Public Class SachDAL
                     .Connection = connection
                     .CommandType = CommandType.Text
                     .CommandText = sqlQuery
-                    .Parameters.AddWithValue("@MaSach", iMaSachh)
+                    .Parameters.AddWithValue("@MaSach", iMaSach)
                 End With
                 connection.Open()
                 Dim dataReader As SqlDataReader

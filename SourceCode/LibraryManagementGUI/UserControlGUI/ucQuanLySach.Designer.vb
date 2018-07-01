@@ -19,6 +19,7 @@ Partial Class ucQuanLySach
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucQuanLySach))
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
@@ -64,11 +65,15 @@ Partial Class ucQuanLySach
         Me.ckeTrangThai = New DevExpress.XtraEditors.CheckEdit()
         Me.btnLoc = New DevExpress.XtraEditors.SimpleButton()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
+        Me.btnIn = New DevExpress.XtraEditors.SimpleButton()
+        Me.btnChoosePath = New DevExpress.XtraEditors.ButtonEdit()
         Me.btnDong = New DevExpress.XtraEditors.SimpleButton()
         Me.btnXoa = New DevExpress.XtraEditors.SimpleButton()
         Me.btnXoaLichSuMuon = New DevExpress.XtraEditors.SimpleButton()
         Me.btnCapNhat = New DevExpress.XtraEditors.SimpleButton()
         Me.PanelControl5 = New DevExpress.XtraEditors.PanelControl()
+        Me.xfbChoosePath = New DevExpress.XtraEditors.XtraFolderBrowserDialog(Me.components)
+        Me.txtFileName = New DevExpress.XtraEditors.TextEdit()
         CType(Me.txtTenSach.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTriGia.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dteNgayNhap.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -101,13 +106,15 @@ Partial Class ucQuanLySach
         CType(Me.ckeTrangThai.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
+        CType(Me.btnChoosePath.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl5.SuspendLayout()
+        CType(Me.txtFileName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelControl5
         '
-        Me.LabelControl5.Location = New System.Drawing.Point(382, 71)
+        Me.LabelControl5.Location = New System.Drawing.Point(458, 71)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(52, 13)
         Me.LabelControl5.TabIndex = 5
@@ -115,7 +122,7 @@ Partial Class ucQuanLySach
         '
         'LabelControl4
         '
-        Me.LabelControl4.Location = New System.Drawing.Point(382, 41)
+        Me.LabelControl4.Location = New System.Drawing.Point(458, 41)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(29, 13)
         Me.LabelControl4.TabIndex = 4
@@ -123,14 +130,14 @@ Partial Class ucQuanLySach
         '
         'txtTenSach
         '
-        Me.txtTenSach.Location = New System.Drawing.Point(125, 38)
+        Me.txtTenSach.Location = New System.Drawing.Point(149, 38)
         Me.txtTenSach.Name = "txtTenSach"
         Me.txtTenSach.Size = New System.Drawing.Size(138, 20)
         Me.txtTenSach.TabIndex = 7
         '
         'LabelControl3
         '
-        Me.LabelControl3.Location = New System.Drawing.Point(382, 11)
+        Me.LabelControl3.Location = New System.Drawing.Point(458, 11)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(65, 13)
         Me.LabelControl3.TabIndex = 3
@@ -138,14 +145,14 @@ Partial Class ucQuanLySach
         '
         'txtTriGia
         '
-        Me.txtTriGia.Location = New System.Drawing.Point(468, 38)
+        Me.txtTriGia.Location = New System.Drawing.Point(544, 38)
         Me.txtTriGia.Name = "txtTriGia"
         Me.txtTriGia.Size = New System.Drawing.Size(110, 20)
         Me.txtTriGia.TabIndex = 8
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(35, 71)
+        Me.LabelControl2.Location = New System.Drawing.Point(59, 71)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(67, 13)
         Me.LabelControl2.TabIndex = 2
@@ -154,7 +161,7 @@ Partial Class ucQuanLySach
         'dteNgayNhap
         '
         Me.dteNgayNhap.EditValue = Nothing
-        Me.dteNgayNhap.Location = New System.Drawing.Point(468, 68)
+        Me.dteNgayNhap.Location = New System.Drawing.Point(544, 68)
         Me.dteNgayNhap.Name = "dteNgayNhap"
         Me.dteNgayNhap.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dteNgayNhap.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -163,7 +170,7 @@ Partial Class ucQuanLySach
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(35, 41)
+        Me.LabelControl1.Location = New System.Drawing.Point(59, 41)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(43, 13)
         Me.LabelControl1.TabIndex = 1
@@ -172,7 +179,7 @@ Partial Class ucQuanLySach
         'dteNamXuatBan
         '
         Me.dteNamXuatBan.EditValue = Nothing
-        Me.dteNamXuatBan.Location = New System.Drawing.Point(125, 68)
+        Me.dteNamXuatBan.Location = New System.Drawing.Point(149, 68)
         Me.dteNamXuatBan.Name = "dteNamXuatBan"
         Me.dteNamXuatBan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dteNamXuatBan.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -181,7 +188,7 @@ Partial Class ucQuanLySach
         '
         'lblMaSach
         '
-        Me.lblMaSach.Location = New System.Drawing.Point(35, 11)
+        Me.lblMaSach.Location = New System.Drawing.Point(59, 11)
         Me.lblMaSach.Name = "lblMaSach"
         Me.lblMaSach.Size = New System.Drawing.Size(39, 13)
         Me.lblMaSach.TabIndex = 0
@@ -190,7 +197,7 @@ Partial Class ucQuanLySach
         'txtMaSach
         '
         Me.txtMaSach.Enabled = False
-        Me.txtMaSach.Location = New System.Drawing.Point(125, 8)
+        Me.txtMaSach.Location = New System.Drawing.Point(149, 8)
         Me.txtMaSach.Name = "txtMaSach"
         Me.txtMaSach.Size = New System.Drawing.Size(138, 20)
         Me.txtMaSach.TabIndex = 6
@@ -204,7 +211,7 @@ Partial Class ucQuanLySach
         Me.PanelControl4.Controls.Add(Me.lblTacGia)
         Me.PanelControl4.Location = New System.Drawing.Point(11, 95)
         Me.PanelControl4.Name = "PanelControl4"
-        Me.PanelControl4.Size = New System.Drawing.Size(633, 50)
+        Me.PanelControl4.Size = New System.Drawing.Size(722, 50)
         Me.PanelControl4.TabIndex = 16
         '
         'gleTacGia
@@ -270,7 +277,7 @@ Partial Class ucQuanLySach
         Me.PanelControl3.Controls.Add(Me.lblTheLoai)
         Me.PanelControl3.Location = New System.Drawing.Point(11, 149)
         Me.PanelControl3.Name = "PanelControl3"
-        Me.PanelControl3.Size = New System.Drawing.Size(633, 50)
+        Me.PanelControl3.Size = New System.Drawing.Size(722, 50)
         Me.PanelControl3.TabIndex = 20
         '
         'gleTheLoai
@@ -329,7 +336,7 @@ Partial Class ucQuanLySach
         '
         'txtNhaXuatBan
         '
-        Me.txtNhaXuatBan.Location = New System.Drawing.Point(468, 8)
+        Me.txtNhaXuatBan.Location = New System.Drawing.Point(544, 8)
         Me.txtNhaXuatBan.Name = "txtNhaXuatBan"
         Me.txtNhaXuatBan.Size = New System.Drawing.Size(138, 20)
         Me.txtNhaXuatBan.TabIndex = 21
@@ -340,7 +347,7 @@ Partial Class ucQuanLySach
         Me.lblNamXuatBan.Appearance.ForeColor = System.Drawing.Color.Gray
         Me.lblNamXuatBan.Appearance.Options.UseFont = True
         Me.lblNamXuatBan.Appearance.Options.UseForeColor = True
-        Me.lblNamXuatBan.Location = New System.Drawing.Point(267, 71)
+        Me.lblNamXuatBan.Location = New System.Drawing.Point(293, 71)
         Me.lblNamXuatBan.Name = "lblNamXuatBan"
         Me.lblNamXuatBan.Size = New System.Drawing.Size(68, 13)
         Me.lblNamXuatBan.TabIndex = 22
@@ -350,7 +357,7 @@ Partial Class ucQuanLySach
         '
         Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 10.0!)
         Me.LabelControl8.Appearance.Options.UseFont = True
-        Me.LabelControl8.Location = New System.Drawing.Point(580, 40)
+        Me.LabelControl8.Location = New System.Drawing.Point(656, 40)
         Me.LabelControl8.Name = "LabelControl8"
         Me.LabelControl8.Size = New System.Drawing.Size(25, 16)
         Me.LabelControl8.TabIndex = 23
@@ -376,7 +383,7 @@ Partial Class ucQuanLySach
         Me.PanelControl1.Controls.Add(Me.LabelControl5)
         Me.PanelControl1.Location = New System.Drawing.Point(13, 11)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(649, 206)
+        Me.PanelControl1.Size = New System.Drawing.Size(738, 206)
         Me.PanelControl1.TabIndex = 40
         '
         'grvDanhSachSach
@@ -389,21 +396,21 @@ Partial Class ucQuanLySach
         Me.grcDanhSachSach.Location = New System.Drawing.Point(13, 294)
         Me.grcDanhSachSach.MainView = Me.grvDanhSachSach
         Me.grcDanhSachSach.Name = "grcDanhSachSach"
-        Me.grcDanhSachSach.Size = New System.Drawing.Size(761, 235)
+        Me.grcDanhSachSach.Size = New System.Drawing.Size(879, 235)
         Me.grcDanhSachSach.TabIndex = 35
         Me.grcDanhSachSach.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvDanhSachSach})
         '
         'txtTimKiem
         '
-        Me.txtTimKiem.Location = New System.Drawing.Point(29, 10)
+        Me.txtTimKiem.Location = New System.Drawing.Point(77, 10)
         Me.txtTimKiem.Name = "txtTimKiem"
-        Me.txtTimKiem.Size = New System.Drawing.Size(139, 20)
+        Me.txtTimKiem.Size = New System.Drawing.Size(142, 20)
         Me.txtTimKiem.TabIndex = 18
         '
         'lueLocTheLoai
         '
         Me.lueLocTheLoai.EditValue = " "
-        Me.lueLocTheLoai.Location = New System.Drawing.Point(340, 10)
+        Me.lueLocTheLoai.Location = New System.Drawing.Point(434, 10)
         Me.lueLocTheLoai.Name = "lueLocTheLoai"
         Me.lueLocTheLoai.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueLocTheLoai.Size = New System.Drawing.Size(116, 20)
@@ -413,25 +420,27 @@ Partial Class ucQuanLySach
         '
         Me.LabelControl10.Appearance.Image = CType(resources.GetObject("LabelControl10.Appearance.Image"), System.Drawing.Image)
         Me.LabelControl10.Appearance.Options.UseImage = True
-        Me.LabelControl10.Location = New System.Drawing.Point(10, 11)
+        Me.LabelControl10.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.LabelControl10.Location = New System.Drawing.Point(11, 10)
         Me.LabelControl10.Name = "LabelControl10"
-        Me.LabelControl10.Size = New System.Drawing.Size(16, 16)
+        Me.LabelControl10.Size = New System.Drawing.Size(61, 20)
         Me.LabelControl10.TabIndex = 24
+        Me.LabelControl10.Text = "Tìm kiếm"
         '
         'btnTaiLai
         '
         Me.btnTaiLai.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btnTaiLai.ImageOptions.ImageUri.Uri = "Reset;Size16x16;Office2013"
-        Me.btnTaiLai.Location = New System.Drawing.Point(29, 33)
+        Me.btnTaiLai.Location = New System.Drawing.Point(225, 10)
         Me.btnTaiLai.Name = "btnTaiLai"
-        Me.btnTaiLai.Size = New System.Drawing.Size(139, 24)
+        Me.btnTaiLai.Size = New System.Drawing.Size(94, 20)
         Me.btnTaiLai.TabIndex = 22
         Me.btnTaiLai.Text = "Tải lại"
         '
         'lueLocTacGia
         '
         Me.lueLocTacGia.EditValue = " "
-        Me.lueLocTacGia.Location = New System.Drawing.Point(556, 10)
+        Me.lueLocTacGia.Location = New System.Drawing.Point(650, 10)
         Me.lueLocTacGia.Name = "lueLocTacGia"
         Me.lueLocTacGia.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueLocTacGia.Size = New System.Drawing.Size(116, 20)
@@ -440,7 +449,7 @@ Partial Class ucQuanLySach
         'lueLocTrangThai
         '
         Me.lueLocTrangThai.EditValue = " "
-        Me.lueLocTrangThai.Location = New System.Drawing.Point(556, 36)
+        Me.lueLocTrangThai.Location = New System.Drawing.Point(650, 36)
         Me.lueLocTrangThai.Name = "lueLocTrangThai"
         Me.lueLocTrangThai.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueLocTrangThai.Size = New System.Drawing.Size(116, 20)
@@ -449,7 +458,7 @@ Partial Class ucQuanLySach
         'dteLocNamXuatBan
         '
         Me.dteLocNamXuatBan.EditValue = Nothing
-        Me.dteLocNamXuatBan.Location = New System.Drawing.Point(340, 35)
+        Me.dteLocNamXuatBan.Location = New System.Drawing.Point(434, 35)
         Me.dteLocNamXuatBan.Name = "dteLocNamXuatBan"
         Me.dteLocNamXuatBan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dteLocNamXuatBan.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -458,7 +467,7 @@ Partial Class ucQuanLySach
         '
         'ckeTheLoai
         '
-        Me.ckeTheLoai.Location = New System.Drawing.Point(250, 10)
+        Me.ckeTheLoai.Location = New System.Drawing.Point(344, 10)
         Me.ckeTheLoai.Name = "ckeTheLoai"
         Me.ckeTheLoai.Properties.Caption = "Thể loại"
         Me.ckeTheLoai.Size = New System.Drawing.Size(75, 19)
@@ -466,7 +475,7 @@ Partial Class ucQuanLySach
         '
         'ckeNamXuatBan
         '
-        Me.ckeNamXuatBan.Location = New System.Drawing.Point(250, 35)
+        Me.ckeNamXuatBan.Location = New System.Drawing.Point(344, 35)
         Me.ckeNamXuatBan.Name = "ckeNamXuatBan"
         Me.ckeNamXuatBan.Properties.Caption = "Năm xuất bản"
         Me.ckeNamXuatBan.Size = New System.Drawing.Size(90, 19)
@@ -474,7 +483,7 @@ Partial Class ucQuanLySach
         '
         'ckeTacGia
         '
-        Me.ckeTacGia.Location = New System.Drawing.Point(478, 10)
+        Me.ckeTacGia.Location = New System.Drawing.Point(572, 10)
         Me.ckeTacGia.Name = "ckeTacGia"
         Me.ckeTacGia.Properties.Caption = "Tác giả"
         Me.ckeTacGia.Size = New System.Drawing.Size(75, 19)
@@ -482,7 +491,7 @@ Partial Class ucQuanLySach
         '
         'ckeTrangThai
         '
-        Me.ckeTrangThai.Location = New System.Drawing.Point(478, 35)
+        Me.ckeTrangThai.Location = New System.Drawing.Point(572, 35)
         Me.ckeTrangThai.Name = "ckeTrangThai"
         Me.ckeTrangThai.Properties.Caption = "Trạng thái"
         Me.ckeTrangThai.Size = New System.Drawing.Size(75, 19)
@@ -491,14 +500,17 @@ Partial Class ucQuanLySach
         'btnLoc
         '
         Me.btnLoc.ImageOptions.ImageUri.Uri = "Filter;Size16x16;Office2013"
-        Me.btnLoc.Location = New System.Drawing.Point(678, 11)
+        Me.btnLoc.Location = New System.Drawing.Point(772, 11)
         Me.btnLoc.Name = "btnLoc"
-        Me.btnLoc.Size = New System.Drawing.Size(68, 45)
+        Me.btnLoc.Size = New System.Drawing.Size(85, 45)
         Me.btnLoc.TabIndex = 36
         Me.btnLoc.Text = "Lọc"
         '
         'PanelControl2
         '
+        Me.PanelControl2.Controls.Add(Me.txtFileName)
+        Me.PanelControl2.Controls.Add(Me.btnIn)
+        Me.PanelControl2.Controls.Add(Me.btnChoosePath)
         Me.PanelControl2.Controls.Add(Me.btnLoc)
         Me.PanelControl2.Controls.Add(Me.ckeTrangThai)
         Me.PanelControl2.Controls.Add(Me.ckeTacGia)
@@ -513,16 +525,34 @@ Partial Class ucQuanLySach
         Me.PanelControl2.Controls.Add(Me.txtTimKiem)
         Me.PanelControl2.Location = New System.Drawing.Point(13, 223)
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(761, 65)
+        Me.PanelControl2.Size = New System.Drawing.Size(879, 65)
         Me.PanelControl2.TabIndex = 39
+        '
+        'btnIn
+        '
+        Me.btnIn.ImageOptions.ImageUri.Uri = "Print;Size16x16;Office2013"
+        Me.btnIn.Location = New System.Drawing.Point(225, 36)
+        Me.btnIn.Name = "btnIn"
+        Me.btnIn.Size = New System.Drawing.Size(94, 20)
+        Me.btnIn.TabIndex = 43
+        Me.btnIn.Text = "Xuất ra excel"
+        '
+        'btnChoosePath
+        '
+        Me.btnChoosePath.EnterMoveNextControl = True
+        Me.btnChoosePath.Location = New System.Drawing.Point(11, 35)
+        Me.btnChoosePath.Name = "btnChoosePath"
+        Me.btnChoosePath.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.btnChoosePath.Size = New System.Drawing.Size(142, 20)
+        Me.btnChoosePath.TabIndex = 44
         '
         'btnDong
         '
         Me.btnDong.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btnDong.ImageOptions.ImageUri.Uri = "Cancel;Size16x16;Office2013"
-        Me.btnDong.Location = New System.Drawing.Point(10, 9)
+        Me.btnDong.Location = New System.Drawing.Point(15, 9)
         Me.btnDong.Name = "btnDong"
-        Me.btnDong.Size = New System.Drawing.Size(86, 34)
+        Me.btnDong.Size = New System.Drawing.Size(107, 34)
         Me.btnDong.TabIndex = 38
         Me.btnDong.Text = "Đóng"
         '
@@ -532,9 +562,9 @@ Partial Class ucQuanLySach
         Me.btnXoa.Appearance.Options.UseForeColor = True
         Me.btnXoa.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btnXoa.ImageOptions.ImageUri.Uri = "Close;Size16x16;Office2013"
-        Me.btnXoa.Location = New System.Drawing.Point(10, 164)
+        Me.btnXoa.Location = New System.Drawing.Point(15, 164)
         Me.btnXoa.Name = "btnXoa"
-        Me.btnXoa.Size = New System.Drawing.Size(86, 32)
+        Me.btnXoa.Size = New System.Drawing.Size(107, 32)
         Me.btnXoa.TabIndex = 37
         Me.btnXoa.Text = "Xoá"
         '
@@ -544,9 +574,9 @@ Partial Class ucQuanLySach
         Me.btnXoaLichSuMuon.Appearance.Options.UseForeColor = True
         Me.btnXoaLichSuMuon.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btnXoaLichSuMuon.ImageOptions.ImageUri.Uri = "Close;Size16x16;Office2013"
-        Me.btnXoaLichSuMuon.Location = New System.Drawing.Point(10, 126)
+        Me.btnXoaLichSuMuon.Location = New System.Drawing.Point(15, 126)
         Me.btnXoaLichSuMuon.Name = "btnXoaLichSuMuon"
-        Me.btnXoaLichSuMuon.Size = New System.Drawing.Size(86, 32)
+        Me.btnXoaLichSuMuon.Size = New System.Drawing.Size(107, 32)
         Me.btnXoaLichSuMuon.TabIndex = 41
         Me.btnXoaLichSuMuon.Text = "Xoá lịch sử" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mượn/trả"
         '
@@ -554,9 +584,9 @@ Partial Class ucQuanLySach
         '
         Me.btnCapNhat.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btnCapNhat.ImageOptions.ImageUri.Uri = "CustomizeGrid;Size16x16;Office2013"
-        Me.btnCapNhat.Location = New System.Drawing.Point(10, 70)
+        Me.btnCapNhat.Location = New System.Drawing.Point(15, 70)
         Me.btnCapNhat.Name = "btnCapNhat"
-        Me.btnCapNhat.Size = New System.Drawing.Size(86, 34)
+        Me.btnCapNhat.Size = New System.Drawing.Size(107, 34)
         Me.btnCapNhat.TabIndex = 36
         Me.btnCapNhat.Text = "Cập nhật"
         '
@@ -566,10 +596,22 @@ Partial Class ucQuanLySach
         Me.PanelControl5.Controls.Add(Me.btnXoaLichSuMuon)
         Me.PanelControl5.Controls.Add(Me.btnXoa)
         Me.PanelControl5.Controls.Add(Me.btnDong)
-        Me.PanelControl5.Location = New System.Drawing.Point(668, 11)
+        Me.PanelControl5.Location = New System.Drawing.Point(757, 11)
         Me.PanelControl5.Name = "PanelControl5"
-        Me.PanelControl5.Size = New System.Drawing.Size(106, 206)
+        Me.PanelControl5.Size = New System.Drawing.Size(135, 206)
         Me.PanelControl5.TabIndex = 42
+        '
+        'xfbChoosePath
+        '
+        Me.xfbChoosePath.SelectedPath = "D:\LibraryManagement"
+        Me.xfbChoosePath.Title = "Chọn thư mục lưu dữ liệu sách"
+        '
+        'txtFileName
+        '
+        Me.txtFileName.Location = New System.Drawing.Point(159, 35)
+        Me.txtFileName.Name = "txtFileName"
+        Me.txtFileName.Size = New System.Drawing.Size(60, 20)
+        Me.txtFileName.TabIndex = 45
         '
         'ucQuanLySach
         '
@@ -580,7 +622,7 @@ Partial Class ucQuanLySach
         Me.Controls.Add(Me.grcDanhSachSach)
         Me.Controls.Add(Me.PanelControl1)
         Me.Name = "ucQuanLySach"
-        Me.Size = New System.Drawing.Size(788, 538)
+        Me.Size = New System.Drawing.Size(908, 576)
         CType(Me.txtTenSach.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTriGia.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dteNgayNhap.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -617,8 +659,10 @@ Partial Class ucQuanLySach
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
         Me.PanelControl2.PerformLayout()
+        CType(Me.btnChoosePath.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl5.ResumeLayout(False)
+        CType(Me.txtFileName.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -672,4 +716,8 @@ Partial Class ucQuanLySach
     Friend WithEvents btnXoaLichSuMuon As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnCapNhat As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents PanelControl5 As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents btnIn As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnChoosePath As DevExpress.XtraEditors.ButtonEdit
+    Friend WithEvents xfbChoosePath As DevExpress.XtraEditors.XtraFolderBrowserDialog
+    Friend WithEvents txtFileName As DevExpress.XtraEditors.TextEdit
 End Class

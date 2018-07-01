@@ -33,8 +33,8 @@ Public Class TrangThaiBUS
         Return trangThaiDAL.SelectByMaTrangThai(iMaTrangThai)
     End Function
 
-    Public Function SelectByMaSach(iMaSach As Integer, ByRef listTrangThai As List(Of TrangThaiDTO)) As Result
-        Return trangThaiDAL.SelectByMaSach(iMaSach, listTrangThai)
+    Public Function SelectByMaSach(iMaSach As Integer) As TrangThaiDTO
+        Return trangThaiDAL.SelectByMaSach(iMaSach)
     End Function
 
     Public Function Insert(trangThai As TrangThaiDTO) As Result

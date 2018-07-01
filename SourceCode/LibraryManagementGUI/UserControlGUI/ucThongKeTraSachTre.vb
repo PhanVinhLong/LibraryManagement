@@ -91,8 +91,7 @@ Public Class ucThongKeTraSachTre
     Private Sub btnIn_Click(sender As Object, e As EventArgs) Handles btnIn.Click
         Dim listSachTraTre As List(Of SachTraTreDTO)
         listSachTraTre = sachTraTreBUS.SelectAll(dteThoiGian.EditValue)
-        Using frmPrint As frmPrint = New frmPrint()
-            frmPrint.InitThongKeSachTraTre(dteThoiGian.EditValue, listSachTraTre)
+        Using frmPrint As frmPrint = New frmPrint(dteThoiGian.EditValue, listSachTraTre)
             frmPrint.ShowDialog()
         End Using
     End Sub

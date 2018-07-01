@@ -53,6 +53,10 @@ Public Class SachBUS
         Return sachDAL.SelectAll(listSach)
     End Function
 
+    Public Function SelectByMaSach(iMaSach As Integer) As SachDTO
+        Return sachDAL.SelectByMaSach(iMaSach)
+    End Function
+
     Public Function SelectByCondition(iMaTheLoai As Integer, iMaTacGia As Integer, iMaTrangThai As Integer, iNamXuatBan As Integer, ByRef listSach As List(Of SachDTO)) As Result
         Return sachDAL.SelectByCondition(iMaTheLoai, iMaTacGia, iMaTrangThai, iNamXuatBan, listSach)
     End Function

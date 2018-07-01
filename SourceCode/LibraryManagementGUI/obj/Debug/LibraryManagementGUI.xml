@@ -22,22 +22,22 @@ LibraryManagementGUI
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
-<member name="P:LibraryManagementGUI.My.Resources.Resources.arrow_88_64">
+<member name="P:LibraryManagementGUI.My.Resources.Resources.back_icon">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:LibraryManagementGUI.My.Resources.Resources.cancel">
+<member name="P:LibraryManagementGUI.My.Resources.Resources.cancel_icon">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:LibraryManagementGUI.My.Resources.Resources.librarylogo2_01">
+<member name="P:LibraryManagementGUI.My.Resources.Resources.logo_png">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:LibraryManagementGUI.My.Resources.Resources.setting_01">
+<member name="P:LibraryManagementGUI.My.Resources.Resources.setting_icon">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

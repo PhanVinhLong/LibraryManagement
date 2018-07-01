@@ -75,6 +75,7 @@
     <Compile Include="ChiTietPhieuMuonBUS.vb" />
     <Compile Include="ChiTietPhieuTraBUS.vb" />
     <Compile Include="DocGiaBUS.vb" />
+    <Compile Include="HienThiSachBUS.vb" />
     <Compile Include="LoaiDocGiaBUS.vb" />
     <Compile Include="LoaiNhanVienBUS.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

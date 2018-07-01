@@ -178,6 +178,35 @@ Public Class DocGiaDAL
         Return New Result(True)
     End Function
 
+    Public Function SelectByDocGia(iMaDocGia As Integer) As DocGiaDTO
+        Dim sqlQuery As String
+        sqlQuery = String.Empty
+        sqlQuery &= "SELECT [MaDocGia] ,[HoTen], [NgaySinh], [DiaChi], [Email], [NgayLapThe], [NgayHetHan], [MaLoaiDocGia] "
+        sqlQuery &= "FROM [tblDocGia] "
+        sqlQuery &= "WHERE [MaDocGia] = @MaDocGia "
+
+        Dim docGia As DocGiaDTO = New DocGiaDTO
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand()
+                With command
+                    .Connection = connection
+                    .CommandType = CommandType.Text
+                    .CommandText = sqlQuery
+                    .Parameters.AddWithValue("@MaDocGia", iMaDocGia)
+                End With
+                connection.Open()
+                Dim dataReader As SqlDataReader
+                dataReader = command.ExecuteReader()
+                If dataReader.HasRows = True Then
+                    While dataReader.Read()
+                        docGia = New DocGiaDTO(dataReader("MaDocGia"), dataReader("HoTen"), dataReader("NgaySinh"), dataReader("DiaChi"), dataReader("Email"), dataReader("NgayLapThe"), dataReader("NgayHetHan"), dataReader("MaLoaiDocGia"))
+                    End While
+                End If
+            End Using
+        End Using
+        Return docGia
+    End Function
+
     Public Function Update(docGia As DocGiaDTO) As Result
         Dim sqlQuery As String
         sqlQuery = String.Empty

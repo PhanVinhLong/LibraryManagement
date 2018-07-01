@@ -186,7 +186,7 @@ Partial Class frmLogin
         '
         Me.btnSetting.BackColor = System.Drawing.Color.Transparent
         Me.btnSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnSetting.Image = Global.LibraryManagementGUI.My.Resources.Resources.setting_01
+        Me.btnSetting.Image = Global.LibraryManagementGUI.My.Resources.Resources.setting_icon
         Me.btnSetting.ImageActive = Nothing
         Me.btnSetting.Location = New System.Drawing.Point(302, 4)
         Me.btnSetting.Name = "btnSetting"
@@ -200,7 +200,7 @@ Partial Class frmLogin
         '
         Me.btnClose.BackColor = System.Drawing.Color.Transparent
         Me.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnClose.Image = Global.LibraryManagementGUI.My.Resources.Resources.cancel
+        Me.btnClose.Image = Global.LibraryManagementGUI.My.Resources.Resources.cancel_icon
         Me.btnClose.ImageActive = Nothing
         Me.btnClose.Location = New System.Drawing.Point(333, 4)
         Me.btnClose.Name = "btnClose"
@@ -213,7 +213,7 @@ Partial Class frmLogin
         'BunifuImageButton1
         '
         Me.BunifuImageButton1.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuImageButton1.Image = Global.LibraryManagementGUI.My.Resources.Resources.librarylogo2_01
+        Me.BunifuImageButton1.Image = Global.LibraryManagementGUI.My.Resources.Resources.logo_png
         Me.BunifuImageButton1.ImageActive = Nothing
         Me.BunifuImageButton1.Location = New System.Drawing.Point(104, 28)
         Me.BunifuImageButton1.Name = "BunifuImageButton1"

@@ -43,13 +43,6 @@ Public Class frmMain
         End If
     End Sub
 
-    ' Event đóng tab control
-    Private Sub frmMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        ' Hiện thông báo khi tắt phần mềm
-        e.Cancel = MessageBox.Show("Bạn có chắc chắn muốn thoát", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.No
-        Application.Exit()
-    End Sub
-
     Private Sub xtcMain_CloseButtonClick(sender As Object, e As EventArgs) Handles xtcMain.CloseButtonClick
         xtcMain.TabPages.RemoveAt(xtcMain.SelectedTabPageIndex)
     End Sub

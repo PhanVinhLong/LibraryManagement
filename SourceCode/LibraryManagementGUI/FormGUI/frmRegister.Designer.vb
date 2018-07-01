@@ -62,7 +62,7 @@ Partial Class frmRegister
         '
         Me.btnBack.BackColor = System.Drawing.Color.Transparent
         Me.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnBack.Image = Global.LibraryManagementGUI.My.Resources.Resources.arrow_88_64
+        Me.btnBack.Image = Global.LibraryManagementGUI.My.Resources.Resources.back_icon
         Me.btnBack.ImageActive = Nothing
         Me.btnBack.Location = New System.Drawing.Point(7, 4)
         Me.btnBack.Name = "btnBack"
@@ -75,7 +75,7 @@ Partial Class frmRegister
         'BunifuImageButton1
         '
         Me.BunifuImageButton1.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuImageButton1.Image = Global.LibraryManagementGUI.My.Resources.Resources.librarylogo2_01
+        Me.BunifuImageButton1.Image = Global.LibraryManagementGUI.My.Resources.Resources.logo_png
         Me.BunifuImageButton1.ImageActive = Nothing
         Me.BunifuImageButton1.Location = New System.Drawing.Point(104, 28)
         Me.BunifuImageButton1.Name = "BunifuImageButton1"
@@ -104,7 +104,7 @@ Partial Class frmRegister
         Me.txtRePassword.Padding = New System.Windows.Forms.Padding(0, 3, 0, 3)
         Me.txtRePassword.Size = New System.Drawing.Size(225, 40)
         Me.txtRePassword.TabIndex = 16
-        Me.txtRePassword.Tag = "ASdas"
+        Me.txtRePassword.Tag = ""
         Me.txtRePassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'txtHoTen
@@ -170,7 +170,7 @@ Partial Class frmRegister
         Me.txtPassword.Padding = New System.Windows.Forms.Padding(0, 3, 0, 3)
         Me.txtPassword.Size = New System.Drawing.Size(225, 40)
         Me.txtPassword.TabIndex = 13
-        Me.txtPassword.Tag = "ASdas"
+        Me.txtPassword.Tag = ""
         Me.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'btnLogin
@@ -213,7 +213,7 @@ Partial Class frmRegister
         '
         Me.btnClose.BackColor = System.Drawing.Color.Transparent
         Me.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnClose.Image = Global.LibraryManagementGUI.My.Resources.Resources.cancel
+        Me.btnClose.Image = Global.LibraryManagementGUI.My.Resources.Resources.cancel_icon
         Me.btnClose.ImageActive = Nothing
         Me.btnClose.Location = New System.Drawing.Point(333, 4)
         Me.btnClose.Name = "btnClose"

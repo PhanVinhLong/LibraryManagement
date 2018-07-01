@@ -76,8 +76,12 @@ Public Class DocGiaBUS
         Return docGiaDAL.SelectAll(listDocGia)
     End Function
 
-    Public Function SellectByMaDocGia(maDocGia As Integer, ByRef listDocGia As List(Of DocGiaDTO))
-        Return docGiaDAL.SelectByLoaiDocGia(maDocGia, listDocGia)
+    Public Function SellectByLoaiDocGia(iMaLoaiDocGia As Integer, ByRef listDocGia As List(Of DocGiaDTO))
+        Return docGiaDAL.SelectByLoaiDocGia(iMaLoaiDocGia, listDocGia)
+    End Function
+
+    Public Function SelectByDocGia(iMaDocGia As Integer) As DocGiaDTO
+        Return docGiaDAL.SelectByDocGia(iMaDocGia)
     End Function
 
     Public Function Delete(iMaDocGia As Integer)

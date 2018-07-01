@@ -67,6 +67,7 @@
     <Compile Include="ChiTietPhieuMuonDAL.vb" />
     <Compile Include="ChiTietPhieuTraDAL.vb" />
     <Compile Include="DocGiaDAL.vb" />
+    <Compile Include="HienThiSachDAL.vb" />
     <Compile Include="LoaiDocGiaDAL.vb" />
     <Compile Include="LoaiNhanVienDAL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

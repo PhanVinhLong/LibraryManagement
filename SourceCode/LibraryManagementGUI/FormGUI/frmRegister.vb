@@ -84,23 +84,38 @@ Public Class frmRegister
     End Sub
 
     Private Sub txtUsername_OnValueChanged(sender As Object, e As EventArgs) Handles txtUsername.OnValueChanged
-        nhanVienBUS = New NhanVienBUS()
-        If nhanVienBUS.IsValidTenDangNhap(txtUsername.Text) = False Then
-            txtUsername.ForeColor = Color.Red
-        Else
-            txtUsername.ForeColor = Color.White
+        txtUsername.ForeColor = Color.White
+        If txtUsername.Text <> "" Then
+            If nhanVienBUS.IsValidTenDangNhap(txtUsername.Text) = False Then
+                txtUsername.ForeColor = Color.Red
+            End If
         End If
     End Sub
 
     Private Sub txtHoTen_OnValueChanged(sender As Object, e As EventArgs) Handles txtHoTen.OnValueChanged
-
+        txtHoTen.ForeColor = Color.White
+        If txtHoTen.Text <> "" Then
+            If nhanVienBUS.IsValidHoTen(txtHoTen.Text) = False Then
+                txtHoTen.ForeColor = Color.Red
+            End If
+        End If
     End Sub
 
     Private Sub txtPassword_OnValueChanged(sender As Object, e As EventArgs) Handles txtPassword.OnValueChanged
-
+        txtPassword.ForeColor = Color.White
+        If txtPassword.Text <> "" Then
+            If nhanVienBUS.IsValidMatKhau(txtPassword.Text) = False Then
+                txtPassword.ForeColor = Color.Red
+            End If
+        End If
     End Sub
 
     Private Sub txtRePassword_OnValueChanged(sender As Object, e As EventArgs) Handles txtRePassword.OnValueChanged
-
+        txtRePassword.ForeColor = Color.White
+        If txtRePassword.Text <> "" Then
+            If nhanVienBUS.IsValidMatKhau(txtRePassword.Text) = False Then
+                txtRePassword.ForeColor = Color.Red
+            End If
+        End If
     End Sub
 End Class

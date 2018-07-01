@@ -1,6 +1,7 @@
 ﻿Imports DevExpress.XtraEditors.Controls
 Imports LibraryManagementBUS
 Imports LibraryManagementDTO
+Imports Microsoft.Office.Interop.Excel
 Imports Utility
 
 Public Class ucQuanLyDocGia
@@ -61,6 +62,12 @@ Public Class ucQuanLyDocGia
 
         ' Hiển thị button gia hạn
         btnGiaHanThe.Text = "Gia hạn " & thamSo.ThoiHanSuDung & " tháng"
+
+        ' Text mặc định cho folder picker
+        btnChoosePath.Text = "D:\LibraryManagement\"
+
+        ' Text mặc định cho filename
+        txtFileName.EditValue = "DuLieuDocGia-" & Now.Day & "-" & Now.Month & "-" & Now.Year & ".xls"
     End Sub
 
     Private Sub CaiDatGridControl(listDocGia As List(Of DocGiaDTO))
@@ -145,7 +152,7 @@ Public Class ucQuanLyDocGia
     Private Sub LoadListDocGia(maLoaiDocGia As Integer)
         Dim listDocGia As List(Of DocGiaDTO) = New List(Of DocGiaDTO)
         Dim result As Result
-        result = docGiaBUS.SellectByMaDocGia(maLoaiDocGia, listDocGia)
+        result = docGiaBUS.SellectByLoaiDocGia(maLoaiDocGia, listDocGia)
         If (result.FlagResult = False) Then
             MessageBox.Show("Lấy danh sách tất cả Độc giả không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
@@ -315,4 +322,95 @@ Public Class ucQuanLyDocGia
         filterString = """" & txtTimKiem.EditValue & """"
         grvDanhSachDocGia.ApplyFindFilter(filterString)
     End Sub
+
+    Private Sub btnIn_Click(sender As Object, e As EventArgs) Handles btnIn.Click
+        Dim xlApp As Microsoft.Office.Interop.Excel.Application
+        Dim xlWorkBook As Microsoft.Office.Interop.Excel.Workbook
+        Dim xlWorkSheet As Microsoft.Office.Interop.Excel.Worksheet
+        Dim misValue As Object = System.Reflection.Missing.Value
+
+        xlApp = New Microsoft.Office.Interop.Excel.Application
+        xlWorkBook = xlApp.Workbooks.Add(misValue)
+        xlWorkSheet = xlWorkBook.Sheets("sheet1")
+
+
+        Dim dt = ConvertToDataTable(Of DocGiaDTO)(grvDanhSachDocGia.DataSource)
+        Dim dc As DataColumn
+        Dim dr As DataRow
+
+        xlWorkSheet.Range("A1", "I1").Merge()
+        xlWorkSheet.Cells(1, 1) = "DANH SÁCH ĐỘC GIẢ NGÀY " & Now.ToShortDateString & " - UIT LIBRARY"
+
+        Dim colIndex As Integer = 1
+        Dim rowIndex As Integer = 2
+        Dim stt As Integer = 0
+
+        ' Tên cột Excel
+        xlWorkSheet.Cells(rowIndex, 1) = "STT"
+        For Each dc In dt.Columns
+            colIndex = colIndex + 1
+            xlWorkSheet.Cells(rowIndex, colIndex) = dc.ColumnName
+        Next
+        ' Thêm dữ liệu cho excel
+        For Each dr In dt.Rows
+            stt = stt + 1
+            rowIndex = rowIndex + 1
+            colIndex = 1
+            For Each dc In dt.Columns
+                colIndex = colIndex + 1
+                xlWorkSheet.Cells(rowIndex, 1) = "'" & stt
+                If colIndex = 2 Then
+                    xlWorkSheet.Cells(rowIndex, colIndex) = "'" & dr(dc.ColumnName)
+                Else
+                    xlWorkSheet.Cells(rowIndex, colIndex) = dr(dc.ColumnName)
+                End If
+
+            Next
+        Next
+        ' Auto fit độ rộng cột
+        xlWorkSheet.Columns("A:I").AutoFit
+
+        ' Lưu file
+        Try
+            xlWorkBook.SaveAs(btnChoosePath.EditValue & txtFileName.EditValue, XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue)
+            If MessageBox.Show("Xuất file exel thành công. Bạn có muốn mở file?", "Thông tin", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
+                Process.Start(btnChoosePath.EditValue & txtFileName.EditValue)
+            End If
+        Catch
+            MessageBox.Show("ERROR")
+        End Try
+        xlWorkBook.Close(True, misValue, misValue)
+        xlApp.Quit()
+        ReleaseObject(xlApp)
+        ReleaseObject(xlWorkBook)
+        ReleaseObject(xlWorkSheet)
+    End Sub
+
+    Private Sub ReleaseObject(ByVal obj As Object)
+        Try
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(obj)
+            obj = Nothing
+        Catch ex As Exception
+            obj = Nothing
+        Finally
+            GC.Collect()
+        End Try
+    End Sub
+
+    Public Shared Function ConvertToDataTable(Of DocGiaDTO)(ByVal list As IList(Of DocGiaDTO)) As System.Data.DataTable
+        Dim table As New System.Data.DataTable()
+        Dim fields() = list.First.GetType.GetProperties
+        For Each field In fields
+            table.Columns.Add(field.Name, field.PropertyType)
+        Next
+        For Each item In list
+            Dim row As DataRow = table.NewRow()
+            For Each field In fields
+                Dim p = item.GetType.GetProperty(field.Name)
+                row(field.Name) = p.GetValue(item, Nothing)
+            Next
+            table.Rows.Add(row)
+        Next
+        Return table
+    End Function
 End Class

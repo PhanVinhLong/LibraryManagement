@@ -17,7 +17,7 @@ Public Class frmLogin
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        Application.Exit()
+        Me.Close()
     End Sub
 
     Private Sub btnSetting_Click(sender As Object, e As EventArgs) Handles btnSetting.Click
@@ -25,7 +25,7 @@ Public Class frmLogin
         frmConnectionSetting.ShowDialog()
     End Sub
 
-    Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
+    Private Sub Login()
         ' Kiểm tra kết nối
         Dim connectionString = ConfigurationManager.AppSettings("ConnectionString")
         If IsConnected(connectionString) = False Then
@@ -34,19 +34,23 @@ Public Class frmLogin
         End If
 
         '----
-        If NhanVienBUS.IsCorrectLogin(txtUsername.Text, txtPassword.Text) Then
-            Dim nhanVien As NhanVienDTO = NhanVienBUS.SelectByUsername(txtUsername.Text)
+        If nhanVienBUS.IsCorrectLogin(txtUsername.Text, txtPassword.Text) Then
+            Dim nhanVien As NhanVienDTO = nhanVienBUS.SelectByUsername(txtUsername.Text)
             If nhanVien.MaLoaiNhanVien <> 1 And nhanVien.MaLoaiNhanVien <> 2 Then
                 MessageBox.Show("Tài khoản của bạn chưa được kích hoạt")
                 Return
             End If
+            Me.Visible = False
             GlobalControl.GetDataNhanVien(nhanVien)
             Dim frm As frmMain = New frmMain
-            frmMain.Show()
-            Me.Visible = False
+            frmMain.ShowDialog()
         Else
             MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng")
         End If
+    End Sub
+
+    Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
+        Login()
     End Sub
 
     Public Function EncryptData(ByVal data As String) As Byte()
@@ -75,27 +79,7 @@ Public Class frmLogin
 
     Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
         If e.KeyCode = Keys.Enter Then
-            ' Kiểm tra kết nối
-            Dim connectionString = ConfigurationManager.AppSettings("ConnectionString")
-            If IsConnected(connectionString) = False Then
-                MessageBox.Show("Không thể kết nối đến cơ sở dữ liệu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Return
-            End If
-
-            '----
-            If NhanVienBUS.IsCorrectLogin(txtUsername.Text, txtPassword.Text) Then
-                Dim nhanVien As NhanVienDTO = NhanVienBUS.SelectByUsername(txtUsername.Text)
-                If nhanVien.MaLoaiNhanVien <> 1 And nhanVien.MaLoaiNhanVien <> 2 Then
-                    MessageBox.Show("Tài khoản của bạn chưa được kích hoạt")
-                    Return
-                End If
-                GlobalControl.GetDataNhanVien(nhanVien)
-                Dim frm As frmMain = New frmMain
-                frmMain.ShowDialog()
-                Me.Visible = False
-            Else
-                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng")
-            End If
+            Login()
             e.SuppressKeyPress = True
         ElseIf e.KeyCode = Keys.Space Then
             e.SuppressKeyPress = True
@@ -103,7 +87,7 @@ Public Class frmLogin
     End Sub
 
     Private Sub txtUsername_KeyDown(sender As Object, e As KeyEventArgs) Handles txtUsername.KeyDown
-        If e.KeyCode = Keys.Enter Then
+        If e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Tab Then
             txtPassword.SelectNextControl(txtUsername, 0, 0, 0, 0)
             e.SuppressKeyPress = True
         ElseIf e.KeyCode = Keys.Space Then
@@ -114,6 +98,16 @@ Public Class frmLogin
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         Me.Visible = False
         frm.ShowDialog()
+    End Sub
+
+    Private Sub frmLogin_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        ' Hiện thông báo khi tắt phần mềm
+        If (MessageBox.Show("Bạn có chắc chắn muốn thoát", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.No) Then
+            e.Cancel = True
+            Return
+        Else
+            Me.Dispose()
+        End If
     End Sub
 End Class
 

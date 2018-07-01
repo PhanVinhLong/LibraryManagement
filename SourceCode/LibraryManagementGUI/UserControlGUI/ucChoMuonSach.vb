@@ -155,18 +155,6 @@ Public Class ucChoMuonSach
         grvDanhSachDocGia.OptionsView.ShowGroupPanel = False
         grvDanhSachDocGia.OptionsFind.FindDelay = 0
 
-        ' Chỉnh độ rộng cột
-        grvDanhSachDocGia.Columns("MaDocGia").Width = 70
-        grvDanhSachDocGia.Columns("HoTen").Width = 120
-        grvDanhSachDocGia.Columns("NgaySinh").Width = 70
-        grvDanhSachDocGia.Columns("Email").Width = 120
-        grvDanhSachDocGia.Columns("DiaChi").Width = 140
-        grvDanhSachDocGia.Columns("NgayLapThe").Width = 70
-        grvDanhSachDocGia.Columns("NgayHetHan").Width = 70
-
-        ' Ẩn cột
-        'grvDanhSachDocGia.Columns("MaDocLoaiGia").Visible = False
-
         ' Đổi tên cột
         grvDanhSachDocGia.Columns("MaDocGia").Caption = "Mã độc giả"
         grvDanhSachDocGia.Columns("HoTen").Caption = "Họ tên"
@@ -263,7 +251,7 @@ Public Class ucChoMuonSach
     Private Sub LoadListDocGia(maLoaiDocGia As Integer)
         Dim listDocGia As List(Of DocGiaDTO) = New List(Of DocGiaDTO)
         Dim result As Result
-        result = docGiaBUS.SellectByMaDocGia(maLoaiDocGia, listDocGia)
+        result = docGiaBUS.SellectByLoaiDocGia(maLoaiDocGia, listDocGia)
         If (result.FlagResult = False) Then
             MessageBox.Show("Lấy danh sách tất cả Độc giả không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
@@ -276,17 +264,34 @@ Public Class ucChoMuonSach
     '------------------------------------------------
 
     Private Sub LoadGridSach(listSach As List(Of SachDTO))
+        Dim hienThiSachBUS = New HienThiSachBUS()
+        Dim listHienThiSach As List(Of HienThiSachDTO)
+        listHienThiSach = hienThiSachBUS.ConvertListData(listSach)
         grcDanhSachSach.SuspendLayout() ' Tạm dừng hiển thị GridView
+
         ' Cài đặt cho GridControl và GridView
         grvDanhSachSach.BestFitColumns()
         grvDanhSachSach.Columns.Clear()
-        grcDanhSachSach.DataSource = listSach
+        grcDanhSachSach.DataSource = listHienThiSach
         grvDanhSachSach.OptionsBehavior.Editable = False
         grvDanhSachSach.OptionsFind.AlwaysVisible = False
         grvDanhSachSach.OptionsView.ShowGroupPanel = False
         grvDanhSachSach.OptionsFind.FindDelay = 0
-        grvDanhSachSach.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect
-        grvDanhSachSach.OptionsSelection.MultiSelect = True
+        grvDanhSachDocGia.BestFitColumns()
+        grvDanhSachSach.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect ' Thêm dòng check cho multiselect
+        grvDanhSachSach.OptionsSelection.MultiSelect = True ' Bật chế độ multiselect
+
+        ' Thay đổi tên cột
+        grvDanhSachSach.Columns("MaSach").Caption = "Mã sách"
+        grvDanhSachSach.Columns("TenSach").Caption = "Tên sách"
+        grvDanhSachSach.Columns("NamXuatBan").Caption = "Năm xuất bản"
+        grvDanhSachSach.Columns("NhaXuatBan").Caption = "Nhà xuất bản"
+        grvDanhSachSach.Columns("TriGia").Caption = "Trị giá"
+        grvDanhSachSach.Columns("NgayNhap").Caption = "Ngày nhập"
+        grvDanhSachSach.Columns("TrangThai").Caption = "Trạng thái"
+        grvDanhSachSach.Columns("TacGia").Caption = "Tác giả"
+        grvDanhSachSach.Columns("TheLoai").Caption = "Thể loại"
+
         grcDanhSachSach.ResumeLayout() ' Tiếp tục hiển thị GridView
     End Sub
 
@@ -322,7 +327,7 @@ Public Class ucChoMuonSach
         lblSachDaChon.Text = String.Empty
         listSachChon.Clear()
         For Each rowIndex As Integer In grvDanhSachSach.GetSelectedRows
-            Dim sach = CType(grvDanhSachSach.GetRow(rowIndex), SachDTO)
+            Dim sach = sachBUS.SelectByMaSach(CType(grvDanhSachSach.GetRow(rowIndex), HienThiSachDTO).MaSach)
             listSachChon.Add(sach)
             lblSachDaChon.Text &= sach.TenSach & " (" & sach.MaSach & "), "
         Next
@@ -435,8 +440,17 @@ Public Class ucChoMuonSach
                 Return
             End If
         Next
-        MessageBox.Show("Đã Lập phiếu mượn")
-        GlobalControl.ChangeStatus("Đã Lập phiếu mượn")
+        If MessageBox.Show("Đã Lập phiếu mượn. Bạn có muốn In Phiếu mượn?", "In phiếu mượn", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            Dim hienThiSachBUS = New HienThiSachBUS()
+            Dim listHienThiSach As List(Of HienThiSachDTO)
+            listHienThiSach = hienThiSachBUS.ConvertListData(listSachChon)
+            Using frmPrint As frmPrint = New frmPrint(GlobalControl.ReturnNhanVien, phieuMuon, listHienThiSach)
+                frmPrint.ShowDialog()
+            End Using
+            GlobalControl.ChangeStatus("Đã In phiếu mượn")
+        Else
+            GlobalControl.ChangeStatus("Đã Lập phiếu mượn")
+        End If
     End Sub
 
 

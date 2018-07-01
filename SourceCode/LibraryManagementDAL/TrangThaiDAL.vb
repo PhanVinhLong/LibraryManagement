@@ -111,12 +111,14 @@ Public Class TrangThaiDAL
         Return trangThai
     End Function
 
-    Public Function SelectByMaSach(iMaSach As Integer, ByRef listTrangThai As List(Of TrangThaiDTO)) As Result
+    Public Function SelectByMaSach(iMaSach As Integer) As TrangThaiDTO
         Dim sqlQuery As String = String.Empty
         sqlQuery &= "SELECT [tblTrangThai].[MaTrangThai], [TenTrangThai] "
         sqlQuery &= "FROM [tblTrangThai], [tblSach] "
         sqlQuery &= "WHERE [tblTrangThai].[MaTrangThai] = [tblSach].[MaTrangThai] "
         sqlQuery &= "      AND [MaSach] = @MaSach"
+
+        Dim trangThai As TrangThaiDTO = New TrangThaiDTO()
 
         Using connection As New SqlConnection(connectionString)
             Using command As New SqlCommand()
@@ -126,24 +128,17 @@ Public Class TrangThaiDAL
                     .CommandText = sqlQuery
                     .Parameters.AddWithValue("@MaSach", iMaSach)
                 End With
-                Try
-                    connection.Open()
-                    Dim reader As SqlDataReader
-                    reader = command.ExecuteReader()
-                    If reader.HasRows = True Then
-                        listTrangThai.Clear()
-                        While reader.Read()
-                            listTrangThai.Add(New TrangThaiDTO(reader("MaTrangThai"), reader("TenTrangThai")))
-                        End While
-                    End If
-                Catch ex As Exception
-                    Console.WriteLine(ex.StackTrace)
-                    connection.Close()
-                    Return New Result(False, "Lấy Trạng thái theo Mã sách không thành công", ex.StackTrace)
-                End Try
+                connection.Open()
+                Dim reader As SqlDataReader
+                reader = command.ExecuteReader()
+                If reader.HasRows = True Then
+                    While reader.Read()
+                        trangThai = New TrangThaiDTO(reader("MaTrangThai"), reader("TenTrangThai"))
+                    End While
+                End If
             End Using
         End Using
-        Return New Result(True)
+        Return trangThai
     End Function
 
     Public Function Insert(trangThai As TrangThaiDTO) As Result

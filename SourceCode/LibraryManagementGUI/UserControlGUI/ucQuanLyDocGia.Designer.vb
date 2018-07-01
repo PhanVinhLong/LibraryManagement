@@ -50,6 +50,9 @@ Partial Class ucQuanLyDocGia
         Me.grcDanhSachDocGia = New DevExpress.XtraGrid.GridControl()
         Me.grvDanhSachDocGia = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
+        Me.txtFileName = New DevExpress.XtraEditors.TextEdit()
+        Me.btnIn = New DevExpress.XtraEditors.SimpleButton()
+        Me.btnChoosePath = New DevExpress.XtraEditors.ButtonEdit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
         CType(Me.lueChonLoaiDocGia.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,10 +74,15 @@ Partial Class ucQuanLyDocGia
         CType(Me.grvDanhSachDocGia, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl3.SuspendLayout()
+        CType(Me.txtFileName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnChoosePath.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelControl2
         '
+        Me.PanelControl2.Controls.Add(Me.txtFileName)
+        Me.PanelControl2.Controls.Add(Me.btnIn)
+        Me.PanelControl2.Controls.Add(Me.btnChoosePath)
         Me.PanelControl2.Controls.Add(Me.btnTaiLai)
         Me.PanelControl2.Controls.Add(Me.LabelControl10)
         Me.PanelControl2.Controls.Add(Me.LabelControl1)
@@ -82,7 +90,7 @@ Partial Class ucQuanLyDocGia
         Me.PanelControl2.Controls.Add(Me.txtTimKiem)
         Me.PanelControl2.Location = New System.Drawing.Point(22, 15)
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(645, 36)
+        Me.PanelControl2.Size = New System.Drawing.Size(645, 62)
         Me.PanelControl2.TabIndex = 32
         '
         'btnTaiLai
@@ -329,10 +337,10 @@ Partial Class ucQuanLyDocGia
         '
         'grcDanhSachDocGia
         '
-        Me.grcDanhSachDocGia.Location = New System.Drawing.Point(22, 57)
+        Me.grcDanhSachDocGia.Location = New System.Drawing.Point(22, 83)
         Me.grcDanhSachDocGia.MainView = Me.grvDanhSachDocGia
         Me.grcDanhSachDocGia.Name = "grcDanhSachDocGia"
-        Me.grcDanhSachDocGia.Size = New System.Drawing.Size(645, 329)
+        Me.grcDanhSachDocGia.Size = New System.Drawing.Size(645, 303)
         Me.grcDanhSachDocGia.TabIndex = 26
         Me.grcDanhSachDocGia.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvDanhSachDocGia})
         '
@@ -352,6 +360,31 @@ Partial Class ucQuanLyDocGia
         Me.PanelControl3.Size = New System.Drawing.Size(247, 81)
         Me.PanelControl3.TabIndex = 33
         '
+        'txtFileName
+        '
+        Me.txtFileName.Location = New System.Drawing.Point(449, 35)
+        Me.txtFileName.Name = "txtFileName"
+        Me.txtFileName.Size = New System.Drawing.Size(60, 20)
+        Me.txtFileName.TabIndex = 48
+        '
+        'btnIn
+        '
+        Me.btnIn.ImageOptions.ImageUri.Uri = "Print;Size16x16;Office2013"
+        Me.btnIn.Location = New System.Drawing.Point(515, 36)
+        Me.btnIn.Name = "btnIn"
+        Me.btnIn.Size = New System.Drawing.Size(94, 20)
+        Me.btnIn.TabIndex = 46
+        Me.btnIn.Text = "Xuất ra excel"
+        '
+        'btnChoosePath
+        '
+        Me.btnChoosePath.EnterMoveNextControl = True
+        Me.btnChoosePath.Location = New System.Drawing.Point(301, 35)
+        Me.btnChoosePath.Name = "btnChoosePath"
+        Me.btnChoosePath.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.btnChoosePath.Size = New System.Drawing.Size(142, 20)
+        Me.btnChoosePath.TabIndex = 47
+        '
         'ucQuanLyDocGia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -361,7 +394,7 @@ Partial Class ucQuanLyDocGia
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.grcDanhSachDocGia)
         Me.Name = "ucQuanLyDocGia"
-        Me.Size = New System.Drawing.Size(936, 404)
+        Me.Size = New System.Drawing.Size(936, 422)
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
         Me.PanelControl2.PerformLayout()
@@ -385,6 +418,8 @@ Partial Class ucQuanLyDocGia
         CType(Me.grvDanhSachDocGia, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl3.ResumeLayout(False)
+        CType(Me.txtFileName.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnChoosePath.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -419,4 +454,7 @@ Partial Class ucQuanLyDocGia
     Friend WithEvents grcDanhSachDocGia As DevExpress.XtraGrid.GridControl
     Friend WithEvents grvDanhSachDocGia As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents PanelControl3 As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents txtFileName As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents btnIn As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnChoosePath As DevExpress.XtraEditors.ButtonEdit
 End Class
