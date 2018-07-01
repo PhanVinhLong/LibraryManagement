@@ -1,5 +1,4 @@
 ﻿Public Class NhanVienDTO
-    Private iMaNhanVien As Integer
     Private strTenDangNhap As String
     Private strHoTen As String
     Private strMatKhau As String
@@ -8,22 +7,12 @@
     Public Sub New()
     End Sub
 
-    Public Sub New(iMaNhanVien As Integer, strTenDangNhap As String, strHoTen As String, strMatKhau As String, iMaLoaiNhanVien As Integer)
-        Me.iMaNhanVien = iMaNhanVien
+    Public Sub New(strTenDangNhap As String, strHoTen As String, strMatKhau As String, iMaLoaiNhanVien As Integer)
         Me.strTenDangNhap = strTenDangNhap
         Me.strHoTen = strHoTen
         Me.strMatKhau = strMatKhau
         Me.iMaLoaiNhanVien = iMaLoaiNhanVien
     End Sub
-
-    Public Property MaNhanVien As Integer
-        Get
-            Return iMaNhanVien
-        End Get
-        Set(value As Integer)
-            iMaNhanVien = value
-        End Set
-    End Property
 
     Public Property TenDangNhap As String
         Get

@@ -80,4 +80,8 @@ Public Class SachBUS
     Public Function NgayMuonCuoi(sach As SachDTO) As DateTime
         Return sachDAL.NgayMuonCuoi(sach)
     End Function
+
+    Public Function DeleteLichSuMuonTra(iMaSach As Integer) As Result
+        Return sachDAL.DeleteLichSuMuonTra(iMaSach)
+    End Function
 End Class

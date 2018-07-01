@@ -474,6 +474,7 @@ Public Class ucQuanLySach
             End If
             Reset()
             MessageBox.Show("Thêm Sách thành công")
+            GlobalControl.ChangeStatus("Thêm Sách thành công")
         End If
     End Sub
 
@@ -490,6 +491,7 @@ Public Class ucQuanLySach
                         result = sachBUS.Delete(txtMaSach.EditValue)
                         If (result.FlagResult = True) Then
                             MessageBox.Show("Xóa Sách thành công.", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            GlobalControl.ChangeStatus("Xóa Sách thành công")
                             Reset()
                             If (currentRowIndex >= grvDanhSachSach.RowCount) Then
                                 currentRowIndex = currentRowIndex - 1
@@ -499,6 +501,7 @@ Public Class ucQuanLySach
                             End If
                         Else
                             MessageBox.Show("Xóa Sách không thành công.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            GlobalControl.ChangeStatus("Xóa Sách không thành công")
                             System.Console.WriteLine(result.SystemMessage)
                         End If
                     Catch ex As Exception
@@ -512,7 +515,14 @@ Public Class ucQuanLySach
 
     Private Sub btnXoaLichSuMuon_Click(sender As Object, e As EventArgs) Handles btnXoaLichSuMuon.Click
         If MessageBox.Show("Bạn có chắc chắn muốn xoá Lịch sử mượn và trả của sách " & sach.TenSach & " với mã số " & sach.MaSach & "?", "Xoá lịch sử mượn/ trả", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
-            Return
+            Dim result = sachBUS.DeleteLichSuMuonTra(sach.MaSach)
+            If result.FlagResult = False Then
+                MessageBox.Show("Xoá lịch sử không thành công")
+                GlobalControl.ChangeStatus("Xoá lịch sử không thành công")
+            Else
+                MessageBox.Show("Xoá lịch sử thành công")
+                GlobalControl.ChangeStatus("Xoá lịch sử thành công")
+            End If
         End If
     End Sub
 
@@ -580,6 +590,7 @@ Public Class ucQuanLySach
             If MessageBox.Show("Xuất file exel thành công. Bạn có muốn mở file?", "Thông tin", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
                 Process.Start(btnChoosePath.EditValue & txtFileName.EditValue)
             End If
+            GlobalControl.ChangeStatus("Xuất file exel thành công")
         Catch
             MessageBox.Show("ERROR")
         End Try

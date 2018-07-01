@@ -29,6 +29,7 @@ Public Class frmMain
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Tắt QuickAccessBar của RibbonControl
+        xtcMain.ClosePageButtonShowMode = ClosePageButtonShowMode.InAllTabPageHeaders
 
         ' Mở UC Thông tin
         clsAddTab.AddTab(xtcMain, "Thông tin", New ucThongTin())
@@ -44,7 +45,8 @@ Public Class frmMain
     End Sub
 
     Private Sub xtcMain_CloseButtonClick(sender As Object, e As EventArgs) Handles xtcMain.CloseButtonClick
-        xtcMain.TabPages.RemoveAt(xtcMain.SelectedTabPageIndex)
+        Dim arg As ClosePageButtonEventArgs = TryCast(e, ClosePageButtonEventArgs)
+        TryCast(arg.Page, XtraTabPage).PageVisible = False
     End Sub
 
     Private Sub btnThoat_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThoat.ItemClick
@@ -302,8 +304,17 @@ Public Class frmMain
         End If
     End Sub
 
-    Private Sub nbiDoiMatKhau_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles nbiDoiMatKhau.LinkClicked
-        GlobalControl.ChangeStatus("Đổi mật khẩu")
+    Private Sub nbiDoiMatKhau_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles nbiTaiKhoan.LinkClicked
+        Dim t As Integer = 0
+        For Each tab As DevExpress.XtraTab.XtraTabPage In xtcMain.TabPages
+            If tab.Text = "Thông tin tài khoản" Then
+                xtcMain.SelectedTabPage = tab
+                t = 1
+            End If
+        Next
+        If t <> 1 Then
+            clsAddTab.AddTab(xtcMain, "Thông tin tài khoản", New ucThongTinTaiKhoan())
+        End If
     End Sub
 
     Private Sub nbiDangXuat_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles nbiDangXuat.LinkClicked
@@ -323,7 +334,7 @@ Public Class frmMain
             End If
         Next
         If t <> 1 Then
-            clsAddTab.AddTab(xtcMain, "Thông tin tài khoảng", New ucThongTinTaiKhoan())
+            clsAddTab.AddTab(xtcMain, "Thông tin tài khoản", New ucThongTinTaiKhoan())
         End If
     End Sub
 

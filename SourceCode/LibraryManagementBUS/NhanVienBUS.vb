@@ -46,10 +46,6 @@ Public Class NhanVienBUS
         Return True
     End Function
 
-    Public Function BuildMaNhanVien(ByRef nextMaNhanVien As Integer) As Result
-        Return nhanVienDAL.BuildMaNhanVien(nextMaNhanVien)
-    End Function
-
     Public Function Insert(nhanVien As NhanVienDTO) As Result
         Return nhanVienDAL.Insert(nhanVien)
     End Function

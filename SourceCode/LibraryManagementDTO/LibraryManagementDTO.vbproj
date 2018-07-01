@@ -67,6 +67,7 @@
     <Compile Include="ChiTietPhieuTraDTO.vb" />
     <Compile Include="DBServerDTO.vb" />
     <Compile Include="DocGiaDTO.vb" />
+    <Compile Include="HienThiPhieuTraSach.vb" />
     <Compile Include="HienThiSachDTO.vb" />
     <Compile Include="LoaiDocGiaDTO.vb" />
     <Compile Include="LoaiNhanVienDTO.vb" />

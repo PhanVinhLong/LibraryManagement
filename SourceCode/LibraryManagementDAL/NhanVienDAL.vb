@@ -16,55 +16,10 @@ Public Class NhanVienDAL
         Me.connectionString = ConnectionString
     End Sub
 
-    Public Function BuildMaNhanVien(ByRef nextMaNhanVien As Integer) As Result
-        Dim sqlQuery As String
-        sqlQuery = String.Empty
-
-        sqlQuery &= "SELECT TOP 1 [MaNhanVien] "
-        sqlQuery &= "FROM [tblNhanVien] "
-        sqlQuery &= "ORDER BY [MaNhanVien] DESC "
-
-        Using connection As New SqlConnection(connectionString)
-            Using command As New SqlCommand()
-                With command
-                    .Connection = connection
-                    .CommandType = CommandType.Text
-                    .CommandText = sqlQuery
-                End With
-                Try
-                    connection.Open()
-                    Dim dataReader As SqlDataReader
-                    dataReader = command.ExecuteReader()
-                    Dim maNhanVienOnDB As String = String.Empty
-                    If dataReader.HasRows = True Then
-                        While dataReader.Read()
-                            maNhanVienOnDB = dataReader("MaNhanVien")
-                        End While
-                    End If
-                    nextMaNhanVien = maNhanVienOnDB + 1
-                    System.Console.WriteLine(nextMaNhanVien)
-                Catch ex As Exception
-                    connection.Close()
-                    System.Console.WriteLine(ex.StackTrace)
-                    Return New Result(False, "Lấy Mã nhân viên kế tiếp không thành công!", ex.StackTrace)
-                End Try
-            End Using
-        End Using
-        Return New Result(True)
-    End Function
-
     Public Function Insert(nhanVien As NhanVienDTO) As Result
         Dim sqlQuery As String = String.Empty
-        sqlQuery &= "INSERT INTO [tblNhanVien] ([MaNhanVien], [TenDangNhap], [HoTen], [MatKhau], [MaLoaiNhanVien]) "
-        sqlQuery &= "VALUES (@MaNhanVien, @TenDangNhap, @HoTen, @MatKhau, @MaLoaiNhanVien) "
-
-        Dim nextMaNhanVien = 0
-        Dim result As Result
-        result = BuildMaNhanVien(nextMaNhanVien)
-        If (result.FlagResult = False) Then
-            Return result
-        End If
-        nhanVien.MaNhanVien = nextMaNhanVien
+        sqlQuery &= "INSERT INTO [tblNhanVien] ([TenDangNhap], [HoTen], [MatKhau], [MaLoaiNhanVien]) "
+        sqlQuery &= "VALUES (@TenDangNhap, @HoTen, @MatKhau, @MaLoaiNhanVien) "
 
         nhanVien.MatKhau = ConvertToMd5(nhanVien.MatKhau)
 
@@ -74,7 +29,6 @@ Public Class NhanVienDAL
                     .Connection = connection
                     .CommandType = CommandType.Text
                     .CommandText = sqlQuery
-                    .Parameters.AddWithValue("@MaNhanVien", nhanVien.MaNhanVien)
                     .Parameters.AddWithValue("@TenDangNhap", nhanVien.TenDangNhap)
                     .Parameters.AddWithValue("@HoTen", nhanVien.HoTen)
                     .Parameters.AddWithValue("@MatKhau", nhanVien.MatKhau)
@@ -94,7 +48,7 @@ Public Class NhanVienDAL
 
     Public Function SelectALL(ByRef listNhanVien As List(Of NhanVienDTO)) As Result
         Dim sqlQuery As String = String.Empty
-        sqlQuery &= "SELECT [MaNhanVien], [TenDangNhap], [HoTen], [MatKhau], [MaLoaiNhanVien] "
+        sqlQuery &= "SELECT [TenDangNhap], [HoTen], [MatKhau], [MaLoaiNhanVien] "
         sqlQuery &= "FROM [tblNhanVien] "
 
         Using connection As New SqlConnection(connectionString)
@@ -111,7 +65,7 @@ Public Class NhanVienDAL
                     If reader.HasRows = True Then
                         listNhanVien.Clear()
                         While reader.Read()
-                            listNhanVien.Add(New NhanVienDTO(reader("MaNhanVien"), reader("TenDangNhap"), reader("HoTen"), reader("MatKhau"), reader("MaLoaiNhanVien")))
+                            listNhanVien.Add(New NhanVienDTO(reader("TenDangNhap"), reader("HoTen"), reader("MatKhau"), reader("MaLoaiNhanVien")))
                         End While
                     End If
                 Catch ex As Exception
@@ -126,7 +80,7 @@ Public Class NhanVienDAL
 
     Public Function SelectByMaLoaiNhanVien(iMaLoaiNhanVien As Integer, ByRef listNhanVien As List(Of NhanVienDTO)) As Result
         Dim sqlQuery As String = String.Empty
-        sqlQuery &= "SELECT [MaNhanVien], [TenDangNhap], [HoTen], [MatKhau], [MaLoaiNhanVien] "
+        sqlQuery &= "SELECT [TenDangNhap], [HoTen], [MatKhau], [MaLoaiNhanVien] "
         sqlQuery &= "FROM [tblNhanVien] "
         sqlQuery &= "WHERE [MaLoaiNhanVien] = @MaLoaiNhanVien "
 
@@ -145,7 +99,7 @@ Public Class NhanVienDAL
                     If reader.HasRows = True Then
                         listNhanVien.Clear()
                         While reader.Read()
-                            listNhanVien.Add(New NhanVienDTO(reader("MaNhanVien"), reader("TenDangNhap"), reader("HoTen"), reader("MatKhau"), reader("MaLoaiNhanVien")))
+                            listNhanVien.Add(New NhanVienDTO(reader("TenDangNhap"), reader("HoTen"), reader("MatKhau"), reader("MaLoaiNhanVien")))
                         End While
                     End If
                 Catch ex As Exception
@@ -161,7 +115,7 @@ Public Class NhanVienDAL
     Public Function SelectByUsername(strTenDangNhap As String) As NhanVienDTO
         Dim nhanVien As NhanVienDTO = New NhanVienDTO()
         Dim sqlQuery As String = String.Empty
-        sqlQuery &= "SELECT [MaNhanVien], [TenDangNhap], [HoTen], [MatKhau], [MaLoaiNhanVien] "
+        sqlQuery &= "SELECT [TenDangNhap], [HoTen], [MatKhau], [MaLoaiNhanVien] "
         sqlQuery &= "FROM [tblNhanVien] "
         sqlQuery &= "WHERE [TenDangNhap] = @TenDangNhap "
 
@@ -178,7 +132,7 @@ Public Class NhanVienDAL
                     Dim dataReader As SqlDataReader
                     dataReader = command.ExecuteReader()
                     While dataReader.Read
-                        nhanVien = New NhanVienDTO(dataReader("MaNhanVien"), dataReader("TenDangNhap"), dataReader("HoTen"), "ahihi", dataReader("MaLoaiNhanVien"))
+                        nhanVien = New NhanVienDTO(dataReader("TenDangNhap"), dataReader("HoTen"), "1", dataReader("MaLoaiNhanVien"))
                     End While
                 Catch ex As Exception
                     Console.WriteLine(ex.StackTrace)

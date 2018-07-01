@@ -110,9 +110,11 @@ Public Class ucQuanLyTacGia
                 result = tacGiaBUS.Update(tacGia)
                 If (result.FlagResult) Then
                     MessageBox.Show("Cập nhật thông tin Tác giả thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    GlobalControl.ChangeStatus("Cập nhật thông tin Tác giả thành công")
                     Reset()
                 Else
                     MessageBox.Show("Cập nhật thông tin Tác giả không thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    GlobalControl.ChangeStatus("Cập nhật thông tin Tác giả không thành công")
                     System.Console.WriteLine(result.SystemMessage)
                 End If
             Catch ex As Exception
@@ -133,6 +135,7 @@ Public Class ucQuanLyTacGia
                         Dim soBanGhi As Integer
                         tacGiaBUS.DemBanGhi(soBanGhi)
                         If (soBanGhi > 0) Then
+                            GlobalControl.ChangeStatus("Còn " & soBanGhi & " thuộc  tác giả " & txtTenTacGia.EditValue)
                             MessageBox.Show("Bạn phải xoá TẤT CẢ (" & soBanGhi & ") Sách có Tác giả là " & txtTenTacGia.EditValue & " trước khi xoá Tác giả này", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
                             Return
                         End If
@@ -140,6 +143,7 @@ Public Class ucQuanLyTacGia
                         result = tacGiaBUS.Delete(txtMaTacGia.EditValue)
                         If (result.FlagResult = True) Then
                             MessageBox.Show("Xóa Tác giả thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            GlobalControl.ChangeStatus("Xóa Tác giả thành công")
                             Reset()
                             If (currentRowIndex >= grvDanhSachTacGia.RowCount) Then
                                 currentRowIndex = currentRowIndex - 1
@@ -149,6 +153,7 @@ Public Class ucQuanLyTacGia
                             End If
                         Else
                             MessageBox.Show("Xóa Tác giả không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            GlobalControl.ChangeStatus("Xóa Tác giả không thành công")
                             System.Console.WriteLine(result.SystemMessage)
                         End If
                     Catch ex As Exception

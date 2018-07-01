@@ -44,8 +44,10 @@ Public Class ucThemLoaiDocGia
         result = loaiDocGiaBUS.Insert(loaiDocGia)
         If (result.FlagResult) Then
             MessageBox.Show("Thêm Loại độc giả thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            GlobalControl.ChangeStatus("Thêm Loại độc giả thành công")
         Else
             MessageBox.Show("Thêm Loại độc giả không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            GlobalControl.ChangeStatus("Thêm Loại độc giả không thành công")
             System.Console.WriteLine(result.SystemMessage)
         End If
 
@@ -81,9 +83,11 @@ Public Class ucThemLoaiDocGia
         result = loaiDocGiaBUS.Insert(loaiDocGia)
         If (result.FlagResult) Then
             MessageBox.Show("Thêm Loại độc giả thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            GlobalControl.ChangeStatus("Thêm Loại độc giả thành công")
             Me.Parent.Dispose()
         Else
             MessageBox.Show("Thêm Loại độc giả không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            GlobalControl.ChangeStatus("Thêm Loại độc giả không thành công")
             System.Console.WriteLine(result.SystemMessage)
         End If
     End Sub
@@ -101,7 +105,7 @@ Public Class ucThemLoaiDocGia
         Dim soLoaiDocGia As Integer
         soLoaiDocGia = loaiDocGiaBUS.Dem()
         lblGioiHanLoaiDocGia.Text = "* Số Loại độc giả/ Tối đa: " & soLoaiDocGia & "/" & thamSo.SoLuongLoaiDocGia
-        If (soLoaiDocGia = thamSo.SoLuongLoaiDocGia) Then
+        If (soLoaiDocGia >= thamSo.SoLuongLoaiDocGia) Then
             lblCanhBao.Visible = True
             txtTenLoaiDocGia.Enabled = False
             btnThem.Enabled = False

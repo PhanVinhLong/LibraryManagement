@@ -58,6 +58,11 @@ Public Class ucQuanLyNhanVien
         grvDanhSachTacGia.OptionsFind.AlwaysVisible = False
         grvDanhSachTacGia.OptionsView.ShowGroupPanel = False
         grvDanhSachTacGia.OptionsFind.FindDelay = 0
+
+        grvDanhSachTacGia.Columns("MatKhau").Visible = False
+        grvDanhSachTacGia.Columns("TenDangNhap").Caption = "Tên đăng nhập"
+        grvDanhSachTacGia.Columns("HoTen").Caption = "Họ tên"
+        grvDanhSachTacGia.Columns("MaLoaiNhanVien").Caption = "Loại nhân viên"
         grcDanhSachNhanVien.ResumeLayout() ' Tiếp tục hiển thị GridView
     End Sub
 
@@ -154,16 +159,19 @@ Public Class ucQuanLyNhanVien
                 '--
                 If txtMatKhau.EditValue <> txtReMatKhau.EditValue Then
                     MessageBox.Show("Mật khẩu mới không khớp. Vui lòng nhập lại")
+                    GlobalControl.ChangeStatus("Mật khẩu mới không khớp")
                     Return
                 End If
                 '--
                 If nhanVienBUS.IsValidMatKhau(txtMatKhau.EditValue) = False Then
                     MessageBox.Show("Mật khẩu ít nhất 6 ký tự 0-9, a-z, A-Z")
+                    GlobalControl.ChangeStatus("Mật khẩu ít nhất 6 ký tự 0-9, a-z, A-Z")
                     Return
                 End If
                 '--
                 If nhanVienBUS.IsValidTenDangNhap(txtHoTen.EditValue) = False Then
                     MessageBox.Show("Họ tên không đúng")
+                    GlobalControl.ChangeStatus("Họ tên không đúng")
                     Return
                 End If
                 nhanVien.MatKhau = txtMatKhau.EditValue
@@ -176,9 +184,11 @@ Public Class ucQuanLyNhanVien
                 result = nhanVienBUS.Update(nhanVien)
                 If (result.FlagResult) Then
                     MessageBox.Show("Cập nhật thông tin Nhân viên thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    GlobalControl.ChangeStatus("Cập nhật thông tin Nhân viên thành công")
                     Reset()
                 Else
                     MessageBox.Show("Cập nhật thông tin Nhân viên không thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    GlobalControl.ChangeStatus("Cập nhật thông tin Nhân viên không thành công")
                     System.Console.WriteLine(result.SystemMessage)
                 End If
             Catch ex As Exception
@@ -220,7 +230,8 @@ Public Class ucQuanLyNhanVien
                         Dim result As Result
                         result = nhanVienBUS.Delete(txtTenDangNhap.EditValue)
                         If (result.FlagResult = True) Then
-                            MessageBox.Show("Xóa Độc giả thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MessageBox.Show("Xóa Nhân viên thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            GlobalControl.ChangeStatus("Xóa Nhân viên thành công")
                             Reset()
                             If (currentRowIndex >= grvDanhSachTacGia.RowCount) Then
                                 currentRowIndex = currentRowIndex - 1
@@ -230,6 +241,7 @@ Public Class ucQuanLyNhanVien
                             End If
                         Else
                             MessageBox.Show("Xóa Nhân viên không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            GlobalControl.ChangeStatus("Xóa Nhân viên không thành công")
                             System.Console.WriteLine(result.SystemMessage)
                         End If
                     Catch ex As Exception

@@ -92,6 +92,7 @@ Public Class ucThongKeTraSachTre
         Dim listSachTraTre As List(Of SachTraTreDTO)
         listSachTraTre = sachTraTreBUS.SelectAll(dteThoiGian.EditValue)
         Using frmPrint As frmPrint = New frmPrint(dteThoiGian.EditValue, listSachTraTre)
+            GlobalControl.ChangeStatus("Đã In thống kê")
             frmPrint.ShowDialog()
         End Using
     End Sub

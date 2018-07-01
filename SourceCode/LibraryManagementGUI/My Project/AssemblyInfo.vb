@@ -9,9 +9,9 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("LibraryManagementGUI")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("LibraryManagementGUI")>
+<Assembly: AssemblyDescription("Phần mềm quản lý thư viện - UIT LibraryManagement")>
+<Assembly: AssemblyCompany("UIT")>
+<Assembly: AssemblyProduct("LibraryManagement")>
 <Assembly: AssemblyCopyright("Copyright ©  2018")>
 <Assembly: AssemblyTrademark("")>
 

@@ -110,9 +110,11 @@ Public Class ucQuanLyTheLoaiSach
                 result = theLoaiBUS.Update(theLoai)
                 If (result.FlagResult) Then
                     MessageBox.Show("Cập nhật thông tin Thể loại thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    GlobalControl.ChangeStatus("Cập nhật thông tin Thể loại thành công")
                     Reset()
                 Else
                     MessageBox.Show("Cập nhật thông tin Thể loại không thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    GlobalControl.ChangeStatus("Cập nhật thông tin Thể loại không thành công")
                     System.Console.WriteLine(result.SystemMessage)
                 End If
             Catch ex As Exception
@@ -131,8 +133,9 @@ Public Class ucQuanLyTheLoaiSach
                 Case DialogResult.Yes
                     Try
                         Dim soBanGhi As Integer
-                        theLoaiBUS.DemBanGhi(soBanGhi)
+                        theLoaiBUS.DemBanGhi(txtMaTheLoai.EditValue)
                         If (soBanGhi > 0) Then
+                            GlobalControl.ChangeStatus("Còn " & soBanGhi & " sách thuộc thể loại " & txtTenTheLoai.EditValue)
                             MessageBox.Show("Bạn phải xoá TẤT CẢ (" & soBanGhi & ") Sách có Thể loại là " & txtTenTheLoai.EditValue & " trước khi xoá Thể loại này", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
                             Return
                         End If
@@ -140,6 +143,7 @@ Public Class ucQuanLyTheLoaiSach
                         result = theLoaiBUS.Delete(txtMaTheLoai.EditValue)
                         If (result.FlagResult = True) Then
                             MessageBox.Show("Xóa Thể loại thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            GlobalControl.ChangeStatus("Xóa Thể loại thành công")
                             Reset()
                             If (currentRowIndex >= grvDanhSachTheLoai.RowCount) Then
                                 currentRowIndex = currentRowIndex - 1
@@ -149,6 +153,7 @@ Public Class ucQuanLyTheLoaiSach
                             End If
                         Else
                             MessageBox.Show("Xóa Thể loại không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            GlobalControl.ChangeStatus("Xóa Thể loại không thành công")
                             System.Console.WriteLine(result.SystemMessage)
                         End If
                     Catch ex As Exception

@@ -44,8 +44,10 @@ Public Class ucThemTheLoai
         result = theLoaiBUS.Insert(theLoai)
         If (result.FlagResult) Then
             MessageBox.Show("Thêm Thể loại thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            GlobalControl.ChangeStatus("Thêm Thể loại thành công")
         Else
             MessageBox.Show("Thêm Thể loại không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            GlobalControl.ChangeStatus("Thêm Thể loại không thành công")
             System.Console.WriteLine(result.SystemMessage)
         End If
 
@@ -81,11 +83,11 @@ Public Class ucThemTheLoai
         result = theLoaiBUS.Insert(theLoai)
         If (result.FlagResult) Then
             MessageBox.Show("Thêm Thể loại thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Me.Parent.Dispose()
         Else
             MessageBox.Show("Thêm Thể loại không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
         End If
+        Me.Parent.Dispose()
     End Sub
 
     Private Sub btnDong_Click(sender As Object, e As EventArgs) Handles btnDong.Click

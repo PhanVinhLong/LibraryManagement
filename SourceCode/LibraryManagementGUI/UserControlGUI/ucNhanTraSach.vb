@@ -329,6 +329,7 @@ Public Class ucNhanTraSach
         For Each sach As SachDTO In listSachChon
             If sachBUS.NgayHetHan(sach).AddDays(-thamSo.SoNgayMuonToiDa) > dteNgayTra.EditValue Then
                 MessageBox.Show("Ngày trả không thể nhỏ hơn ngày mượn của sách (" & sach.TenSach & ")", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                GlobalControl.ChangeStatus("Ngày trả không thể nhỏ hơn ngày mượn của sách (" & sach.TenSach & ")")
                 Return
             End If
         Next
@@ -385,8 +386,18 @@ Public Class ucNhanTraSach
                 Return
             End If
         Next
-
-        MessageBox.Show("Đã Lập phiếu trả")
+        GlobalControl.ChangeStatus("Đã Lập phiếu mượn")
+        If MessageBox.Show("Đã Lập phiếu mượn. Bạn có muốn In Phiếu mượn?", "In phiếu mượn", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            Dim hienThiSachBUS = New HienThiSachBUS()
+            Dim listHienThiSach As List(Of HienThiSachDTO)
+            listHienThiSach = hienThiSachBUS.ConvertListData(listSachChon)
+            Using frmPrint As frmPrint = New frmPrint(GlobalControl.ReturnNhanVien, phieuTra, listHienThiSach)
+                frmPrint.ShowDialog()
+            End Using
+            GlobalControl.ChangeStatus("Đã In phiếu trả")
+        Else
+            GlobalControl.ChangeStatus("Đã Lập phiếu trả")
+        End If
 
         ' Reset dữ liệu
         ResetDocGia()

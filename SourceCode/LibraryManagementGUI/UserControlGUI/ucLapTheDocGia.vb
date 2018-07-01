@@ -29,6 +29,7 @@ Public Class ucLapTheDocGia
         result = docGiaBUS.BuildMaDocGia(nextMaDocGia)
         If (result.FlagResult = False) Then
             MessageBox.Show("Sinh Mã độc giả không thành công.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            GlobalControl.ChangeStatus("Sinh Mã độc giả không thành công")
             System.Console.WriteLine(result.SystemMessage)
             Me.Parent.Dispose()
             Return
@@ -40,6 +41,7 @@ Public Class ucLapTheDocGia
         result = loaiDocGiaBUS.SelectAll(listLoaiDocGia)
         If (result.FlagResult = False) Then
             MessageBox.Show("Lấy danh sách Loại độc giả không thành công.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            GlobalControl.ChangeStatus("Lấy danh sách Loại độc giả không thành công")
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -121,18 +123,21 @@ Public Class ucLapTheDocGia
         ' Kiểm tra tính đúng đắn dữ liệu
         If (docGiaBUS.IsValidHoTen(docGia) = False) Then
             MessageBox.Show("Tên độc giả không hợp lệ!")
+            GlobalControl.ChangeStatus("Tên độc giả không hợp lệ")
             txtHoTen.Focus()
             Return
         End If
         '------
         If (docGiaBUS.IsValidNgayLapThe(docGia) = False) Then
             MessageBox.Show("Ngày lập thẻ không hợp lệ!")
+            GlobalControl.ChangeStatus("Ngày lập thẻ không hợp lệ")
             dteNgayLapThe.Focus()
             Return
         End If
         '------
         If (docGiaBUS.IsValidNgaySinh(docGia) = False) Then
             MessageBox.Show("Ngày sinh không hợp lệ!")
+            GlobalControl.ChangeStatus("Ngày sinh không hợp lệ")
             dteNgaySinh.Focus()
             Return
         End If
@@ -154,6 +159,7 @@ Public Class ucLapTheDocGia
             result = docGiaBUS.BuildMaDocGia(nextMaDocGia)
             If (result.FlagResult = False) Then
                 MessageBox.Show("Sinh MaDocGia không thành công.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                GlobalControl.ChangeStatus("Sinh MaDocGia không thành công")
                 System.Console.WriteLine(result.SystemMessage)
                 Me.Parent.Dispose()
                 Return
@@ -169,6 +175,7 @@ Public Class ucLapTheDocGia
             dteNgayLapThe.EditValue.AddMonths(thamSo.ThoiHanSuDung)
         Else
             MessageBox.Show("Thêm Độc giả không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            GlobalControl.ChangeStatus("Thêm Độc giả không thành côn")
             System.Console.WriteLine(result.SystemMessage)
         End If
     End Sub
@@ -190,6 +197,7 @@ Public Class ucLapTheDocGia
         ' Kiểm tra tính đúng đắn dữ liệu
         If (docGiaBUS.IsValidHoTen(docGia) = False) Then
             MessageBox.Show("Tên độc giả không đúng!")
+            GlobalControl.ChangeStatus("Tên độc giả không đúng")
             txtHoTen.Focus()
             Return
         End If
@@ -199,9 +207,11 @@ Public Class ucLapTheDocGia
         result = docGiaBUS.Insert(docGia)
         If (result.FlagResult) Then
             MessageBox.Show("Thêm Độc giả thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            GlobalControl.ChangeStatus("Thêm Độc giả thành công")
             Me.Parent.Dispose()
         Else
             MessageBox.Show("Thêm Độc giả không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            GlobalControl.ChangeStatus("Thêm Độc giả không thành công")
             System.Console.WriteLine(result.SystemMessage)
         End If
     End Sub

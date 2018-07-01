@@ -22,13 +22,13 @@ Partial Class ucQuanLyTheLoaiSach
         Me.grcDanhSachTheLoai = New DevExpress.XtraGrid.GridControl()
         Me.grvDanhSachTheLoai = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
+        Me.btnCapNhat = New DevExpress.XtraEditors.SimpleButton()
+        Me.btnXoa = New DevExpress.XtraEditors.SimpleButton()
+        Me.btnDong = New DevExpress.XtraEditors.SimpleButton()
         Me.txtMaTheLoai = New DevExpress.XtraEditors.TextEdit()
         Me.txtTenTheLoai = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.btnDong = New DevExpress.XtraEditors.SimpleButton()
-        Me.btnXoa = New DevExpress.XtraEditors.SimpleButton()
-        Me.btnCapNhat = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         CType(Me.grcDanhSachTheLoai, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grvDanhSachTheLoai, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,6 +64,38 @@ Partial Class ucQuanLyTheLoaiSach
         Me.PanelControl1.Size = New System.Drawing.Size(254, 71)
         Me.PanelControl1.TabIndex = 7
         '
+        'btnCapNhat
+        '
+        Me.btnCapNhat.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.btnCapNhat.ImageOptions.ImageUri.Uri = "CustomizeGrid;Size16x16;Office2013"
+        Me.btnCapNhat.Location = New System.Drawing.Point(18, 19)
+        Me.btnCapNhat.Name = "btnCapNhat"
+        Me.btnCapNhat.Size = New System.Drawing.Size(100, 32)
+        Me.btnCapNhat.TabIndex = 9
+        Me.btnCapNhat.Text = "Cập nhật"
+        '
+        'btnXoa
+        '
+        Me.btnXoa.Appearance.ForeColor = System.Drawing.Color.Red
+        Me.btnXoa.Appearance.Options.UseForeColor = True
+        Me.btnXoa.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.btnXoa.ImageOptions.ImageUri.Uri = "Delete;Size16x16;Office2013"
+        Me.btnXoa.Location = New System.Drawing.Point(140, 39)
+        Me.btnXoa.Name = "btnXoa"
+        Me.btnXoa.Size = New System.Drawing.Size(100, 23)
+        Me.btnXoa.TabIndex = 10
+        Me.btnXoa.Text = "Xoá"
+        '
+        'btnDong
+        '
+        Me.btnDong.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.btnDong.ImageOptions.ImageUri.Uri = "Close;Size16x16;Office2013"
+        Me.btnDong.Location = New System.Drawing.Point(140, 8)
+        Me.btnDong.Name = "btnDong"
+        Me.btnDong.Size = New System.Drawing.Size(100, 23)
+        Me.btnDong.TabIndex = 11
+        Me.btnDong.Text = "Đóng"
+        '
         'txtMaTheLoai
         '
         Me.txtMaTheLoai.Enabled = False
@@ -95,38 +127,6 @@ Partial Class ucQuanLyTheLoaiSach
         Me.LabelControl1.TabIndex = 0
         Me.LabelControl1.Text = "Mã thể loại"
         '
-        'btnDong
-        '
-        Me.btnDong.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.btnDong.ImageOptions.ImageUri.Uri = "Close;Size16x16;Office2013"
-        Me.btnDong.Location = New System.Drawing.Point(140, 8)
-        Me.btnDong.Name = "btnDong"
-        Me.btnDong.Size = New System.Drawing.Size(100, 23)
-        Me.btnDong.TabIndex = 11
-        Me.btnDong.Text = "Đóng"
-        '
-        'btnXoa
-        '
-        Me.btnXoa.Appearance.ForeColor = System.Drawing.Color.Red
-        Me.btnXoa.Appearance.Options.UseForeColor = True
-        Me.btnXoa.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.btnXoa.ImageOptions.ImageUri.Uri = "Delete;Size16x16;Office2013"
-        Me.btnXoa.Location = New System.Drawing.Point(140, 39)
-        Me.btnXoa.Name = "btnXoa"
-        Me.btnXoa.Size = New System.Drawing.Size(100, 23)
-        Me.btnXoa.TabIndex = 10
-        Me.btnXoa.Text = "Xoá"
-        '
-        'btnCapNhat
-        '
-        Me.btnCapNhat.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.btnCapNhat.ImageOptions.ImageUri.Uri = "CustomizeGrid;Size16x16;Office2013"
-        Me.btnCapNhat.Location = New System.Drawing.Point(18, 19)
-        Me.btnCapNhat.Name = "btnCapNhat"
-        Me.btnCapNhat.Size = New System.Drawing.Size(100, 32)
-        Me.btnCapNhat.TabIndex = 9
-        Me.btnCapNhat.Text = "Cập nhật"
-        '
         'GroupControl1
         '
         Me.GroupControl1.Controls.Add(Me.txtMaTheLoai)
@@ -147,7 +147,7 @@ Partial Class ucQuanLyTheLoaiSach
         Me.Controls.Add(Me.grcDanhSachTheLoai)
         Me.Controls.Add(Me.PanelControl1)
         Me.Name = "ucQuanLyTheLoaiSach"
-        Me.Size = New System.Drawing.Size(736, 455)
+        Me.Size = New System.Drawing.Size(574, 216)
         CType(Me.grcDanhSachTheLoai, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grvDanhSachTheLoai, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()

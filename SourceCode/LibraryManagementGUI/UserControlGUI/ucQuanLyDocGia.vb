@@ -238,9 +238,11 @@ Public Class ucQuanLyDocGia
                 result = docGiaBUS.Update(docGia)
                 If (result.FlagResult) Then
                     MessageBox.Show("Cập nhật thông tin độc giả thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    GlobalControl.ChangeStatus("Cập nhật thông tin độc giả thành công")
                     Reset()
                 Else
                     MessageBox.Show("Cập nhật thông tin độc giả không thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    GlobalControl.ChangeStatus("Cập nhật thông tin độc giả không thành công")
                     System.Console.WriteLine(result.SystemMessage)
                 End If
             Catch ex As Exception
@@ -276,9 +278,11 @@ Public Class ucQuanLyDocGia
         result = docGiaBUS.Update(docGia)
         If (result.FlagResult) Then
             MessageBox.Show("Gia hạn thẻ độc giả thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            GlobalControl.ChangeStatus("Gia hạn thẻ độc giả thành công")
             Reset()
         Else
             MessageBox.Show("Gia hạn thẻ độc giả không thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            GlobalControl.ChangeStatus("Gia hạn thẻ độc giả không thành công")
             System.Console.WriteLine(result.SystemMessage)
         End If
     End Sub
@@ -296,6 +300,7 @@ Public Class ucQuanLyDocGia
                         result = docGiaBUS.Delete(txtMaDocGia.EditValue)
                         If (result.FlagResult = True) Then
                             MessageBox.Show("Xóa Độc giả thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            GlobalControl.ChangeStatus("Xóa Độc giả thành công")
                             Reset()
                             If (currentRowIndex >= grvDanhSachDocGia.RowCount) Then
                                 currentRowIndex = currentRowIndex - 1
@@ -305,6 +310,7 @@ Public Class ucQuanLyDocGia
                             End If
                         Else
                             MessageBox.Show("Xóa Độc giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            GlobalControl.ChangeStatus("Xóa Độc giả không thành công")
                             System.Console.WriteLine(result.SystemMessage)
                         End If
                     Catch ex As Exception
@@ -376,6 +382,7 @@ Public Class ucQuanLyDocGia
             If MessageBox.Show("Xuất file exel thành công. Bạn có muốn mở file?", "Thông tin", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
                 Process.Start(btnChoosePath.EditValue & txtFileName.EditValue)
             End If
+            GlobalControl.ChangeStatus("Xuất file exel thành công.")
         Catch
             MessageBox.Show("ERROR")
         End Try

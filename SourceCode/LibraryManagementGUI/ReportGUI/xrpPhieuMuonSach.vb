@@ -2,7 +2,9 @@
 Imports LibraryManagementDTO
 
 Public Class xrpPhieuMuonSach
-    Public Sub Init(nhanVien As NhanVienDTO, phieuMuon As PhieuMuonDTO, listSach As List(Of HienThiSachDTO))
+    Public Sub New(nhanVien As NhanVienDTO, phieuMuon As PhieuMuonDTO, listSach As List(Of HienThiSachDTO))
+        InitializeComponent()
+
         Dim docGiaBUS As DocGiaBUS = New DocGiaBUS()
         Dim docGia = docGiaBUS.SelectByDocGia(phieuMuon.MaDocGia)
 

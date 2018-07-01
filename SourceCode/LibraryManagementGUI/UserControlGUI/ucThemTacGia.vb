@@ -44,8 +44,10 @@ Public Class ucThemTacGia
         result = tacGiaBUS.Insert(tacGia)
         If (result.FlagResult) Then
             MessageBox.Show("Thêm Tác giả thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            GlobalControl.ChangeStatus("Thêm Tác giả thành công")
         Else
             MessageBox.Show("Thêm Tác giả không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            GlobalControl.ChangeStatus("Thêm Tác giả không thành công")
             System.Console.WriteLine(result.SystemMessage)
         End If
 
@@ -81,24 +83,14 @@ Public Class ucThemTacGia
         result = tacGiaBUS.Insert(tacGia)
         If (result.FlagResult) Then
             MessageBox.Show("Thêm Tác giả thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Me.Parent.Dispose()
+            GlobalControl.ChangeStatus("Thêm Tác giả thành công")
         Else
             MessageBox.Show("Thêm Tác giả không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            GlobalControl.ChangeStatus("Thêm Tác giả không thành công")
             System.Console.WriteLine(result.SystemMessage)
-            Me.Parent.Dispose()
         End If
 
-        ' Lấy mã tác giả kế tiếp
-        Dim nextMaTacGia As Integer = Nothing
-        result = tacGiaBUS.BuildMaTacGia(nextMaTacGia)
-        If (result.FlagResult = True) Then
-            txtMaTacGia.EditValue = nextMaTacGia
-            txtTenTacGia.EditValue = Nothing
-            KiemTraQuyDinh()
-        Else
-            MessageBox.Show("Lấy Mã tác giả kế tiếp không thành công.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            System.Console.WriteLine(result.SystemMessage)
-        End If
+        Me.Parent.Dispose()
     End Sub
 
     Private Sub btnDong_Click(sender As Object, e As EventArgs) Handles btnDong.Click

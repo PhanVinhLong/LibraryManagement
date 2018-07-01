@@ -112,9 +112,11 @@ Public Class ucQuanLyLoaiDocGia
                 result = loaiDocGiaBUS.Update(loaiDocGia)
                 If (result.FlagResult) Then
                     MessageBox.Show("Cập nhật thông tin Loại độc giả thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    GlobalControl.ChangeStatus("Cập nhật thông tin Loại độc giả thành công")
                     Reset()
                 Else
                     MessageBox.Show("Cập nhật thông tin Loại độc giả không thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    GlobalControl.ChangeStatus("Cập nhật thông tin Loại độc giả thành công")
                     System.Console.WriteLine(result.SystemMessage)
                 End If
             Catch ex As Exception
@@ -142,6 +144,7 @@ Public Class ucQuanLyLoaiDocGia
                         result = loaiDocGiaBUS.Delete(txtMaLoaiDocGia.EditValue)
                         If (result.FlagResult = True) Then
                             MessageBox.Show("Xóa Loại độc giả thành công", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            GlobalControl.ChangeStatus("Xóa Loại độc giả thành công")
                             Reset()
                             If (currentRowIndex >= grvDanhSachLoaiDocGia.RowCount) Then
                                 currentRowIndex = currentRowIndex - 1
@@ -151,6 +154,7 @@ Public Class ucQuanLyLoaiDocGia
                             End If
                         Else
                             MessageBox.Show("Xóa Loại độc giả không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            GlobalControl.ChangeStatus("Xóa Loại độc giả không thành công")
                             System.Console.WriteLine(result.SystemMessage)
                         End If
                     Catch ex As Exception

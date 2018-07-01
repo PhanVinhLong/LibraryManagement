@@ -77,6 +77,7 @@ Public Class ucThongKeTinhHinhMuonSach
         Dim listTinhHinhMuonSach As List(Of TinhHinhMuonSachDTO)
         listTinhHinhMuonSach = tinhHinhMuonSachBUS.SelectAll(dteThangNam.EditValue.Month, dteThangNam.EditValue.Year)
         Using frmPrint As frmPrint = New frmPrint(dteThangNam.EditValue, listTinhHinhMuonSach)
+            GlobalControl.ChangeStatus("Đã In thống kê")
             frmPrint.ShowDialog()
         End Using
     End Sub

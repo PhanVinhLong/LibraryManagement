@@ -51,6 +51,7 @@ Public Class ucChoMuonSach
         result = loaiDocGiaBUS.SelectAll(listLoaiDocGia)
         If (result.FlagResult = False) Then
             MessageBox.Show("Lấy danh sách Loại độc giả không thành công.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            GlobalControl.ChangeStatus("Lấy danh sách Loại độc giả không thành công")
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -78,6 +79,7 @@ Public Class ucChoMuonSach
         result = theLoaiBUS.SelectAll(listTheLoai)
         If (result.FlagResult = False) Then
             MessageBox.Show("Lấy danh sách Thể loại không thành công.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            GlobalControl.ChangeStatus("Lấy danh sách Loại độc giả không thành công")
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -86,6 +88,7 @@ Public Class ucChoMuonSach
         result = tacGiaBUS.SelectAll(listTacGia)
         If (result.FlagResult = False) Then
             MessageBox.Show("Lấy danh sách Tác giả không thành công.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            GlobalControl.ChangeStatus("Lấy danh sách Tác giả không thành công")
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -94,6 +97,7 @@ Public Class ucChoMuonSach
         result = trangThaiBUS.SelectALL(listTrangThai)
         If (result.FlagResult = False) Then
             MessageBox.Show("Lấy danh sách Trạng thái không thành công.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            GlobalControl.ChangeStatus("Lấy danh sách Trạng thái không thành công")
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -173,6 +177,7 @@ Public Class ucChoMuonSach
         result = docGiaBUS.SelectAll(listDocGia)
         If (result.FlagResult = False) Then
             MessageBox.Show("Lấy danh sách Độc giả không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            GlobalControl.ChangeStatus("Lấy danh sách Tác giả không thành công")
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -254,6 +259,7 @@ Public Class ucChoMuonSach
         result = docGiaBUS.SellectByLoaiDocGia(maLoaiDocGia, listDocGia)
         If (result.FlagResult = False) Then
             MessageBox.Show("Lấy danh sách tất cả Độc giả không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            GlobalControl.ChangeStatus("Lấy danh sách tất cả Độc giả không thành công")
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -303,6 +309,7 @@ Public Class ucChoMuonSach
         result = sachBUS.SelectByCondition(iMaTheLoai, iMaTacGia, iMaTrangThai, iNamXuatBan, listSach)
         If (result.FlagResult = False) Then
             MessageBox.Show("Lấy danh sách Sách theo điều kiện không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            GlobalControl.ChangeStatus("Lấy danh sách Sách theo điều kiện không thành công")
             System.Console.WriteLine(result.SystemMessage)
         End If
         Return listSach
@@ -369,22 +376,26 @@ Public Class ucChoMuonSach
         ' Kiểm tra
         If dteNgayNhap.EditValue > Now Then
             MessageBox.Show("Ngày nhập không đúng")
+            GlobalControl.ChangeStatus("Ngày nhập không đúng")
             Return
         End If
         ' ----
         If listSachChon.Count < 1 Then
             MessageBox.Show("Bạn chưa chọn sách nào")
+            GlobalControl.ChangeStatus("Bạn chưa chọn sách nà")
             Return
         End If
         ' ----
         If docGia.MaDocGia = Nothing Then
             MessageBox.Show("Bạn chưa chọn độc giả")
+            GlobalControl.ChangeStatus("Bạn chưa chọn độc giả")
             Return
         End If
         '----
         For Each sach In listSachChon
             If sachBUS.NgayMuonCuoi(sach) > dteNgayNhap.EditValue Then
                 MessageBox.Show("Ngày mượn không thể nhỏ hơn ngày mượn cuối cùng hoặc ngày nhập sách")
+                GlobalControl.ChangeStatus("Ngày mượn không thể nhỏ hơn ngày mượn cuối cùng hoặc ngày nhập sách")
                 Return
             End If
         Next
