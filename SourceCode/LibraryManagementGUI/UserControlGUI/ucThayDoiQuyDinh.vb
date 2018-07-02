@@ -35,6 +35,10 @@ Public Class ucThayDoiQuyDinh
     End Sub
 
     Private Sub btnCapNhat_Click(sender As Object, e As EventArgs) Handles btnCapNhat.Click
+        If txtTuoiToiThieu.EditValue > txtTuoiToiDa.EditValue Then
+            MessageBox.Show("Tuổi tối thiểu không thể lớn hơn tuổi tối đa", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
         If txtSoLuongTacGia.EditValue < tacGiaBUS.Dem Then
             MessageBox.Show("Số lượng tác giả trong dữ liệu lớn hơn quy định mới. Vui lòng xoá bớt tác giả", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return

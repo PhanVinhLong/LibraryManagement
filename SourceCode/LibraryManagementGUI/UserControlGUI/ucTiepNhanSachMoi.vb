@@ -280,28 +280,10 @@ Public Class ucTiepNhanSachMoi
     End Sub
 
     Private Sub btnTaiLaiTacGia_Click(sender As Object, e As EventArgs) Handles btnTaiLaiTacGia.Click
-        ' Lấy danh sách Tác giả
-        Dim listTacGia As List(Of TacGiaDTO) = New List(Of TacGiaDTO)
-        result = tacGiaBUS.SelectAll(listTacGia)
-        If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách Tác giả không thành công.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            System.Console.WriteLine(result.SystemMessage)
-            Return
-        End If
-        ' Load grid tác giả
-        LoadGridTaGia(listTacGia)
+        txtTimKiemTacGia.EditValue = ""
     End Sub
 
     Private Sub txtTaiLaiTheLoai_Click(sender As Object, e As EventArgs) Handles txtTaiLaiTheLoai.Click
-        ' Lấy danh sách Thể loại
-        Dim listTheLoai As List(Of TheLoaiDTO) = New List(Of TheLoaiDTO)
-        result = theLoaiBUS.SelectAll(listTheLoai)
-        If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách Thể loại không thành công.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            System.Console.WriteLine(result.SystemMessage)
-            Return
-        End If
-        ' Load grid thể loại
-        LoadGridTheLoai(listTheLoai)
+        txtTimKiemTheLoai.EditValue = ""
     End Sub
 End Class
