@@ -67,7 +67,7 @@ Public Class ThamSoDAL
                     .Connection = connection
                     .CommandType = CommandType.Text
                     .CommandText = sqlQuery
-                    .Parameters.AddWithValue("@TuoiToiThieu", iTuoiToiDa)
+                    .Parameters.AddWithValue("@TuoiToiThieu", iTuoiToiThieu)
                     .Parameters.AddWithValue("@TuoiToiDa", iTuoiToiDa)
                     .Parameters.AddWithValue("@ThoiHanSuDung", iThoiHanSuDung)
                     .Parameters.AddWithValue("@GioiHanNamXuatBan", iGioiHanNamXuatBan)

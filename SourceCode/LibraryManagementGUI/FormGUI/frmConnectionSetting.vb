@@ -104,7 +104,7 @@ Public Class frmConnectionSetting
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Return False
             End If
-            connectionString = "Data Source=" & txtServer.EditValue & "," & txtPort.EditValue & ";Network Library=DBMSSOCN;Initial Catalog=" & txtDatabase.EditValue & ";User ID=" & txtUsername.EditValue & ";Password=" & txtPassword.EditValue
+            connectionString = "Data Source=" & txtServer.EditValue & "," & txtPort.EditValue & ";Network Library=DBMSSOCN;Initial Catalog=" & txtDatabase.EditValue & ";User ID=" & txtUsername.EditValue & ";Password=" & txtPassword.EditValue & ";"
         End If
         ' MySQL
         If ckeMySQL.Checked = True Then

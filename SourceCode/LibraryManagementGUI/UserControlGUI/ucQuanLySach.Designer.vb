@@ -32,24 +32,27 @@ Partial Class ucQuanLySach
         Me.dteNamXuatBan = New DevExpress.XtraEditors.DateEdit()
         Me.lblMaSach = New DevExpress.XtraEditors.LabelControl()
         Me.txtMaSach = New DevExpress.XtraEditors.TextEdit()
-        Me.PanelControl4 = New DevExpress.XtraEditors.PanelControl()
-        Me.gleTacGia = New DevExpress.XtraEditors.GridLookUpEdit()
-        Me.GridLookUpEdit1View = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.btnXoaTacGia = New DevExpress.XtraEditors.SimpleButton()
-        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
-        Me.btnThemTacGia = New DevExpress.XtraEditors.SimpleButton()
-        Me.lblTacGia = New DevExpress.XtraEditors.LabelControl()
-        Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
-        Me.gleTheLoai = New DevExpress.XtraEditors.GridLookUpEdit()
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.btnXoaTheLoai = New DevExpress.XtraEditors.SimpleButton()
-        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
-        Me.btnThemTheLoai = New DevExpress.XtraEditors.SimpleButton()
-        Me.lblTheLoai = New DevExpress.XtraEditors.LabelControl()
         Me.txtNhaXuatBan = New DevExpress.XtraEditors.TextEdit()
         Me.lblNamXuatBan = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
+        Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
+        Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
+        Me.lblTacGia = New DevExpress.XtraEditors.LabelControl()
+        Me.lblTheLoai = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
+        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
+        Me.grcTheLoai = New DevExpress.XtraGrid.GridControl()
+        Me.grvTheLoai = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.txtTaiLaiTheLoai = New DevExpress.XtraEditors.SimpleButton()
+        Me.txtTimKiemTheLoai = New DevExpress.XtraEditors.TextEdit()
+        Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
+        Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
+        Me.btnTaiLaiTacGia = New DevExpress.XtraEditors.SimpleButton()
+        Me.grcTacGia = New DevExpress.XtraGrid.GridControl()
+        Me.grvTacGia = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.txtTimKiemTacGia = New DevExpress.XtraEditors.TextEdit()
         Me.grvDanhSachSach = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.grcDanhSachSach = New DevExpress.XtraGrid.GridControl()
         Me.txtTimKiem = New DevExpress.XtraEditors.TextEdit()
@@ -65,6 +68,7 @@ Partial Class ucQuanLySach
         Me.ckeTrangThai = New DevExpress.XtraEditors.CheckEdit()
         Me.btnLoc = New DevExpress.XtraEditors.SimpleButton()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
+        Me.txtFileName = New DevExpress.XtraEditors.TextEdit()
         Me.btnIn = New DevExpress.XtraEditors.SimpleButton()
         Me.btnChoosePath = New DevExpress.XtraEditors.ButtonEdit()
         Me.btnDong = New DevExpress.XtraEditors.SimpleButton()
@@ -73,7 +77,6 @@ Partial Class ucQuanLySach
         Me.btnCapNhat = New DevExpress.XtraEditors.SimpleButton()
         Me.PanelControl5 = New DevExpress.XtraEditors.PanelControl()
         Me.xfbChoosePath = New DevExpress.XtraEditors.XtraFolderBrowserDialog(Me.components)
-        Me.txtFileName = New DevExpress.XtraEditors.TextEdit()
         CType(Me.txtTenSach.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTriGia.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dteNgayNhap.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -81,17 +84,21 @@ Partial Class ucQuanLySach
         CType(Me.dteNamXuatBan.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dteNamXuatBan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtMaSach.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PanelControl4, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelControl4.SuspendLayout()
-        CType(Me.gleTacGia.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridLookUpEdit1View, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelControl3.SuspendLayout()
-        CType(Me.gleTheLoai.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtNhaXuatBan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
+        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl3.SuspendLayout()
+        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl3.SuspendLayout()
+        CType(Me.grcTheLoai, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grvTheLoai, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtTimKiemTheLoai.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl2.SuspendLayout()
+        CType(Me.grcTacGia, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grvTacGia, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtTimKiemTacGia.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grvDanhSachSach, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grcDanhSachSach, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTimKiem.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -106,10 +113,10 @@ Partial Class ucQuanLySach
         CType(Me.ckeTrangThai.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
+        CType(Me.txtFileName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnChoosePath.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl5.SuspendLayout()
-        CType(Me.txtFileName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelControl5
@@ -202,138 +209,6 @@ Partial Class ucQuanLySach
         Me.txtMaSach.Size = New System.Drawing.Size(138, 20)
         Me.txtMaSach.TabIndex = 6
         '
-        'PanelControl4
-        '
-        Me.PanelControl4.Controls.Add(Me.gleTacGia)
-        Me.PanelControl4.Controls.Add(Me.btnXoaTacGia)
-        Me.PanelControl4.Controls.Add(Me.LabelControl6)
-        Me.PanelControl4.Controls.Add(Me.btnThemTacGia)
-        Me.PanelControl4.Controls.Add(Me.lblTacGia)
-        Me.PanelControl4.Location = New System.Drawing.Point(11, 95)
-        Me.PanelControl4.Name = "PanelControl4"
-        Me.PanelControl4.Size = New System.Drawing.Size(722, 50)
-        Me.PanelControl4.TabIndex = 16
-        '
-        'gleTacGia
-        '
-        Me.gleTacGia.Location = New System.Drawing.Point(57, 5)
-        Me.gleTacGia.Name = "gleTacGia"
-        Me.gleTacGia.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.gleTacGia.Properties.PopupView = Me.GridLookUpEdit1View
-        Me.gleTacGia.Size = New System.Drawing.Size(141, 20)
-        Me.gleTacGia.TabIndex = 21
-        '
-        'GridLookUpEdit1View
-        '
-        Me.GridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
-        Me.GridLookUpEdit1View.Name = "GridLookUpEdit1View"
-        Me.GridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = False
-        Me.GridLookUpEdit1View.OptionsView.ShowGroupPanel = False
-        '
-        'btnXoaTacGia
-        '
-        Me.btnXoaTacGia.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.btnXoaTacGia.ImageOptions.ImageUri.Uri = "Delete;Size16x16;Office2013"
-        Me.btnXoaTacGia.Location = New System.Drawing.Point(285, 5)
-        Me.btnXoaTacGia.Name = "btnXoaTacGia"
-        Me.btnXoaTacGia.Size = New System.Drawing.Size(73, 20)
-        Me.btnXoaTacGia.TabIndex = 20
-        Me.btnXoaTacGia.Text = "Xoá"
-        '
-        'LabelControl6
-        '
-        Me.LabelControl6.Location = New System.Drawing.Point(5, 8)
-        Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(34, 13)
-        Me.LabelControl6.TabIndex = 12
-        Me.LabelControl6.Text = "Tác giả"
-        '
-        'btnThemTacGia
-        '
-        Me.btnThemTacGia.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.btnThemTacGia.ImageOptions.ImageUri.Uri = "Add;Size16x16;Office2013"
-        Me.btnThemTacGia.Location = New System.Drawing.Point(204, 5)
-        Me.btnThemTacGia.Name = "btnThemTacGia"
-        Me.btnThemTacGia.Size = New System.Drawing.Size(73, 20)
-        Me.btnThemTacGia.TabIndex = 16
-        Me.btnThemTacGia.Text = "Thêm"
-        '
-        'lblTacGia
-        '
-        Me.lblTacGia.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.lblTacGia.Appearance.Options.UseFont = True
-        Me.lblTacGia.Location = New System.Drawing.Point(60, 31)
-        Me.lblTacGia.Name = "lblTacGia"
-        Me.lblTacGia.Size = New System.Drawing.Size(106, 13)
-        Me.lblTacGia.TabIndex = 19
-        Me.lblTacGia.Text = "Tác giả X, Tác giả Y"
-        '
-        'PanelControl3
-        '
-        Me.PanelControl3.Controls.Add(Me.gleTheLoai)
-        Me.PanelControl3.Controls.Add(Me.btnXoaTheLoai)
-        Me.PanelControl3.Controls.Add(Me.LabelControl7)
-        Me.PanelControl3.Controls.Add(Me.btnThemTheLoai)
-        Me.PanelControl3.Controls.Add(Me.lblTheLoai)
-        Me.PanelControl3.Location = New System.Drawing.Point(11, 149)
-        Me.PanelControl3.Name = "PanelControl3"
-        Me.PanelControl3.Size = New System.Drawing.Size(722, 50)
-        Me.PanelControl3.TabIndex = 20
-        '
-        'gleTheLoai
-        '
-        Me.gleTheLoai.Location = New System.Drawing.Point(57, 5)
-        Me.gleTheLoai.Name = "gleTheLoai"
-        Me.gleTheLoai.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.gleTheLoai.Properties.PopupView = Me.GridView1
-        Me.gleTheLoai.Size = New System.Drawing.Size(141, 20)
-        Me.gleTheLoai.TabIndex = 22
-        '
-        'GridView1
-        '
-        Me.GridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
-        Me.GridView1.Name = "GridView1"
-        Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False
-        Me.GridView1.OptionsView.ShowGroupPanel = False
-        '
-        'btnXoaTheLoai
-        '
-        Me.btnXoaTheLoai.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.btnXoaTheLoai.ImageOptions.ImageUri.Uri = "Cancel;Size16x16;Office2013"
-        Me.btnXoaTheLoai.Location = New System.Drawing.Point(285, 5)
-        Me.btnXoaTheLoai.Name = "btnXoaTheLoai"
-        Me.btnXoaTheLoai.Size = New System.Drawing.Size(73, 20)
-        Me.btnXoaTheLoai.TabIndex = 20
-        Me.btnXoaTheLoai.Text = "Xoá"
-        '
-        'LabelControl7
-        '
-        Me.LabelControl7.Location = New System.Drawing.Point(5, 8)
-        Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(37, 13)
-        Me.LabelControl7.TabIndex = 12
-        Me.LabelControl7.Text = "Thể loại"
-        '
-        'btnThemTheLoai
-        '
-        Me.btnThemTheLoai.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.btnThemTheLoai.ImageOptions.ImageUri.Uri = "Add;Size16x16;Office2013"
-        Me.btnThemTheLoai.Location = New System.Drawing.Point(204, 5)
-        Me.btnThemTheLoai.Name = "btnThemTheLoai"
-        Me.btnThemTheLoai.Size = New System.Drawing.Size(73, 20)
-        Me.btnThemTheLoai.TabIndex = 16
-        Me.btnThemTheLoai.Text = "Thêm"
-        '
-        'lblTheLoai
-        '
-        Me.lblTheLoai.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.lblTheLoai.Appearance.Options.UseFont = True
-        Me.lblTheLoai.Location = New System.Drawing.Point(60, 31)
-        Me.lblTheLoai.Name = "lblTheLoai"
-        Me.lblTheLoai.Size = New System.Drawing.Size(114, 13)
-        Me.lblTheLoai.TabIndex = 19
-        Me.lblTheLoai.Text = "Thể loại X, Thể loại Y"
-        '
         'txtNhaXuatBan
         '
         Me.txtNhaXuatBan.Location = New System.Drawing.Point(544, 8)
@@ -365,11 +240,12 @@ Partial Class ucQuanLySach
         '
         'PanelControl1
         '
+        Me.PanelControl1.Controls.Add(Me.PanelControl3)
+        Me.PanelControl1.Controls.Add(Me.GroupControl3)
+        Me.PanelControl1.Controls.Add(Me.GroupControl2)
         Me.PanelControl1.Controls.Add(Me.LabelControl8)
         Me.PanelControl1.Controls.Add(Me.lblNamXuatBan)
         Me.PanelControl1.Controls.Add(Me.txtNhaXuatBan)
-        Me.PanelControl1.Controls.Add(Me.PanelControl3)
-        Me.PanelControl1.Controls.Add(Me.PanelControl4)
         Me.PanelControl1.Controls.Add(Me.txtMaSach)
         Me.PanelControl1.Controls.Add(Me.lblMaSach)
         Me.PanelControl1.Controls.Add(Me.dteNamXuatBan)
@@ -383,8 +259,167 @@ Partial Class ucQuanLySach
         Me.PanelControl1.Controls.Add(Me.LabelControl5)
         Me.PanelControl1.Location = New System.Drawing.Point(13, 11)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(738, 206)
+        Me.PanelControl1.Size = New System.Drawing.Size(738, 341)
         Me.PanelControl1.TabIndex = 40
+        '
+        'PanelControl3
+        '
+        Me.PanelControl3.Controls.Add(Me.LabelControl9)
+        Me.PanelControl3.Controls.Add(Me.lblTacGia)
+        Me.PanelControl3.Controls.Add(Me.lblTheLoai)
+        Me.PanelControl3.Controls.Add(Me.LabelControl6)
+        Me.PanelControl3.Location = New System.Drawing.Point(5, 291)
+        Me.PanelControl3.Name = "PanelControl3"
+        Me.PanelControl3.Size = New System.Drawing.Size(728, 45)
+        Me.PanelControl3.TabIndex = 37
+        '
+        'LabelControl9
+        '
+        Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.LabelControl9.Appearance.Options.UseFont = True
+        Me.LabelControl9.Location = New System.Drawing.Point(8, 6)
+        Me.LabelControl9.Name = "LabelControl9"
+        Me.LabelControl9.Size = New System.Drawing.Size(43, 13)
+        Me.LabelControl9.TabIndex = 23
+        Me.LabelControl9.Text = "Tác giả:"
+        '
+        'lblTacGia
+        '
+        Me.lblTacGia.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.lblTacGia.Appearance.Options.UseFont = True
+        Me.lblTacGia.Location = New System.Drawing.Point(61, 6)
+        Me.lblTacGia.Name = "lblTacGia"
+        Me.lblTacGia.Size = New System.Drawing.Size(106, 13)
+        Me.lblTacGia.TabIndex = 19
+        Me.lblTacGia.Text = "Tác giả X, Tác giả Y"
+        '
+        'lblTheLoai
+        '
+        Me.lblTheLoai.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.lblTheLoai.Appearance.Options.UseFont = True
+        Me.lblTheLoai.Location = New System.Drawing.Point(61, 25)
+        Me.lblTheLoai.Name = "lblTheLoai"
+        Me.lblTheLoai.Size = New System.Drawing.Size(114, 13)
+        Me.lblTheLoai.TabIndex = 19
+        Me.lblTheLoai.Text = "Thể loại X, Thể loại Y"
+        '
+        'LabelControl6
+        '
+        Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.LabelControl6.Appearance.Options.UseFont = True
+        Me.LabelControl6.Location = New System.Drawing.Point(8, 25)
+        Me.LabelControl6.Name = "LabelControl6"
+        Me.LabelControl6.Size = New System.Drawing.Size(47, 13)
+        Me.LabelControl6.TabIndex = 24
+        Me.LabelControl6.Text = "Thể loại:"
+        '
+        'GroupControl3
+        '
+        Me.GroupControl3.Controls.Add(Me.LabelControl7)
+        Me.GroupControl3.Controls.Add(Me.grcTheLoai)
+        Me.GroupControl3.Controls.Add(Me.txtTaiLaiTheLoai)
+        Me.GroupControl3.Controls.Add(Me.txtTimKiemTheLoai)
+        Me.GroupControl3.Location = New System.Drawing.Point(361, 94)
+        Me.GroupControl3.Name = "GroupControl3"
+        Me.GroupControl3.Size = New System.Drawing.Size(372, 191)
+        Me.GroupControl3.TabIndex = 36
+        Me.GroupControl3.Text = "Chọn thể loại"
+        '
+        'LabelControl7
+        '
+        Me.LabelControl7.Appearance.Image = CType(resources.GetObject("LabelControl7.Appearance.Image"), System.Drawing.Image)
+        Me.LabelControl7.Appearance.Options.UseImage = True
+        Me.LabelControl7.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.LabelControl7.Location = New System.Drawing.Point(20, 26)
+        Me.LabelControl7.Name = "LabelControl7"
+        Me.LabelControl7.Size = New System.Drawing.Size(61, 20)
+        Me.LabelControl7.TabIndex = 32
+        Me.LabelControl7.Text = "Tìm kiếm"
+        '
+        'grcTheLoai
+        '
+        Me.grcTheLoai.Location = New System.Drawing.Point(5, 53)
+        Me.grcTheLoai.MainView = Me.grvTheLoai
+        Me.grcTheLoai.Name = "grcTheLoai"
+        Me.grcTheLoai.Size = New System.Drawing.Size(361, 133)
+        Me.grcTheLoai.TabIndex = 25
+        Me.grcTheLoai.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvTheLoai})
+        '
+        'grvTheLoai
+        '
+        Me.grvTheLoai.GridControl = Me.grcTheLoai
+        Me.grvTheLoai.Name = "grvTheLoai"
+        '
+        'txtTaiLaiTheLoai
+        '
+        Me.txtTaiLaiTheLoai.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.txtTaiLaiTheLoai.ImageOptions.ImageUri.Uri = "Reset;Size16x16;Office2013"
+        Me.txtTaiLaiTheLoai.Location = New System.Drawing.Point(237, 25)
+        Me.txtTaiLaiTheLoai.Name = "txtTaiLaiTheLoai"
+        Me.txtTaiLaiTheLoai.Size = New System.Drawing.Size(113, 21)
+        Me.txtTaiLaiTheLoai.TabIndex = 31
+        Me.txtTaiLaiTheLoai.Text = "Tải lại"
+        '
+        'txtTimKiemTheLoai
+        '
+        Me.txtTimKiemTheLoai.Location = New System.Drawing.Point(87, 26)
+        Me.txtTimKiemTheLoai.Name = "txtTimKiemTheLoai"
+        Me.txtTimKiemTheLoai.Size = New System.Drawing.Size(139, 20)
+        Me.txtTimKiemTheLoai.TabIndex = 30
+        '
+        'GroupControl2
+        '
+        Me.GroupControl2.Controls.Add(Me.LabelControl11)
+        Me.GroupControl2.Controls.Add(Me.btnTaiLaiTacGia)
+        Me.GroupControl2.Controls.Add(Me.grcTacGia)
+        Me.GroupControl2.Controls.Add(Me.txtTimKiemTacGia)
+        Me.GroupControl2.Location = New System.Drawing.Point(5, 94)
+        Me.GroupControl2.Name = "GroupControl2"
+        Me.GroupControl2.Size = New System.Drawing.Size(350, 191)
+        Me.GroupControl2.TabIndex = 35
+        Me.GroupControl2.Text = "Chọn tác giả"
+        '
+        'LabelControl11
+        '
+        Me.LabelControl11.Appearance.Image = CType(resources.GetObject("LabelControl11.Appearance.Image"), System.Drawing.Image)
+        Me.LabelControl11.Appearance.Options.UseImage = True
+        Me.LabelControl11.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.LabelControl11.Location = New System.Drawing.Point(14, 27)
+        Me.LabelControl11.Name = "LabelControl11"
+        Me.LabelControl11.Size = New System.Drawing.Size(61, 20)
+        Me.LabelControl11.TabIndex = 29
+        Me.LabelControl11.Text = "Tìm kiếm"
+        '
+        'btnTaiLaiTacGia
+        '
+        Me.btnTaiLaiTacGia.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.btnTaiLaiTacGia.ImageOptions.ImageUri.Uri = "Reset;Size16x16;Office2013"
+        Me.btnTaiLaiTacGia.Location = New System.Drawing.Point(231, 26)
+        Me.btnTaiLaiTacGia.Name = "btnTaiLaiTacGia"
+        Me.btnTaiLaiTacGia.Size = New System.Drawing.Size(113, 21)
+        Me.btnTaiLaiTacGia.TabIndex = 28
+        Me.btnTaiLaiTacGia.Text = "Tải lại"
+        '
+        'grcTacGia
+        '
+        Me.grcTacGia.Location = New System.Drawing.Point(5, 53)
+        Me.grcTacGia.MainView = Me.grvTacGia
+        Me.grcTacGia.Name = "grcTacGia"
+        Me.grcTacGia.Size = New System.Drawing.Size(347, 133)
+        Me.grcTacGia.TabIndex = 22
+        Me.grcTacGia.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvTacGia})
+        '
+        'grvTacGia
+        '
+        Me.grvTacGia.GridControl = Me.grcTacGia
+        Me.grvTacGia.Name = "grvTacGia"
+        '
+        'txtTimKiemTacGia
+        '
+        Me.txtTimKiemTacGia.Location = New System.Drawing.Point(81, 27)
+        Me.txtTimKiemTacGia.Name = "txtTimKiemTacGia"
+        Me.txtTimKiemTacGia.Size = New System.Drawing.Size(139, 20)
+        Me.txtTimKiemTacGia.TabIndex = 27
         '
         'grvDanhSachSach
         '
@@ -393,16 +428,16 @@ Partial Class ucQuanLySach
         '
         'grcDanhSachSach
         '
-        Me.grcDanhSachSach.Location = New System.Drawing.Point(13, 294)
+        Me.grcDanhSachSach.Location = New System.Drawing.Point(13, 416)
         Me.grcDanhSachSach.MainView = Me.grvDanhSachSach
         Me.grcDanhSachSach.Name = "grcDanhSachSach"
-        Me.grcDanhSachSach.Size = New System.Drawing.Size(879, 235)
+        Me.grcDanhSachSach.Size = New System.Drawing.Size(879, 179)
         Me.grcDanhSachSach.TabIndex = 35
         Me.grcDanhSachSach.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grvDanhSachSach})
         '
         'txtTimKiem
         '
-        Me.txtTimKiem.Location = New System.Drawing.Point(77, 10)
+        Me.txtTimKiem.Location = New System.Drawing.Point(77, 6)
         Me.txtTimKiem.Name = "txtTimKiem"
         Me.txtTimKiem.Size = New System.Drawing.Size(142, 20)
         Me.txtTimKiem.TabIndex = 18
@@ -410,7 +445,7 @@ Partial Class ucQuanLySach
         'lueLocTheLoai
         '
         Me.lueLocTheLoai.EditValue = " "
-        Me.lueLocTheLoai.Location = New System.Drawing.Point(434, 10)
+        Me.lueLocTheLoai.Location = New System.Drawing.Point(434, 6)
         Me.lueLocTheLoai.Name = "lueLocTheLoai"
         Me.lueLocTheLoai.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueLocTheLoai.Size = New System.Drawing.Size(116, 20)
@@ -421,7 +456,7 @@ Partial Class ucQuanLySach
         Me.LabelControl10.Appearance.Image = CType(resources.GetObject("LabelControl10.Appearance.Image"), System.Drawing.Image)
         Me.LabelControl10.Appearance.Options.UseImage = True
         Me.LabelControl10.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.LabelControl10.Location = New System.Drawing.Point(11, 10)
+        Me.LabelControl10.Location = New System.Drawing.Point(11, 6)
         Me.LabelControl10.Name = "LabelControl10"
         Me.LabelControl10.Size = New System.Drawing.Size(61, 20)
         Me.LabelControl10.TabIndex = 24
@@ -431,7 +466,7 @@ Partial Class ucQuanLySach
         '
         Me.btnTaiLai.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btnTaiLai.ImageOptions.ImageUri.Uri = "Reset;Size16x16;Office2013"
-        Me.btnTaiLai.Location = New System.Drawing.Point(225, 10)
+        Me.btnTaiLai.Location = New System.Drawing.Point(225, 6)
         Me.btnTaiLai.Name = "btnTaiLai"
         Me.btnTaiLai.Size = New System.Drawing.Size(94, 20)
         Me.btnTaiLai.TabIndex = 22
@@ -440,7 +475,7 @@ Partial Class ucQuanLySach
         'lueLocTacGia
         '
         Me.lueLocTacGia.EditValue = " "
-        Me.lueLocTacGia.Location = New System.Drawing.Point(650, 10)
+        Me.lueLocTacGia.Location = New System.Drawing.Point(650, 6)
         Me.lueLocTacGia.Name = "lueLocTacGia"
         Me.lueLocTacGia.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueLocTacGia.Size = New System.Drawing.Size(116, 20)
@@ -449,7 +484,7 @@ Partial Class ucQuanLySach
         'lueLocTrangThai
         '
         Me.lueLocTrangThai.EditValue = " "
-        Me.lueLocTrangThai.Location = New System.Drawing.Point(650, 36)
+        Me.lueLocTrangThai.Location = New System.Drawing.Point(650, 32)
         Me.lueLocTrangThai.Name = "lueLocTrangThai"
         Me.lueLocTrangThai.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueLocTrangThai.Size = New System.Drawing.Size(116, 20)
@@ -458,7 +493,7 @@ Partial Class ucQuanLySach
         'dteLocNamXuatBan
         '
         Me.dteLocNamXuatBan.EditValue = Nothing
-        Me.dteLocNamXuatBan.Location = New System.Drawing.Point(434, 35)
+        Me.dteLocNamXuatBan.Location = New System.Drawing.Point(434, 31)
         Me.dteLocNamXuatBan.Name = "dteLocNamXuatBan"
         Me.dteLocNamXuatBan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dteLocNamXuatBan.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -467,7 +502,7 @@ Partial Class ucQuanLySach
         '
         'ckeTheLoai
         '
-        Me.ckeTheLoai.Location = New System.Drawing.Point(344, 10)
+        Me.ckeTheLoai.Location = New System.Drawing.Point(344, 6)
         Me.ckeTheLoai.Name = "ckeTheLoai"
         Me.ckeTheLoai.Properties.Caption = "Thể loại"
         Me.ckeTheLoai.Size = New System.Drawing.Size(75, 19)
@@ -475,7 +510,7 @@ Partial Class ucQuanLySach
         '
         'ckeNamXuatBan
         '
-        Me.ckeNamXuatBan.Location = New System.Drawing.Point(344, 35)
+        Me.ckeNamXuatBan.Location = New System.Drawing.Point(344, 31)
         Me.ckeNamXuatBan.Name = "ckeNamXuatBan"
         Me.ckeNamXuatBan.Properties.Caption = "Năm xuất bản"
         Me.ckeNamXuatBan.Size = New System.Drawing.Size(90, 19)
@@ -483,7 +518,7 @@ Partial Class ucQuanLySach
         '
         'ckeTacGia
         '
-        Me.ckeTacGia.Location = New System.Drawing.Point(572, 10)
+        Me.ckeTacGia.Location = New System.Drawing.Point(572, 6)
         Me.ckeTacGia.Name = "ckeTacGia"
         Me.ckeTacGia.Properties.Caption = "Tác giả"
         Me.ckeTacGia.Size = New System.Drawing.Size(75, 19)
@@ -491,7 +526,7 @@ Partial Class ucQuanLySach
         '
         'ckeTrangThai
         '
-        Me.ckeTrangThai.Location = New System.Drawing.Point(572, 35)
+        Me.ckeTrangThai.Location = New System.Drawing.Point(572, 31)
         Me.ckeTrangThai.Name = "ckeTrangThai"
         Me.ckeTrangThai.Properties.Caption = "Trạng thái"
         Me.ckeTrangThai.Size = New System.Drawing.Size(75, 19)
@@ -500,7 +535,7 @@ Partial Class ucQuanLySach
         'btnLoc
         '
         Me.btnLoc.ImageOptions.ImageUri.Uri = "Filter;Size16x16;Office2013"
-        Me.btnLoc.Location = New System.Drawing.Point(772, 11)
+        Me.btnLoc.Location = New System.Drawing.Point(772, 7)
         Me.btnLoc.Name = "btnLoc"
         Me.btnLoc.Size = New System.Drawing.Size(85, 45)
         Me.btnLoc.TabIndex = 36
@@ -523,15 +558,22 @@ Partial Class ucQuanLySach
         Me.PanelControl2.Controls.Add(Me.LabelControl10)
         Me.PanelControl2.Controls.Add(Me.lueLocTheLoai)
         Me.PanelControl2.Controls.Add(Me.txtTimKiem)
-        Me.PanelControl2.Location = New System.Drawing.Point(13, 223)
+        Me.PanelControl2.Location = New System.Drawing.Point(13, 352)
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(879, 65)
+        Me.PanelControl2.Size = New System.Drawing.Size(879, 58)
         Me.PanelControl2.TabIndex = 39
+        '
+        'txtFileName
+        '
+        Me.txtFileName.Location = New System.Drawing.Point(159, 31)
+        Me.txtFileName.Name = "txtFileName"
+        Me.txtFileName.Size = New System.Drawing.Size(60, 20)
+        Me.txtFileName.TabIndex = 45
         '
         'btnIn
         '
         Me.btnIn.ImageOptions.ImageUri.Uri = "Print;Size16x16;Office2013"
-        Me.btnIn.Location = New System.Drawing.Point(225, 36)
+        Me.btnIn.Location = New System.Drawing.Point(225, 32)
         Me.btnIn.Name = "btnIn"
         Me.btnIn.Size = New System.Drawing.Size(94, 20)
         Me.btnIn.TabIndex = 43
@@ -540,7 +582,7 @@ Partial Class ucQuanLySach
         'btnChoosePath
         '
         Me.btnChoosePath.EnterMoveNextControl = True
-        Me.btnChoosePath.Location = New System.Drawing.Point(11, 35)
+        Me.btnChoosePath.Location = New System.Drawing.Point(11, 31)
         Me.btnChoosePath.Name = "btnChoosePath"
         Me.btnChoosePath.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.btnChoosePath.Size = New System.Drawing.Size(142, 20)
@@ -606,13 +648,6 @@ Partial Class ucQuanLySach
         Me.xfbChoosePath.SelectedPath = "D:\LibraryManagement"
         Me.xfbChoosePath.Title = "Chọn thư mục lưu dữ liệu sách"
         '
-        'txtFileName
-        '
-        Me.txtFileName.Location = New System.Drawing.Point(159, 35)
-        Me.txtFileName.Name = "txtFileName"
-        Me.txtFileName.Size = New System.Drawing.Size(60, 20)
-        Me.txtFileName.TabIndex = 45
-        '
         'ucQuanLySach
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -622,7 +657,7 @@ Partial Class ucQuanLySach
         Me.Controls.Add(Me.grcDanhSachSach)
         Me.Controls.Add(Me.PanelControl1)
         Me.Name = "ucQuanLySach"
-        Me.Size = New System.Drawing.Size(908, 576)
+        Me.Size = New System.Drawing.Size(908, 598)
         CType(Me.txtTenSach.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTriGia.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dteNgayNhap.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -630,20 +665,25 @@ Partial Class ucQuanLySach
         CType(Me.dteNamXuatBan.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dteNamXuatBan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtMaSach.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PanelControl4, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelControl4.ResumeLayout(False)
-        Me.PanelControl4.PerformLayout()
-        CType(Me.gleTacGia.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridLookUpEdit1View, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelControl3.ResumeLayout(False)
-        Me.PanelControl3.PerformLayout()
-        CType(Me.gleTheLoai.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtNhaXuatBan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         Me.PanelControl1.PerformLayout()
+        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl3.ResumeLayout(False)
+        Me.PanelControl3.PerformLayout()
+        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl3.ResumeLayout(False)
+        Me.GroupControl3.PerformLayout()
+        CType(Me.grcTheLoai, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grvTheLoai, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtTimKiemTheLoai.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl2.ResumeLayout(False)
+        Me.GroupControl2.PerformLayout()
+        CType(Me.grcTacGia, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grvTacGia, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtTimKiemTacGia.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grvDanhSachSach, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grcDanhSachSach, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTimKiem.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -659,10 +699,10 @@ Partial Class ucQuanLySach
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
         Me.PanelControl2.PerformLayout()
+        CType(Me.txtFileName.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnChoosePath.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl5.ResumeLayout(False)
-        CType(Me.txtFileName.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -678,20 +718,6 @@ Partial Class ucQuanLySach
     Friend WithEvents dteNamXuatBan As DevExpress.XtraEditors.DateEdit
     Friend WithEvents lblMaSach As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txtMaSach As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents PanelControl4 As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents gleTacGia As DevExpress.XtraEditors.GridLookUpEdit
-    Friend WithEvents GridLookUpEdit1View As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents btnXoaTacGia As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents btnThemTacGia As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents lblTacGia As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents PanelControl3 As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents gleTheLoai As DevExpress.XtraEditors.GridLookUpEdit
-    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents btnXoaTheLoai As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents btnThemTheLoai As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents lblTheLoai As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txtNhaXuatBan As DevExpress.XtraEditors.TextEdit
     Friend WithEvents lblNamXuatBan As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
@@ -720,4 +746,21 @@ Partial Class ucQuanLySach
     Friend WithEvents btnChoosePath As DevExpress.XtraEditors.ButtonEdit
     Friend WithEvents xfbChoosePath As DevExpress.XtraEditors.XtraFolderBrowserDialog
     Friend WithEvents txtFileName As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents PanelControl3 As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents LabelControl9 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents lblTacGia As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents lblTheLoai As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents grcTheLoai As DevExpress.XtraGrid.GridControl
+    Friend WithEvents grvTheLoai As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents txtTaiLaiTheLoai As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents txtTimKiemTheLoai As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents LabelControl11 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents btnTaiLaiTacGia As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents grcTacGia As DevExpress.XtraGrid.GridControl
+    Friend WithEvents grvTacGia As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents txtTimKiemTacGia As DevExpress.XtraEditors.TextEdit
 End Class

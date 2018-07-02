@@ -25,6 +25,7 @@ Public Class SachTraTreDAL
         sqlQuery &= "FROM [tblSach], [tblPhieuMuon], [tblChiTietPhieuMuon], [tblPhieuTra], [tblChiTietPhieuTra] "
         sqlQuery &= "WHERE [SoNgayTraTre] > 0 "
         sqlQuery &= "      AND [tblSach].[MaSach] = [tblChiTietPhieuMuon].[MaSach] "
+        sqlQuery &= "      AND [tblChiTietPhieuTra].[MaSach] = [tblChiTietPhieuMuon].[MaSach] "
         sqlQuery &= "      AND [tblPhieuMuon].[MaPhieuMuon] = [tblChiTietPhieuMuon].[MaPhieuMuon] "
         sqlQuery &= "      AND [tblChiTietPhieuMuon].[MaPhieuMuon] = [tblChiTietPhieuTra].[MaPhieuMuon] "
         sqlQuery &= "      AND [tblChiTietPhieuTra].[MaPhieuTra] = [tblPhieuTra].[MaPhieuTra] "

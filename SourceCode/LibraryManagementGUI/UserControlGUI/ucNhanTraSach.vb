@@ -387,7 +387,7 @@ Public Class ucNhanTraSach
             End If
         Next
         GlobalControl.ChangeStatus("Đã Lập phiếu mượn")
-        If MessageBox.Show("Đã Lập phiếu mượn. Bạn có muốn In Phiếu mượn?", "In phiếu mượn", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+        If MessageBox.Show("Đã Lập phiếu trả sách. Bạn có muốn In Phiếu trả sách?", "In phiếu trả", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             Dim hienThiSachBUS = New HienThiSachBUS()
             Dim listHienThiSach As List(Of HienThiSachDTO)
             listHienThiSach = hienThiSachBUS.ConvertListData(listSachChon)

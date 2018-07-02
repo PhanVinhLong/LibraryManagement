@@ -65,6 +65,11 @@ Public Class ucQuanLySach
             Return
         End If
 
+        ' Load grid tác giả
+        LoadGridTaGia(listTacGia)
+        ' Load grid thể loại
+        LoadGridTheLoai(listTheLoai)
+
         lueLocTheLoai.Properties.ShowHeader = False
         lueLocTheLoai.Properties.ShowFooter = False
         lueLocTheLoai.Properties.DataSource = New BindingSource(listTheLoai, String.Empty)
@@ -73,14 +78,6 @@ Public Class ucQuanLySach
         lueLocTheLoai.Properties.TextEditStyle = TextEditStyles.Standard
         lueLocTheLoai.Properties.SearchMode = SearchMode.AutoFilter
         '----
-        gleTacGia.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup
-        gleTacGia.Properties.ShowFooter = False
-        gleTacGia.Properties.DataSource = New BindingSource(listTacGia, String.Empty)
-        gleTacGia.Properties.DisplayMember = "TenTacGia"
-        gleTacGia.Properties.ValueMember = "MaTacGia"
-        gleTacGia.Properties.TextEditStyle = TextEditStyles.Standard
-        gleTacGia.Properties.View.OptionsView.ShowAutoFilterRow = SearchMode.AutoFilter
-        '----
         lueLocTacGia.Properties.ShowHeader = False
         lueLocTacGia.Properties.ShowFooter = False
         lueLocTacGia.Properties.DataSource = New BindingSource(listTacGia, String.Empty)
@@ -88,14 +85,6 @@ Public Class ucQuanLySach
         lueLocTacGia.Properties.ValueMember = "MaTacGia"
         lueLocTacGia.Properties.TextEditStyle = TextEditStyles.Standard
         lueLocTacGia.Properties.SearchMode = SearchMode.AutoFilter
-        '----
-        gleTheLoai.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup
-        gleTheLoai.Properties.ShowFooter = False
-        gleTheLoai.Properties.DataSource = New BindingSource(listTheLoai, String.Empty)
-        gleTheLoai.Properties.DisplayMember = "TenTheLoai"
-        gleTheLoai.Properties.ValueMember = "MaTheLoai"
-        gleTheLoai.Properties.TextEditStyle = TextEditStyles.Standard
-        gleTheLoai.Properties.View.OptionsView.ShowAutoFilterRow = SearchMode.AutoFilter
         '----
         lueLocTrangThai.Properties.ShowHeader = False
         lueLocTrangThai.Properties.ShowFooter = False
@@ -136,8 +125,6 @@ Public Class ucQuanLySach
         dteNgayNhap.EditValue = Now
 
         ' Đặt giá trị mặc định
-        gleTacGia.EditValue = 1
-        gleTheLoai.EditValue = 1
         lueLocTheLoai.EditValue = 1
         lueLocTrangThai.EditValue = 1
         lueLocTacGia.EditValue = 1
@@ -149,7 +136,7 @@ Public Class ucQuanLySach
         btnChoosePath.Text = "D:\LibraryManagement\"
 
         ' Text mặc định cho filename
-        txtFileName.EditValue = "DuLieuSach-" & Now.Day & "-" & Now.Month & "-" & Now.Year & ".xls"
+        txtFileName.EditValue = "DuLieuSach-" & Now.Day & "-" & Now.Month & "-" & Now.Year & ""
     End Sub
 
     Private Sub CaiDatGridControl(listSach As List(Of SachDTO))
@@ -193,6 +180,40 @@ Public Class ucQuanLySach
         ' Load tác giả
         tacGiaBUS.SelectByMaSach(sach.MaSach, lTacGia)
         theLoaiBUS.SelectByMaSach(sach.MaSach, lTheLoai)
+
+        Dim listIndex = New List(Of Integer)
+        ' Select tác giả trong grid
+        Dim index = 0
+        listIndex.Clear()
+        grvTacGia.ClearSelection()
+        For Each rowData As TacGiaDTO In grvTacGia.DataSource
+            For Each tacGia In lTacGia
+                If rowData.MaTacGia = tacGia.MaTacGia Then
+                    listIndex.Add(index)
+                End If
+            Next
+            index += 1
+        Next
+        For Each i In listIndex
+            grvTacGia.SelectRow(i)
+        Next
+
+        ' Select thể loại trong grid
+        index = 0
+        listIndex.Clear()
+        grvTheLoai.ClearSelection()
+        For Each rowData As TheLoaiDTO In grvTheLoai.DataSource
+            For Each theLoai In lTheLoai
+                If rowData.MaTheLoai = theLoai.MaTheLoai Then
+                    listIndex.Add(index)
+                End If
+            Next
+            index += 1
+        Next
+        For Each i In listIndex
+            grvTheLoai.SelectRow(i)
+        Next
+
         UpdateTacGia()
         UpdateTheLoai()
     End Sub
@@ -206,7 +227,6 @@ Public Class ucQuanLySach
             LoadListSach()
             sach = sachBUS.SelectByMaSach(CType(grvDanhSachSach.GetRow(currenRowIndex), HienThiSachDTO).MaSach)
             LoadSach(sach)
-            grvDanhSachSach.FocusedRowHandle = currenRowIndex
         End If
 
         ' Xoá ô tìm kiếm
@@ -288,6 +308,8 @@ Public Class ucQuanLySach
     End Sub
 
     Private Sub grvDanhSachSach_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles grvDanhSachSach.FocusedRowChanged
+        grvTheLoai.ClearSelection()
+        grvTacGia.ClearSelection()
         ' Lấy dòng hiện tại
         Dim currenRowIndex As Integer
         currenRowIndex = grvDanhSachSach.FocusedRowHandle
@@ -334,42 +356,6 @@ Public Class ucQuanLySach
 
         ' Lọc data
         LoadListSach(iMaTheLoai, iMaTacGia, iMaTrangThai, iNamXuatBan)
-    End Sub
-
-    Private Sub btnThemTacGia_Click(sender As Object, e As EventArgs) Handles btnThemTacGia.Click
-        Dim tacGia As TacGiaDTO = tacGiaBUS.SelectByMaTacGia(gleTacGia.EditValue)
-        For Each tg In lTacGia
-            If tacGia.MaTacGia = tg.MaTacGia Then
-                Return
-            End If
-        Next
-        lTacGia.Add(tacGia)
-        UpdateTacGia()
-    End Sub
-
-    Private Sub btnXoaTacGia_Click(sender As Object, e As EventArgs) Handles btnXoaTacGia.Click
-        If lTacGia.Count > 0 Then
-            lTacGia.Remove(lTacGia.Last)
-            UpdateTacGia()
-        End If
-    End Sub
-
-    Private Sub btnThemTheLoai_Click(sender As Object, e As EventArgs) Handles btnThemTheLoai.Click
-        Dim theLoai As TheLoaiDTO = theLoaiBUS.SelectByMaTheLoai(gleTheLoai.EditValue)
-        For Each tl In lTheLoai
-            If theLoai.MaTheLoai = tl.MaTheLoai Then
-                Return
-            End If
-        Next
-        lTheLoai.Add(theLoai)
-        UpdateTheLoai()
-    End Sub
-
-    Private Sub btnXoaTheLoai_Click(sender As Object, e As EventArgs) Handles btnXoaTheLoai.Click
-        If lTheLoai.Count > 0 Then
-            lTheLoai.Remove(lTheLoai.Last)
-            UpdateTheLoai()
-        End If
     End Sub
 
     Private Sub btnCapNhat_Click(sender As Object, e As EventArgs) Handles btnCapNhat.Click
@@ -473,8 +459,8 @@ Public Class ucQuanLySach
                 MessageBox.Show("Thêm Chi tiết tác giả không thành công")
             End If
             Reset()
-            MessageBox.Show("Thêm Sách thành công")
-            GlobalControl.ChangeStatus("Thêm Sách thành công")
+            MessageBox.Show("Cập nhật Sách thành công")
+            GlobalControl.ChangeStatus("Cập nhật Sách thành công")
         End If
     End Sub
 
@@ -484,6 +470,10 @@ Public Class ucQuanLySach
         currentRowIndex = grvDanhSachSach.FocusedRowHandle
 
         If (-1 < currentRowIndex < grvDanhSachSach.RowCount) Then
+            If sachBUS.DemPhieuMuon(txtMaSach.EditValue) > 0 Then
+                MessageBox.Show("Không thể xoá sách. Còn phiếu mượn/trả của sách chưa được xoá", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
             Select Case MessageBox.Show("Bạn chắc chắn muốn xoá Sách " & txtTenSach.EditValue & " với Mã số " & txtMaSach.EditValue & "?", "Xoá Sách", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
                 Case DialogResult.Yes
                     Try
@@ -514,12 +504,14 @@ Public Class ucQuanLySach
     End Sub
 
     Private Sub btnXoaLichSuMuon_Click(sender As Object, e As EventArgs) Handles btnXoaLichSuMuon.Click
-        If MessageBox.Show("Bạn có chắc chắn muốn xoá Lịch sử mượn và trả của sách " & sach.TenSach & " với mã số " & sach.MaSach & "?", "Xoá lịch sử mượn/ trả", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
+        If MessageBox.Show("Bạn có chắc chắn muốn xoá Lịch sử mượn và trả của sách " & sach.TenSach & " với mã số " & sach.MaSach & "?", "Xoá lịch sử mượn/ trả", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             Dim result = sachBUS.DeleteLichSuMuonTra(sach.MaSach)
             If result.FlagResult = False Then
                 MessageBox.Show("Xoá lịch sử không thành công")
                 GlobalControl.ChangeStatus("Xoá lịch sử không thành công")
             Else
+                sach.MaTrangThai = 1
+                sachBUS.Update(sach)
                 MessageBox.Show("Xoá lịch sử thành công")
                 GlobalControl.ChangeStatus("Xoá lịch sử thành công")
             End If
@@ -586,9 +578,9 @@ Public Class ucQuanLySach
 
         ' Lưu file
         Try
-            xlWorkBook.SaveAs(btnChoosePath.EditValue & txtFileName.EditValue, XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue)
+            xlWorkBook.SaveAs(btnChoosePath.EditValue & txtFileName.EditValue & ".xls", XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue)
             If MessageBox.Show("Xuất file exel thành công. Bạn có muốn mở file?", "Thông tin", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
-                Process.Start(btnChoosePath.EditValue & txtFileName.EditValue)
+                Process.Start(btnChoosePath.EditValue & txtFileName.EditValue & ".xls")
             End If
             GlobalControl.ChangeStatus("Xuất file exel thành công")
         Catch
@@ -628,4 +620,92 @@ Public Class ucQuanLySach
         Next
         Return table
     End Function
+
+    Private Sub grvTacGia_SelectionChanged(sender As Object, e As DevExpress.Data.SelectionChangedEventArgs) Handles grvTacGia.SelectionChanged
+        lblTacGia.Text = String.Empty
+        lTacGia.Clear()
+        For Each rowIndex As Integer In grvTacGia.GetSelectedRows
+            Dim tacGia = tacGiaBUS.SelectByMaTacGia(CType(grvTacGia.GetRow(rowIndex), TacGiaDTO).MaTacGia)
+            lTacGia.Add(tacGia)
+            lblTacGia.Text &= tacGia.TenTacGia & " (" & tacGia.MaTacGia & "), "
+        Next
+    End Sub
+
+    Private Sub grvTheLoai_SelectionChanged(sender As Object, e As DevExpress.Data.SelectionChangedEventArgs) Handles grvTheLoai.SelectionChanged
+        lblTheLoai.Text = String.Empty
+        lTheLoai.Clear()
+        For Each rowIndex As Integer In grvTheLoai.GetSelectedRows
+            Dim theLoai = theLoaiBUS.SelectByMaTheLoai(CType(grvTheLoai.GetRow(rowIndex), TheLoaiDTO).MaTheLoai)
+            lTheLoai.Add(theLoai)
+            lblTheLoai.Text &= theLoai.TenTheLoai & " (" & theLoai.MaTheLoai & "), "
+        Next
+    End Sub
+
+    Private Sub txtTimKiemTacGia_EditValueChanged(sender As Object, e As EventArgs) Handles txtTimKiemTacGia.EditValueChanged
+        Dim filterString As String
+        filterString = String.Empty
+        filterString = """" & txtTimKiemTacGia.EditValue & """"
+        grvTacGia.ApplyFindFilter(filterString)
+    End Sub
+
+    Private Sub txtTimKiemTheLoai_EditValueChanged(sender As Object, e As EventArgs) Handles txtTimKiemTheLoai.EditValueChanged
+        Dim filterString As String
+        filterString = String.Empty
+        filterString = """" & txtTimKiemTheLoai.EditValue & """"
+        grvTheLoai.ApplyFindFilter(filterString)
+    End Sub
+
+    Private Sub btnTaiLaiTacGia_Click(sender As Object, e As EventArgs) Handles btnTaiLaiTacGia.Click
+        ' Lấy danh sách Tác giả
+        Dim listTacGia As List(Of TacGiaDTO) = New List(Of TacGiaDTO)
+        result = tacGiaBUS.SelectAll(listTacGia)
+        If (result.FlagResult = False) Then
+            MessageBox.Show("Lấy danh sách Tác giả không thành công.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            System.Console.WriteLine(result.SystemMessage)
+            Return
+        End If
+        ' Load grid tác giả
+        LoadGridTaGia(listTacGia)
+    End Sub
+
+    Private Sub txtTaiLaiTheLoai_Click(sender As Object, e As EventArgs) Handles txtTaiLaiTheLoai.Click
+        ' Lấy danh sách Thể loại
+        Dim listTheLoai As List(Of TheLoaiDTO) = New List(Of TheLoaiDTO)
+        result = theLoaiBUS.SelectAll(listTheLoai)
+        If (result.FlagResult = False) Then
+            MessageBox.Show("Lấy danh sách Thể loại không thành công.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            System.Console.WriteLine(result.SystemMessage)
+            Return
+        End If
+        ' Load grid thể loại
+        LoadGridTheLoai(listTheLoai)
+    End Sub
+
+    Private Sub LoadGridTaGia(listTacGia As List(Of TacGiaDTO))
+        ' Cài đặt cho GridControl và GridView
+        grvTacGia.BestFitColumns()
+        grvTacGia.Columns.Clear()
+        grcTacGia.DataSource = listTacGia
+        grvTacGia.OptionsBehavior.Editable = False
+        grvTacGia.OptionsFind.AlwaysVisible = False
+        grvTacGia.OptionsView.ShowGroupPanel = False
+        grvTacGia.OptionsFind.FindDelay = 0
+        grvTacGia.BestFitColumns()
+        grvTacGia.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect ' Thêm dòng check cho multiselect
+        grvTacGia.OptionsSelection.MultiSelect = True ' Bật chế độ multiselect
+    End Sub
+
+    Private Sub LoadGridTheLoai(listTheLoai As List(Of TheLoaiDTO))
+        ' Cài đặt cho GridControl và GridView
+        grvTheLoai.BestFitColumns()
+        grvTheLoai.Columns.Clear()
+        grcTheLoai.DataSource = listTheLoai
+        grvTheLoai.OptionsBehavior.Editable = False
+        grvTheLoai.OptionsFind.AlwaysVisible = False
+        grvTheLoai.OptionsView.ShowGroupPanel = False
+        grvTheLoai.OptionsFind.FindDelay = 0
+        grvTheLoai.BestFitColumns()
+        grvTheLoai.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect ' Thêm dòng check cho multiselect
+        grvTheLoai.OptionsSelection.MultiSelect = True ' Bật chế độ multiselect
+    End Sub
 End Class

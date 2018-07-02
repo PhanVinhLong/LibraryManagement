@@ -67,7 +67,7 @@ Public Class ucQuanLyDocGia
         btnChoosePath.Text = "D:\LibraryManagement\"
 
         ' Text mặc định cho filename
-        txtFileName.EditValue = "DuLieuDocGia-" & Now.Day & "-" & Now.Month & "-" & Now.Year & ".xls"
+        txtFileName.EditValue = "DuLieuDocGia-" & Now.Day & "-" & Now.Month & "-" & Now.Year
     End Sub
 
     Private Sub CaiDatGridControl(listDocGia As List(Of DocGiaDTO))
@@ -378,9 +378,9 @@ Public Class ucQuanLyDocGia
 
         ' Lưu file
         Try
-            xlWorkBook.SaveAs(btnChoosePath.EditValue & txtFileName.EditValue, XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue)
+            xlWorkBook.SaveAs(btnChoosePath.EditValue & txtFileName.EditValue & ".xls", XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue)
             If MessageBox.Show("Xuất file exel thành công. Bạn có muốn mở file?", "Thông tin", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
-                Process.Start(btnChoosePath.EditValue & txtFileName.EditValue)
+                Process.Start(btnChoosePath.EditValue & txtFileName.EditValue & ".xls")
             End If
             GlobalControl.ChangeStatus("Xuất file exel thành công.")
         Catch

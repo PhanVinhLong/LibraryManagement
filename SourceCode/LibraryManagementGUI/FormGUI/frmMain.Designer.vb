@@ -23,7 +23,6 @@ Partial Class frmMain
         Me.btnThoat = New DevExpress.XtraBars.BarButtonItem()
         Me.btnLapTheDocGia = New DevExpress.XtraBars.BarButtonItem()
         Me.btnTiepNhanSachMoi = New DevExpress.XtraBars.BarButtonItem()
-        Me.btnTraCuuSach = New DevExpress.XtraBars.BarButtonItem()
         Me.btnChoMuonSach = New DevExpress.XtraBars.BarButtonItem()
         Me.btnQuanLyDocGia = New DevExpress.XtraBars.BarButtonItem()
         Me.btnQuanLySach = New DevExpress.XtraBars.BarButtonItem()
@@ -64,7 +63,7 @@ Partial Class frmMain
         Me.RibbonPageGroup12 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.rpgQuanLyNhanVien = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage4 = New DevExpress.XtraBars.Ribbon.RibbonPage()
-        Me.RibbonPageGroup10 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.rpgThayDoiQuyDinh = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup8 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonStatusBar1 = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.nbcTruyCapNhanh = New DevExpress.XtraNavBar.NavBarControl()
@@ -79,6 +78,7 @@ Partial Class frmMain
         Me.xtcMain = New DevExpress.XtraTab.XtraTabControl()
         Me.BunifuCheckbox1 = New Bunifu.Framework.UI.BunifuCheckbox()
         Me.btnCaiDatTaiKhoan = New DevExpress.XtraBars.BarButtonItem()
+        Me.RibbonPage7 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         CType(Me.rbcMain, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nbcTruyCapNhanh, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.xtcMain, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,11 +87,11 @@ Partial Class frmMain
         'rbcMain
         '
         Me.rbcMain.ExpandCollapseItem.Id = 0
-        Me.rbcMain.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.rbcMain.ExpandCollapseItem, Me.btnThoat, Me.btnLapTheDocGia, Me.btnTiepNhanSachMoi, Me.btnTraCuuSach, Me.btnChoMuonSach, Me.btnQuanLyDocGia, Me.btnQuanLySach, Me.btnNhanTraSach, Me.btnThemLoaiDocGia, Me.btnQuanLyLoaiDocGia, Me.btnThemTheLoai, Me.btnQuanLyTheLoai, Me.btnThemTacGia, Me.btnQuanLyTacGia, Me.SkinRibbonGalleryBarItem, Me.BarButtonItem1, Me.btnThongTin, Me.BarHeaderItem1, Me.BarStaticItem1, Me.txtLoaiTaiKhoan, Me.btnThayDoiQuyDinh, Me.btnThongKeTinhHinh, Me.btnThongKeSachTraTre, Me.txtThongTin, Me.btnThongTinTaiKhoan, Me.btnQuanLyNhanVien, Me.txtTenTaiKhoan})
+        Me.rbcMain.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.rbcMain.ExpandCollapseItem, Me.btnThoat, Me.btnLapTheDocGia, Me.btnTiepNhanSachMoi, Me.btnChoMuonSach, Me.btnQuanLyDocGia, Me.btnQuanLySach, Me.btnNhanTraSach, Me.btnThemLoaiDocGia, Me.btnQuanLyLoaiDocGia, Me.btnThemTheLoai, Me.btnQuanLyTheLoai, Me.btnThemTacGia, Me.btnQuanLyTacGia, Me.SkinRibbonGalleryBarItem, Me.BarButtonItem1, Me.btnThongTin, Me.BarHeaderItem1, Me.BarStaticItem1, Me.txtLoaiTaiKhoan, Me.btnThayDoiQuyDinh, Me.btnThongKeTinhHinh, Me.btnThongKeSachTraTre, Me.txtThongTin, Me.btnThongTinTaiKhoan, Me.btnQuanLyNhanVien, Me.txtTenTaiKhoan})
         Me.rbcMain.Location = New System.Drawing.Point(0, 0)
         Me.rbcMain.MaxItemId = 43
         Me.rbcMain.Name = "rbcMain"
-        Me.rbcMain.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage3, Me.RibbonPage5, Me.RibbonPage6, Me.RibbonPage4})
+        Me.rbcMain.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage3, Me.RibbonPage7, Me.RibbonPage5, Me.RibbonPage6, Me.RibbonPage4})
         Me.rbcMain.Size = New System.Drawing.Size(1054, 141)
         Me.rbcMain.StatusBar = Me.RibbonStatusBar1
         '
@@ -116,13 +116,6 @@ Partial Class frmMain
         Me.btnTiepNhanSachMoi.ImageOptions.ImageUri.Uri = "AddItem;Office2013"
         Me.btnTiepNhanSachMoi.Name = "btnTiepNhanSachMoi"
         '
-        'btnTraCuuSach
-        '
-        Me.btnTraCuuSach.Caption = "Tra cứu sách"
-        Me.btnTraCuuSach.Id = 4
-        Me.btnTraCuuSach.ImageOptions.ImageUri.Uri = "Preview;Office2013"
-        Me.btnTraCuuSach.Name = "btnTraCuuSach"
-        '
         'btnChoMuonSach
         '
         Me.btnChoMuonSach.Caption = "Cho mượn sách"
@@ -139,7 +132,7 @@ Partial Class frmMain
         '
         'btnQuanLySach
         '
-        Me.btnQuanLySach.Caption = "Quản lý sách"
+        Me.btnQuanLySach.Caption = "Quản lý và tra cứu sách"
         Me.btnQuanLySach.Id = 7
         Me.btnQuanLySach.ImageOptions.ImageUri.Uri = "Paste;Size32x32;Office2013"
         Me.btnQuanLySach.Name = "btnQuanLySach"
@@ -322,21 +315,20 @@ Partial Class frmMain
         '
         'RibbonPage3
         '
-        Me.RibbonPage3.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup3, Me.RibbonPageGroup4, Me.RibbonPageGroup6, Me.RibbonPageGroup7})
+        Me.RibbonPage3.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup3, Me.RibbonPageGroup6, Me.RibbonPageGroup7})
         Me.RibbonPage3.Name = "RibbonPage3"
         Me.RibbonPage3.Text = "Sách"
         '
         'RibbonPageGroup3
         '
         Me.RibbonPageGroup3.ItemLinks.Add(Me.btnTiepNhanSachMoi)
-        Me.RibbonPageGroup3.ItemLinks.Add(Me.btnTraCuuSach)
         Me.RibbonPageGroup3.ItemLinks.Add(Me.btnQuanLySach)
         Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
         Me.RibbonPageGroup3.Text = "Quản lý sách"
         '
         'RibbonPageGroup4
         '
-        Me.RibbonPageGroup4.ItemLinks.Add(Me.btnChoMuonSach)
+        Me.RibbonPageGroup4.ItemLinks.Add(Me.btnChoMuonSach, True)
         Me.RibbonPageGroup4.ItemLinks.Add(Me.btnNhanTraSach)
         Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
         Me.RibbonPageGroup4.Text = "Mượn trả sách"
@@ -388,15 +380,15 @@ Partial Class frmMain
         '
         'RibbonPage4
         '
-        Me.RibbonPage4.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup10, Me.RibbonPageGroup8})
+        Me.RibbonPage4.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.rpgThayDoiQuyDinh, Me.RibbonPageGroup8})
         Me.RibbonPage4.Name = "RibbonPage4"
         Me.RibbonPage4.Text = "Cài đặt"
         '
-        'RibbonPageGroup10
+        'rpgThayDoiQuyDinh
         '
-        Me.RibbonPageGroup10.ItemLinks.Add(Me.btnThayDoiQuyDinh, True)
-        Me.RibbonPageGroup10.Name = "RibbonPageGroup10"
-        Me.RibbonPageGroup10.Text = "Thay đổi quy định"
+        Me.rpgThayDoiQuyDinh.ItemLinks.Add(Me.btnThayDoiQuyDinh, True)
+        Me.rpgThayDoiQuyDinh.Name = "rpgThayDoiQuyDinh"
+        Me.rpgThayDoiQuyDinh.Text = "Thay đổi quy định"
         '
         'RibbonPageGroup8
         '
@@ -505,10 +497,17 @@ Partial Class frmMain
         Me.btnCaiDatTaiKhoan.Id = 38
         Me.btnCaiDatTaiKhoan.Name = "btnCaiDatTaiKhoan"
         '
+        'RibbonPage7
+        '
+        Me.RibbonPage7.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup4})
+        Me.RibbonPage7.Name = "RibbonPage7"
+        Me.RibbonPage7.Text = "Mượn trả"
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile
         Me.ClientSize = New System.Drawing.Size(1054, 791)
         Me.Controls.Add(Me.xtcMain)
         Me.Controls.Add(Me.nbcTruyCapNhanh)
@@ -536,7 +535,6 @@ Partial Class frmMain
     Friend WithEvents btnTiepNhanSachMoi As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPage3 As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents RibbonPageGroup3 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
-    Friend WithEvents btnTraCuuSach As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnChoMuonSach As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnQuanLyDocGia As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnQuanLySach As DevExpress.XtraBars.BarButtonItem
@@ -572,7 +570,7 @@ Partial Class frmMain
     Friend WithEvents BarStaticItem1 As DevExpress.XtraBars.BarStaticItem
     Friend WithEvents txtLoaiTaiKhoan As DevExpress.XtraBars.BarStaticItem
     Friend WithEvents btnThayDoiQuyDinh As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents RibbonPageGroup10 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents rpgThayDoiQuyDinh As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents btnThongKeTinhHinh As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPage5 As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents RibbonPageGroup11 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
@@ -586,4 +584,5 @@ Partial Class frmMain
     Friend WithEvents btnQuanLyNhanVien As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents rpgQuanLyNhanVien As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents txtTenTaiKhoan As DevExpress.XtraBars.BarStaticItem
+    Friend WithEvents RibbonPage7 As DevExpress.XtraBars.Ribbon.RibbonPage
 End Class

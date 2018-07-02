@@ -61,6 +61,10 @@ Public Class SachBUS
         Return sachDAL.SelectByCondition(iMaTheLoai, iMaTacGia, iMaTrangThai, iNamXuatBan, listSach)
     End Function
 
+    Public Function DemPhieuMuon(iMaSach As Integer) As Integer
+        Return sachDAL.DemPhieuMuon(iMaSach)
+    End Function
+
     Public Function Update(sach As SachDTO) As Result
         Return sachDAL.Update(sach)
     End Function

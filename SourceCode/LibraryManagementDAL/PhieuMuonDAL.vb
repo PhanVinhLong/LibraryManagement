@@ -112,4 +112,93 @@ Public Class PhieuMuonDAL
         End Using
         Return New Result(True)
     End Function
+
+    Public Function DemChiTiet(iMaPhieuMuon As Integer) As Integer
+        Dim sqlQuery As String = String.Empty
+        sqlQuery &= "SELECT COUNT (*) "
+        sqlQuery &= "FROM [tblPhieuMuon] AS PM, [tblChiTietPhieuMuon] AS CT "
+        sqlQuery &= "WHERE PM.[MaPhieuMuon] = CT.[MaPhieuMuon] "
+        sqlQuery &= "      AND PM.[MaPhieuMuon] = @MaPhieuMuon "
+
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand()
+                With command
+                    .Connection = connection
+                    .CommandType = CommandType.Text
+                    .CommandText = sqlQuery
+                    .Parameters.AddWithValue("@MaPhieuMuon", iMaPhieuMuon)
+                End With
+                Try
+                    connection.Open()
+                    Return command.ExecuteScalar()
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    connection.Close()
+                    Return -1
+                End Try
+            End Using
+        End Using
+    End Function
+
+    Public Function SelectAll() As List(Of PhieuMuonDTO)
+        Dim listPhieu As List(Of PhieuMuonDTO) = New List(Of PhieuMuonDTO)
+        Dim sqlQuery As String = String.Empty
+        sqlQuery &= "SELECT [MaPhieuMuon], [MaDocGia], [NgayMuon] "
+        sqlQuery &= "FROM [tblPhieuMuon] "
+
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand()
+                With command
+                    .Connection = connection
+                    .CommandType = CommandType.Text
+                    .CommandText = sqlQuery
+                End With
+                connection.Open()
+                Dim dataReader As SqlDataReader
+                dataReader = command.ExecuteReader
+                If dataReader.HasRows = True Then
+                    While dataReader.Read()
+                        listPhieu.Add(New PhieuMuonDTO(dataReader("MaPhieuMuon"), dataReader("MaDocGia"), dataReader("NgayMuon")))
+                    End While
+                End If
+            End Using
+        End Using
+        Return listPhieu
+    End Function
+
+    Public Function Delete(iMaPhieuMuon) As Result
+        Dim sqlQuery As String
+        sqlQuery = String.Empty
+
+        sqlQuery &= "DELETE FROM [tblPhieuMuon] "
+        sqlQuery &= "WHERE [MaPhieuMuon] = @MaPhieuMuon "
+
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand()
+                With command
+                    .Connection = connection
+                    .CommandType = CommandType.Text
+                    .CommandText = sqlQuery
+                    .Parameters.AddWithValue("@MaPhieuMuon", iMaPhieuMuon)
+                End With
+                Try
+                    connection.Open()
+                    command.ExecuteNonQuery()
+                Catch ex As Exception
+                    connection.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Xoá Sách không thành công!", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)
+    End Function
+
+    Public Sub DeletePhieuTrong()
+        For Each phieu In SelectAll()
+            If DemChiTiet(phieu.MaPhieuMuon) = 0 Then
+                Delete(phieu.MaPhieuMuon)
+            End If
+        Next
+    End Sub
 End Class

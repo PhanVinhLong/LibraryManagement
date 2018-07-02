@@ -290,27 +290,13 @@ Public Class SachDAL
     End Function
 
     Public Function DeleteLichSuMuonTra(iMaSach As Integer) As Result
-        Dim tacGiaSachDAL = New TacGiaSachDAL()
-        Dim theLoaiSachDAL = New TheLoaiSachDAL()
         Dim result As Result
 
-        ' Xoá chi tiết tác giả
-        result = tacGiaSachDAL.DeleteByMaSach(iMaSach)
-        If result.FlagResult = False Then
-            Return result
-        End If
-
-        ' Xoá chi tiết thể loại
-        result = theLoaiSachDAL.DeleteByMaSach(iMaSach)
-        If result.FlagResult = False Then
-            Return result
-        End If
-
-        ' Xoá sách
+        ' Xoá lịch sử mượn
         Dim sqlQuery As String
-        sqlQuery = String.Empty
 
-        sqlQuery &= "DELETE FROM [tblSach] "
+        sqlQuery = String.Empty
+        sqlQuery &= "DELETE FROM [tblChiTietPhieuMuon] "
         sqlQuery &= "WHERE [MaSach] = @MaSach "
 
         Using connection As New SqlConnection(connectionString)
@@ -327,11 +313,64 @@ Public Class SachDAL
                 Catch ex As Exception
                     connection.Close()
                     System.Console.WriteLine(ex.StackTrace)
-                    Return New Result(False, "Xoá Sách không thành công!", ex.StackTrace)
+                    Return New Result(False, "Xoá LS không thành công!", ex.StackTrace)
                 End Try
             End Using
         End Using
+
+        sqlQuery = String.Empty
+        sqlQuery &= "DELETE FROM [tblChiTietPhieuTra] "
+        sqlQuery &= "WHERE [MaSach] = @MaSach "
+
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand()
+                With command
+                    .Connection = connection
+                    .CommandType = CommandType.Text
+                    .CommandText = sqlQuery
+                    .Parameters.AddWithValue("@MaSach", iMaSach)
+                End With
+                Try
+                    connection.Open()
+                    command.ExecuteNonQuery()
+                Catch ex As Exception
+                    connection.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Xoá LS không thành công!", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+
         Return New Result(True)
+    End Function
+
+    Public Function DemPhieuMuon(iMaSach As Integer) As Integer
+        Dim soPhieuMuon As Integer
+        Dim sqlQuery As String
+        sqlQuery = String.Empty
+        sqlQuery &= "SELECT COUNT (*) As SoLanMuon "
+        sqlQuery &= "FROM [tblChiTietPhieuMuon] "
+        sqlQuery &= "WHERE [MaSach] = @MaSach "
+
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand()
+                With command
+                    .Connection = connection
+                    .CommandType = CommandType.Text
+                    .CommandText = sqlQuery
+                    .Parameters.AddWithValue("@MaSach", iMaSach)
+                End With
+                connection.Open()
+                Dim dataReader As SqlDataReader
+                dataReader = command.ExecuteReader()
+                If dataReader.HasRows = True Then
+                    While dataReader.Read()
+                        soPhieuMuon = dataReader("SoLanMuon")
+                    End While
+                End If
+            End Using
+        End Using
+        Return soPhieuMuon
     End Function
 
     Public Function MaDocGiaDangMuon(sach As SachDTO) As String

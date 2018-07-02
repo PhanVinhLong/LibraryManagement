@@ -41,12 +41,13 @@ Public Class frmMain
         ' Phần dành riêng cho admin
         If GlobalControl.ReturnNhanVien.MaLoaiNhanVien <> 1 Then
             rpgQuanLyNhanVien.Visible = False
+            rpgThayDoiQuyDinh.Visible = False
         End If
     End Sub
 
     Private Sub xtcMain_CloseButtonClick(sender As Object, e As EventArgs) Handles xtcMain.CloseButtonClick
         Dim arg As ClosePageButtonEventArgs = TryCast(e, ClosePageButtonEventArgs)
-        TryCast(arg.Page, XtraTabPage).PageVisible = False
+        TryCast(arg.Page, XtraTabPage).Dispose()
     End Sub
 
     Private Sub btnThoat_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThoat.ItemClick
