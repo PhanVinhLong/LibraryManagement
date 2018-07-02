@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LibraryManagementGUI", "LibraryManagementGUI\LibraryManagementGUI.vbproj", "{CB6272F7-2781-461C-B4B6-A46E16C6CD82}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LibraryManagementBUS", "LibraryManagementBUS\LibraryManagementBUS.vbproj", "{5E27C130-68F6-47FB-ABBF-1C314D1AF94C}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Utility", "Utility\Utility.vbproj", "{01C6792E-64F1-4A93-9C59-91532921232E}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{0E228510-3283-46A4-97A6-C9935D407639}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,8 +41,13 @@ Global
 		{01C6792E-64F1-4A93-9C59-91532921232E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01C6792E-64F1-4A93-9C59-91532921232E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01C6792E-64F1-4A93-9C59-91532921232E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E228510-3283-46A4-97A6-C9935D407639}.Debug|Any CPU.ActiveCfg = Debug
+		{0E228510-3283-46A4-97A6-C9935D407639}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {05E11573-A6A1-45DD-9E37-6A509E4CF132}
 	EndGlobalSection
 EndGlobal
